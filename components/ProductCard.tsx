@@ -14,7 +14,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   );
 
   return (
-    <div className="flex h-full flex-col rounded-lg border border-hairline bg-surface p-5">
+    <div className="flex h-full flex-col rounded-lg border border-hairline bg-surface p-5 shadow-card transition-all duration-base ease-out-expo hover:-translate-y-0.5 hover:border-hairline-strong hover:shadow-lift">
       <h3 className="text-base font-semibold leading-snug">{product.name}</h3>
 
       <div className="mt-3 flex items-baseline gap-2 font-mono">
@@ -24,12 +24,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         <span className="text-sm text-ink-faint line-through">
           {formatPrice(product.originalPriceUsd)}
         </span>
-        <span className="rounded-sm border border-hairline px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-accent">
+        <span className="rounded-sm border border-accent px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-accent">
           {discountPercent}% off
         </span>
       </div>
 
-      <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-hairline-soft pt-3 font-mono text-xs text-ink-faint">
+      <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-hairline pt-3 font-mono text-xs text-ink-faint">
         <div>
           <dt className="inline">Leads: </dt>
           <dd className="inline text-ink-secondary">
@@ -52,7 +52,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         href={product.checkoutUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-flex items-center justify-center rounded-sm bg-ink px-5 py-2.5 text-sm font-medium text-surface transition duration-fast ease-out-expo hover:bg-ink-hover active:scale-[0.98]"
+        className="mt-4 inline-flex items-center justify-center rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition duration-fast ease-out-expo hover:bg-accent-hover active:scale-[0.98]"
       >
         Download
       </a>

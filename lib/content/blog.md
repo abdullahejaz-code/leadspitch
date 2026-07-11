@@ -1,4 +1,4 @@
-# **Leadspitch — Blog Content Strategy \+ First 3 Articles**
+# **LeadsPitch — Blog Content Strategy \+ First 3 Articles**
 
 ---
 

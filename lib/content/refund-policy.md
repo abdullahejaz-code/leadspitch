@@ -1,6 +1,6 @@
-# **Leadspitch — Refund Policy**
+# **LeadsPitch — Refund Policy**
 
-**Leadspitch**  sells downloadable digital products. Because your file is delivered instantly and is yours to keep the moment you download it, refunds work differently here than they do for a physical product. This page tells you exactly when a refund is available and when it isn't, so there's no guesswork.
+**LeadsPitch**  sells downloadable digital products. Because your file is delivered instantly and is yours to keep the moment you download it, refunds work differently here than they do for a physical product. This page tells you exactly when a refund is available and when it isn't, so there's no guesswork.
 
 ## **General Policy**
 

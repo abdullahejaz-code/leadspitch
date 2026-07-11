@@ -3,28 +3,36 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import SoonBadge from "@/components/SoonBadge";
 import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavLink {
   href: string;
   label: string;
-  soon?: boolean;
 }
 
 const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Home" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/leads", label: "Leads" },
-  { href: "/blog", label: "Blog", soon: true },
   { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ];
 
-const CTA_LINK = { href: "/contact", label: "Contact" } as const;
+const CTA_LINK = { href: "/leads", label: "Browse lists" } as const;
 
 function isActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function LogoMark() {
+  return (
+    <span className="inline-flex h-7 w-7 items-center justify-center rounded-[8px] bg-accent">
+      <span className="font-mono text-sm font-bold tracking-[-0.04em] text-white">
+        lp
+      </span>
+    </span>
+  );
 }
 
 export default function Navbar() {
@@ -50,48 +58,33 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  // Close the sheet whenever the route changes.
-  useEffect(() => {
+  // Close the sheet whenever the route changes ("adjust state during
+  // render" pattern — avoids an extra effect-driven render pass).
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsMenuOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-hairline">
-      <div className="bg-surface/70 backdrop-blur-xl">
+      <div className="bg-surface-2/90 backdrop-blur-xl">
         <nav
           aria-label="Main navigation"
-          className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
+          className="mx-auto flex h-16 max-w-shell items-center justify-between px-5 md:px-10"
         >
           <Link
             href="/"
-            className="flex items-center gap-2.5 text-lg font-semibold tracking-tight transition-opacity duration-fast hover:opacity-70"
+            className="flex items-center gap-2.5 text-lg font-semibold tracking-[-0.02em] text-ink transition-opacity duration-fast hover:opacity-80"
             onClick={() => setIsMenuOpen(false)}
           >
-            <span className="relative inline-block h-[15px] w-[15px] rounded-[4px] border-[1.5px] border-ink">
-              <span className="absolute inset-x-[3px] top-[3px] h-[1.5px] bg-ink" />
-              <span className="absolute inset-x-[3px] top-[6px] h-[1.5px] bg-ink" />
-              <span className="absolute bottom-[3px] left-[3px] top-[6px] w-[1.5px] bg-accent" />
-            </span>
+            <LogoMark />
             LeadsPitch
           </Link>
 
           <ul className="hidden items-center gap-1 md:flex">
             {NAV_LINKS.map((link) => {
-              const active = !link.soon && isActive(pathname, link.href);
-              if (link.soon) {
-                return (
-                  <li key={link.href}>
-                    <span
-                      aria-disabled="true"
-                      title="Coming soon"
-                      className="inline-flex cursor-not-allowed items-center rounded-sm px-3 py-2 text-sm text-ink-faint"
-                    >
-                      {link.label}
-                      <SoonBadge />
-                    </span>
-                  </li>
-                );
-              }
+              const active = isActive(pathname, link.href);
               return (
                 <li key={link.href}>
                   <Link
@@ -118,7 +111,7 @@ export default function Navbar() {
             <li className="ml-1">
               <Link
                 href={CTA_LINK.href}
-                className="inline-flex items-center rounded-sm bg-ink px-4 py-2 text-sm font-medium text-surface transition duration-fast ease-out-expo hover:bg-ink-hover active:scale-[0.98]"
+                className="inline-flex items-center rounded-sm bg-accent px-4 py-2 text-sm font-medium text-white transition duration-fast ease-out-expo hover:bg-accent-hover active:scale-[0.98]"
               >
                 {CTA_LINK.label}
               </Link>
@@ -132,18 +125,18 @@ export default function Navbar() {
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              className="relative z-50 flex h-10 w-10 items-center justify-center"
+              className="relative z-50 flex h-10 w-10 items-center justify-center text-ink"
               onClick={() => setIsMenuOpen((open) => !open)}
             >
               <span
                 aria-hidden="true"
-                className={`absolute h-px w-5 bg-ink transition-transform duration-base ease-out-expo ${
+                className={`absolute h-[1.5px] w-5 bg-current transition-transform duration-base ease-out-expo ${
                   isMenuOpen ? "rotate-45" : "-translate-y-1"
                 }`}
               />
               <span
                 aria-hidden="true"
-                className={`absolute h-px w-5 bg-ink transition-transform duration-base ease-out-expo ${
+                className={`absolute h-[1.5px] w-5 bg-current transition-transform duration-base ease-out-expo ${
                   isMenuOpen ? "-rotate-45" : "translate-y-1"
                 }`}
               />
@@ -161,7 +154,7 @@ export default function Navbar() {
         aria-hidden={!isMenuOpen}
       >
         <div
-          className={`absolute inset-0 bg-canvas/95 backdrop-blur-xl transition-opacity duration-base ease-out-expo ${
+          className={`absolute inset-0 bg-surface-2/95 backdrop-blur-xl transition-opacity duration-base ease-out-expo ${
             isMenuOpen ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -173,7 +166,7 @@ export default function Navbar() {
         >
           <ul className="flex flex-col divide-y divide-hairline border-y border-hairline">
             {NAV_LINKS.map((link, index) => {
-              const active = !link.soon && isActive(pathname, link.href);
+              const active = isActive(pathname, link.href);
               return (
                 <li
                   key={link.href}
@@ -182,38 +175,28 @@ export default function Navbar() {
                   }`}
                   style={{ transitionDelay: isMenuOpen ? `${index * 40}ms` : "0ms" }}
                 >
-                  {link.soon ? (
-                    <span
-                      aria-disabled="true"
-                      className="flex cursor-not-allowed items-center justify-between py-4 text-lg text-ink-faint"
-                    >
-                      {link.label}
-                      <SoonBadge />
-                    </span>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      aria-current={active ? "page" : undefined}
-                      className={`flex items-center justify-between py-4 text-lg transition-colors duration-fast ${
-                        active ? "text-ink" : "text-ink-secondary"
-                      }`}
-                    >
-                      {link.label}
-                      {active && (
-                        <span
-                          aria-hidden="true"
-                          className="h-1.5 w-1.5 rounded-full bg-accent"
-                        />
-                      )}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`flex items-center justify-between py-4 text-lg transition-colors duration-fast ${
+                      active ? "text-ink" : "text-ink-secondary"
+                    }`}
+                  >
+                    {link.label}
+                    {active && (
+                      <span
+                        aria-hidden="true"
+                        className="h-1.5 w-1.5 rounded-full bg-accent"
+                      />
+                    )}
+                  </Link>
                 </li>
               );
             })}
           </ul>
           <Link
             href={CTA_LINK.href}
-            className={`mt-8 inline-flex items-center justify-center rounded-sm bg-ink px-5 py-3 text-base font-medium text-surface transition-all duration-base ease-out-expo hover:bg-ink-hover active:scale-[0.98] ${
+            className={`mt-8 inline-flex items-center justify-center rounded-sm bg-accent px-5 py-3 text-base font-medium text-white transition-all duration-base ease-out-expo hover:bg-accent-hover active:scale-[0.98] ${
               isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
             }`}
             style={{ transitionDelay: isMenuOpen ? `${NAV_LINKS.length * 40}ms` : "0ms" }}

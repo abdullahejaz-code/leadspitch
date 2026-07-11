@@ -1,4 +1,4 @@
-# **Leadspitch — Home Page Copy**
+# **LeadsPitch — Home Page Copy**
 
 ---
 
@@ -6,7 +6,7 @@
 
 # **Buy One Lead List. Not Another Subscription.**
 
-**Leadspitch** sells pre-packaged, niche-specific business contact lists in real estate, legal, home services, beauty, and medical. Pick a category, pay once, and download a ready-to-use XLSX file in minutes. No login, no credits, no monthly charge.
+**LeadsPitch** sells pre-packaged, niche-specific business contact lists in real estate, legal, home services, beauty, and medical. Pick a category, pay once, and download a ready-to-use XLSX file in minutes. No login, no credits, no monthly charge.
 
 ---
 
@@ -14,9 +14,9 @@
 
 ## **An Apollo.io and Clay.com Alternative for People Who Need One List, Not a Platform**
 
-**Leadspitch** is a one-time purchase alternative to Apollo.io and Clay.com for anyone who needs a single targeted contact list instead of an ongoing sales intelligence subscription. Apollo and Clay are built for revenue teams running continuous prospecting workflows, which means you keep paying every month whether you search once or a thousand times. **Leadspitch** charges once for the exact list you need, and the file is yours to keep.
+**LeadsPitch** is a one-time purchase alternative to Apollo.io and Clay.com for anyone who needs a single targeted contact list instead of an ongoing sales intelligence subscription. Apollo and Clay are built for revenue teams running continuous prospecting workflows, which means you keep paying every month whether you search once or a thousand times. **LeadsPitch** charges once for the exact list you need, and the file is yours to keep.
 
-|  | Leadspitch  | Apollo.io | Clay.com |
+|  | LeadsPitch  | Apollo.io | Clay.com |
 | ----- | ----- | ----- | ----- |
 | **Pricing** | One-time payment, $7.99–$15.99 per 1k list | $49–$119 per user, per month | Credit-based, costs stack across 100+ connected data providers |
 | **Access** | Instant ZIP/XLSX download after checkout | Web platform login, filter-and-search workflow | Spreadsheet-style workspace, requires configuration |
@@ -51,17 +51,17 @@ Apollo and Clay solve a different problem than the one most freelancers and smal
 
 ## **5\. What's Included**
 
-Every **Leadspitch**  list includes business name, contact name, direct email address, phone number where publicly available, company or practice name, physical address, and website URL, organized in a single XLSX sheet with clean column headers. Niche-specific lists also include relevant fields for that category. For example, real estate lists include license type and brokerage, and medical/clinic lists include practice type and specialty. Every list is delivered as a ZIP file immediately after purchase, with no watermarks, no sample restrictions, and no fields locked behind a higher tier.
+Every **LeadsPitch**  list includes business name, contact name, direct email address, phone number where publicly available, company or practice name, physical address, and website URL, organized in a single XLSX sheet with clean column headers. Niche-specific lists also include relevant fields for that category. For example, real estate lists include license type and brokerage, and medical/clinic lists include practice type and specialty. Every list is delivered as a ZIP file immediately after purchase, with no watermarks, no sample restrictions, and no fields locked behind a higher tier.
 
 ---
 
 ## **6\. FAQ**
 
-**Is there a cheaper alternative to Apollo.io for small agencies?** Yes. **Leadspitch**  costs a one-time $7.99–$15.99 per 1k list instead of Apollo's $49–$119 per user, per month. If you only need contacts for one niche or one campaign, a single purchase is cheaper than even one month of an Apollo subscription.
+**Is there a cheaper alternative to Apollo.io for small agencies?** Yes. **LeadsPitch**  costs a one-time $7.99–$15.99 per 1k list instead of Apollo's $49–$119 per user, per month. If you only need contacts for one niche or one campaign, a single purchase is cheaper than even one month of an Apollo subscription.
 
-**Can I buy a lead list without a monthly subscription?** Yes. Every **Leadspitch** list is a one-time purchase. You pay once at checkout, download the file, and there is nothing to cancel later because nothing renews.
+**Can I buy a lead list without a monthly subscription?** Yes. Every **LeadsPitch** list is a one-time purchase. You pay once at checkout, download the file, and there is nothing to cancel later because nothing renews.
 
-**Is it legal to buy an email list and cold email people?** Yes, cold emailing business contacts is legal in the US under CAN-SPAM as long as you include a working unsubscribe link and accurate sender information. **Leadspitch** lists are built from publicly available business contact information for exactly this kind of B2B outreach. You're still responsible for how you use the list, so follow CAN-SPAM (or GDPR, if you're emailing into the EU/UK).
+**Is it legal to buy an email list and cold email people?** Yes, cold emailing business contacts is legal in the US under CAN-SPAM as long as you include a working unsubscribe link and accurate sender information. **LeadsPitch** lists are built from publicly available business contact information for exactly this kind of B2B outreach. You're still responsible for how you use the list, so follow CAN-SPAM (or GDPR, if you're emailing into the EU/UK).
 
 **What file format do lead lists come in?** Every list is delivered as a ZIP file containing an XLSX spreadsheet. XLSX opens directly in Excel, Google Sheets, or any CRM and cold email tool that accepts spreadsheet imports.
 

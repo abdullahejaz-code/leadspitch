@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "The terms that govern your access to and use of the Leadspitch website and your purchase of any digital product sold on it.",
+    "The terms that govern your access to and use of the LeadsPitch website and your purchase of any digital product sold on it.",
 };
 
 export default function TermsOfServicePage() {
   return (
     <article className="mx-auto max-w-2xl px-6 py-section">
-      <h1 className="text-4xl font-semibold md:text-5xl">Terms of Service</h1>
-      <p className="mt-4 font-mono text-sm text-ink-faint">
-        Last updated: 04/07/2026
-      </p>
-      <p className="mt-8 leading-relaxed text-ink-secondary">
-        These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and
-        use of the Leadspitch website and your purchase of any digital product
-        sold on it. By purchasing a product, submitting a contact form, or
-        otherwise using the site, you agree to these Terms. If you do not agree,
-        do not use the site or purchase from Leadspitch.
-      </p>
+      <Reveal>
+        <h1 className="text-4xl font-semibold md:text-5xl">Terms of Service</h1>
+        <p className="mt-4 font-mono text-sm text-ink-faint">
+          Last updated: 04/07/2026
+        </p>
+        <p className="mt-8 leading-relaxed text-ink-secondary">
+          These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and
+          use of the LeadsPitch website and your purchase of any digital product
+          sold on it. By purchasing a product, submitting a contact form, or
+          otherwise using the site, you agree to these Terms. If you do not
+          agree, do not use the site or purchase from LeadsPitch.
+        </p>
+      </Reveal>
 
       <section className="mt-16">
         <h2 className="text-xl font-semibold md:text-2xl">
           1. Acceptance of These Terms
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          By using Leadspitch or completing a purchase, you confirm that you are
+          By using LeadsPitch or completing a purchase, you confirm that you are
           at least 18 years old (or the age of majority in your jurisdiction),
           that you have the authority to agree to these Terms on your own behalf
           or on behalf of the business or agency you represent, and that you
@@ -42,11 +46,11 @@ export default function TermsOfServicePage() {
           2. Description of the Service
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          Leadspitch sells pre-packaged, niche-specific business contact lists
+          LeadsPitch sells pre-packaged, niche-specific business contact lists
           as downloadable digital products, delivered as ZIP files containing
           XLSX spreadsheets, across categories including real estate, legal,
           home services, beauty, and medical/clinic industries. Every purchase
-          is a one-time, non-subscription transaction. Leadspitch does not use
+          is a one-time, non-subscription transaction. LeadsPitch does not use
           user accounts or logins; each purchase is delivered via an instant
           download link generated after payment is confirmed.
         </p>
@@ -59,10 +63,10 @@ export default function TermsOfServicePage() {
         <p className="mt-4 leading-relaxed text-ink-secondary">
           Prices for each product are listed on its product page and stated in
           USD. Payment is processed entirely by a third-party payment provider
-          2Checkout / Gumroad; Leadspitch does not directly collect or store
+          2Checkout / Gumroad; LeadsPitch does not directly collect or store
           your payment card information. An order is considered complete once
           payment is confirmed by the processor, at which point your download
-          becomes available. Leadspitch might change product pricing at any time
+          becomes available. LeadsPitch might change product pricing at any time
           without notice, but a price change never affects an order you have
           already completed.
         </p>
@@ -73,7 +77,7 @@ export default function TermsOfServicePage() {
           4. License to Use Purchased List Data
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          When you purchase a list, Leadspitch grants you a limited,
+          When you purchase a list, LeadsPitch grants you a limited,
           non-exclusive, non-transferable license to use the contact data in
           that file for your own internal business outreach and marketing
           purposes. This license allows you to import the data into your own
@@ -114,7 +118,7 @@ export default function TermsOfServicePage() {
           do not guarantee 100% accuracy, completeness, or currency of any
           individual record. Businesses close, contact details change, and the
           public sources we draw from are updated on their own schedules that we
-          do not control. Leadspitch takes reasonable steps to verify email
+          do not control. LeadsPitch takes reasonable steps to verify email
           addresses before a list is offered for sale, but we do not warrant
           that any specific email will be deliverable, that any phone number
           will be in service, or that any listed business is still operating as
@@ -134,7 +138,7 @@ export default function TermsOfServicePage() {
           protection, privacy, or anti-spam law relevant to you or to the people
           you contact. This includes using accurate sender identification,
           including a functional unsubscribe or opt-out mechanism in your
-          communications, and honoring opt-out requests promptly. Leadspitch
+          communications, and honoring opt-out requests promptly. LeadsPitch
           sources and sells business contact data; we do not provide legal
           advice, and this section is not a substitute for consulting a
           qualified attorney about your specific outreach obligations,
@@ -148,18 +152,18 @@ export default function TermsOfServicePage() {
           8. Intellectual Property
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          The Leadspitch website, including its design, text, branding, and
-          underlying software, is owned by Leadspitch and protected by
+          The LeadsPitch website, including its design, text, branding, and
+          underlying software, is owned by LeadsPitch and protected by
           applicable intellectual property law; these Terms grant you no rights
           to the website itself beyond ordinary browsing and purchasing. The
           underlying business facts contained in our list products originate
-          from public sources and are not exclusively owned by Leadspitch or by
+          from public sources and are not exclusively owned by LeadsPitch or by
           you as the buyer; what you purchase is a compiled, formatted, and
           verified list product together with the usage license described in
           Section 4, not exclusive ownership of the underlying public
           information. The compilation, formatting, and verification process
-          Leadspitch applies to that public data is itself proprietary to
-          Leadspitch and is the asset protected under Section 5&rsquo;s resale
+          LeadsPitch applies to that public data is itself proprietary to
+          LeadsPitch and is the asset protected under Section 5&rsquo;s resale
           restriction.
         </p>
       </section>
@@ -170,13 +174,13 @@ export default function TermsOfServicePage() {
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
           In addition to the restrictions in Section 5, you may not scrape,
-          crawl, or use automated tools to extract data from the Leadspitch
+          crawl, or use automated tools to extract data from the LeadsPitch
           website, attempt to access any product file without a completed, valid
           payment, attempt to reverse engineer our data sourcing methods,
           verification process, or pricing structure for competitive purposes,
           use the site to test stolen or fraudulent payment credentials, or use
           any purchased list for an illegal purpose, including harassment,
-          fraud, or unlawfully discriminatory targeting. Leadspitch reserves the
+          fraud, or unlawfully discriminatory targeting. LeadsPitch reserves the
           right to refuse service, cancel an order, or restrict site access for
           anyone we reasonably believe is violating these Terms.
         </p>
@@ -187,19 +191,19 @@ export default function TermsOfServicePage() {
           10. Refunds and Order Issues
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          Because Leadspitch sells downloadable digital products, sales are
+          Because LeadsPitch sells downloadable digital products, sales are
           generally final once a file has been downloaded. Refunds or
-          replacements may be available under Leadspitch&rsquo;s{" "}
+          replacements may be available under LeadsPitch&rsquo;s{" "}
           <Link
             href="/refund-policy"
-            className="font-medium text-accent transition-colors duration-fast hover:text-accent-deep"
+            className="font-medium text-accent transition-colors duration-fast hover:text-accent-hover"
           >
             refund policy
           </Link>{" "}
           for specific issues such as a corrupted file, a list that materially
           does not match its product page description, or a clearly accidental
           duplicate purchase; contact support with your order details to request
-          a review. Refunds are granted at Leadspitch&rsquo;s discretion under
+          a review. Refunds are granted at LeadsPitch&rsquo;s discretion under
           the policy in effect at the time of your purchase, and imperfect
           contact data alone, as described in Section 6, is not automatically
           grounds for a refund.
@@ -211,12 +215,12 @@ export default function TermsOfServicePage() {
           11. Limitation of Liability
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          To the maximum extent permitted by law, Leadspitch and its owners and
+          To the maximum extent permitted by law, LeadsPitch and its owners and
           operators are not liable for indirect, incidental, special, or
           consequential damages arising from your use of a purchased list or the
           website, including damages related to failed outreach campaigns, email
           deliverability problems, or complaints from third parties you contact
-          using purchased data. Leadspitch&rsquo;s total liability for any claim
+          using purchased data. LeadsPitch&rsquo;s total liability for any claim
           arising from a purchase is limited to the amount you paid for that
           specific product. Nothing in this section limits any liability that
           cannot be limited under applicable law.
@@ -226,11 +230,11 @@ export default function TermsOfServicePage() {
       <section className="mt-12">
         <h2 className="text-xl font-semibold md:text-2xl">12. Termination</h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          Leadspitch may suspend your access to the website or decline to
+          LeadsPitch may suspend your access to the website or decline to
           process future orders at any time, particularly in response to a
           violation of these Terms, and is under no obligation to refund
           purchases that were completed legitimately before such action. Because
-          Leadspitch does not use accounts, termination primarily means
+          LeadsPitch does not use accounts, termination primarily means
           restricting your ability to place further orders or access the site
           going forward; it does not retroactively revoke a license already
           granted for data purchased and used in compliance with these Terms,
@@ -244,9 +248,9 @@ export default function TermsOfServicePage() {
           13. Governing Law and Changes to These Terms
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          These Terms are governed by the laws of [jurisdiction placeholder],
-          without regard to its conflict of law principles, and any dispute
-          arising from these Terms or your use of Leadspitch is subject to the
+          These Terms are governed by the laws of {SITE.jurisdiction}, without
+          regard to its conflict of law principles, and any dispute
+          arising from these Terms or your use of LeadsPitch is subject to the
           exclusive jurisdiction of the courts located there. We may revise
           these Terms from time to time; changes take effect once posted to this
           page, and continuing to use the site or purchasing a product after an

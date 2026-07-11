@@ -5,8 +5,8 @@ in VS Code with the "Markdown Preview Mermaid Support" extension, or by pasting
 into https://mermaid.live. For an SVG image, install Graphviz and run
 `npm run graph:svg`.
 
-- Modules: 25
-- Dependency links: 22
+- Modules: 29
+- Dependency links: 45
 - Circular dependencies: none
 
 ```mermaid
@@ -21,41 +21,68 @@ flowchart LR
   n7["app/leads/[category]/page.tsx"]
   n8["app/leads/page.tsx"]
   n9["app/page.tsx"]
-  n10["app/privacy-policy/page.tsx"]
-  n11["app/refund-policy/page.tsx"]
-  n12["app/terms-of-service/page.tsx"]
-  n13["components/ComingSoon.tsx"]
-  n14["components/ContactForm.tsx"]
-  n15["components/FaqAccordion.tsx"]
-  n16["components/Footer.tsx"]
-  n17["components/GridBackdrop.tsx"]
-  n18["components/Navbar.tsx"]
-  n19["components/ProductCard.tsx"]
-  n20["components/Reveal.tsx"]
-  n21["components/SoonBadge.tsx"]
-  n22["components/ThemeToggle.tsx"]
-  n23["lib/categories.ts"]
-  n24["lib/products.ts"]
-  n1 --> n13
-  n2 --> n13
-  n3 --> n14
-  n4 --> n15
+  n10["app/pricing/page.tsx"]
+  n11["app/privacy-policy/page.tsx"]
+  n12["app/refund-policy/page.tsx"]
+  n13["app/terms-of-service/page.tsx"]
+  n14["components/CheckTick.tsx"]
+  n15["components/ComingSoon.tsx"]
+  n16["components/ContactForm.tsx"]
+  n17["components/FaqAccordion.tsx"]
+  n18["components/Footer.tsx"]
+  n19["components/GridBackdrop.tsx"]
+  n20["components/Navbar.tsx"]
+  n21["components/ProductCard.tsx"]
+  n22["components/Reveal.tsx"]
+  n23["components/SoonBadge.tsx"]
+  n24["components/ThemeToggle.tsx"]
+  n25["components/TodoChip.tsx"]
+  n26["lib/categories.ts"]
+  n27["lib/jsonld.ts"]
+  n28["lib/products.ts"]
+  n0 --> n22
+  n0 --> n25
+  n0 --> n27
+  n1 --> n15
+  n2 --> n15
+  n3 --> n16
+  n3 --> n22
+  n3 --> n25
+  n4 --> n17
+  n4 --> n22
+  n4 --> n25
+  n4 --> n27
   n6 --> n5
-  n6 --> n16
   n6 --> n18
-  n7 --> n13
-  n7 --> n19
-  n7 --> n23
-  n7 --> n24
-  n8 --> n21
+  n6 --> n20
+  n7 --> n15
+  n7 --> n21
+  n7 --> n22
+  n7 --> n26
+  n7 --> n28
+  n8 --> n22
   n8 --> n23
-  n9 --> n17
-  n9 --> n20
-  n9 --> n21
-  n9 --> n23
-  n9 --> n24
-  n16 --> n21
-  n18 --> n21
-  n18 --> n22
-  n19 --> n24
+  n8 --> n26
+  n9 --> n14
+  n9 --> n22
+  n9 --> n25
+  n9 --> n27
+  n9 --> n28
+  n10 --> n14
+  n10 --> n22
+  n10 --> n25
+  n10 --> n28
+  n11 --> n22
+  n11 --> n25
+  n12 --> n14
+  n12 --> n22
+  n12 --> n25
+  n13 --> n22
+  n13 --> n25
+  n15 --> n22
+  n16 --> n14
+  n16 --> n25
+  n18 --> n25
+  n20 --> n24
+  n21 --> n28
 ```

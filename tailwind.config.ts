@@ -9,27 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "var(--color-canvas)",
+        // Surfaces
+        canvas: "rgb(var(--color-page-rgb) / <alpha-value>)",
         surface: {
-          DEFAULT: "var(--color-surface)",
-          2: "var(--color-surface-2)",
+          DEFAULT: "rgb(var(--color-surface-rgb) / <alpha-value>)",
+          2: "rgb(var(--color-surface-2-rgb) / <alpha-value>)",
+          3: "var(--color-surface-3)",
         },
+        band: "rgb(var(--color-band-rgb) / <alpha-value>)",
+        // Ink scale
         ink: {
           DEFAULT: "var(--color-ink)",
+          strong: "var(--color-ink-strong)",
           secondary: "var(--color-ink-secondary)",
           faint: "var(--color-ink-faint)",
-          hover: "var(--color-ink-hover)",
         },
+        // Hairlines
         hairline: {
           DEFAULT: "var(--color-hairline)",
-          soft: "var(--color-hairline-soft)",
+          strong: "var(--color-hairline-strong)",
         },
-        dot: "var(--color-dot)",
+        // Accent — the one interactive colour
         accent: {
-          DEFAULT: "var(--color-accent)",
-          deep: "var(--color-accent-deep)",
+          DEFAULT: "rgb(var(--color-accent-rgb) / <alpha-value>)",
+          hover: "var(--color-accent-hover)",
           soft: "var(--color-accent-soft)",
         },
+        // Semantic
         danger: {
           DEFAULT: "var(--color-danger)",
           soft: "var(--color-danger-soft)",
@@ -37,34 +43,30 @@ const config: Config = {
         notice: {
           DEFAULT: "var(--color-notice)",
           soft: "var(--color-notice-soft)",
+          border: "var(--color-notice-border)",
         },
-        "cta-bg": "var(--color-cta-bg)",
-        "cta-ink": "var(--color-cta-ink)",
-        "cta-sub": "var(--color-cta-sub)",
-        "cta-border": "var(--color-cta-border)",
-        "cta-btn-bg": "var(--color-cta-btn-bg)",
-        "cta-btn-ink": "var(--color-cta-btn-ink)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        mono: ["var(--font-space-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
         sm: "var(--radius-sm)",
         DEFAULT: "var(--radius-md)",
+        md: "var(--radius-md)",
         lg: "var(--radius-lg)",
         xl: "var(--radius-xl)",
       },
       boxShadow: {
-        hairline: "0 1px 2px rgba(19, 19, 22, 0.04)",
-        lift: "0 2px 8px rgba(19, 19, 22, 0.04), 0 12px 32px -16px rgba(19, 19, 22, 0.08)",
-        elevated: "var(--shadow)",
+        card: "var(--shadow-card)",
+        lift: "var(--shadow-lift)",
       },
       spacing: {
         section: "var(--space-section)",
       },
       maxWidth: {
-        prose: "68ch",
+        prose: "72ch",
+        shell: "72rem", // 1152px page shell (design frames sit ~1280 incl. gutters)
       },
       transitionTimingFunction: {
         "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
@@ -72,7 +74,7 @@ const config: Config = {
       transitionDuration: {
         fast: "150ms",
         base: "300ms",
-        slow: "600ms",
+        slow: "500ms",
       },
     },
   },

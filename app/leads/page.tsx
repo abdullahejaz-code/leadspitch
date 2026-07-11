@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import SoonBadge from "@/components/SoonBadge";
 import { categories } from "@/lib/categories";
 
@@ -12,16 +13,18 @@ export const metadata: Metadata = {
 export default function LeadsPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-section">
-      <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-        Lead Lists
-      </h1>
-      <p className="mt-4 max-w-prose text-ink-secondary">
-        Pick a niche, pay once, get the file. Every list is sourced from
-        public directories and verified before sale.
-      </p>
+      <Reveal>
+        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+          Lead Lists
+        </h1>
+        <p className="mt-4 max-w-prose text-ink-secondary">
+          Pick a niche, pay once, get the file. Every list is sourced from
+          public directories and verified before sale.
+        </p>
+      </Reveal>
 
       <ul className="mt-12 border-t border-hairline">
-        {categories.map((category) => {
+        {categories.map((category, index) => {
           const isLive = category.status === "live";
           const content = (
             <>
@@ -36,8 +39,11 @@ export default function LeadsPage() {
           );
 
           return (
-            <li
+            <Reveal
               key={category.slug}
+              as="li"
+              variant="slide-left"
+              delay={index * 70}
               className="border-b border-hairline py-6"
             >
               {isLive ? (
@@ -55,7 +61,7 @@ export default function LeadsPage() {
                   {content}
                 </div>
               )}
-            </li>
+            </Reveal>
           );
         })}
       </ul>

@@ -2,14 +2,42 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
+export type RevealVariant =
+  | "fade-up"
+  | "fade"
+  | "slide-left"
+  | "slide-right"
+  | "zoom"
+  | "blur-up";
+
 interface RevealProps {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "li";
+  as?: "div" | "li" | "section";
+  variant?: RevealVariant;
 }
 
-export default function Reveal({ children, delay = 0, className = "", as = "div" }: RevealProps) {
+// Hidden state per variant; every variant resolves to the same neutral
+// visible state so they can be mixed freely on one page.
+const HIDDEN_STATE: Record<RevealVariant, string> = {
+  "fade-up": "translate-y-4 opacity-0",
+  fade: "opacity-0",
+  "slide-left": "-translate-x-5 opacity-0",
+  "slide-right": "translate-x-5 opacity-0",
+  zoom: "scale-[0.96] opacity-0",
+  "blur-up": "translate-y-3 opacity-0 blur-[6px]",
+};
+
+const VISIBLE_STATE = "translate-x-0 translate-y-0 scale-100 opacity-100 blur-0";
+
+export default function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  as = "div",
+  variant = "fade-up",
+}: RevealProps) {
   const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,11 +45,9 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
     const node = ref.current;
     if (!node) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsVisible(true);
-      return;
-    }
-
+    // Reduced motion needs no special-casing here: the global
+    // prefers-reduced-motion CSS zeroes transition durations, so elements
+    // simply appear the moment they intersect.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -35,8 +61,8 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
     return () => observer.disconnect();
   }, []);
 
-  const revealClassName = `transition-all duration-slow ease-out-expo ${
-    isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+  const revealClassName = `transition-all duration-slow ease-out-expo will-change-[transform,opacity] ${
+    isVisible ? VISIBLE_STATE : HIDDEN_STATE[variant]
   } ${className}`;
   const style = { transitionDelay: isVisible ? `${delay}ms` : "0ms" };
 
@@ -45,6 +71,14 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
       <li ref={ref} style={style} className={revealClassName}>
         {children}
       </li>
+    );
+  }
+
+  if (as === "section") {
+    return (
+      <section ref={ref} style={style} className={revealClassName}>
+        {children}
+      </section>
     );
   }
 

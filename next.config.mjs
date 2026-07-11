@@ -1,4 +1,35 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+// Applied to every route. The site is fully static marketing content: it can
+// safely deny framing, sniffing, and unneeded browser APIs.
+const securityHeaders = [
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains",
+  },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
+  },
+];
+
+const nextConfig = {
+  // Pin the workspace root: a stray lockfile in the user profile directory
+  // otherwise makes Turbopack infer the wrong root.
+  turbopack: {
+    root: import.meta.dirname,
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ];
+  },
+};
 
 export default nextConfig;

@@ -6,9 +6,9 @@
 
 # **We Sell Lists, Not Subscriptions**
 
-**Leadspitch** exists because most freelancers and small agencies don't need a sales intelligence platform. They need one accurate list, for one niche, for one campaign, and they shouldn't have to sign up for a monthly tool to get it. Apollo, Clay, and ZoomInfo are built for revenue teams running prospecting as a permanent, ongoing job. Most of our buyers are running it as a project with a start and an end date, which is a different problem that deserves a different product.
+**LeadsPitch** exists because most freelancers and small agencies don't need a sales intelligence platform. They need one accurate list, for one niche, for one campaign, and they shouldn't have to sign up for a monthly tool to get it. Apollo, Clay, and ZoomInfo are built for revenue teams running prospecting as a permanent, ongoing job. Most of our buyers are running it as a project with a start and an end date, which is a different problem that deserves a different product.
 
-That gap is the entire reason **Leadspitch** exists. A freelancer pitching website services to salons in one city doesn't need 275 million contacts and a monthly seat license. They need 400 salon owners in their target area, once. So we built a store instead of a platform: pick the niche, pay once, get the file.
+That gap is the entire reason **LeadsPitch** exists. A freelancer pitching website services to salons in one city doesn't need 275 million contacts and a monthly seat license. They need 400 salon owners in their target area, once. So we built a store instead of a platform: pick the niche, pay once, get the file.
 
 ---
 
@@ -40,7 +40,7 @@ LeadsPitch is a platform built specifically to give freelancers and agencies ins
 
 ## **5\. Trust and Legitimacy**
 
-**Leadspitch** is a real, operating business, not an anonymous data dump. Every list goes through email verification before sale, we publish sample data so you can check format and quality before you buy, and every purchase is backed by \[refund/replacement policy placeholder\]. If you have a question about a list before or after buying it, you can reach us directly at \[contact email/method placeholder\], and a person answers, not a support ticket queue. We also don't collect or resell your customer data. Our business is selling lists we've built ourselves, not brokering yours.
+**LeadsPitch** is a real, operating business, not an anonymous data dump. Every list goes through email verification before sale, we publish sample data so you can check format and quality before you buy, and every purchase is backed by \[refund/replacement policy placeholder\]. If you have a question about a list before or after buying it, you can reach us directly at \[contact email/method placeholder\], and a person answers, not a support ticket queue. We also don't collect or resell your customer data. Our business is selling lists we've built ourselves, not brokering yours.
 
 ---
 

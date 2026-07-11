@@ -1,23 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Leadspitch collects, uses, and protects information when you visit the site, contact us, or purchase a digital lead list product.",
+    "How LeadsPitch collects, uses, and protects information when you visit the site, contact us, or purchase a digital lead list product.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <article className="mx-auto max-w-2xl px-6 py-section">
-      <h1 className="text-4xl font-semibold md:text-5xl">Privacy Policy</h1>
-      <p className="mt-4 font-mono text-sm text-ink-faint">
-        Effective date: 04/07/2026
-      </p>
+      <Reveal variant="fade">
+        <h1 className="text-4xl font-semibold md:text-5xl">Privacy Policy</h1>
+        <p className="mt-4 font-mono text-sm text-ink-faint">
+          Effective date: 04/07/2026
+        </p>
+      </Reveal>
       <p className="mt-8 leading-relaxed text-ink-secondary">
-        This Privacy Policy explains how Leadspitch (&ldquo;we,&rdquo;
+        This Privacy Policy explains how LeadsPitch (&ldquo;we,&rdquo;
         &ldquo;us,&rdquo; &ldquo;our&rdquo;) collects, uses, and protects
-        information when you visit Leadspitch&rsquo;s website, contact us, or
+        information when you visit LeadsPitch&rsquo;s website, contact us, or
         purchase a digital lead list product. It does not cover the business
         contact data contained within the lead list products themselves;
         Section 3 below explains that distinction in detail, because it is
@@ -31,7 +35,7 @@ export default function PrivacyPolicyPage() {
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
           This policy applies to visitors, contact form submitters, and buyers
-          who interact with the Leadspitch website. Leadspitch does not require
+          who interact with the LeadsPitch website. LeadsPitch does not require
           account creation or login to browse or purchase products; every
           purchase is a one-time transaction processed through a third-party
           payment provider, and we do not maintain user profiles, saved
@@ -65,7 +69,7 @@ export default function PrivacyPolicyPage() {
           3. Important: This Policy Does Not Cover the Lead List Data We Sell
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          The business contact data contained in Leadspitch&rsquo;s downloadable
+          The business contact data contained in LeadsPitch&rsquo;s downloadable
           lead list products is not personal information collected from you, the
           website visitor, and is not covered by the data-subject rights
           described in Section 9. Our lead list products are compiled from
@@ -76,7 +80,7 @@ export default function PrivacyPolicyPage() {
           contact data about third parties (business owners and professionals)
           gathered independently of our website, not data submitted to us by our
           customers or scraped from private accounts. If you are a business
-          professional who appears in a Leadspitch list and have questions about
+          professional who appears in a LeadsPitch list and have questions about
           that listing, contact us using the details in Section 10; questions
           about your own personal data as a site visitor or buyer are handled
           under Sections 2 and 9 instead.
@@ -104,12 +108,21 @@ export default function PrivacyPolicyPage() {
           5. Payment Processing
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          All payments are processed by 2Checkout / Gumroad, a third-party
-          payment provider. Leadspitch does not collect or store your full
+          All payments are processed by {SITE.processorName}, a third-party
+          payment provider. LeadsPitch does not collect or store your full
           payment card number, card expiration date, or CVV; that information is
           entered directly with the processor and is subject to their own
-          security standards and privacy policy, available at [processor privacy
-          policy link]. We receive limited transaction information from the
+          security standards and privacy policy, available at{" "}
+          <a
+            href={SITE.processorPrivacyPolicyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent transition-colors hover:text-accent-hover"
+          >
+            gumroad.com/privacy
+          </a>
+          . We
+          receive limited transaction information from the
           processor, such as your email address, the product purchased, the
           amount charged, and the transaction date, which we use solely to
           deliver your product and provide order support.
@@ -121,7 +134,7 @@ export default function PrivacyPolicyPage() {
           6. Cookies and Analytics
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          Leadspitch uses cookies and a web analytics tool e.g. Google
+          LeadsPitch uses cookies and a web analytics tool e.g. Google
           Analytics or Plausible to understand how visitors use the site,
           including which pages are viewed, how visitors arrive at the site, and
           general device and browser information. This data is used in aggregate
@@ -139,7 +152,7 @@ export default function PrivacyPolicyPage() {
           7. Other Third-Party Services and Disclosure
         </h2>
         <p className="mt-4 leading-relaxed text-ink-secondary">
-          Beyond our payment processor and analytics provider, Leadspitch may
+          Beyond our payment processor and analytics provider, LeadsPitch may
           use a transactional email service to deliver order confirmations and
           download links, and a hosting provider to run the website; both
           process data only as needed to provide their service to us, not for
@@ -183,7 +196,7 @@ export default function PrivacyPolicyPage() {
           of these rights, contact us using the details in Section 10; because
           we do not maintain user accounts, we will verify your request using
           the email address associated with your order or contact form
-          submission. Leadspitch does not knowingly collect personal information
+          submission. LeadsPitch does not knowingly collect personal information
           from children under 16, and our products and services are intended for
           business use by adults.
         </p>
@@ -202,7 +215,7 @@ export default function PrivacyPolicyPage() {
           that appears in one of our products, contact us through our{" "}
           <Link
             href="/contact"
-            className="font-medium text-accent transition-colors duration-fast hover:text-accent-deep"
+            className="font-medium text-accent transition-colors duration-fast hover:text-accent-hover"
           >
             contact page
           </Link>
