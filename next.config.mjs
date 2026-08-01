@@ -17,11 +17,6 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-  // Pin the workspace root: a stray lockfile in the user profile directory
-  // otherwise makes Turbopack infer the wrong root.
-  turbopack: {
-    root: import.meta.dirname,
-  },
   async headers() {
     return [
       {
