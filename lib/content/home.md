@@ -19,7 +19,7 @@
 |  | LeadsPitch  | Apollo.io | Clay.com |
 | ----- | ----- | ----- | ----- |
 | **Pricing** | One-time payment, $7.99–$15.99 per 1k list | $49–$119 per user, per month | Credit-based, costs stack across 100+ connected data providers |
-| **Access** | Instant ZIP/XLSX download after checkout | Web platform login, filter-and-search workflow | Spreadsheet-style workspace, requires configuration |
+| **Access** | Secure ZIP/XLSX delivery after checkout | Web platform login, filter-and-search workflow | Spreadsheet-style workspace, requires configuration |
 | **Commitment** | None. Buy once, keep the file forever | Monthly or annual subscription | Monthly subscription plus ongoing per-enrichment credit spend |
 | **Setup** | None. Open the file and start emailing | Build filters, connect CRM, set up sequences | Build enrichment waterfalls and workflows before you get usable data |
 
@@ -33,7 +33,7 @@ Apollo and Clay solve a different problem than the one most freelancers and smal
 
 **2\. Pay once at checkout.** No account creation, no recurring card charge, no credit system to figure out. One price, one payment.
 
-**3\. Download instantly.** Your list arrives as a ZIP file containing a clean XLSX, ready to import into your CRM, cold email tool, or spreadsheet of choice.
+**3\. Secure delivery.** Your list arrives as a ZIP file containing a clean XLSX, ready to import into your CRM, cold email tool, or spreadsheet of choice.
 
 ---
 

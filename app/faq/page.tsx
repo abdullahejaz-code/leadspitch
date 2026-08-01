@@ -58,7 +58,7 @@ const ITEMS: FaqItem[] = [
   {
     question: "How fast will I receive my list after paying?",
     answer:
-      "Delivery is instant. Once your payment is confirmed, your download link is available immediately, with no manual processing or waiting period.",
+      "Delivery is secure and fast. Once your payment is confirmed, your download link is sent right away, with no manual processing or waiting period.",
   },
   {
     question: "Can I buy a list without a subscription?",

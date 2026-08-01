@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Allow AI search crawlers for visibility in AI-powered search
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Block training-only crawlers (optional - adjust as needed)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://leadspitch.com/sitemap.xml

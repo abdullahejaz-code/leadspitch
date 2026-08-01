@@ -14,7 +14,7 @@ By using **LeadsPitch** or completing a purchase, you confirm that you are at le
 
 ## **2\. Description of the Service**
 
-**LeadsPitch** sells pre-packaged, niche-specific business contact lists as downloadable digital products, delivered as ZIP files containing XLSX spreadsheets, across categories including real estate, legal, home services, beauty, and medical/clinic industries. Every purchase is a one-time, non-subscription transaction. **LeadsPitch** does not use user accounts or logins; each purchase is delivered via an instant download link generated after payment is confirmed.
+**LeadsPitch** sells pre-packaged, niche-specific business contact lists as downloadable digital products, delivered as ZIP files containing XLSX spreadsheets, across categories including real estate, legal, home services, beauty, and medical/clinic industries. Every purchase is a one-time, non-subscription transaction. **LeadsPitch** does not use user accounts or logins; each purchase is delivered via a secure delivery link generated after payment is confirmed.
 
 ## **3\. Orders, Payment, and Pricing**
 

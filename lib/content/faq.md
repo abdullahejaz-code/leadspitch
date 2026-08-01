@@ -36,7 +36,7 @@ Every answer below opens with a direct, standalone answer sentence, followed by 
 
 **What file format do lists come in?** Every list is delivered as a ZIP file containing an XLSX spreadsheet. XLSX opens directly in Excel or Google Sheets and imports cleanly into most CRM and cold email tools.
 
-**How fast will I receive my list after paying?** Delivery is instant. Once payment is confirmed, your download link is available immediately, with no manual processing or waiting period.
+**How fast will I receive my list after paying?** Delivery is secure and fast. Once payment is confirmed, your download link is sent right away, with no manual processing or waiting period.
 
 **Can I buy a list without a subscription?** Yes, every **LeadsPitch** purchase is a one-time payment. There's no account required, no recurring charge, and nothing to cancel later because nothing renews.
 

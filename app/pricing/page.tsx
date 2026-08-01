@@ -101,7 +101,7 @@ export default function PricingPage() {
               <div className="flex items-start gap-2.5">
                 <CheckTick size={14} className="mt-1 shrink-0 text-accent" />
                 <span className="text-sm leading-snug text-ink-secondary sm:text-[14.5px]">
-                  instant download · yours to keep forever
+                  secure delivery · yours to keep forever
                 </span>
               </div>
             </div>

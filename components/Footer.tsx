@@ -20,6 +20,7 @@ interface FooterProps {
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/bundles", label: "Bundles" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -47,7 +48,7 @@ export default function Footer({
               </span>
               <span className="text-lg font-semibold">LeadsPitch</span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/60">
+            <p className="mt-4 text-sm leading-relaxed text-white/80">
               We sell pre-packaged, niche-specific B2B lead lists, built from
               public business records and state licensing directories. You buy
               once and own the file.
@@ -62,7 +63,7 @@ export default function Footer({
               <span key={link.href} className="flex items-center gap-x-3">
                 <Link
                   href={link.href}
-                  className="text-sm text-white/75 transition-colors duration-fast hover:text-white"
+                  className="text-sm text-white/90 transition-colors duration-fast hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -94,7 +95,7 @@ export default function Footer({
               </Link>
             )}
             {showLegalEntity && (
-              <span className="font-mono text-xs text-white/50">
+              <span className="font-mono text-xs text-white/70">
                 operated by {legalEntity}
               </span>
             )}
@@ -102,13 +103,13 @@ export default function Footer({
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/privacy-policy"
-              className="font-mono text-xs text-white/50 transition-colors duration-fast hover:text-white/80"
+              className="font-mono text-xs text-white/70 transition-colors duration-fast hover:text-white"
             >
               Privacy
             </Link>
             <Link
               href="/terms-of-service"
-              className="font-mono text-xs text-white/50 transition-colors duration-fast hover:text-white/80"
+              className="font-mono text-xs text-white/70 transition-colors duration-fast hover:text-white"
             >
               Terms
             </Link>

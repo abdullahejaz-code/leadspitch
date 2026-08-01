@@ -51,8 +51,8 @@ export default function TermsOfServicePage() {
           XLSX spreadsheets, across categories including real estate, legal,
           home services, beauty, and medical/clinic industries. Every purchase
           is a one-time, non-subscription transaction. LeadsPitch does not use
-          user accounts or logins; each purchase is delivered via an instant
-          download link generated after payment is confirmed.
+          user accounts or logins; each purchase is delivered via a secure
+          delivery link generated after payment is confirmed.
         </p>
       </section>
 
@@ -63,7 +63,7 @@ export default function TermsOfServicePage() {
         <p className="mt-4 leading-relaxed text-ink-secondary">
           Prices for each product are listed on its product page and stated in
           USD. Payment is processed entirely by a third-party payment provider
-          2Checkout / Gumroad; LeadsPitch does not directly collect or store
+          Gumroad; LeadsPitch does not directly collect or store
           your payment card information. An order is considered complete once
           payment is confirmed by the processor, at which point your download
           becomes available. LeadsPitch might change product pricing at any time

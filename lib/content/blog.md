@@ -65,7 +65,7 @@ Applying the "verified emails" filter also reportedly shrinks Apollo's claimed 2
 |  | \[Brand\] | Apollo.io |
 | ----- | ----- | ----- |
 | Pricing | One-time payment, $\[XX\]–$\[XX\] per list | $49–$119 per user, per month |
-| Access | Instant download after checkout | Live platform search, ongoing login |
+| Access | Secure delivery after checkout | Live platform search, ongoing login |
 | Commitment | None, keep the file forever | Monthly or annual subscription |
 | Setup | None, open the file | Filters, sequences, CRM integration |
 | Best for | A single niche, single campaign | Continuous, multi-vertical prospecting |

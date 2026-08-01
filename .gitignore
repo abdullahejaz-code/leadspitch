@@ -24,6 +24,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# codebase graph (regenerable via `npm run graph`)
-/codegraph.json
-/codegraph.svg
+# vercel
+.vercel

@@ -307,7 +307,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 04 · INSPECT THE FILE ===== */}
-      <section className="border-b border-hairline bg-surface-2">
+      <section id="04" className="border-b border-hairline bg-surface-2">
         <div className="mx-auto max-w-shell px-5 py-16 md:px-10">
           <Reveal>
             <SectionHead num="04" title="Inspect the file before you buy" />
