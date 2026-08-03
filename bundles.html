@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industry Bundles | LeadsPitch</title>
+  <meta name="description" content="Save more when you buy multiple industry datasets together. Bundle pricing for 25K and 50K email packages.">
+  <meta name="keywords" content="lead list bundles, buy multiple lead lists, bulk B2B contact data, multi-industry lead package, discounted lead lists, bulk lead emails, B2B data bundle, lead pack combo, 25K email list, 50K email list">
+  <meta property="og:title" content="Industry Bundles | LeadsPitch">
+  <meta property="og:description" content="Save more when you buy multiple industry datasets together. Bundle pricing for 25K and 50K email packages.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leadspitch.com/bundles.html">
+  <meta property="og:site_name" content="LeadsPitch">
+  <meta property="og:image" content="https://leadspitch.com/public/sample-excel.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industry Bundles | LeadsPitch">
+  <meta name="twitter:description" content="Buy multiple industry datasets together and save. 25K and 50K email packages.">
+  <meta name="twitter:image" content="https://leadspitch.com/public/sample-excel.png">
+  <link rel="canonical" href="https://leadspitch.com/bundles.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LeadsPitch",
+    "url": "https://leadspitch.com",
+    "description": "Business data platform offering monthly subscriptions and one-time dataset purchases across 19+ industries.",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leadspitch.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Bundles" }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-elevated: #f9fafb;
+      --surface: #ffffff;
+      --surface-2: #f3f4f6;
+      --fg: #111111;
+      --muted: #374151;
+      --faint: #6b7280;
+      --border: #e5e7eb;
+      --border-soft: #f3f4f6;
+      --accent: #111111;
+      --accent-soft: rgba(17, 17, 17, 0.05);
+      --accent-text: #111111;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --radius: 12px;
+      --max: 1120px;
+      --gutter: clamp(1.25rem, 4vw, 2.5rem);
+      --nav-h: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    ul { list-style: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    /* ─── Layout ─── */
+    .wrap { width: min(100% - var(--gutter) * 2, var(--max)); margin-inline: auto; }
+    .wrap--narrow { max-width: var(--max); }
+    /* ─── Nav ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-h);
+      background: transparent;
+      transition: background 200ms ease;
+    }
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+    .nav {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      gap: 1rem;
+      position: relative;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .logo img { height: 36px; width: auto; }
+
+    .nav-pill {
+      display: none;
+      align-items: center;
+      gap: 0.125rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.375rem 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .nav-pill a,
+    .nav-pill .nav-dropdown-toggle {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 0.5rem 0.875rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: color 180ms ease, background 180ms ease;
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-pill a:hover,
+    .nav-pill .nav-dropdown-toggle:hover {
+      color: var(--fg);
+      background: var(--surface-2);
+    }
+    .nav-pill a.active {
+      color: var(--fg);
+      background: var(--surface-2);
+      font-weight: 600;
+    }
+    .nav-pill .logo {
+      font-size: 0.9375rem;
+      padding: 0.375rem 0.75rem;
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--fg);
+    }
+    .nav-pill .logo:hover { background: var(--surface-2); }
+    .nav-pill .logo img { height: 32px; width: auto; }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+    .nav-dropdown-toggle svg {
+      width: 10px;
+      height: 10px;
+      transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .nav-dropdown-toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      width: 480px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 0.5rem;
+      z-index: 100;
+      opacity: 0;
+      transform: translateX(-50%) scale(0.9) translateY(-8px);
+      transform-origin: top center;
+      pointer-events: none;
+      transition: opacity 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+      opacity: 1;
+      transform: translateX(-50%) scale(1) translateY(0);
+      pointer-events: auto;
+    }
+    .nav-dropdown-menu a {
+      display: flex;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      border-radius: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 160ms ease, background 160ms ease;
+      text-decoration: none;
+    }
+    .nav-dropdown-menu a:hover {
+      color: var(--fg);
+      background: var(--surface-2);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: auto;
+    }
+
+    .nav-toggle {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: none;
+      border-radius: 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: background 150ms ease;
+    }
+    .nav-toggle:hover { background: var(--surface-2); }
+    .nav-toggle span {
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--fg);
+      position: relative;
+      transition: background 180ms ease;
+    }
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--fg);
+      transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
+    }
+    .nav-toggle span::before { top: -5px; }
+    .nav-toggle span::after { top: 5px; }
+    .nav-toggle[aria-expanded="true"] span { background: transparent; }
+    .nav-toggle[aria-expanded="true"] span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    /* ─── Mobile overlay ─── */
+    .mobile-panel {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: var(--bg);
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem var(--gutter) 3rem;
+    }
+    .mobile-panel.open { display: flex; }
+    .mobile-panel .mobile-nav-links {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      max-width: 320px;
+    }
+    .mobile-panel .mobile-nav-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 0;
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid var(--border-soft);
+      width: 100%;
+      text-decoration: none;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-panel .mobile-nav-links a:hover,
+    .mobile-panel .mobile-nav-links a:active {
+      color: var(--fg);
+      padding-left: 0.75rem;
+    }
+    .mobile-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.1rem 0;
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: -0.02em;
+      border: none;
+      background: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid var(--border-soft);
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-dropdown-toggle svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .mobile-dropdown-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .mobile-dropdown-toggle:hover { color: var(--fg); padding-left: 0.75rem; }
+    .mobile-dropdown-panel {
+      display: none;
+      flex-direction: column;
+      padding-left: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 250ms ease;
+      opacity: 0;
+    }
+    .mobile-dropdown-panel.open {
+      display: flex;
+      max-height: 600px;
+      opacity: 1;
+    }
+    .mobile-dropdown-panel a {
+      display: flex;
+      align-items: center;
+      padding: 0.7rem 0;
+      font-size: 1.1rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      color: var(--faint);
+      border-bottom: 1px solid var(--border-soft);
+      text-decoration: none;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-dropdown-panel a:hover { color: var(--fg); padding-left: 0.5rem; }
+    .mobile-panel .mobile-nav-cta {
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 320px;
+    }
+    .mobile-panel .mobile-nav-cta .btn {
+      width: 100%;
+      background: var(--fg);
+      color: #ffffff;
+      border: none;
+    }
+    .mobile-panel .mobile-nav-cta .btn:hover { background: #242424; }
+    .mobile-close {
+      position: absolute;
+      top: 1.25rem;
+      right: var(--gutter);
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: none;
+      border-radius: 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      transition: background 150ms ease;
+    }
+    .mobile-close:hover { background: var(--surface-2); }
+    .mobile-close svg { width: 18px; height: 18px; }
+    @media (min-width: 768px) {
+      .nav-pill { display: inline-flex; }
+      .nav-right { display: none !important; }
+      .mobile-panel { display: none !important; }
+    }
+
+
+    /* ─── Shared ─── */
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 1.25rem;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-soft);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .divider--wide { max-width: var(--max-wide); }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    .btn-primary {
+      background: var(--fg);
+      color: #ffffff;
+      border: 1px solid var(--fg);
+    }
+    .btn-primary:hover { background: #242424; border-color: #242424; }
+    .btn-outline {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+    /* ─── Breadcrumbs ─── */
+    .breadcrumbs {
+      padding: 1.5rem 0 0;
+      font-size: 0.8125rem;
+      color: var(--faint);
+    }
+    .breadcrumbs a { color: var(--muted); transition: color 150ms ease; }
+    .breadcrumbs a:hover { color: var(--fg); }
+    .breadcrumbs span { margin: 0 0.4rem; }
+
+    /* ─── Hero ─── */
+    .hero {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--fg);
+      max-width: 18ch;
+    }
+    .hero-subtitle {
+      margin-top: 1.5rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+    .hero--compact { padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem); }
+    .hero--compact h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0;
+    }
+    .hero--compact .hero-sub {
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    /* ─── How it works ─── */
+    .how-it-works { background: var(--bg-elevated); }
+    .how-it-works .wrap { max-width: 720px; text-align: center; }
+    .how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin: 0.75rem 0 1.5rem;
+    }
+    .how-steps { display: grid; gap: 1.5rem; text-align: left; }
+    .how-step { display: flex; gap: 1rem; align-items: start; }
+    .how-step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .how-step strong { display: block; }
+    .how-step p { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+
+    /* ─── Bundles ─── */
+    main > section:first-of-type { padding: var(--section-gap) 0; }
+    .bundles-grid {
+      display: grid; gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .bundle-card {
+      border: 1px solid var(--border); border-radius: 16px;
+      background: var(--surface); overflow: hidden;
+      display: grid;
+      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    }
+    .bundle-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .bundle-card-top {
+      background: linear-gradient(135deg, #111111 0%, #374151 100%);
+      padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .bundle-name {
+      font-family: var(--font-display); font-size: 1.15rem;
+      font-weight: 700; letter-spacing: -0.01em; color: #ffffff;
+    }
+    .bundle-save {
+      display: inline-block; width: fit-content;
+      font-size: 0.7rem; font-weight: 700; color: #111111;
+      background: #10b981; padding: 0.25rem 0.6rem; border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+    .bundle-tags {
+      display: flex; flex-wrap: wrap; gap: 0.35rem;
+      padding: 0 1.5rem; margin-top: -0.5rem; position: relative; z-index: 1;
+    }
+    .bundle-tag {
+      font-size: 0.68rem; font-weight: 500; color: var(--muted);
+      background: var(--surface-2); padding: 0.2rem 0.55rem;
+      border-radius: 20px; border: 1px solid var(--border-soft);
+    }
+    .bundle-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: grid; gap: 0.75rem;
+    }
+    .bundle-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .bundle-tier {
+      display: grid; gap: 0.4rem; padding: 1rem 0.75rem;
+      border: 1px solid var(--border-soft); border-radius: 12px; text-align: center;
+      background: var(--bg-elevated);
+      transition: border-color 160ms ease;
+    }
+    .bundle-tier:hover { border-color: var(--border); }
+    .bundle-tier--featured {
+      border-color: var(--accent); background: var(--surface);
+      position: relative;
+    }
+    .bundle-tier--featured::before {
+      content: "Best value"; position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
+      font-size: 0.6rem; font-weight: 600; color: #fff; background: var(--accent);
+      padding: 0.15rem 0.5rem; border-radius: 10px; white-space: nowrap;
+      letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .bundle-tier-label { font-size: 0.72rem; color: var(--faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .bundle-tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.35rem; }
+    .bundle-old-price { font-size: 0.78rem; color: var(--faint); text-decoration: line-through; }
+    .bundle-new-price { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
+    .bundle-tier .btn { margin-top: 0.25rem; }
+    .bundle-industries { font-size: 0.75rem; color: var(--faint); text-align: center; line-height: 1.5; }
+    .btn-sm { min-height: 36px; padding: 0.45rem 0.9rem; font-size: 0.8125rem; }
+    @media (max-width: 699px) { .bundles-grid { grid-template-columns: 1fr; } }
+
+    /* ─── CTA ─── */
+    .bottom-cta {
+      padding: var(--section-gap) 0;
+      text-align: center;
+    }
+    .bottom-cta .cta-center h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .bottom-cta .cta-center p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      max-width: 42ch;
+      margin-inline: auto;
+    }
+    .bottom-cta .cta-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      background: #000000; color: #d1d5db;
+      padding: clamp(3rem, 6vw, 5rem) 0 0; margin-top: 1rem; text-align: center;
+    }
+    .footer-logo {
+      display: flex; justify-content: center;
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      border-bottom: 1px solid #374151;
+    }
+    .footer-logo img { height: clamp(64px, 9vw, 120px); width: auto; }
+    .footer-display {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(3rem, 10vw, 7.5rem); letter-spacing: -0.03em; line-height: 0.95;
+      color: #ffffff; padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      border-bottom: 1px solid #374151; margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    @supports (text-wrap: balance) {
+      .footer-display { text-wrap: balance; }
+    }
+    .footer-grid { display: grid; gap: 2rem; justify-items: center; }
+    .footer-grid a { color: #9ca3af; transition: color 150ms ease; }
+    .footer-grid a:hover { color: #ffffff; }
+    .footer-brand p { margin-top: 0; color: #6b7280; font-size: 0.92rem; line-height: 1.55; max-width: 28ch; }
+    .footer-col h4 { font-size: 0.78rem; font-family: var(--font-body); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
+    .footer-col a { display: block; color: #9ca3af; font-size: 0.92rem; padding: 0.25rem 0; transition: color 150ms ease; }
+    .footer-col a:hover { color: #ffffff; }
+    .footer-bottom { margin-top: 2.5rem; padding: 1.25rem 0; border-top: 1px solid #374151; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center; color: #6b7280; font-size: 0.82rem; }
+
+    /* ─── Reveal ─── */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 700ms ease, transform 700ms ease;
+      }
+      .reveal.is-in { opacity: 1; transform: none; }
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 767px) {
+      .cta-actions { flex-direction: column; }
+      .cta-actions .btn { width: 100%; justify-content: center; }
+      .footer-grid { gap: 1.5rem; }
+      .footer-display { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+      .footer-brand p { margin-top: 0.35rem; font-size: 0.85rem; line-height: 1.45; max-width: 24ch; color: #6b7280; }
+      .footer-col h4 { margin-bottom: 0.4rem; font-size: 0.75rem; color: #6b7280; }
+      .footer-col a { padding: 0.18rem 0; font-size: 0.88rem; }
+      .footer-bottom { margin-top: 1.5rem; padding-top: 1rem; gap: 0.4rem 0.75rem; font-size: 0.78rem; flex-direction: column; align-items: center; }
+      .hero h1 { max-width: 100%; }
+    }
+    @media (min-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="wrap nav">            
+
+              <nav class="nav-pill" aria-label="Primary">
+<a class="logo" href="index.html" aria-label="LeadsPitch home">
+        <img src="public/leadspitch logo.png" alt="LeadsPitch" onerror="this.insertAdjacentText('afterend','LeadsPitch');this.remove()">
+      </a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Industries
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="industries/automotive.html" role="menuitem">Automotive</a>
+            <a href="industries/construction.html" role="menuitem">Construction</a>
+            <a href="industries/accounting-finance.html" role="menuitem">Accounting &amp; Finance</a>
+            <a href="industries/clinics.html" role="menuitem">Clinics &amp; Healthcare</a>
+            <a href="industries/dentists.html" role="menuitem">Dentists</a>
+            <a href="industries/education.html" role="menuitem">Education &amp; Training</a>
+            <a href="industries/home-services.html" role="menuitem">Home Services</a>
+            <a href="industries/restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
+            <a href="industries/events-leisure.html" role="menuitem">Events &amp; Leisure</a>
+            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage Suppliers</a>
+            <a href="industries/agencies-business.html" role="menuitem">Agencies &amp; Business</a>
+            <a href="industries/beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
+            <a href="industries/hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
+            <a href="industries/legal.html" role="menuitem">Legal</a>
+            <a href="industries/logistics.html" role="menuitem">Logistics</a>
+            <a href="industries/real-estate.html" role="menuitem">Real Estate</a>
+          </div>
+        </div>
+        <a href="bundles.html">Bundles</a>
+        <a href="membership.html">Membership</a>
+        <a href="faq.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-panel" id="mobile-nav">
+    <button class="mobile-close" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+        <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+        Industries
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-dropdown-panel">
+        <a href="industries/automotive.html">Automotive</a>
+        <a href="industries/construction.html">Construction</a>
+        <a href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+        <a href="industries/clinics.html">Clinics &amp; Healthcare</a>
+        <a href="industries/dentists.html">Dentists</a>
+        <a href="industries/education.html">Education &amp; Training</a>
+        <a href="industries/home-services.html">Home Services</a>
+        <a href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+        <a href="industries/events-leisure.html">Events &amp; Leisure</a>
+        <a href="industries/food-beverage.html">Food &amp; Beverage Suppliers</a>
+        <a href="industries/agencies-business.html">Agencies &amp; Business</a>
+        <a href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+        <a href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+        <a href="industries/legal.html">Legal</a>
+        <a href="industries/logistics.html">Logistics</a>
+        <a href="industries/real-estate.html">Real Estate</a>
+      </div>
+      <a href="bundles.html">Bundles</a>
+      <a href="membership.html">Membership</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-cta">
+      <a class="btn-primary" href="bundles.html">See Bundles</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Breadcrumbs -->
+    <div class="wrap">
+      <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Bundles</span>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero hero--compact">
+      <div class="wrap">
+        <p class="eyebrow reveal">Industry Bundles</p>
+        <h1 class="reveal">Save more with multi-industry bundles</h1>
+        <p class="reveal hero-sub">Buy multiple industry datasets together and save up to $42 per bundle. Each bundle includes verified leads and emails across 3 related industries.</p>
+      </div>
+    </section>
+
+    <!-- Bundles -->
+    <section>
+      <div class="wrap">
+        <div class="bundles-grid">
+
+          <!-- Bundle 1: Restaurants, Hotels & Construction -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Restaurants, Hotels & Construction</h3>
+              <span class="bundle-save">Save up to $23</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Restaurants & Cafes</span>
+              <span class="bundle-tag">Hotels & Hospitality</span>
+              <span class="bundle-tag">Construction</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$65.99</span>
+                    <span class="bundle-new-price">$49.99</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-25k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$117.99</span>
+                    <span class="bundle-new-price">$94.99</span>
+                  </div>
+                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-50k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Restaurants & Cafes + Hotels & Hospitality + Construction</p>
+            </div>
+          </div>
+
+          <!-- Bundle 4: Automotive, Logistics & Agencies -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Automotive, Logistics & Agencies</h3>
+              <span class="bundle-save">Save up to $22</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Automotive</span>
+              <span class="bundle-tag">Logistics & Transportation</span>
+              <span class="bundle-tag">Agencies & Business Services</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$68.99</span>
+                    <span class="bundle-new-price">$49.99</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-25k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$111.99</span>
+                    <span class="bundle-new-price">$89.99</span>
+                  </div>
+                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-50k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Automotive + Logistics & Transportation + Agencies & Business Services</p>
+            </div>
+          </div>
+
+          <!-- Bundle 5: Education, Events & Leisure -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Education, Events & Leisure</h3>
+              <span class="bundle-save">Save up to $22</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Education</span>
+              <span class="bundle-tag">Events & Leisure</span>
+              <span class="bundle-tag">Accounting & Finance</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$64.99</span>
+                    <span class="bundle-new-price">$49.99</span>
+                  </div>
+                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-education-training-events-leisure-accounting-finance-25k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K Emails</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-old-price">$106.99</span>
+                    <span class="bundle-new-price">$84.99</span>
+                  </div>
+                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-education-training-events-leisure-accounting-finance-50k/" target="_blank" rel="noopener">Get bundle</a>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Education + Events & Leisure + Accounting & Finance</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+      <div class="wrap">
+        <p class="eyebrow reveal">How it works</p>
+        <h2 class="reveal">Three steps to bundled data</h2>
+        <div class="how-steps reveal">
+          <div class="how-step">
+            <span class="how-step-num">1</span>
+            <div><strong>Pick a bundle</strong><p>Choose from 3 curated bundles across related industries.</p></div>
+          </div>
+          <div class="how-step">
+            <span class="how-step-num">2</span>
+            <div><strong>Select email volume</strong><p>Pick 25K or 50K verified emails per industry.</p></div>
+          </div>
+          <div class="how-step">
+            <span class="how-step-num">3</span>
+            <div><strong>Get your data</strong><p>Receive verified datasets for all 3 industries in one delivery.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+      <div class="wrap">
+        <div class="reveal cta-center">
+          <h2>Need a single industry instead?</h2>
+          <p>Browse all 19 industries and buy individual datasets.</p>
+          <div class="cta-actions-row">
+            <a class="btn btn-primary" href="industries.html">Browse industries</a>
+            <a class="btn btn-outline" href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-logo">
+        <img src="public/leadspitch-footer.png" alt="LeadsPitch">
+      </div>
+    </div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><p>Business data platform. Subscriptions, one-time purchases, and membership discounts across 16 industries.</p></div>
+      <div class="footer-col"><h4>Product</h4><a href="index.html#how-it-works">How it works</a><a href="industries.html">Industries</a><a href="bundles.html">Bundles</a><a href="faq.html">FAQ</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="membership.html">Memberships</a><a href="index.html#trust">Trust</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund Policy</a></div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>&copy; 2026 LeadsPitch</span>
+      <span>Business data, delivered your way.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector(".site-header");
+      var toggle = document.querySelector(".nav-toggle");
+      var panel = document.getElementById("mobile-nav");
+
+      function onScroll() {
+        if (!header) return;
+        header.classList.toggle("is-scrolled", window.scrollY > 8);
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      if (toggle && panel) {
+        var closeBtn = panel.querySelector(".mobile-close");
+        function openNav() {
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Close menu");
+          panel.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        function closeNav() {
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Open menu");
+          panel.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        toggle.addEventListener("click", function () {
+          var open = toggle.getAttribute("aria-expanded") === "true";
+          if (open) closeNav(); else openNav();
+        });
+        if (closeBtn) closeBtn.addEventListener("click", closeNav);
+        panel.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", closeNav);
+        });
+      }
+
+      document.querySelectorAll(".nav-dropdown").forEach(function(dropdown) {
+        var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+        if (!toggle) return;
+        toggle.addEventListener("click", function(e) {
+          e.stopPropagation();
+          var wasOpen = dropdown.classList.contains("open");
+          document.querySelectorAll(".nav-dropdown.open").forEach(function(d) { d.classList.remove("open"); d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false"); });
+          if (!wasOpen) { dropdown.classList.add("open"); toggle.setAttribute("aria-expanded", "true"); }
+        });
+      });
+      document.addEventListener("click", function() {
+        document.querySelectorAll(".nav-dropdown.open").forEach(function(d) { d.classList.remove("open"); d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false"); });
+      });
+
+      document.querySelectorAll(".mobile-dropdown-toggle").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var panel = btn.nextElementSibling;
+          if (!panel) return;
+          var isOpen = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+          panel.classList.toggle("open");
+        });
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add("is-in");
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+      document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>

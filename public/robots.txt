@@ -14,10 +14,6 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Block training-only crawlers (optional - adjust as needed)
-User-agent: CCBot
-Disallow: /
-
 User-agent: Google-Extended
 Allow: /
 
