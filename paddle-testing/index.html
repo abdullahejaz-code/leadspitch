@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeadsPitch — Buy B2B Lead Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff; --surface: #ffffff; --ink: #0b0b0d; --muted: #55565b;
+      --line: #e5e5e8; --green: #39FF14; --font: "Inter", sans-serif;
+      --radius: 16px; --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -20px rgba(0,0,0,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    .badge { position: fixed; top: 0; left: 0; right: 0; z-index: 99; background: linear-gradient(135deg, #ff6b35, #f72585); color: #fff; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px; }
+    body { padding-top: 28px; }
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 80px 0 60px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 16px; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 540px; margin: 0 auto; }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 0 80px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; position: relative; transition: transform 200ms, box-shadow 200ms; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.06), 0 24px 56px -20px rgba(0,0,0,0.16); }
+    .card.pop { border-color: var(--green); box-shadow: var(--shadow), 0 0 0 1px var(--green); }
+    .pop-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #000; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
+
+    .tier { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+    .name { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+    .price .big { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; }
+    .price .sub { font-size: 14px; color: var(--muted); }
+    .onetime { display: inline-block; background: #eff4ff; color: #2563eb; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+    .desc { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+    .stat b { display: block; font-size: 1.2rem; font-weight: 700; }
+    .stat span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    .feats { list-style: none; flex: 1; margin-bottom: 20px; }
+    .feats li { font-size: 14px; color: var(--muted); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+    .feats li::before { content: "\2713"; color: var(--green); font-weight: 700; font-size: 14px; flex-shrink: 0; }
+
+    .buy { display: block; width: 100%; padding: 14px; border-radius: 999px; font-size: 14px; font-weight: 600; text-align: center; cursor: pointer; border: none; transition: all 180ms; }
+    .buy.green { background: var(--green); color: #000; font-weight: 700; }
+    .buy.green:hover { background: #2de010; }
+    .buy.outline { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+    .buy.outline:hover { background: #f6f6f7; }
+    .buy:disabled { opacity: 0.5; cursor: wait; }
+    .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: #333; border-radius: 50%; animation: spin .6s linear infinite; margin-right: 6px; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Toast */
+    .toasts { position: fixed; bottom: 20px; right: 20px; z-index: 100; display: flex; flex-direction: column; gap: 8px; }
+    .toast { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 10px; max-width: 360px; font-size: 14px; animation: slideIn 200ms ease; }
+    .toast.ok { border-left: 3px solid #16a34a; }
+    .toast.err { border-left: 3px solid #dc2626; }
+    .toast.info { border-left: 3px solid #2563eb; }
+    .toast b { display: block; margin-bottom: 2px; }
+    .toast small { color: var(--muted); font-size: 12px; }
+    .toast button { background: none; border: none; font-size: 16px; color: #999; cursor: pointer; margin-left: auto; padding: 0 0 0 8px; }
+    .toast button:hover { color: #333; }
+    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+    /* IDs */
+    .ids { padding: 60px 0; text-align: center; }
+    .ids h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+    .ids p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .id-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 700px; margin: 0 auto; }
+    .id-box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+    .id-box .lbl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .id-box .val { font-size: 12px; font-weight: 600; font-family: monospace; word-break: break-all; }
+
+    footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--line); font-size: 13px; color: #999; }
+
+    @media (max-width: 768px) { .cards, .id-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="badge">Paddle Sandbox — One-Time Purchase Testing</div>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Buy Verified B2B Lead Data</h1>
+      <p>One-time CSV datasets. No subscriptions. No credits. Pay once, download instantly.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cards">
+
+      <!-- Starter -->
+      <div class="card">
+        <div class="tier">Starter</div>
+        <div class="name">LeadsPitch Starter</div>
+        <div class="price"><span class="big">$27</span><span class="sub">.99 one-time</span></div>
+        <div class="onetime">One-time purchase</div>
+        <p class="desc">Entry-level dataset. Perfect for testing B2B outreach for the first time.</p>
+        <div class="stats">
+          <div class="stat"><b>27K</b><span>Total Leads</span></div>
+          <div class="stat"><b>5K</b><span>Emails</span></div>
+        </div>
+        <ul class="feats">
+          <li>Business names &amp; contacts</li>
+          <li>Phone numbers &amp; websites</li>
+          <li>City &amp; state data</li>
+          <li>Ratings &amp; reviews</li>
+          <li>Instant CSV download</li>
+        </ul>
+        <button class="buy outline" onclick="buy('pri_01m1r1skgzn17wyhk3fsq77qx2','Starter',27.99)">Buy Now — $27.99</button>
+      </div>
+
+      <!-- Growth -->
+      <div class="card pop">
+        <div class="pop-tag">Best Value</div>
+        <div class="tier">Growth</div>
+        <div class="name">LeadsPitch Growth</div>
+        <div class="price"><span class="big">$49</span><span class="sub">.99 one-time</span></div>
+        <div class="onetime">One-time purchase</div>
+        <p class="desc">4x more leads. Best value for teams scaling their outreach.</p>
+        <div class="stats">
+          <div class="stat"><b>105K</b><span>Total Leads</span></div>
+          <div class="stat"><b>25K</b><span>Emails</span></div>
+        </div>
+        <ul class="feats">
+          <li>Everything in Starter</li>
+          <li>4x more lead records</li>
+          <li>5x more emails</li>
+          <li>Priority data refresh</li>
+          <li>Instant CSV download</li>
+        </ul>
+        <button class="buy green" onclick="buy('pri_01m1r1sksard4wyvp3qe6zg2pa','Growth',49.99)">Buy Now — $49.99</button>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="card">
+        <div class="tier">Enterprise</div>
+        <div class="name">LeadsPitch Enterprise</div>
+        <div class="price"><span class="big">$279</span><span class="sub">.99 one-time</span></div>
+        <div class="onetime">One-time purchase</div>
+        <p class="desc">Complete database. For agencies and large teams with serious volume.</p>
+        <div class="stats">
+          <div class="stat"><b>1.15M+</b><span>Total Leads</span></div>
+          <div class="stat"><b>300K</b><span>Emails</span></div>
+        </div>
+        <ul class="feats">
+          <li>Everything in Growth</li>
+          <li>10x+ more leads</li>
+          <li>12x more emails</li>
+          <li>Dedicated support</li>
+          <li>Instant CSV download</li>
+        </ul>
+        <button class="buy outline" onclick="buy('pri_01m1r1skyw2xpfnzd9zd9x1c31','Enterprise',279.99)">Buy Now — $279.99</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ids">
+    <div class="wrap">
+      <h2>Paddle Sandbox IDs</h2>
+      <p>Live one-time product &amp; price IDs</p>
+      <div class="id-grid">
+        <div class="id-box"><div class="lbl">Starter Product</div><div class="val">pro_01m1r1sk06k6j6p5hwqt50ekxr</div></div>
+        <div class="id-box"><div class="lbl">Starter Price</div><div class="val">pri_01m1r1skgzn17wyhk3fsq77qx2</div></div>
+        <div class="id-box"><div class="lbl">Type</div><div class="val">One-time, no subscription</div></div>
+        <div class="id-box"><div class="lbl">Growth Product</div><div class="val">pro_01m1r1sk63yrdz3cmwjhnerf0s</div></div>
+        <div class="id-box"><div class="lbl">Growth Price</div><div class="val">pri_01m1r1sksard4wyvp3qe6zg2pa</div></div>
+        <div class="id-box"><div class="lbl">Type</div><div class="val">One-time, no subscription</div></div>
+        <div class="id-box"><div class="lbl">Enterprise Product</div><div class="val">pro_01m1r1skc7nq7en9n9rxj56apf</div></div>
+        <div class="id-box"><div class="lbl">Enterprise Price</div><div class="val">pri_01m1r1skyw2xpfnzd9zd9x1c31</div></div>
+        <div class="id-box"><div class="lbl">Type</div><div class="val">One-time, no subscription</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">LeadsPitch Paddle Testing — Sandbox — Not production</div>
+  </footer>
+
+  <div class="toasts" id="toasts"></div>
+
+  <!-- Paddle.js v2 -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: "test_c7820512e6eddde7ba586a6cc1e",
+      eventCallback: function(e) {
+        console.log("[Paddle]", e.name, e);
+        if (e.name === "checkout.completed") {
+          toast("ok", "Payment Successful!", "Checkout " + (e.data && e.data.id ? e.data.id : "") + " completed. Your data is ready.");
+        }
+        if (e.name === "checkout.payment_failed") {
+          toast("err", "Payment Failed", "Check your card and try again.");
+        }
+        if (e.name === "checkout.closed") {
+          toast("info", "Checkout Closed", "You can try again anytime.");
+        }
+        resetBtns();
+      }
+    });
+
+    function buy(priceId, plan, price) {
+      var btn = event.target;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spin"></span>Opening checkout...';
+
+      Paddle.Checkout.open({
+        items: [{ priceId: priceId, quantity: 1 }]
+      });
+    }
+
+    function resetBtns() {
+      document.querySelectorAll(".buy").forEach(function(b) {
+        b.disabled = false;
+        var plan = b.textContent.match(/Starter|Growth|Enterprise/);
+        if (plan) {
+          var prices = { Starter: "$27.99", Growth: "$49.99", Enterprise: "$279.99" };
+          b.textContent = "Buy Now — " + prices[plan[0]];
+        }
+      });
+    }
+
+    function toast(type, title, msg) {
+      var wrap = document.getElementById("toasts");
+      var t = document.createElement("div");
+      t.className = "toast " + type;
+      t.innerHTML = "<div><b>" + title + "</b><small>" + msg + "</small></div><button onclick=\"this.parentElement.remove()\">&times;</button>";
+      wrap.appendChild(t);
+      setTimeout(function() { t.remove(); }, 8000);
+    }
+  </script>
+
+</body>
+</html>

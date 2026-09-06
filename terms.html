@@ -1,9 +1,26 @@
 <!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms of Service | LeadsPitch</title>
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
+  <title>Terms of Service | LeadsPitch – Leads Pitch</title>
   <meta name="description" content="Read the terms governing use of LeadsPitch's website and business data subscription services, including billing, acceptable use, and data usage terms.">
+  <meta name="keywords" content="LeadsPitch terms, terms of service, data usage terms, acceptable use policy, subscription terms, leads pitch, lead pitch, leadspitch, leadspitch.com">
   <meta name="robots" content="noindex, follow">
   <meta property="og:title" content="LeadsPitch Terms of Service">
   <meta property="og:description" content="The terms and conditions that govern your use of LeadsPitch's website and subscription services.">
@@ -42,12 +59,27 @@
       --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
-      --radius: 12px;
+      --accent-green: #39FF14;
+      --radius: 999px;
       --max: 1120px;
       --gutter: clamp(1.25rem, 4vw, 2.5rem);
       --nav-h: 72px;
       --section-gap: clamp(3rem, 6vw, 4.5rem);
       --toc-w: 220px;
+    }
+    [data-theme="dark"] {
+      --bg: #000000;
+      --bg-elevated: #0a0a0a;
+      --surface: #111113;
+      --surface-2: #1a1a1e;
+      --fg: #f0f0f2;
+      --muted: #a0a0a8;
+      --faint: #6b6b73;
+      --border: #222228;
+      --border-soft: #1a1a1e;
+      --accent: #f0f0f2;
+      --accent-soft: rgba(240, 240, 242, 0.08);
+      --accent-text: #f0f0f2;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +101,7 @@
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     .wrap { width: min(100% - var(--gutter) * 2, var(--max)); margin-inline: auto; }
 
-    /* ─── Progress Bar ─── */
+    /* --- Progress Bar --- */
     .progress-bar {
       position: fixed; top: 0; left: 0; z-index: 60;
       width: 100%; height: 3px; background: transparent;
@@ -78,11 +110,11 @@
       height: 100%; width: 0%; background: var(--accent);
       transition: width 100ms linear;
     }
-    /* ─── Nav ─── */
+    /* --- Nav --- */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 10;
       height: var(--nav-h);
       background: transparent;
       transition: background 200ms ease;
@@ -96,7 +128,7 @@
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1rem;
       gap: 1rem;
       position: relative;
@@ -144,15 +176,29 @@
       background: var(--surface-2);
       font-weight: 600;
     }
-    .nav-pill .logo {
-      font-size: 0.9375rem;
-      padding: 0.375rem 0.75rem;
-      border-radius: 100px;
+
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       text-decoration: none;
-      color: var(--fg);
+      color: var(--ink);
+      flex-shrink: 0;
+      margin-left: 0.35rem;
     }
-    .nav-pill .logo:hover { background: var(--surface-2); }
-    .nav-pill .logo img { height: 32px; width: auto; }
+    .header-logo:hover { opacity: 0.7; }
+    .header-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+    }
+    .header-logo-text {
+      font-family: "Gevora", "Arial Black", Impact, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
 
     .nav-dropdown { position: relative; }
     .nav-dropdown-toggle {
@@ -266,7 +312,7 @@
       transform: rotate(-45deg);
     }
 
-    /* ─── Mobile overlay ─── */
+    /* --- Mobile overlay --- */
     .mobile-panel {
       display: none;
       position: fixed;
@@ -369,11 +415,30 @@
     }
     .mobile-panel .mobile-nav-cta .btn {
       width: 100%;
-      background: var(--fg);
-      color: #ffffff;
+      background: #39FF14;
+      color: #000000;
       border: none;
     }
     .mobile-panel .mobile-nav-cta .btn:hover { background: #242424; }
+    .btn-primary {
+      background: #39FF14;
+      color: #000000;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+    .btn-primary:hover {
+      background: #2de010;
+      border-color: #2de010;
+    }
     .mobile-close {
       position: absolute;
       top: 1.25rem;
@@ -393,18 +458,17 @@
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
     @media (min-width: 768px) {
-      .nav-pill { display: inline-flex; }
+      .nav-pill { display: inline-flex; margin: 0 auto; }
       .nav-right { display: none !important; }
       .mobile-panel { display: none !important; }
     }
 
-
-    /* ─── Layout ─── */
+    /* --- Layout --- */
     .doc-wrap {
       max-width: var(--max-wide); margin: 0 auto; padding: 0 var(--gutter);
     }
 
-    /* ─── Hero ─── */
+    /* --- Hero --- */
     .doc-hero {
       padding: clamp(5rem, 12vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
     }
@@ -421,21 +485,21 @@
       margin-bottom: 1rem;
     }
     .doc-hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; color: var(--fg);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; color: var(--fg);
     }
     .doc-hero-meta {
       margin-top: 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.6;
     }
 
-    /* ─── Doc Grid ─── */
+    /* --- Doc Grid --- */
     .doc-grid {
       display: grid; grid-template-columns: var(--toc-w) 1fr; gap: clamp(2rem, 4vw, 3.5rem);
       align-items: start;
       padding-bottom: var(--section-gap);
     }
 
-    /* ─── Sticky TOC ─── */
+    /* --- Sticky TOC --- */
     .toc {
       position: sticky; top: calc(var(--nav-h) + 2rem);
       max-height: calc(100vh - var(--nav-h) - 4rem);
@@ -466,7 +530,7 @@
     .toc-mobile-toggle svg { width: 16px; height: 16px; stroke: var(--muted); transition: transform 200ms ease; }
     .toc-mobile-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
 
-    /* ─── Content ─── */
+    /* --- Content --- */
     .doc-content { max-width: var(--max); }
     .doc-section {
       padding: var(--section-gap) 0;
@@ -475,7 +539,7 @@
     .doc-section:first-child { border-top: none; padding-top: 0; }
     .doc-section h2 {
       font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.5rem);
-      font-weight: 400; line-height: 1.25; letter-spacing: -0.015em;
+      font-weight: 700; line-height: 1.25; letter-spacing: -0.015em;
       color: var(--fg); margin-bottom: 1.5rem;
     }
     .doc-section p {
@@ -496,7 +560,7 @@
     }
     .doc-section strong { color: var(--fg); font-weight: 500; }
 
-    /* ─── Callout ─── */
+    /* --- Callout --- */
     .callout {
       background: var(--accent-soft); border-left: 3px solid var(--accent);
       padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0;
@@ -511,43 +575,28 @@
     .callout a { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; }
     .callout a:hover { color: var(--fg); }
 
-    /* ─── Footer ─── */
-    .site-footer {
-      background: #000000; color: #d1d5db;
-      padding: clamp(3rem, 6vw, 5rem) 0 0; margin-top: 1rem; text-align: center;
-    }
-    .footer-logo {
-      display: flex; justify-content: center;
-      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151;
-    }
-    .footer-logo img { height: clamp(64px, 9vw, 120px); width: auto; }
-    .footer-display {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(3rem, 10vw, 7.5rem); letter-spacing: -0.03em; line-height: 0.95;
-      color: #ffffff; padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151; margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-    @supports (text-wrap: balance) {
-      .footer-display { text-wrap: balance; }
-    }
-    .footer-grid { display: grid; gap: 2rem; justify-items: center; }
-    .footer-grid a { color: #9ca3af; transition: color 150ms ease; }
-    .footer-grid a:hover { color: #ffffff; }
-    .footer-brand p { margin-top: 0; color: #6b7280; font-size: 0.92rem; line-height: 1.55; max-width: 28ch; }
-    .footer-col h4 { font-size: 0.78rem; font-family: var(--font-body); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
-    .footer-col a { display: block; color: #9ca3af; font-size: 0.92rem; padding: 0.25rem 0; transition: color 150ms ease; }
-    .footer-col a:hover { color: #ffffff; }
-    .footer-bottom { margin-top: 2.5rem; padding: 1.25rem 0; border-top: 1px solid #374151; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center; color: #6b7280; font-size: 0.82rem; }
+    /* Footer */
+    .site-footer { background: #ffffff; color: #374151; padding: clamp(2.5rem, 5vw, 4rem) 0 0; margin-top: 1rem; }
+    .footer-top { display: grid; gap: 2rem; grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid #e5e7eb; }
+    @media (min-width: 700px) { .footer-top { grid-template-columns: 26ch 1fr; } }
+    .footer-brand .logo { font-family: "Gevora", "Arial Black", Impact, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #0a0a0c; margin-bottom: 0.9rem; }
+    .footer-brand p { color: #6b7280; font-size: var(--text-sm); line-height: 1.55; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+    .footer-col h4 { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
+    .footer-col a { display: block; color: #6b7280; font-size: var(--text-sm); padding: 0.25rem 0; transition: color 150ms ease; }
+    .footer-col a:hover { color: #0a0a0c; }
+    .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid #e5e7eb; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #9ca3af; font-size: var(--text-xs); }
+    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
+    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #0a0a0c; user-select: none; }
 
-    /* ─── Reveal ─── */
+    /* --- Reveal --- */
     @media (prefers-reduced-motion: no-preference) {
       .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease, transform 700ms ease; }
       .reveal.is-in { opacity: 1; transform: none; }
     }
 
-    /* ─── Mobile ─── */
+    /* --- Mobile --- */
     @media (max-width: 860px) {
       .doc-grid { grid-template-columns: 1fr; }
       .toc { display: none; position: static; max-height: none; }
@@ -555,13 +604,74 @@
       .toc-mobile-toggle { display: flex; }
     }
 
-    @media (min-width: 800px) {
-      .footer-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
-    }
-
-    /* ─── Helpers ─── */
+    /* --- Helpers --- */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-  </style>
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+      flex-shrink: 0;
+      color: var(--muted);
+    }
+    .theme-toggle:hover { background: var(--surface-2); color: var(--fg); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    @media (max-width: 767px) {
+      .header-logo + .nav-pill + .theme-toggle { display: none; }
+      .header-logo-img { display: block; }
+      .header-logo-text { display: none; }
+    }
+    .mobile-theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 0;
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border-soft);
+      width: 100%;
+      text-align: left;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-theme-toggle:hover, .mobile-theme-toggle:active { color: var(--fg); padding-left: 0.75rem; }
+    .mobile-theme-toggle .icon-moon { display: block; }
+    .mobile-theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-sun { display: block; }
+
+    /* Dark Theme Overrides */
+    [data-theme="dark"] .site-header.is-scrolled { background: rgba(0, 0, 0, 0.86); }
+    [data-theme="dark"] .nav-pill { background: var(--surface); border-color: var(--border); }
+    [data-theme="dark"] .site-footer { background: #000000; color: #d1d5db; border-color: var(--border); }
+    [data-theme="dark"] .footer-top { border-bottom-color: var(--border); }
+    [data-theme="dark"] .footer-brand .logo { color: #ffffff; }
+    [data-theme="dark"] .footer-brand p { color: #9ca3af; }
+    [data-theme="dark"] .footer-col h4 { color: #9ca3af; }
+    [data-theme="dark"] .footer-col a { color: #9ca3af; }
+    [data-theme="dark"] .footer-col a:hover { color: #ffffff; }
+    [data-theme="dark"] .footer-bottom { border-top-color: var(--border); color: #6b7280; }
+    [data-theme="dark"] .footer-giant__text { color: #ffffff; }
+    [data-theme="dark"] .btn-primary,
+    [data-theme="dark"] .btn-primary:hover,
+    [data-theme="dark"] .mobile-nav-cta .btn,
+    [data-theme="dark"] .mobile-nav-cta .btn:hover { background: #39FF14; color: #000000; border-color: #39FF14; }
+    [data-theme="dark"] .btn-primary:hover,
+    [data-theme="dark"] .mobile-nav-cta .btn:hover { background: #2de010; border-color: #2de010; }
+      /* Gevora Font */
+    @font-face { font-family: "Gevora"; src: url("public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+</style>
 </head>
 <body>
 
@@ -572,16 +682,13 @@
 
   <header class="site-header" id="top">
     <div class="wrap nav">            
-
+      <a class="header-logo" href="index.html" aria-label="LeadsPitch home"><img src="public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
               <nav class="nav-pill" aria-label="Primary">
-<a class="logo" href="index.html" aria-label="LeadsPitch home">
-        <img src="public/leadspitch logo.png" alt="LeadsPitch" onerror="this.insertAdjacentText('afterend','LeadsPitch');this.remove()">
-      </a>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
-            Industries
+            Niches
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
@@ -594,7 +701,7 @@
             <a href="industries/home-services.html" role="menuitem">Home Services</a>
             <a href="industries/restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
             <a href="industries/events-leisure.html" role="menuitem">Events &amp; Leisure</a>
-            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage Suppliers</a>
+            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage</a>
             <a href="industries/agencies-business.html" role="menuitem">Agencies &amp; Business</a>
             <a href="industries/beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
             <a href="industries/hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
@@ -607,7 +714,22 @@
         <a href="membership.html">Membership</a>
         <a href="faq.html">FAQs</a>
         <a href="contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Legal
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="privacy.html" role="menuitem">Privacy Policy</a>
+            <a href="terms.html" role="menuitem">Terms of Service</a>
+            <a href="refund.html" role="menuitem">Refund Policy</a>
+          </div>
+        </div>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
       <div class="nav-right">
 <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span></span>
@@ -624,7 +746,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
-        Industries
+        Niches
         <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="mobile-dropdown-panel">
@@ -637,7 +759,7 @@
         <a href="industries/home-services.html">Home Services</a>
         <a href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
         <a href="industries/events-leisure.html">Events &amp; Leisure</a>
-        <a href="industries/food-beverage.html">Food &amp; Beverage Suppliers</a>
+        <a href="industries/food-beverage.html">Food &amp; Beverage</a>
         <a href="industries/agencies-business.html">Agencies &amp; Business</a>
         <a href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
         <a href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
@@ -649,6 +771,20 @@
       <a href="membership.html">Membership</a>
       <a href="faq.html">FAQs</a>
       <a href="contact.html">Contact</a>
+      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+        Legal
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-dropdown-panel">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+      <button class="mobile-theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <span>Dark mode</span>
+      </button>
     </div>
     <div class="mobile-nav-cta">
       <a class="btn-primary" href="bundles.html">See Bundles</a>
@@ -731,7 +867,7 @@
           <!-- Description of Services -->
           <section class="doc-section reveal" id="description">
             <h2>Description of Services</h2>
-            <p>LeadsPitch is a business data platform. Our current core offering is a subscription service that delivers verified, industry-specific business datasets to subscribers on a recurring monthly basis.</p>
+            <p>LeadsPitch is a business data platform. Our core offering is verified, industry-specific business datasets delivered as one-time CSV purchases.</p>
           </section>
 
           <!-- Subscription Services -->
@@ -880,20 +1016,47 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-logo">
-        <img src="public/leadspitch-footer.png" alt="LeadsPitch">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <p class="logo">LeadsPitch</p>
+        <p>Verified B2B lead data, delivered as CSV. Subscriptions, one-time purchases, and membership discounts across 19+ niches.</p>
+        <p style="margin-top:0.75rem"><a href="mailto:contact@leadspitch.com" style="color:var(--faint);font-size:var(--text-sm);text-decoration:none;transition:color 150ms ease;">contact@leadspitch.com</a></p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="industries.html">Niches</a>
+          <a href="bundles.html">B2B datasets</a>
+          <a href="membership.html">Membership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Popular</h4>
+          <a href="industries/real-estate.html">Real Estate leads</a>
+          <a href="industries/clinics.html">Clinics leads</a>
+          <a href="industries/dentists.html">Dentists leads</a>
+          <a href="industries/legal.html">Lawyers leads</a>
+        </div>
       </div>
     </div>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><p>Business data platform. Subscriptions, one-time purchases, and membership discounts across 16 industries.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html#how-it-works">How it works</a><a href="industries.html">Industries</a><a href="bundles.html">Bundles</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="membership.html">Memberships</a><a href="index.html#trust">Trust</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund Policy</a></div>
-    </div>
     <div class="wrap footer-bottom">
-      <span>&copy; 2026 LeadsPitch</span>
-      <span>Business data, delivered your way.</span>
+      <span>&copy; <span id="y"></span> LeadsPitch</span>
+      <span>Verified B2B data, delivered your way.</span>
+    </div>
+    <div class="footer-giant" id="footer-giant">
+      <span class="footer-giant__text" id="giant-text">LEADSPITCH</span>
     </div>
   </footer>
 
@@ -1000,6 +1163,10 @@
       window.addEventListener("scroll", updateToc, { passive: true });
       updateToc();
 
+      // Footer year
+      var yEl = document.getElementById("y");
+      if (yEl) yEl.textContent = new Date().getFullYear();
+
       // Reveal on scroll
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -1007,7 +1174,61 @@
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+
+      (function () {
+        var container = document.getElementById("footer-giant");
+        var text = document.getElementById("giant-text");
+        if (!container || !text) return;
+        function fit() {
+          var avail = container.offsetWidth;
+          if (!avail) return;
+          text.style.fontSize = "100px";
+          var textW = text.offsetWidth;
+          if (!textW) return;
+          text.style.fontSize = Math.floor((avail / textW) * 100) + "px";
+        }
+        fit(); setTimeout(fit,100); setTimeout(fit,300); setTimeout(fit,600); setTimeout(fit,1000);
+        var rt; window.addEventListener("resize",function(){ if(rt) clearTimeout(rt); rt=setTimeout(fit,100); });
+      })();
+    })();
+        /* Theme Toggle */
+    (function () {
+      var root = document.documentElement;
+      var toggles = document.querySelectorAll(".theme-toggle, .mobile-theme-toggle");
+      var mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+      var hasSaved = (function () { try { return localStorage.getItem("theme") !== null; } catch (e) { return false; } })();
+      function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+      function updateToggleLabel() {
+        var isLight = current() === "light";
+        for (var i = 0; i < toggles.length; i++) {
+          var span = toggles[i].querySelector("span");
+          if (span) span.textContent = isLight ? "Light mode" : "Dark mode";
+          toggles[i].setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+        }
+      }
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem("theme", theme); } catch (e) {}
+        hasSaved = true;
+        updateToggleLabel();
+      }
+      function toggleTheme() { setTheme(current() === "light" ? "dark" : "light"); }
+      function onSystemChange() {
+        if (hasSaved) return;
+        root.setAttribute("data-theme", mql.matches ? "light" : "dark");
+        updateToggleLabel();
+      }
+      updateToggleLabel();
+      for (var i = 0; i < toggles.length; i++) {
+        toggles[i].addEventListener("click", toggleTheme);
+      }
+      if (mql) {
+        if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
+        else if (mql.addListener) mql.addListener(onSystemChange);
+      }
     })();
   </script>
-
-</body></html>
+  <script src="search-data.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

@@ -1,10 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Memberships - LeadsPitch</title>
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
+  <title>Memberships - LeadsPitch – Leads Pitch</title>
   <meta name="description" content="Get 40% off every purchase with LeadsPitch membership plans. Choose from Basic, Pro, or Max tiers to save on industry datasets and bundles.">
-  <meta name="keywords" content="LeadsPitch membership, lead list discounts, B2B data membership, industry data discount, membership plans, save on leads">
+  <meta name="keywords" content="LeadsPitch membership, lead list discounts, B2B data membership, industry data discount, membership plans, save on leads, leads pitch, lead pitch, leadspitch, leadspitch.com">
   <meta property="og:title" content="Memberships - LeadsPitch">
   <meta property="og:description" content="Get 40% off every purchase with LeadsPitch membership plans. Choose from Basic, Pro, or Max tiers.">
   <meta property="og:type" content="website">
@@ -24,8 +40,9 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "LeadsPitch",
+    "alternateName": ["Leads Pitch", "Lead Pitch", "leadspitch.com", "leadspitch"],
     "url": "https://leadspitch.com",
-    "description": "Business data platform offering monthly subscriptions and one-time dataset purchases across 19+ industries.",
+    "description": "Business data platform offering one-time dataset purchases and membership discounts across 19+ industries.",
     "sameAs": []
   }
   </script>
@@ -39,8 +56,91 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the LeadsPitch membership discount work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your membership gives you 40% off the regular price on all eligible products. The discount is applied automatically when you purchase through your member portal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upgrade my membership?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can upgrade to a higher tier at any time. Simply purchase the new tier and you'll get the expanded benefits immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Basic, Pro, and Max?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic covers 3 industries at 40% off. Pro covers 10 industries plus priority support. Max covers all 16 industries, every bundle, bonus records, and priority access to new industries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries are included with a membership?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic covers Events & Leisure, Education & Training, and Construction. Pro adds Agencies & Business, Automotive, Logistics, Hotels & Hospitality, Home Services, Legal, and more. Max unlocks every industry and bundle on the site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a contract?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No contracts. Your membership is a one-time purchase that gives you lifetime access to the 40% discount on eligible products."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get the discount when I check out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Once you join, purchase any eligible dataset or bundle through your member portal and the 40% discount is applied automatically. No coupon codes needed."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
+      --bg: #0f0f0f;
+      --bg-elevated: #141418;
+      --surface: #141418;
+      --surface-2: #1a1a1e;
+      --fg: #f0f0f2;
+      --muted: #a0a0a8;
+      --faint: #6b6b73;
+      --border: #222228;
+      --border-soft: #1a1a1e;
+      --accent: #3b82f6;
+      --accent-green: #39FF14;
+      --accent-soft: rgba(59, 130, 246, 0.1);
+      --accent-text: #3b82f6;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --radius: 999px;
+      --max: 1120px;
+      --max-wide: 1280px;
+      --gutter: clamp(1.25rem, 4vw, 2.5rem);
+      --nav-h: 72px;
+      --section-gap: clamp(3rem, 6vw, 5rem);
+    }
+    [data-theme="light"] {
       --bg: #ffffff;
       --bg-elevated: #f9fafb;
       --surface: #ffffff;
@@ -50,21 +150,9 @@
       --faint: #6b7280;
       --border: #e5e7eb;
       --border-soft: #f3f4f6;
-      --accent: #111111;
-      --accent-soft: rgba(17, 17, 17, 0.05);
-      --accent-text: #111111;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --error: #ef4444;
-      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
-      --radius: 12px;
-      --max: 1120px;
-      --max-wide: 1280px;
-      --gutter: clamp(1.25rem, 4vw, 2.5rem);
-      --nav-h: 72px;
-      --section-gap: clamp(3rem, 6vw, 5rem);
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.08);
+      --accent-text: #3b82f6;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,20 +173,20 @@
     ul { list-style: none; }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-    /* ─── Layout ─── */
+    /* --- Layout --- */
     .wrap { width: min(100% - var(--gutter) * 2, var(--max)); margin-inline: auto; }
     .wrap--narrow { max-width: var(--max); }
-    /* ─── Nav ─── */
+    /* --- Nav --- */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 10;
       height: var(--nav-h);
       background: transparent;
       transition: background 200ms ease;
     }
     .site-header.is-scrolled {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(15, 15, 15, 0.92);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
@@ -106,7 +194,7 @@
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1rem;
       gap: 1rem;
       position: relative;
@@ -154,15 +242,29 @@
       background: var(--surface-2);
       font-weight: 600;
     }
-    .nav-pill .logo {
-      font-size: 0.9375rem;
-      padding: 0.375rem 0.75rem;
-      border-radius: 100px;
+
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       text-decoration: none;
-      color: var(--fg);
+      color: var(--ink);
+      flex-shrink: 0;
+      margin-left: 0.35rem;
     }
-    .nav-pill .logo:hover { background: var(--surface-2); }
-    .nav-pill .logo img { height: 32px; width: auto; }
+    .header-logo:hover { opacity: 0.7; }
+    .header-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+    }
+    .header-logo-text {
+      font-family: "Gevora", "Arial Black", Impact, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
 
     .nav-dropdown { position: relative; }
     .nav-dropdown-toggle {
@@ -276,7 +378,7 @@
       transform: rotate(-45deg);
     }
 
-    /* ─── Mobile overlay ─── */
+    /* --- Mobile overlay --- */
     .mobile-panel {
       display: none;
       position: fixed;
@@ -379,11 +481,12 @@
     }
     .mobile-panel .mobile-nav-cta .btn {
       width: 100%;
-      background: var(--fg);
-      color: #ffffff;
+      background: #39FF14;
+      color: #000000;
       border: none;
+      font-weight: 700;
     }
-    .mobile-panel .mobile-nav-cta .btn:hover { background: #242424; }
+    .mobile-panel .mobile-nav-cta .btn:hover { background: #2de010; }
     .mobile-close {
       position: absolute;
       top: 1.25rem;
@@ -403,13 +506,12 @@
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
     @media (min-width: 768px) {
-      .nav-pill { display: inline-flex; }
+      .nav-pill { display: inline-flex; margin: 0 auto; }
       .nav-right { display: none !important; }
       .mobile-panel { display: none !important; }
     }
 
-
-    /* ─── Shared ─── */
+    /* --- Shared --- */
     .eyebrow {
       font-size: 0.75rem;
       font-weight: 600;
@@ -426,34 +528,26 @@
     }
     .divider--wide { max-width: var(--max-wide); }
 
-    /* ─── Buttons ─── */
+    /* --- Buttons --- */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      border-radius: var(--radius);
-      cursor: pointer;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; font-size: 0.9375rem; font-weight: 500;
+      border-radius: 8px; cursor: pointer; text-decoration: none;
       transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
     }
     .btn-primary {
-      background: var(--fg);
-      color: #ffffff;
-      border: 1px solid var(--fg);
+      background: #39FF14; color: #000000;
+      border: 1px solid #39FF14; font-weight: 700;
     }
-    .btn-primary:hover { background: #242424; border-color: #242424; }
+    .btn-primary:hover { background: #2de010; border-color: #2de010; }
     .btn-outline {
-      background: transparent;
-      color: var(--fg);
-      border: 1px solid var(--border);
+      background: transparent; color: #fff;
+      border: 1px solid #333;
     }
-    .btn-outline:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .btn-outline:hover { background: #fff; color: #0f0f0f; border-color: #fff; }
     .btn-sm { min-height: 36px; padding: 0.45rem 0.9rem; font-size: 0.8125rem; }
 
-    /* ─── Breadcrumbs ─── */
+    /* --- Breadcrumbs --- */
     .breadcrumbs {
       padding: 1.5rem 0 0;
       font-size: 0.8125rem;
@@ -461,27 +555,28 @@
     }
     .breadcrumbs a { color: var(--muted); transition: color 150ms ease; }
     .breadcrumbs a:hover { color: var(--fg); }
-    .breadcrumbs span { margin: 0 0.4rem; }
+    .breadcrumbs .sep { margin: 0 0.4rem; }
 
-    /* ─── Hero ─── */
+    /* --- Hero --- */
     .hero {
-      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(5rem, 10vw, 8rem);
+      text-align: center;
     }
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      font-weight: 400;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
       line-height: 1.12;
-      letter-spacing: -0.025em;
-      color: var(--fg);
-      max-width: 18ch;
+      letter-spacing: -0.02em;
+      max-width: 28ch; margin: 0.75rem auto;
+      color: #fff;
     }
     .hero-subtitle {
       margin-top: 1.5rem;
       font-size: 1.0625rem;
       line-height: 1.7;
       color: var(--muted);
-      max-width: 52ch;
+      max-width: 18ch; margin-inline: auto;
     }
     .hero--compact { padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem); }
     .hero--compact h1 {
@@ -490,223 +585,242 @@
       font-weight: 600;
       line-height: 1.12;
       letter-spacing: -0.02em;
-      margin: 0.75rem 0;
+      max-width: 28ch; margin: 0.75rem auto;
     }
     .hero--compact .hero-sub {
       font-size: clamp(0.95rem, 1.3vw, 1.05rem);
       line-height: 1.65;
       color: var(--muted);
       max-width: 52ch;
+      margin-inline: auto;
     }
 
-    /* ─── Membership Cards ─── */
+    /* --- Membership Cards --- */
     main > section:first-of-type { padding: var(--section-gap) 0; }
     .bundles-grid {
-      display: grid; gap: 1.25rem;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      display: grid; gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      background: #1a1a1e;
+      border: 1px solid #1a1a1e;
+      border-radius: 16px;
+      overflow: hidden;
     }
     .bundle-card {
-      border: 1px solid var(--border); border-radius: 16px;
-      background: var(--surface); overflow: hidden;
-      display: grid;
-      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      background: var(--bg);
+      padding: 2rem;
+      display: flex; flex-direction: column;
+      transition: background 200ms ease;
+      position: relative;
     }
-    .bundle-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .bundle-card-top {
-      padding: 1.5rem;
-      display: flex; flex-direction: column; gap: 0.6rem;
-    }
+    .bundle-card:hover { background: #191919; }
+    .bundle-card--featured { background: #141418; }
+    .bundle-card--featured:hover { background: #1a1a1e; }
+    .bundle-card + .bundle-card { border-left: 1px solid #1a1a1e; }
     .bundle-name {
-      font-family: var(--font-display); font-size: 1.15rem;
-      font-weight: 700; letter-spacing: -0.01em; color: #ffffff;
+      font-family: var(--font-display); font-size: 1.5rem;
+      font-weight: 700; letter-spacing: -0.02em; color: #fff;
+      margin-bottom: 0.5rem;
     }
     .bundle-badge {
+      position: absolute; top: 1.5rem; right: 1.5rem;
       display: inline-block; width: fit-content;
-      font-size: 0.65rem; font-weight: 700; color: #111111;
-      background: #10b981; padding: 0.25rem 0.65rem; border-radius: 20px;
-      letter-spacing: 0.02em; text-transform: uppercase;
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.25rem 0.6rem; border-radius: 4px;
     }
-    .bundle-tags {
-      display: flex; flex-wrap: wrap; gap: 0.35rem;
-      padding: 0 1.5rem; margin-top: -0.5rem; position: relative; z-index: 1;
-    }
-    .bundle-tag {
-      font-size: 0.68rem; font-weight: 500; color: var(--muted);
-      background: var(--surface-2); padding: 0.2rem 0.55rem;
-      border-radius: 20px; border: 1px solid var(--border-soft);
-    }
-    .bundle-body {
-      padding: 1.25rem 1.5rem 1.5rem;
-      display: grid; gap: 1rem;
+    .bundle-badge--popular { background: #3b82f6; color: #fff; }
+    .bundle-badge--new { background: #f0f0f2; color: #0f0f0f; }
+    .bundle-desc {
+      font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+      margin-bottom: 1.5rem; min-height: 2.6em;
     }
     .bundle-price {
-      display: flex; align-items: baseline; gap: 0.35rem;
+      display: flex; align-items: baseline; gap: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .bundle-price .currency {
+      font-size: 1.25rem; font-weight: 600; color: #fff;
+      align-self: flex-start; margin-top: 0.4rem;
     }
     .bundle-price .amount {
-      font-family: var(--font-display); font-size: 2rem; font-weight: 700;
-      letter-spacing: -0.02em;
+      font-family: var(--font-display); font-size: 3rem; font-weight: 700;
+      letter-spacing: -0.03em; color: #fff; line-height: 1;
     }
-    .bundle-price .period {
-      font-size: 0.875rem; color: var(--faint);
+    .bundle-billing {
+      font-size: 0.8125rem; color: var(--faint); margin-bottom: 1.5rem;
+    }
+    .bundle-cta { margin-bottom: 2rem; }
+    .bundle-cta .btn { width: 100%; justify-content: center; }
+    .bundle-divider { border: none; border-top: 1px solid var(--border-soft); margin-bottom: 1.5rem; }
+    .bundle-features-label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--faint); margin-bottom: 1rem;
     }
     .bundle-features {
-      display: grid; gap: 0.5rem;
+      display: grid; gap: 0.75rem; flex: 1;
     }
     .bundle-features li {
-      display: flex; align-items: flex-start; gap: 0.6rem;
-      font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.875rem; color: #d4d4d8; line-height: 1.45;
     }
-    .bundle-features li::before {
-      content: "✓";
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      display: grid; place-items: center;
-      font-size: 0.7rem; font-weight: 700;
-      background: var(--surface-2); color: var(--success);
-      border-radius: 50%; margin-top: 1px;
+    .bundle-features li .icon {
+      flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
     }
-    .bundle-cta { margin-top: 0.5rem; }
-    .bundle-cta .btn { width: 100%; justify-content: center; }
-    @media (max-width: 699px) { .bundles-grid { grid-template-columns: 1fr; } }
+    .bundle-features li .icon svg { width: 16px; height: 16px; color: var(--accent); }
+    .bundle-features li .info {
+      flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #52525b; margin-left: auto;
+    }
+    .bundle-features li .info svg { width: 14px; height: 14px; }
 
-    /* ─── Comparison ─── */
-    .comparison { background: var(--bg-elevated); }
+    /* --- Tooltip --- */
+    .tooltip-wrap { position: relative; display: inline-flex; align-items: center; }
+    .tooltip {
+      position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(4px);
+      width: 220px; padding: 0.65rem 0.75rem;
+      background: #1a1a1e; border: 1px solid #2a2a2e; border-radius: 8px;
+      font-size: 0.75rem; line-height: 1.5; color: #d4d4d8;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      opacity: 0; pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+      z-index: 20;
+      white-space: normal;
+    }
+    .tooltip::after {
+      content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 5px solid transparent; border-top-color: #2a2a2e;
+    }
+    .tooltip-wrap:hover .tooltip,
+    .tooltip-wrap.active .tooltip {
+      opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+    }
+    .tooltip-wrap .tooltip.overflow-left { left: 0; right: auto; transform: translateX(0) translateY(4px); }
+    .tooltip-wrap:hover .tooltip.overflow-left,
+    .tooltip-wrap.active .tooltip.overflow-left { transform: translateX(0) translateY(0); }
+    .tooltip-wrap .tooltip.overflow-left::after { left: 14px; transform: none; }
+    .tooltip-wrap .tooltip.overflow-right { left: auto; right: 0; transform: translateX(0) translateY(4px); }
+    .tooltip-wrap:hover .tooltip.overflow-right,
+    .tooltip-wrap.active .tooltip.overflow-right { transform: translateX(0) translateY(0); }
+    .tooltip-wrap .tooltip.overflow-right::after { left: auto; right: 14px; transform: none; }
+    [data-theme="light"] .tooltip {
+      background: #fff; border-color: #e5e7eb; color: #374151;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    [data-theme="light"] .tooltip::after { border-top-color: #e5e7eb; }
+    @media (max-width: 860px) { .bundles-grid { grid-template-columns: 1fr; } .bundle-card + .bundle-card { border-left: none; border-top: 1px solid var(--border-soft); } }
+
+    /* --- Comparison --- */
+    .comparison { background: var(--bg-elevated); padding: var(--section-gap) 0; }
     .comparison .wrap { max-width: var(--max); }
     .comparison h2 {
       font-family: var(--font-display);
       font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      text-align: center;
-      margin: 0.75rem 0 2rem;
+      font-weight: 600; letter-spacing: -0.02em; line-height: 1.15;
+      text-align: center; margin: 0.75rem 0 2rem; color: #fff;
     }
     .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
+      width: 100%; border-collapse: collapse; font-size: 0.875rem;
     }
     .comparison-table th,
     .comparison-table td {
-      padding: 0.85rem 1rem;
-      text-align: left;
+      padding: 0.85rem 1rem; text-align: left;
       border-bottom: 1px solid var(--border-soft);
     }
     .comparison-table thead th {
-      font-weight: 600;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--faint);
-      background: var(--bg-elevated);
+      font-weight: 600; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--faint); background: var(--bg-elevated);
     }
-    .comparison-table tbody td:first-child {
-      font-weight: 500;
-      color: var(--fg);
-    }
-    .comparison-table tbody td {
-      color: var(--muted);
-    }
-    .comparison-table .check { color: var(--success); font-weight: 700; }
-    .comparison-table .dash { color: var(--border); }
+    .comparison-table tbody td:first-child { font-weight: 500; color: var(--fg); }
+    .comparison-table tbody td { color: var(--muted); }
+    .comparison-table .check { color: var(--accent); font-weight: 700; }
+    .comparison-table .dash { color: #333; }
     @media (max-width: 699px) {
       .comparison-table { font-size: 0.8rem; }
       .comparison-table th,
       .comparison-table td { padding: 0.65rem 0.5rem; }
     }
 
-    /* ─── FAQ ─── */
+    /* --- FAQ --- */
     .faq { padding: var(--section-gap) 0; }
-    .faq .wrap { max-width: 720px; }
-    .faq h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin: 0.75rem 0 2rem;
+    .faq-section { max-width: 720px; margin-inline: auto; }
+    .faq-heading {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700; letter-spacing: -0.04em; line-height: 1;
+      color: #fff; margin-bottom: 0.5rem;
     }
-    .faq-list { display: grid; gap: 0; }
+    .faq-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400; font-style: italic;
+      color: var(--faint); margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    }
+    .faq-list { display: grid; gap: 0.5rem; }
     .faq-item {
-      border-bottom: 1px solid var(--border-soft);
+      border-radius: var(--radius); background: var(--surface-2);
+      overflow: hidden; transition: background 200ms ease;
     }
-    .faq-item summary {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 0; font-size: 0.95rem; font-weight: 500;
-      color: var(--fg); cursor: pointer; list-style: none;
-      transition: color 160ms ease;
+    .faq-item:hover { background: #222226; }
+    .faq-item.open { background: #222226; }
+    .faq-q {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem; text-align: left;
+      padding: 1.25rem 1.5rem;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 500; letter-spacing: -0.01em;
+      color: var(--fg); background: none; border: none;
+      cursor: pointer; font-family: var(--font-body);
     }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: "+"; font-size: 1.25rem; font-weight: 300;
-      color: var(--faint); transition: transform 200ms ease;
+    .faq-q svg {
+      width: 20px; height: 20px; color: var(--faint); flex: 0 0 auto;
+      transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item summary:hover { color: var(--accent); }
-    .faq-answer {
-      padding: 0 0 1.25rem; font-size: 0.9rem; line-height: 1.7;
-      color: var(--muted);
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-text {
+      padding: 0 1.5rem 1.25rem; color: var(--muted);
+      font-size: 0.875rem; line-height: 1.65; max-width: 62ch;
     }
+    .faq-more { margin-top: 1.5rem; font-size: 0.875rem; color: var(--faint); text-align: center; }
+    .faq-more a { color: var(--accent); transition: color 150ms ease; }
+    .faq-more a:hover { color: #60a5fa; }
+    [data-theme="light"] .faq-item:hover,
+    [data-theme="light"] .faq-item.open { background: #ededf0; }
 
-    /* ─── CTA ─── */
-    .bottom-cta {
-      padding: var(--section-gap) 0;
-      text-align: center;
-    }
+    /* --- CTA --- */
+    .bottom-cta { padding: var(--section-gap) 0; text-align: center; }
     .bottom-cta .cta-center h2 {
       font-family: var(--font-display);
       font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
+      font-weight: 600; line-height: 1.2;
+      letter-spacing: -0.02em; margin-bottom: 0.75rem; color: #fff;
     }
     .bottom-cta .cta-center p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-      max-width: 42ch;
-      margin-inline: auto;
+      font-size: 1rem; line-height: 1.7;
+      color: var(--muted); margin-bottom: 1.75rem;
+      max-width: 42ch; margin-inline: auto;
     }
     .bottom-cta .cta-actions-row {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
     }
 
-    /* ─── Footer ─── */
-    .site-footer {
-      background: #000000; color: #d1d5db;
-      padding: clamp(3rem, 6vw, 5rem) 0 0; margin-top: 1rem; text-align: center;
-    }
-    .footer-logo {
-      display: flex; justify-content: center;
-      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151;
-    }
-    .footer-logo img { height: clamp(64px, 9vw, 120px); width: auto; }
-    .footer-display {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(3rem, 10vw, 7.5rem); letter-spacing: -0.03em; line-height: 0.95;
-      color: #ffffff; padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151; margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-    @supports (text-wrap: balance) {
-      .footer-display { text-wrap: balance; }
-    }
-    .footer-grid { display: grid; gap: 2rem; justify-items: center; }
-    .footer-grid a { color: #9ca3af; transition: color 150ms ease; }
-    .footer-grid a:hover { color: #ffffff; }
-    .footer-brand p { margin-top: 0; color: #6b7280; font-size: 0.92rem; line-height: 1.55; max-width: 28ch; }
-    .footer-col h4 { font-size: 0.78rem; font-family: var(--font-body); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
-    .footer-col a { display: block; color: #9ca3af; font-size: 0.92rem; padding: 0.25rem 0; transition: color 150ms ease; }
-    .footer-col a:hover { color: #ffffff; }
-    .footer-bottom { margin-top: 2.5rem; padding: 1.25rem 0; border-top: 1px solid #374151; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center; color: #6b7280; font-size: 0.82rem; }
+    /* Footer */
+    .site-footer { background: #0f0f0f; color: #a0a0a8; padding: clamp(2.5rem, 5vw, 4rem) 0 0; margin-top: 1rem; border-top: 1px solid var(--border-soft); }
+    .footer-top { display: grid; gap: 2rem; grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--border-soft); }
+    @media (min-width: 700px) { .footer-top { grid-template-columns: 26ch 1fr; } }
+    .footer-brand .logo { font-family: "Gevora", "Arial Black", Impact, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; margin-bottom: 0.9rem; }
+    .footer-brand p { color: #6b6b73; font-size: var(--text-sm); line-height: 1.55; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+    .footer-col h4 { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b73; margin-bottom: 0.9rem; }
+    .footer-col a { display: block; color: #6b6b73; font-size: var(--text-sm); padding: 0.25rem 0; transition: color 150ms ease; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid var(--border-soft); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #52525b; font-size: var(--text-xs); }
+    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
+    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #1a1a1e; user-select: none; }
 
-    /* ─── Reveal ─── */
+    /* --- Reveal --- */
     @media (prefers-reduced-motion: no-preference) {
       .reveal {
         opacity: 0;
@@ -716,36 +830,156 @@
       .reveal.is-in { opacity: 1; transform: none; }
     }
 
-    /* ─── Mobile ─── */
+    /* --- Mobile --- */
     @media (max-width: 767px) {
       .cta-actions { flex-direction: column; }
       .cta-actions .btn { width: 100%; justify-content: center; }
-      .footer-grid { gap: 1.5rem; }
-      .footer-display { font-size: clamp(2.2rem, 9vw, 3.5rem); }
-      .footer-brand p { margin-top: 0.35rem; font-size: 0.85rem; line-height: 1.45; max-width: 24ch; color: #6b7280; }
-      .footer-col h4 { margin-bottom: 0.4rem; font-size: 0.75rem; color: #6b7280; }
-      .footer-col a { padding: 0.18rem 0; font-size: 0.88rem; }
-      .footer-bottom { margin-top: 1.5rem; padding-top: 1rem; gap: 0.4rem 0.75rem; font-size: 0.78rem; flex-direction: column; align-items: center; }
       .hero h1 { max-width: 100%; }
       .comparison-table { display: block; overflow-x: auto; }
     }
-    @media (min-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; } }
-  </style>
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+      flex-shrink: 0;
+      color: var(--muted);
+    }
+    .theme-toggle:hover { background: var(--surface-2); color: var(--fg); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    @media (max-width: 767px) {
+      .header-logo + .nav-pill + .theme-toggle { display: none; }
+      .header-logo-img { display: block; }
+      .header-logo-text { display: none; }
+    }
+    .mobile-theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 0;
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border-soft);
+      width: 100%;
+      text-align: left;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-theme-toggle:hover, .mobile-theme-toggle:active { color: var(--fg); padding-left: 0.75rem; }
+    .mobile-theme-toggle .icon-moon { display: block; }
+    .mobile-theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-sun { display: block; }
+
+    /* Dark Theme Overrides (legacy - now default) */
+    [data-theme="dark"] .site-header.is-scrolled { background: rgba(15, 15, 15, 0.92); }
+    [data-theme="dark"] .nav-pill { background: var(--surface); border-color: var(--border); }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] body { background: #fff; color: #111; }
+    [data-theme="light"] .site-header.is-scrolled { background: rgba(255,255,255,0.92); }
+    [data-theme="light"] .nav-pill { background: #fff; border-color: #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    [data-theme="light"] .hero h1,
+    [data-theme="light"] .comparison h2,
+    [data-theme="light"] .faq-heading,
+    [data-theme="light"] .bottom-cta .cta-center h2 { color: #111; }
+    [data-theme="light"] .eyebrow { color: #9ca3af; }
+    [data-theme="light"] .hero-sub { color: #6b7280; }
+    [data-theme="light"] .bundles-grid { background: #e5e7eb; border-color: #e5e7eb; }
+    [data-theme="light"] .bundle-card { background: #fff; }
+    [data-theme="light"] .bundle-card:hover { background: #f9fafb; }
+    [data-theme="light"] .bundle-card--featured { background: #f9fafb; }
+    [data-theme="light"] .bundle-card--featured:hover { background: #f3f4f6; }
+    [data-theme="light"] .bundle-card + .bundle-card { border-left-color: #e5e7eb; }
+    [data-theme="light"] .bundle-name { color: #111; }
+    [data-theme="light"] .bundle-badge--new { background: #111; color: #fff; }
+    [data-theme="light"] .bundle-desc { color: #6b7280; }
+    [data-theme="light"] .bundle-price .currency,
+    [data-theme="light"] .bundle-price .amount { color: #111; }
+    [data-theme="light"] .bundle-billing { color: #9ca3af; }
+    [data-theme="light"] .bundle-divider { border-top-color: #e5e7eb; }
+    [data-theme="light"] .bundle-features-label { color: #9ca3af; }
+    [data-theme="light"] .bundle-features li { color: #374151; }
+    [data-theme="light"] .bundle-features li .info { color: #9ca3af; }
+    [data-theme="light"] .comparison { background: #f9fafb; }
+    [data-theme="light"] .comparison-table thead th { background: #f9fafb; color: #9ca3af; }
+    [data-theme="light"] .comparison-table tbody td:first-child { color: #111; }
+    [data-theme="light"] .comparison-table tbody td { color: #6b7280; }
+    [data-theme="light"] .comparison-table .check { color: #3b82f6; }
+    [data-theme="light"] .comparison-table .dash { color: #d1d5db; }
+    [data-theme="light"] .comparison-table th,
+    [data-theme="light"] .comparison-table td { border-bottom-color: #f3f4f6; }
+    [data-theme="light"] .faq-item { background: #f3f4f6; }
+    [data-theme="light"] .faq-item:hover,
+    [data-theme="light"] .faq-item.open { background: #e5e7eb; }
+    [data-theme="light"] .faq-q { color: #111; }
+    [data-theme="light"] .faq-a-text { color: #6b7280; }
+    [data-theme="light"] .faq-more { color: #9ca3af; }
+    [data-theme="light"] .faq-more a { color: #3b82f6; }
+    [data-theme="light"] .bottom-cta .cta-center p { color: #6b7280; }
+    [data-theme="light"] .site-footer { background: #fff; color: #374151; border-top-color: #e5e7eb; }
+    [data-theme="light"] .footer-top { border-bottom-color: #e5e7eb; }
+    [data-theme="light"] .footer-brand .logo { color: #111; }
+    [data-theme="light"] .footer-brand p { color: #6b7280; }
+    [data-theme="light"] .footer-col h4 { color: #9ca3af; }
+    [data-theme="light"] .footer-col a { color: #6b7280; }
+    [data-theme="light"] .footer-col a:hover { color: #111; }
+    [data-theme="light"] .footer-bottom { border-top-color: #e5e7eb; color: #9ca3af; }
+    [data-theme="light"] .footer-giant__text { color: #111; }
+    [data-theme="light"] .btn-primary { background: #39FF14; color: #000000; border-color: #39FF14; }
+    [data-theme="light"] .btn-primary:hover { background: #2de010; border-color: #2de010; }
+    [data-theme="light"] .btn-outline { background: transparent; color: #111; border-color: #d1d5db; }
+    [data-theme="light"] .btn-outline:hover { background: #111; color: #fff; border-color: #111; }
+    [data-theme="light"] .tooltip { background: #fff; border-color: #e5e7eb; color: #374151; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    [data-theme="light"] .tooltip::after { border-top-color: #e5e7eb; }
+    [data-theme="light"] .mobile-panel { background: #fff; }
+    [data-theme="light"] .mobile-panel .mobile-nav-cta .btn { background: #39FF14; color: #000000; }
+    [data-theme="light"] .mobile-close { background: #f3f4f6; border-color: #e5e7eb; }
+    [data-theme="light"] .mobile-close svg { stroke: #111; }
+    [data-theme="light"] .nav-toggle { background: #f3f4f6; border-color: #e5e7eb; }
+    [data-theme="light"] .nav-toggle span { background: #111; }
+    [data-theme="light"] .nav-toggle span::before,
+    [data-theme="light"] .nav-toggle span::after { background: #111; }
+    [data-theme="light"] .theme-toggle { color: #6b7280; }
+    [data-theme="light"] .theme-toggle:hover { background: #f3f4f6; color: #111; }
+      /* Gevora Font */
+    @font-face { font-family: "Gevora"; src: url("public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+
+    /* Hero Marquee */
+    .hero-marquee { overflow: hidden; position: relative; padding: 0.85rem 0; margin-top: 2rem; }
+    .hero-marquee::before, .hero-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+    .hero-marquee::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .hero-marquee::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .hero-marquee__track { display: flex; gap: 2rem; width: max-content; animation: marquee-scroll 25s linear infinite; }
+    .hero-marquee:hover .hero-marquee__track { animation-play-state: paused; }
+    .hero-marquee__pill { flex-shrink: 0; font-size: 15px; font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: var(--faint); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+    .hero-marquee__pill:hover { color: var(--fg); }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .hero-marquee__track { animation: none !important; } }
+</style>
 </head>
 <body>
 
   <header class="site-header" id="top">
     <div class="wrap nav">            
-
+      <a class="header-logo" href="index.html" aria-label="LeadsPitch home"><img src="public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
               <nav class="nav-pill" aria-label="Primary">
-<a class="logo" href="index.html" aria-label="LeadsPitch home">
-        <img src="public/leadspitch logo.png" alt="LeadsPitch" onerror="this.insertAdjacentText('afterend','LeadsPitch');this.remove()">
-      </a>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
-            Industries
+            Niches
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
@@ -758,7 +992,7 @@
             <a href="industries/home-services.html" role="menuitem">Home Services</a>
             <a href="industries/restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
             <a href="industries/events-leisure.html" role="menuitem">Events &amp; Leisure</a>
-            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage Suppliers</a>
+            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage</a>
             <a href="industries/agencies-business.html" role="menuitem">Agencies &amp; Business</a>
             <a href="industries/beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
             <a href="industries/hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
@@ -771,7 +1005,22 @@
         <a href="membership.html">Membership</a>
         <a href="faq.html">FAQs</a>
         <a href="contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Legal
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="privacy.html" role="menuitem">Privacy Policy</a>
+            <a href="terms.html" role="menuitem">Terms of Service</a>
+            <a href="refund.html" role="menuitem">Refund Policy</a>
+          </div>
+        </div>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
       <div class="nav-right">
 <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span></span>
@@ -788,7 +1037,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
-        Industries
+        Niches
         <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="mobile-dropdown-panel">
@@ -801,7 +1050,7 @@
         <a href="industries/home-services.html">Home Services</a>
         <a href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
         <a href="industries/events-leisure.html">Events &amp; Leisure</a>
-        <a href="industries/food-beverage.html">Food &amp; Beverage Suppliers</a>
+        <a href="industries/food-beverage.html">Food &amp; Beverage</a>
         <a href="industries/agencies-business.html">Agencies &amp; Business</a>
         <a href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
         <a href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
@@ -813,6 +1062,20 @@
       <a href="membership.html">Membership</a>
       <a href="faq.html">FAQs</a>
       <a href="contact.html">Contact</a>
+      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+        Legal
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-dropdown-panel">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+      <button class="mobile-theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <span>Dark mode</span>
+      </button>
     </div>
     <div class="mobile-nav-cta">
       <a class="btn btn-primary" href="membership.html">Get Membership</a>
@@ -821,279 +1084,56 @@
 
   <main>
 
-    <!-- Breadcrumbs -->
-    <div class="wrap">
-      <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">Memberships</span>
-      </nav>
-    </div>
-
-    <!-- Hero -->
-    <section class="hero hero--compact">
-      <div class="wrap">
-        <p class="eyebrow reveal">Membership Plans</p>
-        <h1 class="reveal">Memberships</h1>
-        <p class="reveal hero-sub">One-time membership purchase. Get 40% off every future purchase across eligible industries.</p>
-      </div>
-    </section>
-
-    <!-- Membership Cards -->
-    <section>
-      <div class="wrap">
-        <div class="bundles-grid">
-
-          <!-- Basic Membership -->
-          <div class="bundle-card">
-            <div class="bundle-card-top" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
-              <h3 class="bundle-name">LeadsPitch Basic Membership</h3>
-              <span class="bundle-badge">Entry</span>
-            </div>
-            <div class="bundle-tags">
-              <span class="bundle-tag">Best for starters</span>
-            </div>
-            <div class="bundle-body">
-              <div class="bundle-price">
-                <span class="amount">$19.99</span>
-              </div>
-              <ul class="bundle-features">
-                <li>40% off Events &amp; Leisure</li>
-                <li>40% off Education &amp; Training</li>
-                <li>40% off Construction</li>
-                <li>One-time data sets</li>
-                <li>Monthly plans</li>
-              </ul>
-              <div class="bundle-cta">
-                <a class="btn btn-primary btn-sm" href="https://whop.com/leadspitch-memebership/starter-membership-3/" target="_blank" rel="noopener">Get Basic</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pro Membership -->
-          <div class="bundle-card">
-            <div class="bundle-card-top" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);">
-              <h3 class="bundle-name">LeadsPitch Pro Membership</h3>
-              <span class="bundle-badge">Most Popular</span>
-            </div>
-            <div class="bundle-tags">
-              <span class="bundle-tag">Best for growing teams</span>
-            </div>
-            <div class="bundle-body">
-              <div class="bundle-price">
-                <span class="amount">$29.99</span>
-              </div>
-              <ul class="bundle-features">
-                <li>Everything in Basic</li>
-                <li>40% off Agencies &amp; Business</li>
-                <li>40% off Automotive</li>
-                <li>40% off Logistics</li>
-                <li>40% off Hotels &amp; Hospitality</li>
-                <li>40% off Home Services</li>
-                <li>40% off Legal</li>
-                <li>Priority support</li>
-              </ul>
-              <div class="bundle-cta">
-                <a class="btn btn-primary btn-sm" href="https://whop.com/leadspitch-memebership/leadspitch-growth-membership/" target="_blank" rel="noopener">Get Pro</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Max Membership -->
-          <div class="bundle-card">
-            <div class="bundle-card-top" style="background: linear-gradient(135deg, #2d1b69 0%, #11001c 50%, #4a0e6b 100%);">
-              <h3 class="bundle-name">LeadsPitch Max Membership</h3>
-              <span class="bundle-badge">Best Value</span>
-            </div>
-            <div class="bundle-tags">
-              <span class="bundle-tag">Best for agencies</span>
-            </div>
-            <div class="bundle-body">
-              <div class="bundle-price">
-                <span class="amount">$49.99</span>
-              </div>
-              <ul class="bundle-features">
-                <li>Everything in Pro</li>
-                <li>40% off ALL industries</li>
-                <li>40% off ALL bundles</li>
-                <li>Priority access to new industries</li>
-                <li>Bonus leads &amp; records</li>
-                <li>Priority support</li>
-              </ul>
-              <div class="bundle-cta">
-                <a class="btn btn-primary btn-sm" href="https://whop.com/leadspitch-memebership/membership-max/" target="_blank" rel="noopener">Get Max</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Comparison Table -->
-    <section class="comparison">
-      <div class="wrap">
-        <p class="eyebrow reveal" style="text-align:center;">Compare Plans</p>
-        <h2 class="reveal">Which membership is right for you?</h2>
-        <div class="reveal" style="overflow-x:auto;">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Basic</th>
-                <th>Pro</th>
-                <th>Max</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>One-Time Price</td>
-                <td>$19.99</td>
-                <td>$29.99</td>
-                <td>$49.99</td>
-              </tr>
-              <tr>
-                <td>Events &amp; Leisure</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Education &amp; Training</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Construction</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Agencies &amp; Business</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Automotive</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Logistics</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Hotels &amp; Hospitality</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Home Services</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Legal</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>All Other Industries</td>
-                <td class="dash">—</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Bundle Discounts</td>
-                <td class="dash">—</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Bonus Leads &amp; Records</td>
-                <td class="dash">—</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-              </tr>
-              <tr>
-                <td>Priority Support</td>
-                <td class="dash">—</td>
-                <td class="check">✓</td>
-                <td class="check">✓</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-      <div class="wrap">
-        <p class="eyebrow reveal">FAQ</p>
-        <h2 class="reveal">Frequently asked questions</h2>
-        <div class="faq-list reveal">
-          <details class="faq-item">
-            <summary>How does the membership discount work?</summary>
-            <div class="faq-answer">Your membership gives you 40% off the regular price on all eligible products. The discount is applied automatically when you purchase through your member portal.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Can I upgrade my membership?</summary>
-            <div class="faq-answer">Yes! You can upgrade to a higher tier at any time. Simply purchase the new tier and you'll get the expanded benefits immediately.</div>
-          </details>
-          <details class="faq-item">
-            <summary>What industries are included?</summary>
-            <div class="faq-answer">Basic covers 3 industries, Pro covers 10 industries, and Max covers all 16 industries plus bundles.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Is there a contract?</summary>
-            <div class="faq-answer">No contracts. Your membership is a one-time purchase that gives you lifetime access to the 40% discount on eligible products.</div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bottom CTA -->
-    <section class="bottom-cta">
-      <div class="wrap">
-        <div class="reveal cta-center">
-          <h2>Ready to save 40%?</h2>
-          <p>Choose a membership tier and start saving on every purchase today.</p>
-          <div class="cta-actions-row">
-            <a class="btn btn-primary" href="https://whop.com/leadspitch-memebership/starter-membership-3/" target="_blank" rel="noopener">Get Basic - $19.99</a>
-            <a class="btn btn-primary" href="https://whop.com/leadspitch-memebership/leadspitch-growth-membership/" target="_blank" rel="noopener">Get Pro - $29.99</a>
-            <a class="btn btn-outline" href="https://whop.com/leadspitch-memebership/membership-max/" target="_blank" rel="noopener">Get Max - $49.99</a>
-          </div>
-        </div>
-      </div>
+    <section class="coming-soon" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;padding:4rem 1.5rem;">
+      <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 1.2rem;">Coming Soon</p>
+      <h1 style="font-size:clamp(28px,5vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1.1;margin:0 0 1rem;">Membership Plans</h1>
+      <p style="max-width:440px;color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 2rem;">We're putting the finishing touches on our membership tiers. Check back soon for exclusive discounts on every dataset.</p>
+      <a href="index.html" class="btn btn-primary" style="min-height:48px;padding:0 24px;display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;">Back to Home <span aria-hidden="true">→</span></a>
     </section>
 
   </main>
-
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-logo">
-        <img src="public/leadspitch-footer.png" alt="LeadsPitch">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <p class="logo">LeadsPitch</p>
+        <p>Verified B2B lead data, delivered as CSV. Subscriptions, one-time purchases, and membership discounts across 19+ niches.</p>
+        <p style="margin-top:0.75rem"><a href="mailto:contact@leadspitch.com" style="color:var(--faint);font-size:var(--text-sm);text-decoration:none;transition:color 150ms ease;">contact@leadspitch.com</a></p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="industries.html">Niches</a>
+          <a href="bundles.html">B2B datasets</a>
+          <a href="membership.html">Membership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Popular</h4>
+          <a href="industries/real-estate.html">Real Estate leads</a>
+          <a href="industries/clinics.html">Clinics leads</a>
+          <a href="industries/dentists.html">Dentists leads</a>
+          <a href="industries/legal.html">Lawyers leads</a>
+        </div>
       </div>
     </div>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><p>Business data platform. Subscriptions, one-time purchases, and membership discounts across 16 industries.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="index.html#how-it-works">How it works</a><a href="industries.html">Industries</a><a href="bundles.html">Bundles</a><a href="membership.html">Memberships</a><a href="faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="membership.html">Memberships</a><a href="index.html#trust">Trust</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund Policy</a></div>
-    </div>
     <div class="wrap footer-bottom">
-      <span>&copy; 2026 LeadsPitch</span>
-      <span>Business data, delivered your way.</span>
+      <span>&copy; <span id="y"></span> LeadsPitch</span>
+      <span>Verified B2B data, delivered your way.</span>
+    </div>
+    <div class="footer-giant" id="footer-giant">
+      <span class="footer-giant__text" id="giant-text">LEADSPITCH</span>
     </div>
   </footer>
 
@@ -1158,14 +1198,105 @@
         });
       });
 
+      document.querySelectorAll(".faq-item").forEach(function (item) {
+        var btn = item.querySelector(".faq-q");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var isOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach(function (el) {
+            el.classList.remove("open");
+            var b = el.querySelector(".faq-q");
+            if (b) b.setAttribute("aria-expanded", "false");
+          });
+          if (!isOpen) {
+            item.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      document.querySelectorAll(".tooltip-wrap").forEach(function (wrap) {
+        wrap.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var wasActive = wrap.classList.contains("active");
+          document.querySelectorAll(".tooltip-wrap.active").forEach(function (w) { w.classList.remove("active"); });
+          if (!wasActive) {
+            wrap.classList.add("active");
+            positionTooltip(wrap.querySelector(".tooltip"));
+          }
+        });
+      });
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".tooltip-wrap.active").forEach(function (w) { w.classList.remove("active"); });
+      });
+      function positionTooltip(tip) {
+        if (!tip) return;
+        tip.classList.remove("overflow-left", "overflow-right");
+        var rect = tip.getBoundingClientRect();
+        if (rect.left < 8) tip.classList.add("overflow-left");
+        else if (rect.right > window.innerWidth - 8) tip.classList.add("overflow-right");
+      }
+
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) entry.target.classList.add("is-in");
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+      (function () {
+        var container = document.getElementById("footer-giant");
+        var text = document.getElementById("giant-text");
+        if (!container || !text) return;
+        function fit() {
+          var avail = container.offsetWidth;
+          if (!avail) return;
+          text.style.fontSize = "100px";
+          var textW = text.offsetWidth;
+          if (!textW) return;
+          text.style.fontSize = Math.floor((avail / textW) * 100) + "px";
+        }
+        fit(); setTimeout(fit,100); setTimeout(fit,300); setTimeout(fit,600); setTimeout(fit,1000);
+        var rt; window.addEventListener("resize",function(){ if(rt) clearTimeout(rt); rt=setTimeout(fit,100); });
+      })();
+    })();
+        /* Theme Toggle */
+    (function () {
+      var root = document.documentElement;
+      var toggles = document.querySelectorAll(".theme-toggle, .mobile-theme-toggle");
+      var mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+      var hasSaved = (function () { try { return localStorage.getItem("theme") !== null; } catch (e) { return false; } })();
+      function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+      function updateToggleLabel() {
+        var isLight = current() === "light";
+        for (var i = 0; i < toggles.length; i++) {
+          var span = toggles[i].querySelector("span");
+          if (span) span.textContent = isLight ? "Light mode" : "Dark mode";
+          toggles[i].setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+        }
+      }
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem("theme", theme); } catch (e) {}
+        hasSaved = true;
+        updateToggleLabel();
+      }
+      function toggleTheme() { setTheme(current() === "light" ? "dark" : "light"); }
+      function onSystemChange() {
+        if (hasSaved) return;
+        root.setAttribute("data-theme", mql.matches ? "light" : "dark");
+        updateToggleLabel();
+      }
+      updateToggleLabel();
+      for (var i = 0; i < toggles.length; i++) {
+        toggles[i].addEventListener("click", toggleTheme);
+      }
+      if (mql) {
+        if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
+        else if (mql.addListener) mql.addListener(onSystemChange);
+      }
     })();
   </script>
-
+  <script src="search-data.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>

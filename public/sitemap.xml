@@ -2,16 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://leadspitch.com/index.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://leadspitch.com/industries.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://leadspitch.com/membership.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://leadspitch.com/bundles.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/about.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://leadspitch.com/faq.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://leadspitch.com/contact.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://leadspitch.com/terms.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://leadspitch.com/refund.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://leadspitch.com/privacy.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://leadspitch.com/industries/automotive.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leadspitch.com/industries/construction.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/accounting-finance.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/agencies-business.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/beauty-wellness.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leadspitch.com/industries/automotive.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/clinics.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/construction.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/dentists.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -24,5 +26,4 @@
   <url><loc>https://leadspitch.com/industries/logistics.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/real-estate.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://leadspitch.com/industries/restaurants-cafes.html</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://leadspitch.com/membership.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>

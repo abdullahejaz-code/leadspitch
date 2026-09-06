@@ -1,36 +1,61 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.min.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/controls/OrbitControls.js">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/geometries/RoundedBoxGeometry.js">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LeadsPitch — Buy Verified B2B Lead Data by Industry | CSV Datasets</title>
-  <meta name="description" content="Buy verified B2B leads and industry-specific business data as ready-to-use CSV datasets. Choose from 19+ industries including Healthcare, Legal, Real Estate, and more. Subscribe monthly or buy one-time lead packs. No software, no credits, no dashboard.">
-  <meta name="keywords" content="B2B leads, business data, lead lists, verified business contacts, industry-specific leads, decision-maker contacts, CSV datasets, lead packs, business owner database, sales prospecting data, local business leads, B2B data provider">
-  <meta name="datePublished" content="2025-01-01">
-  <meta name="dateModified" content="2026-08-03">
-  <meta property="og:title" content="LeadsPitch, Verified B2B Business Data by Industry">
-  <meta property="og:description" content="Buy verified B2B leads and industry-specific business data as ready-to-use CSV datasets. Subscribe monthly or buy one-time lead packs. No software, no credits, no dashboard.">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
+  <title>LeadsPitch – Buy Verified B2B Lead Data by Niche | CSV Datasets</title>
+  <meta name="description" content="LeadsPitch (also known as Leads Pitch) — buy verified B2B leads and niche-specific business data as ready-to-use CSV datasets. Emails, phones, and websites across 19+ niches. One flat price, no credits, no software.">
+  <meta name="keywords" content="leadspitch, leads pitch, lead pitch, leadspitch.com, b2b leads, business data, csv datasets, lead lists, niche leads">
+  <meta property="og:title" content="LeadsPitch – Verified B2B Business Data by Niche">
+  <meta property="og:description" content="Buy verified B2B leads and niche-specific business data as ready-to-use CSV datasets. One flat price, no credits, no software.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://leadspitch.com/">
   <meta property="og:site_name" content="LeadsPitch">
   <meta property="og:image" content="https://leadspitch.com/public/sample-excel.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LeadsPitch, Verified B2B Business Data by Industry">
-  <meta name="twitter:description" content="Buy verified B2B leads and industry-specific business data as ready-to-use CSV datasets. No software, no credits, no dashboard.">
+  <meta name="twitter:title" content="LeadsPitch – Verified B2B Business Data by Niche">
+  <meta name="twitter:description" content="Buy verified B2B leads and niche-specific business data as ready-to-use CSV datasets. No credits, no software.">
   <meta name="twitter:image" content="https://leadspitch.com/public/sample-excel.png">
   <link rel="canonical" href="https://leadspitch.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "LeadsPitch",
+    "alternateName": ["Leads Pitch", "Lead Pitch", "leadspitch.com", "leadspitch"],
     "url": "https://leadspitch.com",
-    "logo": "https://leadspitch.com/public/leadspitch%20logo.png",
-    "description": "Business data platform offering verified B2B lead datasets as CSV files. One-time purchases and monthly subscriptions across 19+ industries.",
+    "logo": "https://leadspitch.com/public/logo.png",
+    "description": "Business data platform offering verified B2B lead datasets as CSV files. One-time purchases and membership discounts across 19+ industries.",
     "foundingDate": "2024",
-    "sameAs": [],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
@@ -44,56 +69,7 @@
     "@type": "WebSite",
     "name": "LeadsPitch",
     "url": "https://leadspitch.com",
-    "description": "Buy verified B2B leads and industry-specific business data as ready-to-use CSV datasets.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://leadspitch.com/bundles.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "B2B Industry Datasets",
-    "provider": {
-      "@type": "Organization",
-      "name": "LeadsPitch"
-    },
-    "description": "Verified B2B lead datasets delivered as CSV files. Each dataset is industry-specific and includes business names, emails, phone numbers, websites, locations, ratings, reviews, and competitor data.",
-    "serviceType": "Business Data",
-    "areaServed": "US",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Industry Dataset Plans",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "One-time Dataset Purchase"
-          },
-          "price": "7.99",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Monthly Subscription Dataset"
-          },
-          "price": "9.99",
-          "priceCurrency": "USD",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "9.99",
-            "priceCurrency": "USD",
-            "billingDuration": "P1M"
-          }
-        }
-      ]
-    }
+    "description": "Buy verified B2B leads and industry-specific business data as ready-to-use CSV datasets."
   }
   </script>
   <script type="application/ld+json">
@@ -106,15 +82,7 @@
         "name": "What is LeadsPitch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "LeadsPitch is a B2B business data platform that delivers verified industry datasets as CSV files. You can subscribe monthly for fresh data or purchase a one-time dataset. Each dataset includes business names, emails, phone numbers, websites, locations, and more across 19+ industries."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does LeadsPitch cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LeadsPitch offers two pricing options: one-time dataset purchases starting at $7.99 per dataset, or monthly subscriptions starting at $9.99/month. There are no credits, no per-record charges, and no software fees. Pricing varies by industry."
+          "text": "LeadsPitch delivers verified B2B leads as CSV datasets across 19+ niches. Buy one-time and save with membership. Each file includes business names, emails, phone numbers, websites, locations, ratings, and more."
         }
       },
       {
@@ -122,123 +90,167 @@
         "name": "How is LeadsPitch different from Apollo or ZoomInfo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Unlike Apollo and ZoomInfo which are searchable software platforms with credit systems, LeadsPitch delivers finished datasets without requiring you to learn software or manage credits. You receive a CSV file with verified data, ready to use in any spreadsheet or CRM."
+          "text": "Apollo and ZoomInfo are searchable software platforms with credit systems. LeadsPitch delivers finished CSV datasets with no software, no credits, and no dashboard to learn."
         }
       },
       {
         "@type": "Question",
-        "name": "What data fields are included in LeadsPitch datasets?",
+        "name": "Is LeadsPitch data verified?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Each LeadsPitch dataset includes: business name, owner/decision-maker name, verified email, phone number, website, location (city, state, country), Google ratings, review counts, and competitor information. Additional fields vary by industry."
+          "text": "Yes. Every dataset is sourced and verified before delivery. Where a field can't be confirmed, it's left blank rather than filled with unverified data."
         }
       },
       {
         "@type": "Question",
-        "name": "Is the data verified?",
+        "name": "How much does LeadsPitch cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Every dataset is sourced and verified before delivery. Where a data field cannot be reasonably confirmed, we leave it blank rather than include unverified information. You can request removal of your business information at any time."
+          "text": "Prices vary by niche and dataset size. One-time datasets start at a flat rate. Monthly plans include a discount and fresh data delivered automatically."
         }
       },
       {
         "@type": "Question",
-        "name": "What industries does LeadsPitch cover?",
+        "name": "What data fields are included?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "LeadsPitch currently offers datasets across 19+ industries including Healthcare, Legal, Real Estate, Automotive, Construction, Home Services, Restaurants, Education, and more. Each dataset is built specifically for its industry."
+          "text": "Each CSV typically includes business name, email, phone, website, address, city, state, rating, review count, and more depending on the niche."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is the data updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every dataset is built from scratch at the time of purchase or subscription renewal. You always get fresh, current data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I request a custom niche?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If your niche isn't listed, contact us and we'll build a custom dataset for your specific market."
         }
       }
     ]
   }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer=""></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer=""></script>
   <style>
     :root {
       --bg: #ffffff;
-      --bg-elevated: #f9fafb;
+      --bg-soft: #f6f6f7;
       --surface: #ffffff;
-      --surface-2: #f3f4f6;
-      --fg: #111111;
-      --muted: #374151;
-      --faint: #6b7280;
-      --border: #e5e7eb;
-      --border-soft: #f3f4f6;
-      --accent: #111111;
-      --accent-soft: rgba(17, 17, 17, 0.05);
-      --accent-text: #111111;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --error: #ef4444;
-      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
-      --radius: 12px;
+      --surface-2: #f0f0f2;
+      --ink: #0b0b0d;
+      --muted: #55565b;
+      --faint: #8a8b91;
+      --line: #e5e5e8;
+      --line-strong: #d0d0d5;
+      --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+
+      --gap-xs: 0.5rem;
+      --gap-sm: 0.75rem;
+      --gap: 1rem;
+      --gap-lg: 1.5rem;
+      --gap-xl: clamp(2rem, 5vw, 3.5rem);
+      --section: clamp(3.5rem, 8vw, 6rem);
+
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --shadow-card: 0 1px 2px rgba(20, 20, 28, 0.04), 0 12px 32px -20px rgba(20, 20, 28, 0.10);
+      --shadow-lift: 0 2px 4px rgba(20, 20, 28, 0.05), 0 20px 44px -20px rgba(20, 20, 28, 0.16);
+      --shadow-menu: 0 4px 12px rgba(20, 20, 28, 0.06), 0 24px 56px -20px rgba(20, 20, 28, 0.18);
+
       --max: 1120px;
-      --gutter: clamp(1.25rem, 4vw, 2.5rem);
+      --gutter: clamp(1.25rem, 4vw, 2rem);
       --nav-h: 72px;
-      --section-gap: clamp(3rem, 6vw, 5rem);
+      --accent-green: #39FF14;
+    }
+    [data-theme="dark"] {
+      --bg: #000000;
+      --bg-soft: #0a0a0a;
+      --surface: #111113;
+      --surface-2: #1a1a1e;
+      --ink: #f0f0f2;
+      --muted: #a0a0a8;
+      --faint: #6b6b73;
+      --line: #222228;
+      --line-strong: #333339;
+      --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 12px 32px -20px rgba(0, 0, 0, 0.4);
+      --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.3), 0 20px 44px -20px rgba(0, 0, 0, 0.5);
+      --shadow-menu: 0 4px 12px rgba(0, 0, 0, 0.3), 0 24px 56px -20px rgba(0, 0, 0, 0.6);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 1rem); }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 0.75rem); background: var(--bg); }
     body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.55;
-      color: var(--fg);
+      font-family: var(--font);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--ink);
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
     ul { list-style: none; }
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-    .btn-accent:focus-visible {
-      outline-color: var(--fg);
-      outline-offset: 2px;
-    }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-    .wrap {
-      width: min(100% - var(--gutter) * 2, var(--max));
-      margin-inline: auto;
-    }
-    .eyebrow {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--faint);
-    }
-    .display {
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-    @supports (text-wrap: balance) {
-      .display { text-wrap: balance; }
+    .wrap { width: min(100% - var(--gutter) * 2, var(--max)); margin-inline: auto; }
+
+    h1.display {
+      font-size: clamp(2.75rem, 7vw, 4.5rem);
+      font-weight: 800;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--ink);
+      margin: 0 auto 1.75rem;
+      max-width: 16ch;
+      text-align: center;
+      overflow-wrap: break-word;
     }
     .lede {
-      max-width: 36rem;
+      font-size: var(--text-lg);
       color: var(--muted);
-      font-size: clamp(1rem, 1.4vw, 1.15rem);
-      line-height: 1.6;
-      font-weight: 300;
+      line-height: 1.65;
+      max-width: 34rem;
+      margin-inline: auto;
+      text-align: center;
+      overflow-wrap: break-word;
     }
-    @supports (text-wrap: pretty) {
-      .lede { text-wrap: pretty; }
+    .section-head {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+      max-width: 40rem;
+      margin-inline: auto;
+      text-align: center;
     }
+    .section-head h2 {
+      font-size: clamp(2.25rem, 4.5vw, 3rem);
+      font-weight: 800;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      overflow-wrap: break-word;
+    }
+    .section-head .lede { font-size: var(--text-base); margin-top: 0.25rem; margin-inline: auto; font-style: italic; }
+    .final-cta-lede { font-style: italic; margin-top: 1.25rem; font-size: 0.875rem; color: var(--faint); }
+    .footer-email { margin-top: 0.75rem; }
+    .footer-email a { color: var(--faint); font-size: var(--text-sm); text-decoration: none; transition: color 150ms ease; }
+    .footer-email a:hover { color: var(--fg); }
     .muted { color: var(--muted); }
-    .faint { color: var(--faint); }
+    .text-fade { color: var(--muted); }
 
     /* Buttons */
     .btn {
@@ -246,267 +258,164 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      min-height: 44px;
-      padding: 0.7rem 1.15rem;
-      border-radius: var(--radius);
-      font-size: 0.9375rem;
-      font-weight: 500;
+      min-height: 46px;
+      padding: 0.65rem 1.35rem;
+      border-radius: 999px;
+      font-size: var(--text-sm);
+      font-weight: 600;
       letter-spacing: 0.01em;
       transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
     }
     .btn:active { transform: translateY(1px); }
-    .btn-primary {
-      background: var(--fg);
-      color: #ffffff;
-    }
-    .btn-primary:hover { background: #242424; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-    .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--fg);
-      background: transparent;
-    }
-    .btn-ghost:hover {
-      border-color: var(--faint);
-      background: var(--surface-2);
-    }
-    .btn-accent {
-      background: var(--fg);
-      color: #ffffff;
-    }
-    .btn-accent:hover { background: #242424; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-    .link-inline {
-      color: var(--fg);
-      text-decoration: underline;
-      text-decoration-color: var(--faint);
-      text-underline-offset: 0.18em;
-      transition: text-decoration-color 160ms ease;
-    }
-    .link-inline:hover { text-decoration-color: var(--fg); }
-
-    /* Utility classes (moved from inline styles) */
-    .industries-note {
-      margin-top: 1rem;
-      max-width: 42rem;
-      font-size: 0.88rem;
-    }
-    .section-head--flush { margin-bottom: 0; }
-    .cta-row { margin-top: 1.5rem; }
-    .btn-center { text-align: center; }
-    .faq-more {
-      margin-top: 1.5rem;
-      font-size: 0.92rem;
-    }
-    .final-cta-wrap {
-      text-align: center;
-      max-width: 40rem;
-    }
-    .final-cta-eyebrow { justify-self: center; }
-    .final-cta-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      margin: 0.75rem 0 1rem;
-    }
-    .final-cta-lede { margin-inline: auto; }
-    .final-cta-actions {
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
+    .btn-primary { background: var(--accent-green); color: #000; box-shadow: 0 1px 2px rgba(57,255,20,0.2); font-weight: 700; }
+    .btn-primary:hover { background: #2de010; box-shadow: 0 8px 20px -8px rgba(57,255,20,0.35); }
+    .btn-ghost { border: 1px solid var(--line-strong); color: var(--ink); background: var(--surface); }
+    .btn-ghost:hover { border-color: var(--faint); background: var(--bg-soft); }
+    .link-inline { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 0.18em; transition: text-decoration-color 160ms ease; }
+    .link-inline:hover { text-decoration-color: var(--ink); }
 
     /* Nav */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 10;
       height: var(--nav-h);
       background: transparent;
-      transition: background 200ms ease;
+      transition: background 200ms ease, box-shadow 200ms ease;
     }
     .site-header.is-scrolled {
-      background: rgba(255, 255, 255, 0.92);
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.86);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 var(--line);
     }
     .nav {
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1rem;
       position: relative;
     }
-    .logo {
+    .header-logo {
       display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      font-size: 1.05rem;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--ink);
       flex-shrink: 0;
+      margin-left: 0.35rem;
     }
-    .logo img {
-      height: 36px;
-      width: auto;
+    .header-logo:hover { opacity: 0.7; }
+    .header-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
     }
+    .header-logo-text {
+      font-family: "Gevora", "Arial Black", Impact, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .logo { display: inline-flex; align-items: center; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 1.1rem; letter-spacing: 0.04em; font-weight: 400; flex-shrink: 0; text-decoration: none; color: var(--ink); }
 
-    /* Pill Nav Container */
     .nav-pill {
       display: none;
       align-items: center;
       gap: 0.125rem;
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 100px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       padding: 0.375rem 0.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: var(--shadow-card);
     }
     .nav-pill a,
     .nav-pill .nav-dropdown-toggle {
-      font-size: 0.8125rem;
+      font-size: var(--text-xs);
       font-weight: 500;
       color: var(--muted);
       padding: 0.5rem 0.875rem;
-      border-radius: 100px;
+      border-radius: 999px;
       white-space: nowrap;
       transition: color 180ms ease, background 180ms ease;
-      text-decoration: none;
       position: relative;
-    }
-    .nav-pill a:hover,
-    .nav-pill .nav-dropdown-toggle:hover {
-      color: var(--fg);
-      background: var(--surface-2);
-    }
-    .nav-pill a.active {
-      color: var(--fg);
-      background: var(--surface-2);
-      font-weight: 600;
-    }
-    .nav-pill .logo {
-      font-size: 0.9375rem;
-      padding: 0.375rem 0.75rem;
-      border-radius: 100px;
-      text-decoration: none;
-      color: var(--fg);
-    }
-    .nav-pill .logo:hover { background: var(--surface-2); }
-    .nav-pill .logo img { height: 32px; width: auto; }
-
-    /* Dropdown Toggle */
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-toggle {
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font: inherit;
     }
-    .nav-dropdown-toggle svg {
-      width: 10px;
-      height: 10px;
-      transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .nav-dropdown-toggle[aria-expanded="true"] svg {
-      transform: rotate(180deg);
-    }
+    .nav-pill a:hover,
+    .nav-pill .nav-dropdown-toggle:hover { color: var(--ink); background: var(--surface-2); }
+    .nav-pill a.active { color: var(--ink); background: var(--surface-2); font-weight: 600; }
 
-    /* iOS Bubble Pop Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { background: none; border: none; cursor: pointer; font: inherit; }
+    .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .nav-dropdown-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
     .nav-dropdown-menu {
       position: absolute;
       top: calc(100% + 12px);
       left: 50%;
-      width: 480px;
+      width: 460px;
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-menu);
       padding: 0.5rem;
       z-index: 100;
       opacity: 0;
-      transform: translateX(-50%) scale(0.9) translateY(-8px);
+      transform: translateX(-50%) scale(0.94) translateY(-8px);
       transform-origin: top center;
       pointer-events: none;
-      transition: opacity 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
-                  transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: opacity 220ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
-    .nav-dropdown.open .nav-dropdown-menu {
-      opacity: 1;
-      transform: translateX(-50%) scale(1) translateY(0);
-      pointer-events: auto;
-    }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; transform: translateX(-50%) scale(1) translateY(0); pointer-events: auto; }
     .nav-dropdown-menu a {
       display: flex;
       align-items: center;
-      padding: 0.55rem 0.75rem;
-      font-size: 0.8rem;
+      padding: 0.575rem 0.75rem;
+      font-size: var(--text-xs);
       font-weight: 500;
       color: var(--muted);
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       transition: color 160ms ease, background 160ms ease;
-      text-decoration: none;
     }
-    .nav-dropdown-menu a:hover {
-      color: var(--fg);
-      background: var(--surface-2);
-    }
+    .nav-dropdown-menu a:hover { color: var(--ink); background: var(--surface-2); }
 
-    /* Nav CTA */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-left: auto;
-    }
+    .nav-right { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
 
-    /* Mobile Toggle */
     .nav-toggle {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      border: none;
-      border-radius: 100px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       background: var(--surface);
-      border: 1px solid var(--border);
       transition: background 150ms ease;
     }
     .nav-toggle:hover { background: var(--surface-2); }
-    .nav-toggle span {
-      display: block;
-      width: 16px;
-      height: 1.5px;
-      background: var(--fg);
-      position: relative;
-      transition: background 180ms ease;
-    }
+    .nav-toggle span { display: block; width: 16px; height: 1.5px; background: var(--ink); position: relative; }
     .nav-toggle span::before,
     .nav-toggle span::after {
       content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 1.5px;
-      background: var(--fg);
+      position: absolute; left: 0; width: 100%; height: 1.5px;
+      background: var(--ink);
       transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
     }
     .nav-toggle span::before { top: -5px; }
     .nav-toggle span::after { top: 5px; }
     .nav-toggle[aria-expanded="true"] span { background: transparent; }
-    .nav-toggle[aria-expanded="true"] span::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-    .nav-toggle[aria-expanded="true"] span::after {
-      top: 0;
-      transform: rotate(-45deg);
-    }
+    .nav-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
-    /* Mobile Panel */
     .mobile-panel {
       display: none;
       position: fixed;
@@ -518,123 +427,48 @@
       padding: 5rem var(--gutter) 3rem;
     }
     .mobile-panel.open { display: flex; }
-    .mobile-panel .mobile-nav-links {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      width: 100%;
-      max-width: 320px;
-    }
+    .mobile-panel .mobile-nav-links { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 320px; }
     .mobile-panel .mobile-nav-links a {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1.1rem 0;
-      font-size: 1.5rem;
-      font-family: var(--font-display);
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: -0.02em;
-      border-bottom: 1px solid var(--border-soft);
-      width: 100%;
-      text-decoration: none;
+      display: flex; align-items: center; gap: 0.75rem; padding: 1.05rem 0;
+      font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em;
+      color: var(--muted); border-bottom: 1px solid var(--line); width: 100%;
       transition: color 200ms ease, padding-left 200ms ease;
     }
-    .mobile-panel .mobile-nav-links a:hover,
-    .mobile-panel .mobile-nav-links a:active {
-      color: var(--fg);
-      padding-left: 0.75rem;
-    }
+    .mobile-panel .mobile-nav-links a:hover, .mobile-panel .mobile-nav-links a:active { color: var(--ink); padding-left: 0.75rem; }
     .mobile-dropdown-toggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1.1rem 0;
-      font-size: 1.5rem;
-      font-family: var(--font-display);
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: -0.02em;
-      border: none;
-      background: none;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      border-bottom: 1px solid var(--border-soft);
+      display: flex; align-items: center; gap: 0.5rem; padding: 1.05rem 0;
+      font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; color: var(--muted);
+      border: none; background: none; cursor: pointer; width: 100%; text-align: left;
+      border-bottom: 1px solid var(--line);
       transition: color 200ms ease, padding-left 200ms ease;
     }
-    .mobile-dropdown-toggle svg {
-      width: 16px;
-      height: 16px;
-      transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+    .mobile-dropdown-toggle svg { width: 16px; height: 16px; transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1); }
     .mobile-dropdown-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
-    .mobile-dropdown-toggle:hover { color: var(--fg); padding-left: 0.75rem; }
-    .mobile-dropdown-panel {
-      display: none;
-      flex-direction: column;
-      padding-left: 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
-                  opacity 250ms ease;
-      opacity: 0;
-    }
-    .mobile-dropdown-panel.open {
-      display: flex;
-      max-height: 600px;
-      opacity: 1;
-    }
-    .mobile-dropdown-panel a {
-      display: flex;
-      align-items: center;
-      padding: 0.7rem 0;
-      font-size: 1.1rem;
-      font-family: var(--font-display);
-      font-weight: 400;
-      color: var(--faint);
-      border-bottom: 1px solid var(--border-soft);
-      text-decoration: none;
+    .mobile-dropdown-toggle:hover { color: var(--ink); padding-left: 0.75rem; }
+    .mobile-niches-btn {
+      display: flex; align-items: center; gap: 0.5rem; padding: 1.05rem 0;
+      font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; color: var(--muted);
+      border: none; background: none; cursor: pointer; width: 100%; text-align: left;
+      border-bottom: 1px solid var(--line);
       transition: color 200ms ease, padding-left 200ms ease;
     }
-    .mobile-dropdown-panel a:hover { color: var(--fg); padding-left: 0.5rem; }
-    .mobile-panel .mobile-nav-cta {
-      position: relative;
-      z-index: 1;
-      margin-top: 2rem;
-      width: 100%;
-      max-width: 320px;
-    }
-    .mobile-panel .mobile-nav-cta .btn {
-      width: 100%;
-      background: var(--fg);
-      color: #ffffff;
-      border: none;
-    }
-    .mobile-panel .mobile-nav-cta .btn:hover { background: #242424; }
+    .mobile-niches-btn:hover { color: var(--ink); padding-left: 0.75rem; }
+    .mobile-dropdown-panel { display: none; flex-direction: column; padding-left: 1rem; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 350ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 250ms ease; }
+    .mobile-dropdown-panel.open { display: flex; max-height: 720px; opacity: 1; }
+    .mobile-dropdown-panel a { display: flex; align-items: center; padding: 0.65rem 0; font-size: 1.05rem; font-weight: 400; color: var(--faint); border-bottom: 1px solid var(--line); transition: color 200ms ease, padding-left 200ms ease; }
+    .mobile-dropdown-panel a:hover { color: var(--ink); padding-left: 0.5rem; }
+    .mobile-panel .mobile-nav-cta { position: relative; z-index: 1; margin-top: 2rem; width: 100%; max-width: 320px; }
+    .mobile-panel .mobile-nav-cta .btn { width: 100%; background: #39FF14; color: #000; border: none; }
     .mobile-close {
-      position: absolute;
-      top: 1.25rem;
-      right: var(--gutter);
-      z-index: 2;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border: none;
-      border-radius: 100px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--fg);
-      transition: background 150ms ease;
+      position: absolute; top: 1.25rem; right: var(--gutter); z-index: 2;
+      width: 44px; height: 44px; display: grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink);
     }
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
 
-    @media (min-width: 768px) {
-      .nav-pill { display: inline-flex; }
+    @media (min-width: 900px) {
+      .nav-pill { display: inline-flex; margin: 0 auto; }
       .nav-right { display: none !important; }
       .mobile-panel { display: none !important; }
     }
@@ -642,606 +476,880 @@
     /* Hero */
     .hero {
       position: relative;
-      padding: clamp(3rem, 7vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
-      overflow: hidden;
+      width: 100%;
+      min-height: 100svh;
+      background: var(--bg);
+      padding: 0;
+    }
+    [data-theme="dark"] .hero {
+      background: #000;
+    }
+    [data-theme="light"] .hero {
+      background: #ffffff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.022;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+      background-size: 92px 92px;
+      -webkit-mask-image: linear-gradient(to bottom, #000, transparent 75%);
+      mask-image: linear-gradient(to bottom, #000, transparent 75%);
     }
     .hero-inner {
+      width: min(1240px, calc(100% - 48px));
+      min-height: 100svh;
+      margin: 0 auto;
       display: grid;
-      gap: 3rem;
-      align-items: start;
+      grid-template-columns: minmax(390px, .90fr) minmax(520px, 1.10fr);
+      align-items: center;
+      position: relative;
     }
-    @media (min-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
+    .hero > .wrap { display: none; }
+    .copy {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 650px;
+      padding: 42px 0;
     }
-    .hero-content {
-      max-width: 42rem;
+    .visual {
+      position: relative;
+      width: 100%;
+      height: min(820px, 100svh);
+      min-height: 540px;
+      overflow: visible;
+      z-index: 1;
     }
-    .hero-features {
-      display: none;
+    .visual #app {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
-    @media (min-width: 900px) {
-      .hero-features {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
+    #cube-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      -webkit-mask-image: radial-gradient(90% 90% at 50% 45%, #000 55%, transparent 98%);
+              mask-image: radial-gradient(90% 90% at 50% 45%, #000 55%, transparent 98%);
     }
-    .hero-feature {
-      padding: 1.25rem 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color 200ms ease, box-shadow 200ms ease;
+    #cube-canvas:active {
+      cursor: grabbing;
     }
-    .hero-feature:hover {
-      border-color: var(--faint);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 22px;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
     }
-    .hero-feature__icon {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      background: var(--surface-2);
-      border-radius: 8px;
-      margin-bottom: 0.85rem;
-      color: var(--fg);
+    [data-theme="dark"] .eyebrow { color: #a0a09a; }
+    [data-theme="light"] .eyebrow { color: var(--muted); }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex: none;
+      border-radius: 50%;
+      background: #d8d1b4;
+      box-shadow: 0 0 16px rgba(216, 209, 180, 0.36);
     }
-    .hero-feature__icon svg {
-      width: 18px;
-      height: 18px;
+    #hero-heading {
+      margin: 0;
+      max-width: 680px;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      font-weight: 730;
+      text-align: left;
     }
-    .hero-feature__title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.01em;
+    #hero-heading span {
+      opacity: 0;
+      animation: decode-char-in 0.05s ease forwards;
     }
-    .hero-feature__desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.5;
+    @keyframes decode-char-in {
+      to { opacity: 1; }
     }
-    @media (max-width: 899px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
+    [data-theme="dark"] #hero-heading span.muted-word { color: #8d8d88; font-weight: 520; }
+    [data-theme="light"] #hero-heading span.muted-word { color: var(--muted); font-weight: 520; }
+    .hero-description {
+      max-width: 520px;
+      margin: 25px 0 0;
+      font-size: clamp(16px, 1.45vw, 19px);
+      line-height: 1.56;
     }
-    .hero h1 {
-      font-size: clamp(2.8rem, 6.5vw, 4.5rem);
-      margin: 0.75rem 0 1rem;
-      max-width: 20ch;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
+    [data-theme="dark"] .hero-description { color: #898983; }
+    [data-theme="light"] .hero-description { color: var(--muted); }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
+      gap: 11px;
+      margin-top: 31px;
     }
-    .hero-note {
-      margin-top: 1.25rem;
-      font-size: 0.875rem;
-      color: var(--faint);
-    }
-
-    /* Sections */
-    section { padding: var(--section-gap) 0; }
-    .section-head {
-      display: grid;
-      gap: 0.75rem;
-      margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
-      max-width: 40rem;
-    }
-    .section-head h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.12;
-    }
-    @supports (text-wrap: balance) {
-      .section-head h2 { text-wrap: balance; }
-    }
-    .band {
-      background: var(--bg-elevated);
-      border-block: 1px solid var(--border-soft);
-    }
-
-    /* Steps */
-    .steps {
-      display: grid;
-      gap: 1rem;
-    }
-    @media (min-width: 900px) {
-      .steps {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-      }
-    }
-    .step {
-      position: relative;
-      padding: 1.5rem 1.35rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface);
-      min-height: 100%;
-    }
-    @media (min-width: 900px) {
-      .step {
-        border-radius: 0;
-        border-right-width: 0;
-      }
-      .step:first-child { border-radius: 12px 0 0 12px; }
-      .step:last-child {
-        border-right-width: 1px;
-        border-radius: 0 12px 12px 0;
-      }
-    }
-    .step-index {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 1.1rem;
-    }
-    .step h3 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.65rem;
-    }
-    .step p {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    /* Industries */
-    .industries {
-      display: grid;
-      gap: 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .industry {
-      display: grid;
-      grid-template-columns: 1fr auto;
+    .hero .btn {
+      min-height: 48px;
+      padding: 0 19px;
+      display: inline-flex;
       align-items: center;
-      gap: 1rem;
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      border-radius: var(--radius);
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.042);
+      color: #f1f0ea;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    [data-theme="light"] .hero .btn {
+      border: 1px solid var(--line-strong);
       background: var(--surface);
-      color: var(--fg);
-      text-decoration: none;
-      transition: color 160ms ease, background 160ms ease, padding-left 200ms cubic-bezier(0.22, 1, 0.36, 1);
+      color: var(--ink);
     }
-    .industry:last-child {
-      border-bottom: none;
+    .hero .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.27);
     }
-    .industry:hover {
-      color: var(--fg);
-      background: var(--surface-2);
-      padding-left: 1.7rem;
+    [data-theme="light"] .hero .btn:hover {
+      background: var(--bg-soft);
+      border-color: var(--faint);
     }
-    .industry--disabled {
-      cursor: default;
+    .hero .btn-primary {
+      background: #39FF14;
+      border-color: #39FF14;
+      color: #000;
+      font-weight: 700;
     }
-    .industry--disabled:hover {
-      background: var(--surface);
-      padding-left: 1.4rem;
+    .hero .btn-primary:hover {
+      background: #2de010;
+      box-shadow: 0 8px 28px rgba(57, 255, 20, 0.25);
     }
-    @media (min-width: 800px) {
-      .industries {
-        grid-template-columns: 1fr 1fr;
-      }
-      .industry {
-        border-bottom: none;
-        border-right: 1px solid var(--border);
-      }
-      .industry:nth-child(2n) {
-        border-right: none;
-      }
-      .industry:nth-child(1),
-      .industry:nth-child(2) {
-        border-bottom: 1px solid var(--border);
-      }
+    [data-theme="light"] .hero .btn-primary {
+      background: #39FF14;
+      border-color: #39FF14;
+      color: #000;
     }
-    @media (min-width: 1100px) {
-      .industries {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-      .industry {
-        border-right: 1px solid var(--border);
-      }
-      .industry:nth-child(3n) {
-        border-right: none;
-      }
-      .industry:nth-child(1),
-      .industry:nth-child(2),
-      .industry:nth-child(3) {
-        border-bottom: 1px solid var(--border);
-      }
-      .industry:nth-child(n+4) {
-        border-bottom: none;
-      }
+    [data-theme="light"] .hero .btn-primary:hover {
+      background: #2de010;
+      box-shadow: 0 8px 20px -8px rgba(57, 255, 20, 0.35);
     }
-    .industry h3 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0;
-      margin: 0;
-      line-height: 1.3;
+    .hero .btn .arrow { transition: transform 0.2s ease; }
+    .hero .btn:hover .arrow { transform: translateX(3px); }
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 38px;
+      font-size: 11px;
     }
-    .industry-soon {
-      display: inline-block;
-      margin-left: 0.5rem;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--faint);
-      border: 1px solid var(--border);
-      padding: 0.08rem 0.45rem;
-      border-radius: 20px;
-      vertical-align: middle;
+    [data-theme="dark"] .proof { color: #6c6c67; }
+    [data-theme="light"] .proof { color: var(--faint); }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
     }
-    .industry p {
-      display: none;
-    }
-    .industry-arrow {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
+    .check {
+      width: 16px;
+      height: 16px;
       display: grid;
       place-items: center;
-      color: var(--muted);
-      flex-shrink: 0;
-      transition: color 160ms ease, border-color 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 50%;
+      color: #d4ceb4;
+      font-size: 9px;
     }
-    .industry-arrow svg {
-      width: 13px;
-      height: 13px;
+    [data-theme="light"] .check {
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
     }
-    .industry:hover .industry-arrow {
-      color: var(--fg);
-      border-color: var(--fg);
-      transform: translateX(2px);
-    }
+    /* Industry Marquee */
+    .hero-marquee { overflow: hidden; position: relative; z-index: 1; padding: 0.85rem 0; }
+    .hero-marquee::before, .hero-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+    .hero-marquee::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .hero-marquee::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .hero-marquee__track { display: flex; gap: 2rem; width: max-content; animation: marquee-scroll 25s linear infinite; }
+    .hero-marquee:hover .hero-marquee__track { animation-play-state: paused; }
+    .hero-marquee__pill { flex-shrink: 0; font-size: 15px; font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: var(--faint); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+    .hero-marquee__pill:hover { color: var(--ink); }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .hero-marquee__track { animation: none !important; } }
 
-    /* Included / Data Fields */
-    .fields-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+    /* Industry Popup */
+    .industry-popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.5);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: var(--gutter);
     }
-    @media (max-width: 900px) {
-      .fields-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .industry-popup-overlay.open { display: flex; }
+    .industry-popup-overlay .industry-popup {
+      opacity: 0;
+      transform: translateY(24px) scale(0.96);
+      transition: opacity 280ms ease, transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    @media (max-width: 600px) {
-      .fields-grid {
-        grid-template-columns: 1fr;
-      }
+    .industry-popup-overlay.open .industry-popup {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
-    .field-item {
-      padding: 1rem 1.25rem;
+    .industry-popup {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color 200ms ease, box-shadow 200ms ease;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-menu);
+      width: 100%;
+      max-width: 640px;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
-    .field-item:hover {
-      border-color: var(--faint);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    .industry-popup__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--line);
     }
-    .field-icon {
+    .industry-popup__head h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .industry-popup__close {
       width: 32px;
       height: 32px;
       display: grid;
       place-items: center;
-      background: var(--surface-2);
       border-radius: 8px;
-      margin-bottom: 0.75rem;
-      color: var(--fg);
-    }
-    .field-icon svg {
-      width: 16px;
-      height: 16px;
-    }
-    .field-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.01em;
-    }
-    .field-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .field-item--more {
-      border-style: dashed;
-      background: transparent;
-    }
-
-    /* Why LeadsPitch — comparison + differentiators */
-    .why-layout {
-      display: grid;
-      gap: clamp(2rem, 4vw, 3rem);
-    }
-    @media (min-width: 900px) {
-      .why-layout {
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: start;
-      }
-    }
-    .contrast-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
+      border: 1px solid var(--line);
       background: var(--surface);
-    }
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-    .compare-table th,
-    .compare-table td {
-      padding: 1rem 1.15rem;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    .compare-table thead th {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--faint);
-      font-weight: 500;
-      background: var(--bg-elevated);
-    }
-    .compare-table tbody th {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--faint);
-      font-weight: 500;
-      width: 120px;
-    }
-    .compare-table td {
       color: var(--muted);
+      transition: background 150ms ease, color 150ms ease;
     }
-    .compare-table td strong {
-      display: block;
-      font-size: 0.98rem;
+    .industry-popup__close:hover { background: var(--bg-soft); color: var(--ink); }
+    .industry-popup__close svg { width: 16px; height: 16px; }
+    .industry-popup__list {
+      padding: 0.75rem;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.375rem;
+    }
+    @media (max-width: 499px) { .industry-popup__list { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .industry-popup-overlay { padding: 0; align-items: flex-end; }
+      .industry-popup { max-height: 85vh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+      .industry-popup__head { padding: 1rem 1.25rem; }
+      .industry-popup__list { padding: 0.5rem; gap: 0.25rem; }
+      .industry-popup__link { padding: 0.8rem 0.75rem; font-size: var(--text-sm); }
+    }
+    .industry-popup__link {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 0.7rem 0.875rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
       font-weight: 500;
-      color: var(--fg);
-      letter-spacing: -0.01em;
-      margin-bottom: 0.2rem;
-    }
-    .compare-table td span {
-      display: block;
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-    .compare-table td.is-on {
-      background: var(--accent-soft);
-    }
-    .compare-table tbody tr:last-child td,
-    .compare-table tbody tr:last-child th {
-      border-bottom: 0;
-    }
-    @media (max-width: 700px) {
-      .compare-table thead { display: none; }
-      .compare-table,
-      .compare-table tbody,
-      .compare-table tr,
-      .compare-table th,
-      .compare-table td {
-        display: block;
-        width: 100%;
-      }
-      .compare-table tr {
-        border-bottom: 1px solid var(--border-soft);
-        padding: 1rem 1.15rem;
-      }
-      .compare-table tbody tr:last-child { border-bottom: 0; }
-      .compare-table th {
-        width: auto;
-        padding: 0 0 0.5rem;
-        border-bottom: 0;
-      }
-      .compare-table td {
-        padding: 0.35rem 0;
-        border-bottom: 0;
-      }
-      .compare-table td.is-on {
-        background: var(--accent-soft);
-        margin: 0.25rem -1.15rem;
-        padding: 0.75rem 1.15rem;
-        border-radius: 6px;
-      }
-    }
-
-    /* Differentiators list */
-    .diff-list {
-      display: grid;
-      gap: 0;
-      border-top: 1px solid var(--border);
-    }
-    .diff-item {
-      display: grid;
-      gap: 0.5rem;
-      padding: 1.25rem 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-    @media (min-width: 800px) {
-      .diff-item {
-        grid-template-columns: 220px 1fr;
-        gap: 2rem;
-        align-items: baseline;
-      }
-    }
-    .diff-item h3 {
-      font-size: 1.05rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-    .diff-item p {
       color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 52ch;
+      transition: color 160ms ease, background 160ms ease;
+      text-decoration: none;
     }
+    .industry-popup__link:hover { color: var(--ink); background: var(--bg-soft); }
+    .industry-popup__link::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--line-strong);
+      flex-shrink: 0;
+      transition: background 160ms ease;
+    }
+    .industry-popup__link:hover::before { background: var(--ink); }
 
-    /* Trust stat strip */
-    .trust-stats {
-      display: grid;
-      gap: 1rem;
-    }
-    @media (min-width: 700px) {
-      .trust-stats {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-      }
-    }
-    .trust-stat {
-      display: grid;
-      gap: 0.3rem;
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--surface);
-    }
-    @media (min-width: 700px) {
-      .trust-stat {
-        border-radius: 0;
-        border-right-width: 0;
-      }
-      .trust-stat:first-child { border-radius: 10px 0 0 10px; }
-      .trust-stat:last-child {
-        border-right-width: 1px;
-        border-radius: 0 10px 10px 0;
-      }
-    }
-    .trust-stat__num {
-      font-family: var(--font-display);
-      font-size: clamp(1.3rem, 2.2vw, 1.65rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--fg);
-    }
-    .trust-stat__label {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
+    /* Sections */
+    section { padding: var(--section) 0; }
+    .band { background: var(--bg-soft); }
 
-    /* Pricing preview */
-    .pricing-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    @media (min-width: 700px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0;
-      }
-    }
-    .pricing-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--surface);
+    /* Steps */
+    .steps { display: grid; gap: var(--gap); }
+    @media (min-width: 860px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      position: relative;
       padding: 1.75rem 1.5rem;
-      display: grid;
-      gap: 0.75rem;
-      transition: box-shadow 200ms ease, transform 200ms ease;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-card);
     }
-    .pricing-card:hover {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    .step-index {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--faint);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+    .step p { color: var(--muted); font-size: var(--text-sm); line-height: 1.6; }
+
+    /* Niches â€” Browse by Niche */
+    #niches { padding-block: var(--section); }
+
+    /* === HERO CARDS â€” dark, dramatic, number-first === */
+    .niche-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(0.85rem, 1.4vw, 1.1rem);
+      margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .niche-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: clamp(9rem, 14vw, 12rem);
+      padding: clamp(1rem, 1.5vw, 1.35rem);
+      border-radius: var(--radius-lg);
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      overflow: hidden;
+      transition: transform 280ms cubic-bezier(0.22,1,0.36,1), box-shadow 280ms cubic-bezier(0.22,1,0.36,1);
+    }
+    .niche-hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .niche-hero:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px -8px rgba(0,0,0,0.45);
+    }
+    .niche-hero__sparkline {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 35%;
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      padding: 0 clamp(1rem, 1.5vw, 1.35rem);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .niche-hero__sparkbar {
+      flex: 1;
+      border-radius: 2px 2px 0 0;
+      background: #fff;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 700ms cubic-bezier(0.22,1,0.36,1);
+    }
+    .niche-hero.is-in-view .niche-hero__sparkbar { transform: scaleY(1); }
+    .niche-hero__content {
+      position: relative;
+      z-index: 1;
+    }
+    .niche-hero__num {
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.25rem;
+    }
+    .niche-hero__name {
+      font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 0.5rem;
+    }
+    .niche-hero__meta {
+      font-size: 0.72rem;
+      font-weight: 500;
+      opacity: 0.45;
+    }
+    .niche-hero__meta strong {
+      color: #fff;
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    /* === STANDARD CARDS â€” clean, number-forward === */
+    .niche-std-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(0.75rem, 1.2vw, 1rem);
+      margin-top: clamp(0.85rem, 1.4vw, 1.1rem);
+    }
+    .niche-std {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: clamp(1rem, 1.5vw, 1.35rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      text-decoration: none;
+      overflow: hidden;
+      transition: border-color 200ms ease, box-shadow 280ms cubic-bezier(0.22,1,0.36,1), transform 280ms cubic-bezier(0.22,1,0.36,1);
+    }
+    .niche-std::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 350ms cubic-bezier(0.22,1,0.36,1);
+    }
+    .niche-std:hover {
+      border-color: var(--line-strong);
+      box-shadow: 0 1px 2px rgba(20,20,28,0.04), 0 12px 32px -16px rgba(20,20,28,0.1);
       transform: translateY(-2px);
     }
-    @media (min-width: 700px) {
-      .pricing-card {
-        border-radius: 0;
-        border-right-width: 0;
-      }
-      .pricing-card:first-child { border-radius: 10px 0 0 10px; }
-      .pricing-card:last-child {
-        border-right-width: 1px;
-        border-radius: 0 10px 10px 0;
-      }
+    .niche-std:hover::before { transform: scaleX(1); }
+    .niche-std__num {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
     }
-    .pricing-card__name {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--faint);
-    }
-    .pricing-card__price {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
+    .niche-std__name {
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--fg);
-    }
-    .pricing-card__price span {
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 400;
       color: var(--muted);
+      letter-spacing: -0.005em;
     }
-    .pricing-card__desc {
+    .niche-std__foot {
+      margin-top: auto;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--faint);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .niche-std__foot strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .niche-std__arrow {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid; place-items: center;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      transition: color 160ms ease, border-color 160ms ease, transform 200ms cubic-bezier(0.22,1,0.36,1);
     }
-    .pricing-card .btn {
-      margin-top: 0.5rem;
-      width: 100%;
+    .niche-std:hover .niche-std__arrow {
+      color: var(--ink); border-color: var(--line-strong); transform: translateX(2px);
+    }
+    .niche-std__arrow svg { width: 9px; height: 9px; }
+
+    /* === COMPACT STRIPS â€” horizontal, dense, fast-scan === */
+    .niche-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.6rem, 1vw, 0.85rem);
+      margin-top: clamp(0.85rem, 1.4vw, 1.1rem);
+    }
+    .niche-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      text-decoration: none;
+      transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    }
+    .niche-strip:hover {
+      border-color: var(--line-strong);
+      box-shadow: 0 2px 8px -2px rgba(20,20,28,0.08);
+      transform: translateY(-1px);
+    }
+    .niche-strip__name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      min-width: 0;
+    }
+    .niche-strip__num {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+    .niche-strip__arrow {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid; place-items: center;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: color 160ms ease, transform 180ms ease;
+    }
+    .niche-strip:hover .niche-strip__arrow {
+      color: var(--ink); transform: translateX(2px);
+    }
+    .niche-strip__arrow svg { width: 8px; height: 8px; }
+
+    .niches-note {
+      margin-top: var(--gap-lg);
+      font-size: var(--text-sm);
+      color: var(--faint);
+      text-align: center;
     }
 
-    /* FAQ */
-    .faq-list {
-      max-width: 760px;
-      display: grid; gap: 0.75rem;
-      border-top: none;
+    /* Responsive */
+    @media (max-width: 900px) {
+      .niche-std-grid { grid-template-columns: repeat(2, 1fr); }
+      .niche-strip-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
+    @media (max-width: 1080px) {
+      .hero-inner {
+        width: calc(100% - 32px);
+        grid-template-columns: minmax(360px, .92fr) minmax(460px, 1.08fr);
+        overflow: visible;
+      }
+      .visual { min-height: 500px; }
+    }
+    @media (max-width: 780px) {
+      .hero {
+        min-height: 100svh;
+        background: var(--bg) !important;
+      }
+      .hero-inner {
+        width: calc(100% - 24px);
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding-top: 26px;
+        padding-bottom: 52px;
+      }
+      .copy {
+        max-width: 680px;
+        padding: 0;
+        flex: none;
+      }
+      .visual {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 245px;
+        height: auto;
+        margin-top: 0;
+      }
+      .eyebrow {
+        margin-bottom: 17px;
+        font-size: 9.5px;
+      }
+      #hero-heading {
+        max-width: 600px;
+        font-size: clamp(32px, 10vw, 52px);
+        line-height: 0.94;
+        text-align: left;
+      }
+      .hero-description {
+        max-width: 540px;
+        margin-top: 17px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .hero-actions {
+        margin-top: 20px;
+        gap: 9px;
+      }
+      .hero .btn {
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 13px;
+      }
+      .proof {
+        margin-top: 17px;
+        gap: 7px 15px;
+        font-size: 9.5px;
+      }
+      .hero-marquee { padding: 0.7rem 0; }
+      .hero-marquee__pill { font-size: 13px; letter-spacing: 0.04em; }
+      .hero-marquee__track { gap: 1.25rem; }
+      .hero-marquee::before, .hero-marquee::after { width: 40px; }
+    }
+    @media (max-width: 460px) {
+      .hero-inner { padding-top: 22px; padding-bottom: 44px; }
+      .eyebrow { margin-bottom: 15px; }
+      #hero-heading {
+        max-width: 365px;
+        font-size: clamp(28px, 9vw, 42px);
+      }
+      .hero-description {
+        max-width: 350px;
+        font-size: 13px;
+        line-height: 1.48;
+      }
+      .hero-actions {
+        width: 100%;
+        margin-top: 18px;
+      }
+      .hero .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0 11px;
+      }
+      .proof {
+        margin-top: 15px;
+        max-width: 360px;
+      }
+      .visual {
+        min-height: 225px;
+      }
+      .hero-marquee { padding: 0.6rem 0; }
+      .hero-marquee__pill { font-size: 12px; letter-spacing: 0.03em; }
+      .hero-marquee__track { gap: 1rem; }
+      .hero-marquee::before, .hero-marquee::after { width: 30px; }
+    }
+    @media (max-width: 600px) {
+      .niche-hero-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+      }
+      .niche-hero {
+        min-height: 6rem;
+        padding: 0.75rem;
+      }
+      .niche-hero__sparkline { display: none; }
+      .niche-hero__num { font-size: 1.6rem; }
+      .niche-hero__name { font-size: 0.65rem; letter-spacing: 0.02em; margin-bottom: 0.35rem; }
+      .niche-hero__meta { font-size: 0.6rem; }
+      .niche-std-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+      }
+      .niche-std {
+        padding: 0.75rem;
+        gap: 0.35rem;
+      }
+      .niche-std__num { font-size: 1.35rem; }
+      .niche-std__name { font-size: 0.75rem; }
+      .niche-std__foot { padding-top: 0.4rem; font-size: 0.7rem; }
+      .niche-strip-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+      }
+      .niche-strip {
+        padding: 0.55rem 0.7rem;
+        gap: 0.5rem;
+      }
+      .niche-strip__name { font-size: 0.75rem; }
+      .niche-strip__num { font-size: 0.8rem; }
+    }
+    @media (max-width: 380px) {
+      .niche-hero-grid { grid-template-columns: 1fr; }
+      .niche-hero { min-height: 5rem; }
+      .niche-std-grid { grid-template-columns: 1fr; }
+      .niche-strip-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .niche-hero.is-in-view .niche-hero__sparkbar { transform: scaleY(1); transition: none; }
+      #hero-heading span { animation: none; opacity: 1; }
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+      flex-shrink: 0;
+      color: var(--muted);
+    }
+    .theme-toggle:hover { background: var(--surface-2); color: var(--ink); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .mobile-theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    @media (max-width: 899px) {
+      .header-logo + .nav-pill + .theme-toggle { display: none; }
+      .header-logo-img { display: block; }
+      .header-logo-text { display: none; }
+    }
+    .mobile-theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.05rem 0;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      width: 100%;
+      text-align: left;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-theme-toggle:hover, .mobile-theme-toggle:active { color: var(--ink); padding-left: 0.75rem; }
+    .mobile-theme-toggle .icon-moon { display: block; }
+    .mobile-theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-sun { display: block; }
+
+    /* Dark Theme Overrides */
+    [data-theme="dark"] .site-header.is-scrolled {
+      background: rgba(0, 0, 0, 0.86);
+    }
+    [data-theme="dark"] .nav-pill {
       background: var(--surface);
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .hero-marquee {
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .hero-marquee::before { background: linear-gradient(to right, var(--bg), transparent); }
+    [data-theme="dark"] .hero-marquee::after { background: linear-gradient(to left, var(--bg), transparent); }
+    [data-theme="dark"] .pricing-card {
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .pricing-card.featured {
+      border-color: var(--ink);
+    }
+    [data-theme="dark"] .faq-item {
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .band { background: #000000; }
+    [data-theme="dark"] .faq-item { background: #111113; }
+    [data-theme="dark"] .faq-item:hover, [data-theme="dark"] .faq-item.open { background: #1a1a1e; }
+    [data-theme="dark"] .site-footer {
+      background: #000000;
+      color: #d1d5db;
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .footer-top {
+      border-bottom-color: var(--line);
+    }
+    [data-theme="dark"] .footer-brand .logo { font-family: "Gevora", "Arial Black", Impact, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #ffffff; }
+    [data-theme="dark"] .footer-brand p { color: #9ca3af; }
+    [data-theme="dark"] .footer-col h4 { color: #9ca3af; }
+    [data-theme="dark"] .footer-col a { color: #9ca3af; }
+    [data-theme="dark"] .footer-col a:hover { color: #ffffff; }
+    [data-theme="dark"] .footer-bottom {
+      border-top-color: var(--line);
+      color: #6b7280;
+    }
+    [data-theme="dark"] .footer-giant__text { color: #ffffff; }
+    [data-theme="dark"] .cta-box {
+      background: var(--surface);
+      border-color: var(--line);
+    }
+    [data-theme="dark"] .btn-primary {
+      background: #39FF14;
+      color: #000000;
+      border-color: #39FF14;
+    }
+    [data-theme="dark"] .btn-primary:hover {
+      background: #2de010;
+      border-color: #2de010;
+    }
+    [data-theme="dark"] .niche-hero {
+      background: #1a1a1e;
+      color: #ffffff;
+    }
+    [data-theme="dark"] .niche-hero .niche-hero__meta strong {
+      color: #ffffff;
+    }
+    [data-theme="dark"] .niche-std {
+      background: var(--surface);
+      border-color: var(--line);
+    }
+
+    /* Pricing */
+    .pricing-grid { display: grid; gap: var(--gap); }
+    @media (min-width: 700px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+    .pricing-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      padding: 2rem 1.75rem;
+      display: grid;
+      gap: 0.75rem;
+      box-shadow: var(--shadow-card);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .pricing-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+    .pricing-card--featured { border-color: var(--ink); }
+    .pricing-card__name { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); display: flex; align-items: center; gap: 0.5rem; }
+    .pricing-card__price { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
+    .pricing-card__price span { font-size: var(--text-sm); font-weight: 400; color: var(--muted); }
+    .pricing-card__desc { color: var(--muted); font-size: var(--text-sm); line-height: 1.55; }
+    .pricing-card .btn { margin-top: 0.75rem; width: 100%; }
+    .member-perk { display: inline-flex; align-items: center; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--surface-2); color: var(--ink); font-size: 11px; font-weight: 600; }
+    .pricing-badge--sale { display: inline-flex; align-items: center; padding: 0.2rem 0.6rem; border-radius: 999px; background: #ef4444; color: #fff; font-size: 11px; font-weight: 600; }
+
+    /* FAQ - Subframe style */
+    .faq-section { max-width: 720px; margin-inline: auto; }
+    .faq-heading {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .faq-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--faint);
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    }
+    .faq-list { display: grid; gap: 0.5rem; }
+    .faq-item {
+      border-radius: var(--radius-md);
+      background: var(--bg-soft);
       overflow: hidden;
-      transition: border-color 200ms ease, box-shadow 200ms ease;
+      transition: background 200ms ease;
     }
-    .faq-item:hover { border-color: #d1d5db; }
-    .faq-item.open {
-      border-color: var(--accent);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
+    .faq-item:hover { background: #ededf0; }
+    .faq-item.open { background: #ededf0; }
     .faq-q {
       width: 100%;
       display: flex;
@@ -1249,752 +1357,511 @@
       justify-content: space-between;
       gap: 1rem;
       text-align: left;
-      padding: 1rem 1.25rem;
-      font-size: 0.9375rem;
+      padding: 1.25rem 1.5rem;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
       font-weight: 500;
       letter-spacing: -0.01em;
+      color: var(--ink);
     }
     .faq-q svg {
-      width: 18px;
-      height: 18px;
+      width: 20px; height: 20px;
       color: var(--faint);
       flex: 0 0 auto;
       transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .faq-item.open .faq-q svg { transform: rotate(45deg); color: var(--fg); }
-    .faq-a {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 350ms cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .faq-item.open .faq-a {
-      grid-template-rows: 1fr;
-    }
-    .faq-a > div {
-      overflow: hidden;
-    }
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .faq-item.open .faq-a { max-height: 300px; }
     .faq-a-text {
-      padding: 0 1.25rem 1.25rem;
+      padding: 0 1.5rem 1.25rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: var(--text-sm);
       line-height: 1.65;
       max-width: 62ch;
     }
+    .faq-more { margin-top: var(--gap-lg); font-size: var(--text-sm); color: var(--faint); text-align: center; }
+
+    /* Final CTA */
+    .final-cta-wrap { text-align: center; max-width: 40rem; margin-inline: auto; }
+    .final-cta-title { font-size: clamp(2.1rem, 4.5vw, 3.2rem); margin: 0 0 1rem; }
+    .final-cta-lede { margin-inline: auto; }
+    .final-cta-actions { justify-content: center; margin-top: 1.75rem; }
 
     /* Footer */
-    .site-footer {
-      background: #000000;
-      color: #d1d5db;
-      padding: clamp(3rem, 6vw, 5rem) 0 0;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    .footer-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151;
-    }
-    .footer-logo img {
-      height: clamp(64px, 9vw, 120px);
-      width: auto;
-    }
-    .footer-display {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(3rem, 10vw, 7.5rem);
-      letter-spacing: -0.03em;
-      line-height: 0.95;
-      color: #ffffff;
-      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151;
-      margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-    @supports (text-wrap: balance) {
-      .footer-display { text-wrap: balance; }
-    }
-    .footer-grid {
-      display: grid;
-      gap: 2rem;
-      justify-items: center;
-    }
-    .footer-grid a { color: #9ca3af; transition: color 150ms ease; }
-    .footer-grid a:hover { color: #ffffff; }
-    @media (max-width: 799px) {
-      .site-footer { padding: 2rem 0 0; }
-      .footer-grid { gap: 1.5rem; }
-      .footer-display { font-size: clamp(2.2rem, 9vw, 3.5rem); }
-      .footer-brand p { margin-top: 0.35rem; font-size: 0.85rem; line-height: 1.45; max-width: 24ch; color: #6b7280; }
-      .footer-col h4 { margin-bottom: 0.4rem; font-size: 0.75rem; color: #6b7280; }
-      .footer-col a { padding: 0.18rem 0; font-size: 0.88rem; }
-      .footer-bottom { margin-top: 1.5rem; padding-top: 1rem; gap: 0.4rem 0.75rem; font-size: 0.78rem; flex-direction: column; align-items: center; }
-    }
-    @media (min-width: 800px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 2rem;
-      }
-    }
-    .footer-brand p {
-      margin-top: 0;
-      color: #6b7280;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      max-width: 28ch;
-    }
-    .footer-col h4 {
-      font-size: 0.78rem;
-      font-family: var(--font-body);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #9ca3af;
-      margin-bottom: 0.9rem;
-    }
-    .footer-col a {
-      display: block;
-      color: #9ca3af;
-      font-size: 0.92rem;
-      padding: 0.25rem 0;
-      transition: color 150ms ease;
-    }
-    .footer-col a:hover { color: #ffffff; }
-    .footer-bottom {
-      margin-top: 2.5rem;
-      padding: 1.25rem 0;
-      border-top: 1px solid #374151;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.5rem;
-      justify-content: center;
-      color: #6b7280;
-      font-size: 0.82rem;
-    }
+    .site-footer { background: #ffffff; color: #374151; padding: clamp(2.5rem, 5vw, 4rem) 0 0; margin-top: 1rem; }
+    .footer-top { display: grid; gap: 2rem; grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid #e5e7eb; }
+    @media (min-width: 700px) { .footer-top { grid-template-columns: 26ch 1fr; } }
+    .footer-brand .logo { color: #0a0a0c; margin-bottom: 0.9rem; }
+    .footer-brand p { color: #6b7280; font-size: var(--text-sm); line-height: 1.55; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+    .footer-col h4 { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
+    .footer-col a { display: block; color: #6b7280; font-size: var(--text-sm); padding: 0.25rem 0; transition: color 150ms ease; }
+    .footer-col a:hover { color: #0a0a0c; }
+    .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid #e5e7eb; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #9ca3af; font-size: var(--text-xs); }
+    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
+    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #0a0a0c; -webkit-user-select: none; user-select: none; }
 
-    /* Motion system */
-    @media (prefers-reduced-motion: no-preference) {
-      .hero .eyebrow, .hero h1, .hero .lede, .hero-actions, .hero-note,
-      .section-head > *, .contrast-card, .step, .industry, .diff-item,
-      .trust-stat, .pricing-card, .faq-list, .faq-item {
-        will-change: opacity, transform;
-      }
-      .industry-arrow {
-        transition: color 160ms ease, border-color 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .industry:hover .industry-arrow {
-        transform: translateX(2px);
-      }
-    }
+/* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+      .niche { opacity: 1; transform: none; }
     }
-  </style>
+      /* Gevora Font */
+    @font-face { font-family: "Gevora"; src: url("public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+</style>
 </head>
 <body>
-  <header class="site-header" data-od-id="site-header" id="top">
-    <div class="wrap nav" data-od-id="main-nav">
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="header-logo" href="#top" aria-label="LeadsPitch home"><img src="public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
       <nav class="nav-pill" aria-label="Primary">
-        <a class="logo" href="#top" data-od-id="logo" aria-label="LeadsPitch home">
-        <img src="public/leadspitch logo.png" alt="LeadsPitch" onerror="this.insertAdjacentText('afterend','LeadsPitch');this.remove()">
-      </a>
         <a href="#top" class="active">Home</a>
         <a href="about.html">About</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
-            Industries
+            Niches
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="industries/automotive.html" role="menuitem">Automotive</a>
-            <a href="industries/construction.html" role="menuitem">Construction</a>
             <a href="industries/accounting-finance.html" role="menuitem">Accounting &amp; Finance</a>
+            <a href="industries/agencies-business.html" role="menuitem">Agencies &amp; Business</a>
+            <a href="industries/automotive.html" role="menuitem">Automotive</a>
+            <a href="industries/beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
             <a href="industries/clinics.html" role="menuitem">Clinics &amp; Healthcare</a>
+            <a href="industries/construction.html" role="menuitem">Construction</a>
             <a href="industries/dentists.html" role="menuitem">Dentists</a>
             <a href="industries/education.html" role="menuitem">Education &amp; Training</a>
-            <a href="industries/home-services.html" role="menuitem">Home Services</a>
-            <a href="industries/restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
             <a href="industries/events-leisure.html" role="menuitem">Events &amp; Leisure</a>
-            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage Suppliers</a>
-            <a href="industries/agencies-business.html" role="menuitem">Agencies &amp; Business</a>
-            <a href="industries/beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
+            <a href="industries/food-beverage.html" role="menuitem">Food &amp; Beverage</a>
+            <a href="industries/home-services.html" role="menuitem">Home Services</a>
             <a href="industries/hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
             <a href="industries/legal.html" role="menuitem">Legal</a>
             <a href="industries/logistics.html" role="menuitem">Logistics</a>
             <a href="industries/real-estate.html" role="menuitem">Real Estate</a>
+            <a href="industries/restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
           </div>
         </div>
         <a href="bundles.html">Bundles</a>
         <a href="membership.html">Membership</a>
         <a href="faq.html">FAQs</a>
         <a href="contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Legal
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="privacy.html" role="menuitem">Privacy Policy</a>
+            <a href="terms.html" role="menuitem">Terms of Service</a>
+            <a href="refund.html" role="menuitem">Refund Policy</a>
+          </div>
+        </div>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
       <div class="nav-right">
-<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-od-id="nav-toggle">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span></span>
         </button>
       </div>
     </div>
   </header>
-
-  <div class="mobile-panel" id="mobile-nav" data-od-id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <button class="mobile-close" type="button" aria-label="Close menu" data-od-id="mobile-close">
+  <div class="mobile-panel" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-close" type="button" aria-label="Close menu">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"></path></svg>
     </button>
     <div class="mobile-nav-links">
       <a href="#top">Home</a>
       <a href="about.html">About</a>
-      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
-        Industries
-        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="mobile-dropdown-panel">
-        <a href="industries/automotive.html">Automotive</a>
-        <a href="industries/construction.html">Construction</a>
-        <a href="industries/accounting-finance.html">Accounting &amp; Finance</a>
-        <a href="industries/clinics.html">Clinics &amp; Healthcare</a>
-        <a href="industries/dentists.html">Dentists</a>
-        <a href="industries/education.html">Education &amp; Training</a>
-        <a href="industries/home-services.html">Home Services</a>
-        <a href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
-        <a href="industries/events-leisure.html">Events &amp; Leisure</a>
-        <a href="industries/food-beverage.html">Food &amp; Beverage Suppliers</a>
-        <a href="industries/agencies-business.html">Agencies &amp; Business</a>
-        <a href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
-        <a href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
-        <a href="industries/legal.html">Legal</a>
-        <a href="industries/logistics.html">Logistics</a>
-        <a href="industries/real-estate.html">Real Estate</a>
-      </div>
+      <button class="mobile-niches-btn" type="button">Niches</button>
       <a href="bundles.html">Bundles</a>
       <a href="membership.html">Membership</a>
       <a href="faq.html">FAQs</a>
       <a href="contact.html">Contact</a>
-    </div>
-    <div class="mobile-nav-cta">
-      <a class="btn btn-accent" href="bundles.html">See Bundles</a>
-    </div>
-  </div>
-
-  <main data-od-id="main">
-    <!-- Hero — single column, no timeline -->
-    <section class="hero" data-od-id="hero">
-      <div class="wrap">
-        <div class="hero-inner">
-          <div class="hero-content">
-            <p class="eyebrow">B2B business data platform</p>
-            <h1 class="display" data-od-id="hero-title">Buy verified B2B lead data by industry — CSV datasets, no software</h1>
-            <p class="lede" data-od-id="hero-lede">
-              LeadsPitch delivers verified B2B leads as ready-to-use CSV datasets. Each industry-specific dataset includes business names, emails, phone numbers, websites, locations, ratings, reviews, and competitor data. Subscribe monthly or buy one-time across 19+ industries.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-accent" href="bundles.html" data-od-id="hero-cta-primary">See Bundles</a>
-              <a class="btn btn-ghost" href="#how-it-works" data-od-id="hero-cta-secondary">How it works</a>
-            </div>
-            <p class="hero-note">No credits. No per-record charges. No dashboard to learn.</p>
-          </div>
-          <div class="hero-features">
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div class="hero-feature__title">Verified B2B Data</div>
-              <div class="hero-feature__desc">Every record checked before delivery, blank where unconfirmable.</div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              </div>
-              <div class="hero-feature__title">Monthly Refresh</div>
-              <div class="hero-feature__desc">Fresh subscription data delivered on your billing cycle.</div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              </div>
-              <div class="hero-feature__title">CSV Format</div>
-              <div class="hero-feature__desc">Open in Excel, Google Sheets, or any CRM instantly.</div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <div class="hero-feature__title">One Flat Price</div>
-              <div class="hero-feature__desc">No credits, no per-record charges, no surprises.</div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <div class="hero-feature__title">19+ Industries</div>
-              <div class="hero-feature__desc">Healthcare, Legal, Real Estate, and more.</div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="hero-feature__title">Ready to Use</div>
-              <div class="hero-feature__desc">No setup, no onboarding, no software to learn.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works — moved up for immediate clarity -->
-    <section class="band" data-od-id="section-how" id="how-it-works">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">How it works</p>
-          <h2 data-od-id="how-title">Three steps to verified B2B lead data</h2>
-        </div>
-        <div class="steps" data-od-id="how-steps">
-          <article class="step" data-od-id="step-choose">
-            <div class="step-index">01</div>
-            <h3>Choose an industry</h3>
-            <p>Browse 19+ categories including Healthcare, Legal, Real Estate, Automotive, and more. Each B2B dataset is built specifically for that vertical.</p>
-          </article>
-          <article class="step" data-od-id="step-plan">
-            <div class="step-index">02</div>
-            <h3>Pick your plan</h3>
-            <p>Subscribe for monthly B2B data delivery, or buy a one-time lead dataset. One flat price, no credits or per-record charges.</p>
-          </article>
-          <article class="step" data-od-id="step-receive">
-            <div class="step-index">03</div>
-            <h3>Use it immediately</h3>
-            <p>Your verified business data arrives as a CSV file, ready to open in Excel, Google Sheets, or any CRM.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Industries -->
-    <section data-od-id="section-industries" id="industries">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Industries</p>
-          <h2 data-od-id="industries-title">B2B lead data across 19+ industry categories</h2>
-          <p class="lede">Each industry-specific dataset is built from scratch for that vertical, not filtered from one general B2B database.</p>
-        </div>
-        <div class="industries" data-od-id="industry-list">
-          <a class="industry" href="industries/accounting-finance.html">
-            <h3>Accounting &amp; Finance</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/agencies-business.html">
-            <h3>Agencies &amp; Business</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/automotive.html">
-            <h3>Automotive</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/clinics.html">
-            <h3>Clinics &amp; Healthcare</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/construction.html">
-            <h3>Construction</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/dentists.html">
-            <h3>Dentists</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/education.html">
-            <h3>Education &amp; Training</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/events-leisure.html">
-            <h3>Events &amp; Leisure</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/food-beverage.html">
-            <h3>Food &amp; Beverage</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/home-services.html">
-            <h3>Home Services</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/hotels-hospitality.html">
-            <h3>Hotels &amp; Hospitality</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/legal.html">
-            <h3>Legal</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/logistics.html">
-            <h3>Logistics</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/real-estate.html">
-            <h3>Real Estate</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-          <a class="industry" href="industries/restaurants-cafes.html">
-            <h3>Restaurants &amp; Cafes</h3>
-            <span class="industry-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-          </a>
-        </div>
-        <p class="muted industries-note">
-          Additional industries are continuously being added. Don't see your category? <a class="link-inline" href="contact.html">Contact us</a> to ask about availability.
-        </p>
-      </div>
-    </section>
-
-    <!-- What's included — trimmed, no apologetic note -->
-    <section class="band" data-od-id="section-included" id="included">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">What's included</p>
-          <h2 data-od-id="included-title">Every B2B dataset is industry-scoped and ready to open</h2>
-          <p class="lede">Each verified business data file includes these fields across 19+ industries.</p>
-        </div>
-        <div class="fields-grid">
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <div class="field-name">Name</div>
-            <div class="field-desc">Business owner or decision-maker</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="field-name">Email</div>
-            <div class="field-desc">Verified business email address</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="field-name">Phone</div>
-            <div class="field-desc">Direct business phone number</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </div>
-            <div class="field-name">Website</div>
-            <div class="field-desc">Company website URL</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="field-name">Location</div>
-            <div class="field-desc">City, state, and country</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <div class="field-name">Ratings</div>
-            <div class="field-desc">Google and review site ratings</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div class="field-name">Reviews</div>
-            <div class="field-desc">Total review count across platforms</div>
-          </div>
-          <div class="field-item">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div class="field-name">Competitors</div>
-            <div class="field-desc">Related businesses in the area</div>
-          </div>
-          <div class="field-item field-item--more">
-            <div class="field-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
-            </div>
-            <div class="field-name">And more</div>
-            <div class="field-desc">Additional fields vary by industry</div>
-          </div>
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-accent btn-center" href="bundles.html" data-od-id="included-cta">See Bundles</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why LeadsPitch — merged comparison + differentiators -->
-    <section data-od-id="section-why" id="why">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Why LeadsPitch</p>
-          <h2 data-od-id="why-title">B2B lead data delivered, not another dashboard to learn</h2>
-          <p class="lede">Other B2B data platforms like Apollo and ZoomInfo are built around software. LeadsPitch delivers verified business data as ready-to-use CSV datasets.</p>
-        </div>
-        <div class="why-layout">
-          <div class="contrast-card" data-od-id="contrast-card">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Other platforms</th>
-                  <th scope="col">LeadsPitch</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Discovery</th>
-                  <td><strong>You search, filter, and build lists</strong><span>Log in, run queries, manage exports.</span></td>
-                  <td class="is-on"><strong>Delivered to you</strong><span>A finished dataset arrives on schedule or on demand.</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Pricing</th>
-                  <td><strong>Pay per record or per credit</strong><span>Costs scale with how much you pull.</span></td>
-                  <td class="is-on"><strong>One flat price</strong><span>No credits. No per-record charges. Subscribe or buy once.</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Setup</th>
-                  <td><strong>Setup before value</strong><span>Extensions, integrations, and configuration first.</span></td>
-                  <td class="is-on"><strong>Nothing to configure</strong><span>Open the file. Use the tools you already have.</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="diff-list" data-od-id="diff-list">
-            <div class="diff-item" data-od-id="diff-delivered">
-              <h3>Subscribe or buy once</h3>
-              <p>Get fresh data monthly with a subscription, or purchase a single dataset when you need it.</p>
-            </div>
-            <div class="diff-item" data-od-id="diff-price">
-              <h3>One flat price, no credits</h3>
-              <p>Your cost doesn't change based on how much of the data you use. No per-record charges.</p>
-            </div>
-            <div class="diff-item" data-od-id="diff-refresh">
-              <h3>Verified before delivery</h3>
-              <p>Every dataset is checked before it reaches you. Where a field can't be confirmed, we leave it blank.</p>
-            </div>
-            <div class="diff-item" data-od-id="diff-config">
-              <h3>Nothing to configure</h3>
-              <p>No integration setup, no browser extension, no onboarding required.</p>
-            </div>
-            <div class="diff-item" data-od-id="diff-vertical">
-              <h3>One industry at a time</h3>
-              <p>Each dataset is scoped to a single vertical, so it stays relevant.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Trust — concrete stat strip -->
-    <section class="band" data-od-id="section-trust" id="trust">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">B2B data trust and verification</p>
-          <h2 data-od-id="trust-title">How we verify your business data</h2>
-        </div>
-        <div class="trust-stats" data-od-id="trust-grid">
-          <div class="trust-stat">
-            <span class="trust-stat__num">Every record verified</span>
-            <span class="trust-stat__label">B2B data sourced and checked before delivery, blank where unconfirmable</span>
-          </div>
-          <div class="trust-stat">
-            <span class="trust-stat__num">Removals honored</span>
-            <span class="trust-stat__label">Opt-out requests applied to all future dataset deliveries</span>
-          </div>
-          <div class="trust-stat">
-            <span class="trust-stat__num">Monthly refresh</span>
-            <span class="trust-stat__label">Subscription B2B data refreshed on your billing cycle</span>
-          </div>
-          <div class="trust-stat">
-            <span class="trust-stat__num">No false accuracy claims</span>
-            <span class="trust-stat__label">We don't claim percentages we can't verify. Questions? Ask us.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Preview — actual price ranges -->
-    <section data-od-id="section-pricing" id="pricing">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">B2B data pricing</p>
-          <h2 data-od-id="pricing-title">One flat price for verified business data</h2>
-          <p class="lede">Buy B2B lead data monthly or one-time. No credits, no per-record charges, no software seats required.</p>
-        </div>
-        <div class="pricing-grid" data-od-id="pricing-grid">
-          <div class="pricing-card">
-            <span class="pricing-card__name">One-time dataset</span>
-            <span class="pricing-card__price">$7.99 <span>per dataset</span></span>
-            <p class="pricing-card__desc">Buy a single industry B2B dataset. No commitment, no subscription required.</p>
-            <a class="btn btn-ghost" href="bundles.html">See all industries</a>
-          </div>
-          <div class="pricing-card">
-            <span class="pricing-card__name">Membership</span>
-            <span class="pricing-card__price">$19.99 <span>/mo</span></span>
-            <p class="pricing-card__desc">Access discounts across all B2B datasets, priority requests, and more.</p>
-            <a class="btn btn-ghost" href="membership.html">Compare plans</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — trimmed to 5 -->
-    <section class="band" data-od-id="section-faq" id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">FAQ</p>
-          <h2 data-od-id="faq-title">Frequently asked questions about B2B lead data</h2>
-        </div>
-        <div class="faq-list" data-od-id="faq-list">
-          <div class="faq-item open" data-od-id="faq-what">
-            <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-what-answer">
-              What is LeadsPitch?
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="faq-a" id="faq-what-answer"><div class="faq-a-text">
-              LeadsPitch is a B2B business data platform that delivers verified industry datasets as CSV files. You can subscribe to receive fresh B2B lead data monthly or purchase a one-time dataset. Each dataset includes business names, emails, phone numbers, websites, locations, ratings, reviews, and competitor data across 19+ industries.
-            </div></div>
-          </div>
-          <div class="faq-item" data-od-id="faq-vs">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-vs-answer">
-              How is LeadsPitch different from Apollo or ZoomInfo?
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="faq-a" id="faq-vs-answer"><div class="faq-a-text">
-              Apollo and ZoomInfo are searchable B2B software platforms with credit systems and dashboards. LeadsPitch delivers finished CSV datasets without requiring you to learn software or manage credits. You receive verified business data, either on a recurring schedule or as a one-time purchase.
-            </div></div>
-          </div>
-          <div class="faq-item" data-od-id="faq-cost">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-cost-answer">
-              How much does B2B lead data cost?
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="faq-a" id="faq-cost-answer"><div class="faq-a-text">
-              Every option is one flat price with no credits or per-record charges. One-time B2B datasets start at $7.99. Monthly subscriptions start at $9.99/mo. Pricing varies by industry. See the <a href="industries.html">Industries</a> page for current rates.
-            </div></div>
-          </div>
-          <div class="faq-item" data-od-id="faq-verified">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-verified-answer">
-              Is the B2B data verified?
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="faq-a" id="faq-verified-answer"><div class="faq-a-text">
-              Yes. Every B2B dataset is sourced and verified before delivery. Where a data field cannot be reasonably confirmed, we leave it blank rather than include unverified information. You can request removal of your business information at any time.
-            </div></div>
-          </div>
-          <div class="faq-item" data-od-id="faq-refresh">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-refresh-answer">
-              How often is subscription B2B data refreshed?
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-            </button>
-            <div class="faq-a" id="faq-refresh-answer"><div class="faq-a-text">
-              Every subscription plan includes a new B2B dataset delivered on your billing schedule. You're not working from a single static list that gets older every time you use it.
-            </div></div>
-          </div>
-        </div>
-        <p class="muted faq-more">
-          More questions? <a class="link-inline" href="faq.html">See all FAQs</a> or <a class="link-inline" href="contact.html">contact us</a> directly.
-        </p>
-      </div>
-    </section>
-
-    <!-- Final CTA — fresh angle -->
-    <section data-od-id="section-final" id="contact">
-      <div class="wrap final-cta-wrap">
-        <p class="eyebrow final-cta-eyebrow">Ready to buy B2B lead data?</p>
-        <h2 class="display final-cta-title" data-od-id="final-title">
-          Your next verified dataset is one click away
-        </h2>
-        <p class="lede final-cta-lede">
-          Choose an industry. Pick subscription or one-time. Your verified B2B data arrives as a CSV, ready to use in Excel, Google Sheets, or any CRM.
-        </p>
-        <div class="hero-actions final-cta-actions">
-          <a class="btn btn-accent" href="bundles.html" data-od-id="final-cta">Browse B2B Datasets</a>
-          <a class="btn btn-ghost" href="contact.html" data-od-id="final-cta-secondary">Contact Us</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" data-od-id="site-footer">
-    <div class="wrap">
-      <div class="footer-logo">
-        <img src="public/leadspitch-footer.png" alt="LeadsPitch - B2B Business Data Platform">
-      </div>
-    </div>
-    <div class="wrap footer-grid">
-      <div class="footer-brand" data-od-id="footer-brand">
-        <p>B2B business data platform. Verified lead datasets, subscriptions, one-time purchases, and membership discounts across 19+ industries.</p>
-      </div>
-      <div class="footer-col" data-od-id="footer-product">
-        <h4>Product</h4>
-        <a href="#how-it-works">How it works</a>
-        <a href="#industries">Industries</a>
-        <a href="bundles.html">B2B Datasets</a>
-        <a href="faq.html">FAQ</a>
-      </div>
-      <div class="footer-col" data-od-id="footer-company">
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="membership.html">Memberships</a>
-        <a href="#trust">Trust</a>
-      </div>
-      <div class="footer-col" data-od-id="footer-legal">
-        <h4>Legal</h4>
+      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+        Legal
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-dropdown-panel">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="refund.html">Refund Policy</a>
       </div>
+      <button class="mobile-theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <span>Dark mode</span>
+      </button>
+    </div>
+    <div class="mobile-nav-cta">
+      <a class="btn btn-primary" href="bundles.html">See Bundles</a>
+    </div>
+  </div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="copy">
+          <h1 id="hero-heading"></h1>
+          <p class="hero-description">
+            Industry-specific business leads built for real outreach. Pick a niche,
+            choose the volume you need, and get your data without complicated software.
+          </p>
+          <div class="hero-actions reveal">
+            <button class="btn btn-primary" type="button" id="open-industry-popup">Browse all industries <span class="arrow" aria-hidden="true">→</span></button>
+            <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+          </div>
+          <div class="proof" aria-label="Key benefits">
+            <div class="proof-item"><span class="check">✓</span> Verified business data</div>
+            <div class="proof-item"><span class="check">✓</span> Industry-specific</div>
+            <div class="proof-item"><span class="check">✓</span> No seat licenses</div>
+          </div>
+        </div>
+        <div class="visual" aria-label="Interactive 3D cube">
+          <div id="app"></div>
+        </div>
+      </div>
+      <div class="hero-marquee reveal" aria-label="Browse industries">
+        <div class="hero-marquee__track">
+          <a class="hero-marquee__pill" href="industries/home-services.html">Home Services</a>
+          <a class="hero-marquee__pill" href="industries/automotive.html">Automotive</a>
+          <a class="hero-marquee__pill" href="industries/construction.html">Construction</a>
+          <a class="hero-marquee__pill" href="industries/agencies-business.html">Agencies &amp; Business</a>
+          <a class="hero-marquee__pill" href="industries/clinics.html">Clinics</a>
+          <a class="hero-marquee__pill" href="industries/dentists.html">Dentists</a>
+          <a class="hero-marquee__pill" href="industries/legal.html">Legal</a>
+          <a class="hero-marquee__pill" href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+          <a class="hero-marquee__pill" href="industries/real-estate.html">Real Estate</a>
+          <a class="hero-marquee__pill" href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+          <a class="hero-marquee__pill" href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+          <a class="hero-marquee__pill" href="industries/food-beverage.html">Food &amp; Beverage</a>
+          <a class="hero-marquee__pill" href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+          <a class="hero-marquee__pill" href="industries/education.html">Education</a>
+          <a class="hero-marquee__pill" href="industries/logistics.html">Logistics</a>
+          <a class="hero-marquee__pill" href="industries/events-leisure.html">Events &amp; Leisure</a>
+          <a class="hero-marquee__pill" href="industries/home-services.html">Home Services</a>
+          <a class="hero-marquee__pill" href="industries/automotive.html">Automotive</a>
+          <a class="hero-marquee__pill" href="industries/construction.html">Construction</a>
+          <a class="hero-marquee__pill" href="industries/agencies-business.html">Agencies &amp; Business</a>
+          <a class="hero-marquee__pill" href="industries/clinics.html">Clinics</a>
+          <a class="hero-marquee__pill" href="industries/dentists.html">Dentists</a>
+          <a class="hero-marquee__pill" href="industries/legal.html">Legal</a>
+          <a class="hero-marquee__pill" href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+          <a class="hero-marquee__pill" href="industries/real-estate.html">Real Estate</a>
+          <a class="hero-marquee__pill" href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+          <a class="hero-marquee__pill" href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+          <a class="hero-marquee__pill" href="industries/food-beverage.html">Food &amp; Beverage</a>
+          <a class="hero-marquee__pill" href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+          <a class="hero-marquee__pill" href="industries/education.html">Education</a>
+          <a class="hero-marquee__pill" href="industries/logistics.html">Logistics</a>
+          <a class="hero-marquee__pill" href="industries/events-leisure.html">Events &amp; Leisure</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>One flat price. <span class="text-fade">No credits.</span></h2>
+          <p class="lede">Buy a <span class="text-fade">single dataset</span> as a one-time purchase. No per-record charges, no software seats.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <span class="pricing-card__name">One-time dataset <span class="pricing-badge--sale">20% OFF</span></span>
+            <span class="pricing-card__price">$15.98 <span>per dataset</span></span>
+            <p class="pricing-card__desc">A single niche dataset. No commitment, no subscription.</p>
+            <button class="btn btn-ghost" type="button" id="open-industry-popup-pricing">See all niches</button>
+          </div>
+          <div class="pricing-card pricing-card--featured reveal">
+            <span class="pricing-card__name">Membership <span class="member-perk">Best value</span></span>
+            <span class="pricing-card__price">$19.99 <span>/mo</span></span>
+            <p class="pricing-card__desc">Discounted datasets, priority requests, and more.</p>
+            <a class="btn btn-primary" href="membership.html">Become A Member</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band reveal" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Three steps to <span class="text-fade">verified leads</span></h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-index">01</span>
+            <h3>Pick a niche</h3>
+            <p>19+ verticals, each dataset built specifically for that market.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">02</span>
+            <h3>Choose a plan</h3>
+            <p>One flat price. Buy once, no subscription required.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">03</span>
+            <h3>Use it today</h3>
+            <p>Download a CSV and open it in Excel, Sheets, or any CRM.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" id="niches">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Browse by <span class="text-fade">niche</span></h2>
+          <p class="lede">The market is bigger than your network. Choose an industry, get straight to the businesses that matter.</p>
+        </div>
+
+        <!-- HERO: 4 largest niches â€” dark cards, massive numbers -->
+        <div class="niche-hero-grid">
+          <a class="niche-hero reveal" href="industries/home-services.html" data-tiers="26,100,170,350,700,1050,1500" data-emails="5,25,50,100,200,300,430">
+            <span class="niche-hero__sparkline" aria-hidden="true"></span>
+            <span class="niche-hero__content">
+              <span class="niche-hero__num">0</span>
+              <span class="niche-hero__name">Home Services</span>
+              <span class="niche-hero__meta"><strong>0</strong> emails / Verified</span>
+            </span>
+          </a>
+          <a class="niche-hero reveal" href="industries/automotive.html" data-tiers="27,105,180,375,650,1150" data-emails="5,25,50,100,200,300">
+            <span class="niche-hero__sparkline" aria-hidden="true"></span>
+            <span class="niche-hero__content">
+              <span class="niche-hero__num">0</span>
+              <span class="niche-hero__name">Automotive</span>
+              <span class="niche-hero__meta"><strong>0</strong> emails / Verified</span>
+            </span>
+          </a>
+          <a class="niche-hero reveal" href="industries/construction.html" data-tiers="26,105,175,360,760,1300" data-emails="5,25,50,100,200,350">
+            <span class="niche-hero__sparkline" aria-hidden="true"></span>
+            <span class="niche-hero__content">
+              <span class="niche-hero__num">0</span>
+              <span class="niche-hero__name">Construction</span>
+              <span class="niche-hero__meta"><strong>0</strong> emails / Verified</span>
+            </span>
+          </a>
+          <a class="niche-hero reveal" href="industries/agencies-business.html" data-tiers="26,100,170,350,1050" data-emails="5,25,50,100,300">
+            <span class="niche-hero__sparkline" aria-hidden="true"></span>
+            <span class="niche-hero__content">
+              <span class="niche-hero__num">0</span>
+              <span class="niche-hero__name">Agencies</span>
+              <span class="niche-hero__meta"><strong>0</strong> emails / Verified</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- STANDARD: 8 mid-tier niches â€” clean number-forward cards -->
+        <div class="niche-std-grid">
+          <a class="niche-std reveal" href="industries/clinics.html" data-tiers="26.4,90,130.7,307.8" data-emails="5,25,50,100">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Clinics</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/dentists.html" data-tiers="28,95,145,330" data-emails="5,25,50,100">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Dentists</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/legal.html" data-tiers="24,90,145,300,900" data-emails="5,25,50,100,300">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Legal</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/beauty-wellness.html" data-tiers="28,100,165,340,560" data-emails="5,25,50,100,160">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Beauty &amp; Wellness</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/real-estate.html" data-tiers="3,8,16,32,80,160" data-emails="1,2.5,5,10,25,50">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Real Estate</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/accounting-finance.html" data-tiers="23,82,135,185" data-emails="5,25,50,65">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Accounting &amp; Finance</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/restaurants-cafes.html" data-tiers="28,100,170,360,760" data-emails="5,25,50,100,200">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Restaurants &amp; Cafes</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+          <a class="niche-std reveal" href="industries/food-beverage.html" data-tiers="26,95,165,340,620" data-emails="5,25,50,100,170">
+            <span class="niche-std__num">0</span>
+            <span class="niche-std__name">Food &amp; Beverage</span>
+            <span class="niche-std__foot"><span><strong>0</strong> emails</span><span class="niche-std__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </a>
+        </div>
+
+        <!-- COMPACT: 6 smaller niches â€” horizontal strips, fast scan -->
+        <div class="niche-strip-grid">
+          <a class="niche-strip reveal" href="industries/hotels-hospitality.html" data-tiers="25,90,155,250" data-emails="5,25,50,75">
+            <span class="niche-strip__name">Hotels &amp; Hospitality</span>
+            <span class="niche-strip__num">0</span>
+            <span class="niche-strip__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="niche-strip reveal" href="industries/education.html" data-tiers="25,95,155,330,590" data-emails="5,25,50,100,175">
+            <span class="niche-strip__name">Education</span>
+            <span class="niche-strip__num">0</span>
+            <span class="niche-strip__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="niche-strip reveal" href="industries/logistics.html" data-tiers="24,85,140,255" data-emails="5,25,50,85">
+            <span class="niche-strip__name">Logistics</span>
+            <span class="niche-strip__num">0</span>
+            <span class="niche-strip__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="niche-strip reveal" href="industries/events-leisure.html" data-tiers="26,95,155,330" data-emails="5,25,50,110">
+            <span class="niche-strip__name">Events &amp; Leisure</span>
+            <span class="niche-strip__num">0</span>
+            <span class="niche-strip__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+
+        <p class="muted niches-note">More niches added regularly. Don't see yours? <a class="link-inline" href="contact.html">Ask us</a>.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap faq-section">
+        <h2 class="faq-heading">FAQ.</h2>
+        <p class="faq-subtitle">For the ones who want to lead.</p>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1">
+              What is LeadsPitch?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a1"><div class="faq-a-text">
+              We deliver verified B2B leads as CSV datasets across 19+ niches. Buy one-time and save with membership. Each file includes business names, emails, phones, websites, locations, and more.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2">
+              How is this different from Apollo or ZoomInfo?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a2"><div class="faq-a-text">
+              Those are searchable software platforms with credit systems. LeadsPitch gives you a finished CSV, no software, no credits, no dashboard to learn.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3">
+              Is the data verified?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a3"><div class="faq-a-text">
+              Yes. Every dataset is sourced and verified before delivery. Where a field can't be confirmed, we leave it blank rather than include unverified data.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4">
+              How much does LeadsPitch cost?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a4"><div class="faq-a-text">
+              Prices vary by niche and dataset size. One-time datasets start at a flat rate. Monthly plans include a discount and fresh data delivered automatically.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5">
+              What data fields are included?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a5"><div class="faq-a-text">
+              Each CSV typically includes business name, email, phone, website, address, city, state, rating, review count, and more depending on the niche.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6">
+              How often is the data updated?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a6"><div class="faq-a-text">
+              Every dataset is built from scratch at the time of purchase or subscription renewal. You always get fresh, current data.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a7">
+              Can I request a custom niche?
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+            <div class="faq-a" id="faq-a7"><div class="faq-a-text">
+              Yes. If your niche isn't listed, contact us and we'll build a custom dataset for your specific market.
+            </div></div>
+          </div>
+        </div>
+        <p class="muted faq-more">More questions? <a class="link-inline" href="faq.html">See all FAQs</a> or <a class="link-inline" href="contact.html">contact us</a>.</p>
+      </div>
+    </section>
+
+    <section class="band reveal">
+      <div class="wrap final-cta-wrap">
+        <h2 class="display final-cta-title">Your next <span class="text-fade">verified dataset</span> is one click away</h2>
+        <p class="lede final-cta-lede">Pick a niche, choose a plan, and get a CSV ready to use in any spreadsheet or CRM.</p>
+        <div class="hero-actions final-cta-actions">
+          <button class="btn btn-primary" type="button" id="open-industry-popup-cta">Browse B2B datasets</button>
+          <a class="btn btn-ghost" href="contact.html">Contact us</a>
+        </div>
+        <p class="final-cta-lede">Or email us directly at <a href="mailto:contact@leadspitch.com">contact@leadspitch.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <p class="logo">LeadsPitch</p>
+        <p>Verified B2B lead data, delivered as CSV. Subscriptions, one-time purchases, and membership discounts across 19+ niches.</p>
+        <p class="footer-email"><a href="mailto:contact@leadspitch.com">contact@leadspitch.com</a></p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#how-it-works">How it works</a>
+          <a href="#niches">Niches</a>
+          <a href="bundles.html">B2B datasets</a>
+          <a href="membership.html">Membership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Popular</h4>
+          <a href="industries/real-estate.html">Real Estate leads</a>
+          <a href="industries/clinics.html">Clinics leads</a>
+          <a href="industries/dentists.html">Dentists leads</a>
+          <a href="industries/legal.html">Lawyers leads</a>
+        </div>
+      </div>
     </div>
     <div class="wrap footer-bottom">
-      <span>© <span id="y"></span> LeadsPitch</span>
+      <span>&copy; <span id="y"></span> LeadsPitch</span>
       <span>Verified B2B data, delivered your way.</span>
+    </div>
+    <div class="footer-giant" id="footer-giant">
+      <span class="footer-giant__text" id="giant-text">LEADSPITCH</span>
     </div>
   </footer>
 
   <script>
     (function () {
       var header = document.querySelector(".site-header");
-      var toggle = document.querySelector(".nav-toggle");
-      var panel = document.getElementById("mobile-nav");
       var year = document.getElementById("y");
       if (year) year.textContent = String(new Date().getFullYear());
 
@@ -2005,9 +1872,10 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
 
+      var toggle = document.querySelector(".nav-toggle");
+      var panel = document.getElementById("mobile-nav");
       if (toggle && panel) {
         var closeBtn = panel.querySelector(".mobile-close");
-
         function openNav() {
           toggle.setAttribute("aria-expanded", "true");
           toggle.setAttribute("aria-label", "Close menu");
@@ -2020,36 +1888,12 @@
           panel.classList.remove("open");
           document.body.style.overflow = "";
         }
-
         toggle.addEventListener("click", function () {
-          var open = toggle.getAttribute("aria-expanded") === "true";
-          if (open) closeNav(); else openNav();
+          if (toggle.getAttribute("aria-expanded") === "true") closeNav(); else openNav();
         });
-        if (closeBtn) {
-          closeBtn.addEventListener("click", closeNav);
-        }
-        panel.querySelectorAll("a").forEach(function (a) {
-          a.addEventListener("click", closeNav);
-        });
+        if (closeBtn) closeBtn.addEventListener("click", closeNav);
+        panel.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeNav); });
       }
-
-      var navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 72;
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener("click", function (e) {
-          var id = a.getAttribute("href");
-          if (!id || id === "#") return;
-          var target = document.querySelector(id);
-          if (!target) return;
-          e.preventDefault();
-          var rect = target.getBoundingClientRect();
-          var targetTop = rect.top + window.pageYOffset;
-          var sectionMid = rect.height / 2;
-          var viewportMid = window.innerHeight / 2;
-          var scrollTarget = targetTop - viewportMid + sectionMid - navHeight / 2;
-          window.scrollTo({ top: Math.max(0, scrollTarget), behavior: "smooth" });
-          if (history.pushState) history.pushState(null, "", id);
-        });
-      });
 
       document.querySelectorAll(".faq-item").forEach(function (item) {
         var btn = item.querySelector(".faq-q");
@@ -2068,174 +1912,792 @@
         });
       });
 
-      document.querySelectorAll(".nav-dropdown").forEach(function(dropdown) {
-        var toggle = dropdown.querySelector(".nav-dropdown-toggle");
-        if (!toggle) return;
-        toggle.addEventListener("click", function(e) {
+      document.querySelectorAll(".nav-dropdown").forEach(function (dropdown) {
+        var t = dropdown.querySelector(".nav-dropdown-toggle");
+        if (!t) return;
+        t.addEventListener("click", function (e) {
           e.stopPropagation();
           var wasOpen = dropdown.classList.contains("open");
-          document.querySelectorAll(".nav-dropdown.open").forEach(function(d) { d.classList.remove("open"); d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false"); });
-          if (!wasOpen) { dropdown.classList.add("open"); toggle.setAttribute("aria-expanded", "true"); }
+          document.querySelectorAll(".nav-dropdown.open").forEach(function (d) {
+            d.classList.remove("open");
+            d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false");
+          });
+          if (!wasOpen) {
+            dropdown.classList.add("open");
+            t.setAttribute("aria-expanded", "true");
+          }
         });
       });
-      document.addEventListener("click", function() {
-        document.querySelectorAll(".nav-dropdown.open").forEach(function(d) { d.classList.remove("open"); d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false"); });
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".nav-dropdown.open").forEach(function (d) {
+          d.classList.remove("open");
+          d.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false");
+        });
       });
 
-      document.querySelectorAll(".mobile-dropdown-toggle").forEach(function(btn) {
-        btn.addEventListener("click", function() {
-          var panel = btn.nextElementSibling;
-          if (!panel) return;
+      document.querySelectorAll(".mobile-dropdown-toggle").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var p = btn.nextElementSibling;
+          if (!p) return;
           var isOpen = btn.getAttribute("aria-expanded") === "true";
           btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
-          panel.classList.toggle("open");
+          p.classList.toggle("open");
         });
       });
 
-      function initMotion() {
-        if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-          var selectors = ".hero .eyebrow, .hero h1, .hero .lede, .hero-actions, .hero-note, .hero-features, .section-head > *, .contrast-card, .step, .field-item, .industry, .diff-item, .trust-stat, .pricing-card, .faq-list, [data-od-id='section-final'] .eyebrow, [data-od-id='section-final'] h2, [data-od-id='section-final'] .lede, [data-od-id='section-final'] .hero-actions";
-          document.querySelectorAll(selectors).forEach(function(el) { el.style.opacity = 1; el.style.transform = "none"; });
-          return;
-        }
-        gsap.registerPlugin(ScrollTrigger);
-
-        var ease = "back.out(1.4)";
-        var easeSoft = "power3.out";
-        var dur = 0.7;
-
-        gsap.set(".hero .eyebrow, .hero h1, .hero .lede, .hero-actions, .hero-note, .hero-features", { opacity: 0, y: 24 });
-        gsap.set(".hero-feature", { opacity: 0, y: 16 });
-        gsap.set(".section-head > *", { opacity: 0, y: 16 });
-        gsap.set(".contrast-card", { opacity: 0, scale: 0.94, y: 16 });
-        gsap.set(".step", { opacity: 0, y: 20, scale: 0.97 });
-        gsap.set(".field-item", { opacity: 0, y: 16 });
-        gsap.set(".industry", { opacity: 0, y: 10 });
-        gsap.set(".diff-item", { opacity: 0, y: 14 });
-        gsap.set(".trust-stat", { opacity: 0, y: 16, scale: 0.96 });
-        gsap.set(".pricing-card", { opacity: 0, y: 16, scale: 0.97 });
-        gsap.set(".faq-list", { opacity: 0, y: 18 });
-        gsap.set("[data-od-id='section-final'] .eyebrow, [data-od-id='section-final'] h2, [data-od-id='section-final'] .lede, [data-od-id='section-final'] .hero-actions", { opacity: 0, y: 18 });
-
-        var heroTl = gsap.timeline({ delay: 0.15 });
-        heroTl
-          .to(".hero .eyebrow", { opacity: 1, y: 0, duration: dur, ease: easeSoft }, 0)
-          .to(".hero h1", { opacity: 1, y: 0, duration: dur + 0.1, ease: ease }, 0.08)
-          .to(".hero .lede", { opacity: 1, y: 0, duration: dur, ease: easeSoft }, 0.18)
-          .to(".hero-actions", { opacity: 1, y: 0, duration: dur, ease: ease }, 0.26)
-          .to(".hero-note", { opacity: 1, y: 0, duration: dur - 0.1, ease: easeSoft }, 0.34)
-          .to(".hero-features", { opacity: 1, y: 0, duration: dur, ease: easeSoft }, 0.3)
-          .to(".hero-feature", { opacity: 1, y: 0, duration: dur - 0.1, ease: ease, stagger: 0.08 }, 0.38);
-
-        document.querySelectorAll(".section-head").forEach(function(el) {
-          ScrollTrigger.create({
-            trigger: el,
-            start: "top 85%",
-            once: true,
-            onEnter: function() {
-              gsap.to(el.children, { opacity: 1, y: 0, duration: dur, ease: ease, stagger: 0.06 });
+      var revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
             }
           });
-        });
-
-        ScrollTrigger.create({
-          trigger: ".contrast-card",
-          start: "top 82%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".contrast-card", { opacity: 1, scale: 1, y: 0, duration: dur + 0.1, ease: ease });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".steps",
-          start: "top 80%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".step", { opacity: 1, y: 0, scale: 1, duration: dur, ease: ease, stagger: 0.12 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".fields-grid",
-          start: "top 82%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".field-item", { opacity: 1, y: 0, duration: 0.5, ease: easeSoft, stagger: 0.06 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".industries",
-          start: "top 80%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".industry", { opacity: 1, y: 0, duration: 0.45, ease: ease, stagger: 0.04 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".diff-list",
-          start: "top 80%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".diff-item", { opacity: 1, y: 0, duration: dur - 0.15, ease: ease, stagger: 0.08 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".trust-stats",
-          start: "top 82%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".trust-stat", { opacity: 1, y: 0, scale: 1, duration: dur, ease: ease, stagger: 0.1 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".pricing-grid",
-          start: "top 82%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".pricing-card", { opacity: 1, y: 0, scale: 1, duration: dur, ease: ease, stagger: 0.1 });
-          }
-        });
-
-        ScrollTrigger.create({
-          trigger: ".faq-list",
-          start: "top 82%",
-          once: true,
-          onEnter: function() {
-            gsap.to(".faq-list", { opacity: 1, y: 0, duration: dur, ease: easeSoft });
-          }
-        });
-
-        var finalSection = document.querySelector("[data-od-id='section-final']");
-        if (finalSection) {
-          ScrollTrigger.create({
-            trigger: finalSection,
-            start: "top 80%",
-            once: true,
-            onEnter: function() {
-              var tl = gsap.timeline();
-              tl.to("[data-od-id='section-final'] .eyebrow", { opacity: 1, y: 0, duration: 0.5, ease: easeSoft }, 0)
-                .to("[data-od-id='section-final'] h2", { opacity: 1, y: 0, duration: dur, ease: ease }, 0.06)
-                .to("[data-od-id='section-final'] .lede", { opacity: 1, y: 0, duration: dur - 0.1, ease: easeSoft }, 0.14)
-                .to("[data-od-id='section-final'] .hero-actions", { opacity: 1, y: 0, duration: dur, ease: ease }, 0.22);
-            }
-          });
-        }
-      }
-
-      if (typeof gsap !== "undefined") {
-        initMotion();
+        }, { threshold: 0.12 });
+        revealEls.forEach(function (el) { io.observe(el); });
       } else {
-        window.addEventListener("load", initMotion);
+        revealEls.forEach(function (el) { el.classList.add("is-visible"); });
       }
+
+      (function () {
+        function parseList(v) {
+          return v.split(",").map(function (s) { return parseFloat(s.trim()); });
+        }
+        function fmtK(v) {
+          if (v >= 1000) {
+            return (v / 1000).toFixed(2).replace(/0+$/, "").replace(/\.$/, "") + "M";
+          }
+          if (Number.isInteger(v)) return v + "K";
+          return v.toFixed(1).replace(/\.0$/, "") + "K";
+        }
+
+        var allCards = Array.prototype.slice.call(document.querySelectorAll("[data-tiers]"));
+        if (!allCards.length) return;
+
+        var globalMax = 0;
+        allCards.forEach(function (c) {
+          var tiers = parseList(c.getAttribute("data-tiers"));
+          c._tiers = tiers;
+          var top = Math.max.apply(null, tiers);
+          if (top > globalMax) globalMax = top;
+        });
+
+        var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* Hero cards: build sparkline bars + animate number */
+        var heroes = Array.prototype.slice.call(document.querySelectorAll(".niche-hero[data-tiers]"));
+        heroes.forEach(function (card) {
+          var tiers = card._tiers;
+          var emails = parseList(card.getAttribute("data-emails"));
+          var top = Math.max.apply(null, tiers);
+          var topEmail = Math.max.apply(null, emails);
+
+          var sparkline = card.querySelector(".niche-hero__sparkline");
+          if (sparkline) {
+            var cardMax = Math.max.apply(null, tiers);
+            tiers.forEach(function (t, i) {
+              var bar = document.createElement("span");
+              bar.className = "niche-hero__sparkbar";
+              bar.style.height = Math.max(Math.round(t / cardMax * 100), 8) + "%";
+              bar.style.transitionDelay = i * 50 + "ms";
+              sparkline.appendChild(bar);
+            });
+          }
+
+          var num = card.querySelector(".niche-hero__num");
+          var metaEl = card.querySelector(".niche-hero__meta strong");
+
+          if (metaEl) metaEl.textContent = fmtK(topEmail);
+
+          if (reduced || !("IntersectionObserver" in window)) {
+            if (num) num.textContent = fmtK(top);
+            card.classList.add("is-in-view");
+            return;
+          }
+
+          var started = false;
+          var io = new IntersectionObserver(function (entries) {
+            if (started) return;
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              started = true;
+              io.disconnect();
+              card.classList.add("is-in-view");
+              if (!num) return;
+              var start = null;
+              function step(ts) {
+                if (start === null) start = ts;
+                var p = Math.min(1, (ts - start) / 1000);
+                var eased = 1 - Math.pow(1 - p, 3);
+                num.textContent = fmtK(top * eased);
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+          }, { threshold: 0.25 });
+          io.observe(card);
+        });
+
+        /* Standard cards: animate number + email */
+        var stds = Array.prototype.slice.call(document.querySelectorAll(".niche-std[data-tiers]"));
+        stds.forEach(function (card) {
+          var tiers = card._tiers;
+          var emails = parseList(card.getAttribute("data-emails"));
+          var top = Math.max.apply(null, tiers);
+          var topEmail = Math.max.apply(null, emails);
+
+          var num = card.querySelector(".niche-std__num");
+          var emailStrong = card.querySelector(".niche-std__foot strong");
+
+          if (emailStrong) emailStrong.textContent = fmtK(topEmail);
+
+          if (reduced || !("IntersectionObserver" in window)) {
+            if (num) num.textContent = fmtK(top);
+            card.classList.add("is-visible");
+            return;
+          }
+
+          var started = false;
+          var io = new IntersectionObserver(function (entries) {
+            if (started) return;
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              started = true;
+              io.disconnect();
+              card.classList.add("is-visible");
+              if (!num) return;
+              var start = null;
+              function step(ts) {
+                if (start === null) start = ts;
+                var p = Math.min(1, (ts - start) / 1000);
+                var eased = 1 - Math.pow(1 - p, 3);
+                num.textContent = fmtK(top * eased);
+                if (p < 1) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            });
+          }, { threshold: 0.25 });
+          io.observe(card);
+        });
+
+        /* Compact strips: just set the final number */
+        var strips = Array.prototype.slice.call(document.querySelectorAll(".niche-strip[data-tiers]"));
+        strips.forEach(function (card) {
+          var tiers = card._tiers;
+          var top = Math.max.apply(null, tiers);
+          var num = card.querySelector(".niche-strip__num");
+          if (num) num.textContent = fmtK(top);
+        });
+      })();
+
+      (function () {
+        var container = document.getElementById("footer-giant");
+        var text = document.getElementById("giant-text");
+        if (!container || !text) return;
+        function fit() {
+          var avail = container.offsetWidth;
+          if (!avail) return;
+          text.style.fontSize = "100px";
+          var textW = text.offsetWidth;
+          if (!textW) return;
+          text.style.fontSize = Math.floor((avail / textW) * 100) + "px";
+        }
+        fit(); setTimeout(fit,100); setTimeout(fit,300); setTimeout(fit,600); setTimeout(fit,1000);
+        var rt; window.addEventListener("resize",function(){ if(rt) clearTimeout(rt); rt=setTimeout(fit,100); });
+      })();
+
+          /* Theme Toggle */
+    (function () {
+      var root = document.documentElement;
+      var toggles = document.querySelectorAll(".theme-toggle, .mobile-theme-toggle");
+      var mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+      var hasSaved = (function () { try { return localStorage.getItem("theme") !== null; } catch (e) { return false; } })();
+      function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+      function updateToggleLabel() {
+        var isLight = current() === "light";
+        for (var i = 0; i < toggles.length; i++) {
+          var span = toggles[i].querySelector("span");
+          if (span) span.textContent = isLight ? "Light mode" : "Dark mode";
+          toggles[i].setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+        }
+      }
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem("theme", theme); } catch (e) {}
+        hasSaved = true;
+        updateToggleLabel();
+      }
+      function toggleTheme() { setTheme(current() === "light" ? "dark" : "light"); }
+      function onSystemChange() {
+        if (hasSaved) return;
+        root.setAttribute("data-theme", mql.matches ? "light" : "dark");
+        updateToggleLabel();
+      }
+      updateToggleLabel();
+      for (var i = 0; i < toggles.length; i++) {
+        toggles[i].addEventListener("click", toggleTheme);
+      }
+      if (mql) {
+        if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
+        else if (mql.addListener) mql.addListener(onSystemChange);
+      }
+    })();
+
     })();
   </script>
 
-<script type="application/json" id="speaker-notes">
-[]
-</script>
-</body></html>
+  <!-- Industry Popup -->
+  <div class="industry-popup-overlay" id="industry-popup" role="dialog" aria-modal="true" aria-label="Browse all industries">
+    <div class="industry-popup">
+      <div class="industry-popup__head">
+        <h2>All Industries</h2>
+        <button class="industry-popup__close" type="button" aria-label="Close" id="close-industry-popup">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+        </button>
+      </div>
+      <div class="industry-popup__list">
+        <a class="industry-popup__link" href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+        <a class="industry-popup__link" href="industries/agencies-business.html">Agencies &amp; Business</a>
+        <a class="industry-popup__link" href="industries/automotive.html">Automotive</a>
+        <a class="industry-popup__link" href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+        <a class="industry-popup__link" href="industries/clinics.html">Clinics &amp; Healthcare</a>
+        <a class="industry-popup__link" href="industries/construction.html">Construction</a>
+        <a class="industry-popup__link" href="industries/dentists.html">Dentists</a>
+        <a class="industry-popup__link" href="industries/education.html">Education &amp; Training</a>
+        <a class="industry-popup__link" href="industries/events-leisure.html">Events &amp; Leisure</a>
+        <a class="industry-popup__link" href="industries/food-beverage.html">Food &amp; Beverage</a>
+        <a class="industry-popup__link" href="industries/home-services.html">Home Services</a>
+        <a class="industry-popup__link" href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+        <a class="industry-popup__link" href="industries/legal.html">Legal</a>
+        <a class="industry-popup__link" href="industries/logistics.html">Logistics</a>
+        <a class="industry-popup__link" href="industries/real-estate.html">Real Estate</a>
+        <a class="industry-popup__link" href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var overlay = document.getElementById("industry-popup");
+      var openBtn = document.getElementById("open-industry-popup");
+      var openBtnCta = document.getElementById("open-industry-popup-cta");
+      var openBtnPricing = document.getElementById("open-industry-popup-pricing");
+      var closeBtn = document.getElementById("close-industry-popup");
+      if (!overlay || !openBtn || !closeBtn) return;
+      function openPopup() {
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+      function closePopup() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      openBtn.addEventListener("click", openPopup);
+      if (openBtnCta) openBtnCta.addEventListener("click", openPopup);
+      if (openBtnPricing) openBtnPricing.addEventListener("click", openPopup);
+      var mobileNichesBtn = document.querySelector(".mobile-niches-btn");
+      if (mobileNichesBtn) {
+        mobileNichesBtn.addEventListener("click", function () {
+          var mobilePanel = document.getElementById("mobile-nav");
+          var mobileToggle = document.querySelector(".nav-toggle");
+          if (mobilePanel) mobilePanel.classList.remove("open");
+          if (mobileToggle) {
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileToggle.setAttribute("aria-label", "Open menu");
+          }
+          document.body.style.overflow = "";
+          setTimeout(openPopup, 100);
+        });
+      }
+      closeBtn.addEventListener("click", closePopup);
+      overlay.addEventListener("click", function (e) { if (e.target === overlay) closePopup(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && overlay.classList.contains("open")) closePopup(); });
+    })();
+  </script>
+  <script src="search-data.js"></script>
+  <script src="search.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="graphify.js"></script>
+  <script>
+    // Decode animation for hero heading - plays once per session
+    (function() {
+      const heading = document.getElementById('hero-heading');
+      if (!heading) return;
+      const line1 = "Get Your";
+      const line2 = "Verified B2B Leads.";
+      const fullText = line1 + " " + line2;
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!";
+      const hasPlayed = sessionStorage.getItem('hero_decode_played');
+      if (hasPlayed) {
+        heading.innerHTML = line1 + '<br><span class="muted-word">' + line2 + '</span>';
+        return;
+      }
+
+      function createSpansForLine(text, container, startOffset) {
+        var spans = [];
+        for (var i = 0; i < text.length; i++) {
+          var span = document.createElement('span');
+          span.style.display = 'inline-block';
+          span.style.minWidth = text[i] === ' ' ? '0.3em' : 'auto';
+          span.textContent = chars[Math.floor(Math.random() * chars.length)];
+          container.appendChild(span);
+          spans.push({ el: span, final: text[i], resolved: false, index: startOffset + i });
+        }
+        return spans;
+      }
+
+      var allSpans = [];
+      allSpans = allSpans.concat(createSpansForLine(line1, heading, 0));
+
+      var br = document.createElement('br');
+      heading.appendChild(br);
+
+      var mutedSpan = document.createElement('span');
+      mutedSpan.className = 'muted-word';
+      heading.appendChild(mutedSpan);
+      allSpans = allSpans.concat(createSpansForLine(line2, mutedSpan, line1.length + 1));
+
+      var frame = 0;
+      var totalFrames = 60;
+      function decodeStep() {
+        frame++;
+        var progress = frame / totalFrames;
+        for (var i = 0; i < allSpans.length; i++) {
+          var charProgress = (progress - (allSpans[i].index / fullText.length) * 0.5) / 0.5;
+          if (charProgress >= 1 && !allSpans[i].resolved) {
+            allSpans[i].el.textContent = allSpans[i].final === ' ' ? '\u00A0' : allSpans[i].final;
+            allSpans[i].resolved = true;
+          } else if (!allSpans[i].resolved) {
+            allSpans[i].el.textContent = chars[Math.floor(Math.random() * chars.length)];
+          }
+        }
+        if (frame < totalFrames) {
+          requestAnimationFrame(decodeStep);
+        } else {
+          for (var i = 0; i < allSpans.length; i++) {
+            allSpans[i].el.textContent = allSpans[i].final === ' ' ? '\u00A0' : allSpans[i].final;
+          }
+          sessionStorage.setItem('hero_decode_played', '1');
+        }
+      }
+      requestAnimationFrame(decodeStep);
+    })();
+
+    // Graphify usage example
+    (function() {
+      if (window.Graphify) {
+        var graph = new Graphify();
+        var lines = Graphify.CreateLines(['line-1', 'line-2', 'line-3'], true);
+        $('#hero-heading').after(lines);
+      }
+    })();
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls }      from 'three/addons/controls/OrbitControls.js';
+    import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+    const container = document.getElementById('app');
+    if (!container) throw new Error('Cube container #app not found');
+
+    const SPACING = 1.06, HALF = Math.PI / 2, CUBIE = 1.0;
+    const GRID = [-1.5, -0.5, 0.5, 1.5];
+    const AXI  = { x: 0, y: 1, z: 2 };
+    const AXV  = { x: new THREE.Vector3(1,0,0), y: new THREE.Vector3(0,1,0), z: new THREE.Vector3(0,0,1) };
+    const DUR = 0.6, GAP_MIN = 0.16, GAP_MAX = 0.38;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+
+    const W = () => container.clientWidth  || 1;
+    const H = () => container.clientHeight || 1;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+    renderer.setSize(W(), H());
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    renderer.setClearColor(0x000000, 0);
+    renderer.domElement.id = 'cube-canvas';
+    container.appendChild(renderer.domElement);
+    renderer.domElement.style.opacity = '0';
+    renderer.domElement.style.transition = 'opacity 0.7s ease';
+    const maxAniso = renderer.capabilities.getMaxAnisotropy();
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(30, W() / H(), 0.5, 80);
+    const CAM_DIR = new THREE.Vector3(0.72, 0.5, 0.86).normalize();
+    function frameDistance(aspect) {
+      if (aspect >= 1.3) return 13.0;
+      if (aspect >= 1.0) return 14.2;
+      if (aspect >= 0.8) return 15.6;
+      return 17.0;
+    }
+    function placeCamera() {
+      const aspect = W() / H();
+      camera.aspect = aspect;
+      camera.position.copy(CAM_DIR).multiplyScalar(frameDistance(aspect));
+      camera.updateProjectionMatrix();
+    }
+    placeCamera();
+
+    {
+      const env = new THREE.Scene();
+      const box = (w, h, pos, s) => {
+        const m = new THREE.Mesh(
+          new THREE.PlaneGeometry(w, h),
+          new THREE.MeshBasicMaterial({ color: new THREE.Color(s, s, s) })
+        );
+        m.position.set(...pos);
+        m.lookAt(0, 0, 0);
+        env.add(m);
+      };
+      box(10, 4,    [0, 8, 0],   3);
+      box(1.2, 8,   [-8, 2, 2],  1.5);
+      box(3, 6,     [8, 1, -2],  0.9);
+      box(6, 1.5,   [0, 3, -9],  2);
+      box(1.6, 1.6, [6, 8, 5],   28);
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(env, 0.04).texture;
+      pmrem.dispose();
+    }
+
+    const blindsTex = (() => {
+      const s = 512, c = document.createElement('canvas');
+      c.width = c.height = s;
+      const g = c.getContext('2d');
+      g.fillStyle = '#000'; g.fillRect(0, 0, s, s);
+      g.save(); g.translate(s / 2, s / 2); g.rotate(-0.35);
+      for (let i = 0; i < 6; i++) {
+        const x = -260 + i * 96;
+        const grad = g.createLinearGradient(x, 0, x + 58, 0);
+        grad.addColorStop(0, 'rgba(255,255,255,0)');
+        grad.addColorStop(0.25, 'rgba(255,255,255,1)');
+        grad.addColorStop(0.75, 'rgba(255,255,255,1)');
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        g.fillStyle = grad;
+        g.fillRect(x, -400, 58, 800);
+      }
+      g.restore();
+      for (let i = 0; i < 1500; i++) {
+        g.fillStyle = `rgba(255,255,255,${Math.random() * 0.06})`;
+        g.fillRect(Math.random() * s, Math.random() * s, 1, 1);
+      }
+      return new THREE.CanvasTexture(c);
+    })();
+
+    const sun = new THREE.SpotLight(0xffd9a4, 1300, 0, 0.5, 0.45, 2);
+    sun.position.set(12, 16, 10);
+    sun.map = blindsTex;
+    sun.castShadow = true;
+    const shadowRes = matchMedia('(max-width: 780px)').matches ? 1024 : 2048;
+    sun.shadow.mapSize.set(shadowRes, shadowRes);
+    sun.shadow.camera.near = 5;
+    sun.shadow.camera.far = 60;
+    sun.shadow.bias = -0.0003;
+    sun.shadow.normalBias = 0.03;
+    scene.add(sun, sun.target);
+
+    scene.add(new THREE.HemisphereLight(0xa8c0d8, 0x0a0a0a, 0.35));
+    const rim = new THREE.DirectionalLight(0xcfd8e6, 0.7);
+    rim.position.set(-8, 5, -7);
+    scene.add(rim);
+    const under = new THREE.PointLight(0xffffff, 1.2, 26, 2);
+    under.position.set(0, -6.5, 4.5);
+    scene.add(under);
+
+    function canvasTex(size, repeat, draw) {
+      const c = document.createElement('canvas');
+      c.width = c.height = size;
+      draw(c.getContext('2d'), size);
+      const t = new THREE.CanvasTexture(c);
+      t.wrapS = t.wrapT = THREE.RepeatWrapping;
+      t.repeat.set(repeat, repeat);
+      t.anisotropy = maxAniso;
+      return t;
+    }
+
+    const texGrain = canvasTex(128, 4, (g, s) => {
+      g.fillStyle = '#909090'; g.fillRect(0, 0, s, s);
+      for (let i = 0; i < 5000; i++) {
+        const v = 128 + rnd(-45, 45) | 0;
+        g.fillStyle = `rgba(${v},${v},${v},0.5)`;
+        g.fillRect(Math.random() * s, Math.random() * s, 1, 1);
+      }
+    });
+    const texSpeckle = canvasTex(256, 2, (g, s) => {
+      g.fillStyle = '#000'; g.fillRect(0, 0, s, s);
+      for (let i = 0; i < 320; i++) {
+        const v = rnd(90, 255) | 0;
+        g.fillStyle = `rgba(${v},${v},${v},${rnd(0.4, 1)})`;
+        g.beginPath(); g.arc(Math.random() * s, Math.random() * s, rnd(0.4, 1.3), 0, 7); g.fill();
+      }
+    });
+    const texHex = canvasTex(256, 2, (g, s) => {
+      g.fillStyle = '#000'; g.fillRect(0, 0, s, s);
+      g.strokeStyle = '#5a5a5a'; g.lineWidth = 2;
+      const r = 14, h = r * Math.sin(Math.PI / 3);
+      for (let y = -1; y < s / (h * 2) + 1; y++)
+        for (let x = -1; x < s / (r * 3) + 1; x++) {
+          const cx = x * 3 * r + (y % 2 ? 1.5 * r : 0), cy = y * h * 2;
+          g.beginPath();
+          for (let i = 0; i < 6; i++) {
+            const a = Math.PI / 3 * i + Math.PI / 6;
+            const px = cx + r * Math.cos(a), py = cy + r * Math.sin(a);
+            i ? g.lineTo(px, py) : g.moveTo(px, py);
+          }
+          g.closePath(); g.stroke();
+        }
+    });
+    const texDots = canvasTex(128, 3, (g, s) => {
+      g.fillStyle = '#000'; g.fillRect(0, 0, s, s);
+      g.fillStyle = '#4a4a4a';
+      for (let y = 4; y < s; y += 8)
+        for (let x = 4; x < s; x += 8) { g.beginPath(); g.arc(x, y, 1.4, 0, 7); g.fill(); }
+    });
+    const texBrush = canvasTex(256, 2, (g, s) => {
+      g.fillStyle = '#000'; g.fillRect(0, 0, s, s);
+      for (let i = 0; i < 700; i++) {
+        const v = rnd(30, 120) | 0;
+        g.strokeStyle = `rgba(${v},${v},${v},${rnd(0.2, 0.7)})`;
+        g.lineWidth = rnd(0.5, 1.2);
+        const y = Math.random() * s;
+        g.beginPath(); g.moveTo(0, y); g.lineTo(s, y + rnd(-2, 2)); g.stroke();
+      }
+    });
+
+    const plastic = new THREE.MeshPhysicalMaterial({
+      color: 0x0b0c0d, roughness: 0.9, roughnessMap: texGrain,
+      bumpMap: texGrain, bumpScale: 0.015,
+      clearcoat: 0.9, clearcoatRoughness: 0.18,
+      metalness: 0.1, envMapIntensity: 1.1,
+    });
+
+    const FINISHES = [
+      () => new THREE.MeshPhysicalMaterial({ color: 0x0a0a0b, roughness: 0.9, roughnessMap: texSpeckle,
+        bumpMap: texSpeckle, bumpScale: 0.02, clearcoat: 1, clearcoatRoughness: 0.07, envMapIntensity: 1.4 }),
+      () => new THREE.MeshPhysicalMaterial({ color: 0x15161a, roughness: 0.55,
+        bumpMap: texSpeckle, bumpScale: 0.03, envMapIntensity: 0.9 }),
+      () => new THREE.MeshPhysicalMaterial({ color: 0x0c0d10, roughness: 0.4,
+        bumpMap: texHex, bumpScale: 0.025, clearcoat: 0.45, clearcoatRoughness: 0.25, envMapIntensity: 1.2 }),
+      () => new THREE.MeshPhysicalMaterial({ color: 0x101114, roughness: 0.5,
+        bumpMap: texDots, bumpScale: 0.03, envMapIntensity: 1.0 }),
+      () => new THREE.MeshPhysicalMaterial({ color: 0x17181b, roughness: 0.35, metalness: 0.45,
+        bumpMap: texBrush, bumpScale: 0.02, envMapIntensity: 1.3 }),
+      () => new THREE.MeshPhysicalMaterial({ color: 0x2a2d31, roughness: 0.3,
+        clearcoat: 0.6, clearcoatRoughness: 0.2, envMapIntensity: 1.2 }),
+    ];
+    const pickFinish = () => {
+      const r = Math.random();
+      const i = r < 0.26 ? 0 : r < 0.46 ? 1 : r < 0.62 ? 2 : r < 0.76 ? 3 : r < 0.9 ? 4 : 5;
+      return FINISHES[i]();
+    };
+
+    const dustN = 160;
+    const dustPos = new Float32Array(dustN * 3);
+    for (let i = 0; i < dustN; i++) {
+      dustPos[i * 3]     = rnd(-6, 6);
+      dustPos[i * 3 + 1] = rnd(-3, 5);
+      dustPos[i * 3 + 2] = rnd(-6, 6);
+    }
+    const dustGeo = new THREE.BufferGeometry();
+    dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+    const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({
+      color: 0xd8dce2, size: 0.02, transparent: true, opacity: 0.45, depthWrite: false,
+    }));
+    scene.add(dust);
+
+    const rootEl = document.documentElement;
+    function applyTheme() {
+      const light = rootEl.getAttribute('data-theme') === 'light';
+      dust.material.color.set(light ? 0x9aa0a8 : 0xd8dce2);
+      dust.material.opacity = light ? 0.28 : 0.45;
+      sun.color.set(light ? 0xfff1dc : 0xffd9a4);
+      sun.intensity = light ? 900 : 1300;
+    }
+    applyTheme();
+    new MutationObserver(applyTheme).observe(rootEl, { attributes: true, attributeFilter: ['data-theme'] });
+
+    const cubeRoot = new THREE.Group();
+    scene.add(cubeRoot);
+    const pivot = new THREE.Group();
+    cubeRoot.add(pivot);
+
+    function roundedRect(w, r) {
+      const s = new THREE.Shape(), x = -w / 2, y = -w / 2;
+      s.moveTo(x + r, y);
+      s.lineTo(x + w - r, y);    s.quadraticCurveTo(x + w, y, x + w, y + r);
+      s.lineTo(x + w, y + w - r);s.quadraticCurveTo(x + w, y + w, x + w - r, y + w);
+      s.lineTo(x + r, y + w);    s.quadraticCurveTo(x, y + w, x, y + w - r);
+      s.lineTo(x, y + r);        s.quadraticCurveTo(x, y, x + r, y);
+      return s;
+    }
+    const stickerGeo = new THREE.ShapeGeometry(roundedRect(0.82, 0.15), 8);
+    const cubieGeo   = new RoundedBoxGeometry(CUBIE, CUBIE, CUBIE, 6, 0.12);
+
+    const FACE_DEFS = [
+      { n: [-1, 0, 0], rot: [ 0, -HALF, 0] },
+      { n: [ 1, 0, 0], rot: [ 0,  HALF, 0] },
+      { n: [ 0,-1, 0], rot: [ HALF, 0, 0] },
+      { n: [ 0, 1, 0], rot: [-HALF, 0, 0] },
+      { n: [ 0, 0,-1], rot: [ 0, Math.PI, 0] },
+      { n: [ 0, 0, 1], rot: [ 0, 0, 0] },
+    ];
+
+    const cubies = [];
+    for (let ix = 0; ix < 4; ix++)
+    for (let iy = 0; iy < 4; iy++)
+    for (let iz = 0; iz < 4; iz++) {
+      const mesh = new THREE.Mesh(cubieGeo, plastic);
+      mesh.castShadow = mesh.receiveShadow = true;
+      const faces = [];
+      if (ix === 0) faces.push(0); if (ix === 3) faces.push(1);
+      if (iy === 0) faces.push(2); if (iy === 3) faces.push(3);
+      if (iz === 0) faces.push(4); if (iz === 3) faces.push(5);
+      for (const f of faces) {
+        const def = FACE_DEFS[f];
+        const st = new THREE.Mesh(stickerGeo, pickFinish());
+        st.position.set(def.n[0] * 0.506, def.n[1] * 0.506, def.n[2] * 0.506);
+        st.rotation.set(...def.rot);
+        mesh.add(st);
+      }
+      const pos = new THREE.Vector3(ix - 1.5, iy - 1.5, iz - 1.5);
+      mesh.position.copy(pos).multiplyScalar(SPACING);
+      cubeRoot.add(mesh);
+      cubies.push({ mesh, pos, orient: new THREE.Matrix3() });
+    }
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.06;
+    controls.enablePan = false;
+    controls.minDistance = 7.5;
+    controls.maxDistance = 22;
+    controls.target.set(0, 0, 0);
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.45;
+    let idleTimer = null;
+    controls.addEventListener('start', () => { controls.autoRotate = false; clearTimeout(idleTimer); });
+    controls.addEventListener('end',   () => { idleTimer = setTimeout(() => controls.autoRotate = true, 2600); });
+
+    let current = null, pending = 1.0, lastKey = '';
+    const rand = (a, b) => a + Math.random() * (b - a);
+    const easeInOutQuart = t => t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+
+    function rotVec(v, axis, dir) {
+      const { x, y, z } = v;
+      if (axis === 'x') dir > 0 ? v.set(x, -z,  y) : v.set(x,  z, -y);
+      if (axis === 'y') dir > 0 ? v.set(z,  y, -x) : v.set(-z, y,  x);
+      if (axis === 'z') dir > 0 ? v.set(-y, x,  z) : v.set(y, -x,  z);
+    }
+    const _m4 = new THREE.Matrix4();
+    function snapMesh(c) {
+      c.mesh.position.copy(c.pos).multiplyScalar(SPACING);
+      _m4.setFromMatrix3(c.orient);
+      c.mesh.quaternion.setFromRotationMatrix(_m4);
+    }
+    function startMove() {
+      let axis, layer;
+      do {
+        axis  = ['x', 'y', 'z'][(Math.random() * 3) | 0];
+        layer = (Math.random() * 4) | 0;
+      } while (axis + layer === lastKey);
+      lastKey = axis + layer;
+      const turns = Math.random() < 0.12 ? 2 : 1;
+      const dir   = Math.random() < 0.5 ? 1 : -1;
+      const group = cubies.filter(c => Math.abs(c.pos.getComponent(AXI[axis]) - GRID[layer]) < 0.01);
+      pivot.rotation.set(0, 0, 0);
+      for (const c of group) pivot.attach(c.mesh);
+      current = { axis, dir, turns, group, t: 0, angle: dir * turns * HALF, dur: DUR * (turns === 2 ? 1.35 : 1) };
+    }
+    function finalizeMove() {
+      const { axis, dir, turns, group } = current;
+      _m4.makeRotationAxis(AXV[axis], dir * turns * HALF);
+      const m3 = new THREE.Matrix3().setFromMatrix4(_m4);
+      m3.elements.forEach((v, i) => m3.elements[i] = Math.round(v));
+      for (const c of group) {
+        cubeRoot.attach(c.mesh);
+        for (let k = 0; k < turns; k++) rotVec(c.pos, axis, dir);
+        c.orient.premultiply(m3);
+        snapMesh(c);
+      }
+      pivot.rotation.set(0, 0, 0);
+      current = null;
+      pending = rand(GAP_MIN, GAP_MAX);
+    }
+
+    function randomSpin() {
+      const v = new THREE.Vector3(rnd(-1, 1), rnd(-1, 1), rnd(-1, 1));
+      if (v.lengthSq() < 0.01) v.set(0, 1, 0);
+      return v.normalize().multiplyScalar(rnd(0.5, 0.9));
+    }
+    const spinVel = randomSpin();
+    let spinTarget = randomSpin();
+    let spinTimer = rnd(2, 4);
+    const _axis = new THREE.Vector3();
+    const _q = new THREE.Quaternion();
+
+    let isVisible = true;
+    if ('IntersectionObserver' in window) {
+      const visObs = new IntersectionObserver((entries) => {
+        isVisible = entries[0]?.isIntersecting ?? true;
+      }, { rootMargin: '200px' });
+      visObs.observe(renderer.domElement);
+    }
+
+    const clock = new THREE.Clock();
+    let running = true;
+    function frame() {
+      if (!running) return;
+      requestAnimationFrame(frame);
+      if (!isVisible) { controls.update(); return; }
+      const dt = Math.min(clock.getDelta(), 0.05);
+      const t = clock.elapsedTime;
+
+      if (current) {
+        current.t += dt / current.dur;
+        pivot.rotation[current.axis] = current.angle * easeInOutQuart(Math.min(current.t, 1));
+        if (current.t >= 1) finalizeMove();
+      } else {
+        pending -= dt;
+        if (pending <= 0) startMove();
+      }
+
+      spinTimer -= dt;
+      if (spinTimer <= 0) {
+        spinTarget = randomSpin();
+        spinTimer = rnd(2, 4);
+      }
+      spinVel.lerp(spinTarget, 1 - Math.exp(-dt * 1.4));
+      const angle = spinVel.length() * dt;
+      if (angle > 1e-6) {
+        _axis.copy(spinVel).normalize();
+        _q.setFromAxisAngle(_axis, angle);
+        cubeRoot.quaternion.premultiply(_q);
+      }
+
+      sun.position.x = 12 + Math.sin(t * 0.04) * 1.6;
+      sun.position.z = 10 + Math.cos(t * 0.03) * 1.6;
+      dust.rotation.y = t * 0.02;
+      dust.position.y = Math.sin(t * 0.1) * 0.3;
+      controls.update();
+      renderer.render(scene, camera);
+      if (renderer.domElement.style.opacity === '0') renderer.domElement.style.opacity = '1';
+    }
+    frame();
+
+    function onResize() {
+      const w = W(), h = H();
+      if (w <= 1 || h <= 1) return;
+      placeCamera();
+      renderer.setSize(w, h);
+    }
+    window.addEventListener('resize', onResize);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(onResize).observe(container);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadsPitch — Pricing Cards Preview</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --text-primary: #1a1a2e;
+    --text-secondary: #555770;
+    --text-muted: #8a8ca5;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-light: #eff4ff;
+    --border: #e2e4ea;
+    --border-light: #f0f1f5;
+    --bg: #f5f6fa;
+    --card-bg: #ffffff;
+    --badge-bg: #fef3e6;
+    --badge-text: #b45309;
+    --membership-bg: #f0fdf4;
+    --membership-text: #166534;
+    --success: #16a34a;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .preview-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .variant-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .variant-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+  }
+
+  .variant-section {
+    margin-bottom: 64px;
+  }
+
+  /* ==================== VARIANT 01: INDIVIDUAL CARDS ==================== */
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px 24px;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-plan-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .card-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .price-block {
+    margin-bottom: 20px;
+  }
+
+  .price-original {
+    font-size: 15px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .price-current {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+
+  .price-billing {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  .discount-badge {
+    display: inline-block;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  .membership-saving {
+    font-size: 12.5px;
+    color: var(--membership-text);
+    background: var(--membership-bg);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  .membership-saving strong {
+    font-weight: 600;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 20px 0;
+  }
+
+  .leads-emails {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .leads-emails .stat {
+    flex: 1;
+  }
+
+  .leads-emails .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .leads-emails .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .features-section {
+    margin-top: 0;
+  }
+
+  .features-heading {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+  }
+
+  .features-list {
+    list-style: none;
+  }
+
+  .features-list li {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .features-list li .check {
+    color: var(--success);
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .features-faded {
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .features-faded.open {
+    max-height: 300px;
+  }
+
+  .features-fade-mask {
+    position: relative;
+  }
+
+  .features-fade-mask::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: linear-gradient(to bottom, transparent, var(--card-bg));
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .features-fade-mask.open::after {
+    opacity: 0;
+  }
+
+  .show-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .show-more-btn:hover {
+    text-decoration: underline;
+  }
+
+  .show-more-btn .arrow {
+    transition: transform 0.2s;
+    font-size: 10px;
+  }
+
+  .show-more-btn.open .arrow {
+    transform: rotate(180deg);
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+    margin-top: 20px;
+  }
+
+  .cta-btn:hover {
+    background: var(--accent-hover);
+  }
+
+  /* ==================== VARIANT 02: CONNECTED GRID ==================== */
+  .grid-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-col {
+    padding: 28px 24px 24px;
+    position: relative;
+  }
+
+  .grid-col:not(:last-child) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  .grid-col .card-plan-label {
+    margin-bottom: 4px;
+  }
+
+  .grid-col .card-name {
+    margin-bottom: 20px;
+  }
+
+  .grid-align-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .grid-align-cell {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .grid-align-cell:not(:last-child) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  .grid-align-cell .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .grid-align-cell .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .grid-features-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .grid-features-cell {
+    padding: 20px 24px 0;
+  }
+
+  .grid-features-cell:not(:last-child) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  .grid-cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .grid-cta-cell {
+    padding: 16px 24px 24px;
+  }
+
+  .grid-cta-cell:not(:last-child) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  /* ==================== VARIANT 03: HYBRID ==================== */
+  .hybrid-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .hybrid-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .hybrid-top {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hybrid-middle {
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hybrid-stat-box {
+    text-align: center;
+    padding: 12px 8px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+  }
+
+  .hybrid-stat-box .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+  }
+
+  .hybrid-stat-box .stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hybrid-features {
+    padding: 20px 24px;
+  }
+
+  .hybrid-cta-area {
+    padding: 0 24px 24px;
+  }
+
+  /* ==================== BUNDLE CARD ==================== */
+  .bundle-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    max-width: 480px;
+    margin-top: 32px;
+  }
+
+  .bundle-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .bundle-header .card-plan-label {
+    color: var(--accent);
+  }
+
+  .bundle-header .card-name {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .bundle-save {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--success);
+  }
+
+  .bundle-tiers {
+    padding: 16px 24px;
+  }
+
+  .bundle-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .bundle-tier:not(:last-child) {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .bundle-tier-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .bundle-tier-pricing {
+    text-align: right;
+  }
+
+  .bundle-tier-original {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  .bundle-tier-current {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .bundle-includes {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-light);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .bundle-cta-area {
+    padding: 0 24px 24px;
+  }
+
+  .best-value-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 900px) {
+    .cards-row,
+    .grid-row,
+    .grid-align-row,
+    .grid-features-row,
+    .grid-cta-row {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-col:not(:last-child),
+    .grid-align-cell:not(:last-child),
+    .grid-features-cell:not(:last-child),
+    .grid-cta-cell:not(:last-child) {
+      border-right: none;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .grid-col:last-child,
+    .grid-cta-cell:last-child {
+      border-bottom: none;
+    }
+
+    .hybrid-middle {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .bundle-card {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .preview-wrapper {
+      padding: 24px 16px 60px;
+    }
+
+    .card, .grid-col {
+      padding: 24px 20px 20px;
+    }
+
+    .price-current {
+      font-size: 28px;
+    }
+
+    .hybrid-stat-box .stat-value {
+      font-size: 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-wrapper">
+
+  <!-- ======================== VARIANT 01 ======================== -->
+  <div class="variant-section">
+    <div class="variant-label">Variant 01</div>
+    <div class="variant-title">Individual Product Cards</div>
+
+    <div class="cards-row">
+
+      <!-- Starter -->
+      <div class="card">
+        <div class="card-plan-label">Entry Plan</div>
+        <div class="card-name">Starter</div>
+        <div class="price-block">
+          <div class="price-original">$17.49</div>
+          <div class="price-current">$13.99</div>
+          <div class="price-billing">one-time</div>
+          <div class="discount-badge">20% OFF</div>
+        </div>
+        <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $8.39</div>
+        <div class="card-divider"></div>
+        <div class="leads-emails">
+          <div class="stat">
+            <div class="stat-value">27K</div>
+            <div class="stat-label">Leads</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">5K</div>
+            <div class="stat-label">Emails</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="features-section">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="f1-mask">
+            <div class="features-faded" id="f1">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('f1','f1-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <button class="cta-btn">Buy now</button>
+      </div>
+
+      <!-- High Volume -->
+      <div class="card">
+        <div class="card-plan-label">High Volume</div>
+        <div class="card-name">High Volume</div>
+        <div class="price-block">
+          <div class="price-original">$49.99</div>
+          <div class="price-current">$39.99</div>
+          <div class="price-billing">one-time</div>
+          <div class="discount-badge">20% OFF</div>
+        </div>
+        <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $23.99</div>
+        <div class="card-divider"></div>
+        <div class="leads-emails">
+          <div class="stat">
+            <div class="stat-value">80K</div>
+            <div class="stat-label">Leads</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">15K</div>
+            <div class="stat-label">Emails</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="features-section">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="f2-mask">
+            <div class="features-faded" id="f2">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('f2','f2-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <button class="cta-btn">Buy now</button>
+      </div>
+
+      <!-- Business -->
+      <div class="card">
+        <div class="card-plan-label">Business</div>
+        <div class="card-name">Business</div>
+        <div class="price-block">
+          <div class="price-original">$84.99</div>
+          <div class="price-current">$67.99</div>
+          <div class="price-billing">one-time</div>
+          <div class="discount-badge">20% OFF</div>
+        </div>
+        <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $40.79</div>
+        <div class="card-divider"></div>
+        <div class="leads-emails">
+          <div class="stat">
+            <div class="stat-value">150K</div>
+            <div class="stat-label">Leads</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">25K</div>
+            <div class="stat-label">Emails</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="features-section">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="f3-mask">
+            <div class="features-faded" id="f3">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('f3','f3-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <button class="cta-btn">Buy now</button>
+      </div>
+    </div>
+
+    <!-- Bundle -->
+    <div class="bundle-card">
+      <div class="bundle-header">
+        <div class="card-plan-label">Bundle</div>
+        <div class="card-name">Restaurants, Hotels &amp; Construction</div>
+        <div class="bundle-save">Save up to $23</div>
+      </div>
+      <div class="bundle-tiers">
+        <div class="bundle-tier">
+          <div>
+            <div class="bundle-tier-label">25K Emails</div>
+          </div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$65.99</div>
+            <div class="bundle-tier-current">$49.99</div>
+          </div>
+        </div>
+        <div class="bundle-tier">
+          <div>
+            <div class="bundle-tier-label">50K Emails <span class="best-value-badge">BEST VALUE</span></div>
+          </div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$117.99</div>
+            <div class="bundle-tier-current">$94.99</div>
+          </div>
+        </div>
+      </div>
+      <div class="bundle-includes">
+        Includes: Restaurants &amp; Caf&eacute;s + Hotels &amp; Hospitality + Construction
+      </div>
+      <div class="bundle-cta-area">
+        <button class="cta-btn">Get bundle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== VARIANT 02 ======================== -->
+  <div class="variant-section">
+    <div class="variant-label">Variant 02</div>
+    <div class="variant-title">Connected Pricing Grid</div>
+
+    <div class="grid-container">
+      <!-- Headers -->
+      <div class="grid-row">
+        <div class="grid-col">
+          <div class="card-plan-label">Entry Plan</div>
+          <div class="card-name">Starter</div>
+          <div class="price-block">
+            <div class="price-original">$17.49</div>
+            <div class="price-current">$13.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $8.39</div>
+        </div>
+        <div class="grid-col">
+          <div class="card-plan-label">High Volume</div>
+          <div class="card-name">High Volume</div>
+          <div class="price-block">
+            <div class="price-original">$49.99</div>
+            <div class="price-current">$39.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $23.99</div>
+        </div>
+        <div class="grid-col">
+          <div class="card-plan-label">Business</div>
+          <div class="card-name">Business</div>
+          <div class="price-block">
+            <div class="price-original">$84.99</div>
+            <div class="price-current">$67.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $40.79</div>
+        </div>
+      </div>
+
+      <!-- Leads & Emails -->
+      <div class="grid-align-row">
+        <div class="grid-align-cell">
+          <div class="stat-value">27K Leads</div>
+          <div class="stat-label">5K Emails</div>
+        </div>
+        <div class="grid-align-cell">
+          <div class="stat-value">80K Leads</div>
+          <div class="stat-label">15K Emails</div>
+        </div>
+        <div class="grid-align-cell">
+          <div class="stat-value">150K Leads</div>
+          <div class="stat-label">25K Emails</div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid-features-row">
+        <div class="grid-features-cell">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="g1-mask">
+            <div class="features-faded" id="g1">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('g1','g1-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <div class="grid-features-cell">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="g2-mask">
+            <div class="features-faded" id="g2">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('g2','g2-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <div class="grid-features-cell">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="g3-mask">
+            <div class="features-faded" id="g3">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('g3','g3-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="grid-cta-row">
+        <div class="grid-cta-cell"><button class="cta-btn">Buy now</button></div>
+        <div class="grid-cta-cell"><button class="cta-btn">Buy now</button></div>
+        <div class="grid-cta-cell"><button class="cta-btn">Buy now</button></div>
+      </div>
+    </div>
+
+    <!-- Bundle -->
+    <div class="bundle-card">
+      <div class="bundle-header">
+        <div class="card-plan-label">Bundle</div>
+        <div class="card-name">Restaurants, Hotels &amp; Construction</div>
+        <div class="bundle-save">Save up to $23</div>
+      </div>
+      <div class="bundle-tiers">
+        <div class="bundle-tier">
+          <div><div class="bundle-tier-label">25K Emails</div></div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$65.99</div>
+            <div class="bundle-tier-current">$49.99</div>
+          </div>
+        </div>
+        <div class="bundle-tier">
+          <div><div class="bundle-tier-label">50K Emails <span class="best-value-badge">BEST VALUE</span></div></div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$117.99</div>
+            <div class="bundle-tier-current">$94.99</div>
+          </div>
+        </div>
+      </div>
+      <div class="bundle-includes">Includes: Restaurants &amp; Caf&eacute;s + Hotels &amp; Hospitality + Construction</div>
+      <div class="bundle-cta-area"><button class="cta-btn">Get bundle</button></div>
+    </div>
+  </div>
+
+  <!-- ======================== VARIANT 03 ======================== -->
+  <div class="variant-section">
+    <div class="variant-label">Variant 03</div>
+    <div class="variant-title">Hybrid Professional Cards</div>
+
+    <div class="cards-row">
+
+      <!-- Starter -->
+      <div class="hybrid-card">
+        <div class="hybrid-top">
+          <div class="card-plan-label">Entry Plan</div>
+          <div class="card-name">Starter</div>
+          <div class="price-block">
+            <div class="price-original">$17.49</div>
+            <div class="price-current">$13.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $8.39</div>
+        </div>
+        <div class="hybrid-middle">
+          <div class="hybrid-stat-box">
+            <span class="stat-value">27K</span>
+            <span class="stat-label">Leads</span>
+          </div>
+          <div class="hybrid-stat-box">
+            <span class="stat-value">5K</span>
+            <span class="stat-label">Emails</span>
+          </div>
+        </div>
+        <div class="hybrid-features">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="h1-mask">
+            <div class="features-faded" id="h1">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('h1','h1-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <div class="hybrid-cta-area">
+          <button class="cta-btn">Buy now</button>
+        </div>
+      </div>
+
+      <!-- High Volume -->
+      <div class="hybrid-card">
+        <div class="hybrid-top">
+          <div class="card-plan-label">High Volume</div>
+          <div class="card-name">High Volume</div>
+          <div class="price-block">
+            <div class="price-original">$49.99</div>
+            <div class="price-current">$39.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $23.99</div>
+        </div>
+        <div class="hybrid-middle">
+          <div class="hybrid-stat-box">
+            <span class="stat-value">80K</span>
+            <span class="stat-label">Leads</span>
+          </div>
+          <div class="hybrid-stat-box">
+            <span class="stat-value">15K</span>
+            <span class="stat-label">Emails</span>
+          </div>
+        </div>
+        <div class="hybrid-features">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="h2-mask">
+            <div class="features-faded" id="h2">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('h2','h2-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <div class="hybrid-cta-area">
+          <button class="cta-btn">Buy now</button>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div class="hybrid-card">
+        <div class="hybrid-top">
+          <div class="card-plan-label">Business</div>
+          <div class="card-name">Business</div>
+          <div class="price-block">
+            <div class="price-original">$84.99</div>
+            <div class="price-current">$67.99</div>
+            <div class="price-billing">one-time</div>
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <div class="membership-saving"><strong>40% OFF with membership</strong> &middot; $40.79</div>
+        </div>
+        <div class="hybrid-middle">
+          <div class="hybrid-stat-box">
+            <span class="stat-value">150K</span>
+            <span class="stat-label">Leads</span>
+          </div>
+          <div class="hybrid-stat-box">
+            <span class="stat-value">25K</span>
+            <span class="stat-label">Emails</span>
+          </div>
+        </div>
+        <div class="hybrid-features">
+          <div class="features-heading">What's included</div>
+          <ul class="features-list">
+            <li><span class="check">&#10003;</span> Verified Emails</li>
+            <li><span class="check">&#10003;</span> Phone Numbers</li>
+            <li><span class="check">&#10003;</span> Company Name</li>
+          </ul>
+          <div class="features-fade-mask" id="h3-mask">
+            <div class="features-faded" id="h3">
+              <ul class="features-list">
+                <li><span class="check">&#10003;</span> Contact Name</li>
+                <li><span class="check">&#10003;</span> Competitor Details</li>
+                <li><span class="check">&#10003;</span> City &amp; State</li>
+                <li><span class="check">&#10003;</span> Property Location</li>
+                <li><span class="check">&#10003;</span> Company Website</li>
+                <li><span class="check">&#10003;</span> Industry Information</li>
+                <li><span class="check">&#10003;</span> Rating &amp; Reviews</li>
+              </ul>
+            </div>
+          </div>
+          <button class="show-more-btn" onclick="toggleFeatures('h3','h3-mask',this)">Show more <span class="arrow">&#9660;</span></button>
+        </div>
+        <div class="hybrid-cta-area">
+          <button class="cta-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bundle -->
+    <div class="bundle-card">
+      <div class="bundle-header">
+        <div class="card-plan-label">Bundle</div>
+        <div class="card-name">Restaurants, Hotels &amp; Construction</div>
+        <div class="bundle-save">Save up to $23</div>
+      </div>
+      <div class="bundle-tiers">
+        <div class="bundle-tier">
+          <div><div class="bundle-tier-label">25K Emails</div></div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$65.99</div>
+            <div class="bundle-tier-current">$49.99</div>
+          </div>
+        </div>
+        <div class="bundle-tier">
+          <div><div class="bundle-tier-label">50K Emails <span class="best-value-badge">BEST VALUE</span></div></div>
+          <div class="bundle-tier-pricing">
+            <div class="bundle-tier-original">$117.99</div>
+            <div class="bundle-tier-current">$94.99</div>
+          </div>
+        </div>
+      </div>
+      <div class="bundle-includes">Includes: Restaurants &amp; Caf&eacute;s + Hotels &amp; Hospitality + Construction</div>
+      <div class="bundle-cta-area"><button class="cta-btn">Get bundle</button></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleFeatures(id, maskId, btn) {
+  var el = document.getElementById(id);
+  var mask = document.getElementById(maskId);
+  if (el.classList.contains('open')) {
+    el.classList.remove('open');
+    mask.classList.remove('open');
+    btn.classList.remove('open');
+    btn.innerHTML = 'Show more <span class="arrow">&#9660;</span>';
+  } else {
+    el.classList.add('open');
+    mask.classList.add('open');
+    btn.classList.add('open');
+    btn.innerHTML = 'Show less <span class="arrow">&#9660;</span>';
+  }
+}
+</script>
+
+</body>
+</html>

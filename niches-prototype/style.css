@@ -1,0 +1,328 @@
+/* =========================================
+   LEADS PITCH — NICHES SHOWCASE
+   Scrolling pill showcase.
+   ========================================= */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f0ede8;
+  --ink: #0e0e0e;
+  --ink-3: #8a8680;
+  --ink-4: #b5b0a8;
+  --rule: #d0cbc3;
+  --accent-bg: #0e0e0e;
+  --accent-fg: #f0ede8;
+  --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.3; }
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 100px 28px 80px;
+  text-align: center;
+}
+.hero__eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 16px;
+}
+.hero__title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  margin-bottom: 16px;
+}
+.hero__sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   NICHES SECTION
+   ========================================= */
+.niches {
+  padding: 56px 0 64px;
+  overflow: hidden;
+}
+.niches__head {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 28px 20px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.niches__label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--ink-4);
+  margin-bottom: 4px;
+}
+.niches__title {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* =========================================
+   SHOWCASE — scrolling rows
+   ========================================= */
+.showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Each row is an overflow-hidden viewport with edge fades */
+.row {
+  overflow: hidden;
+  width: 100%;
+  cursor: default;
+  position: relative;
+}
+
+/* Edge fade masks — left and right */
+.row::before,
+.row::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.row::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.row::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+/* The track holds pills and scrolls */
+.row__track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ---- Scroll directions ---- */
+.row--left .row__track {
+  animation: scroll-left 18s linear infinite;
+}
+.row--right .row__track {
+  animation: scroll-right 18s linear infinite;
+}
+
+/* Speed modifiers */
+.row--fast .row__track {
+  animation-duration: 12s;
+}
+.row--slow .row__track {
+  animation-duration: 26s;
+}
+
+/* Pause on hover */
+.row:hover .row__track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* =========================================
+   PILL — the industry name card
+   ========================================= */
+.pill {
+  flex-shrink: 0;
+  padding: 14px 32px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.pill:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Accent variant — dark pill */
+.pill--accent {
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+  border-color: var(--accent-bg);
+}
+
+.pill--accent:hover {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+/* =========================================
+   PILL ICON — animated SVG inside a scrolling pill
+   ========================================= */
+.pill--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.pill--icon:hover {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.pill__icon-svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+/* Base: paths hidden */
+.pill__icon-path {
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+}
+
+/* Draw animation — infinite loop.
+   Draws in quickly, then HOLDS the icon visible most of the
+   cycle so it never looks broken/empty between redraws. */
+.pill__icon-path--1 { animation: icon-draw 2.5s ease 0s infinite; }
+.pill__icon-path--2 { animation: icon-draw 2.5s ease 0.1s infinite; }
+.pill__icon-path--3 { animation: icon-draw 2.5s ease 0.2s infinite; }
+.pill__icon-path--4 { animation: icon-draw 2.5s ease 0.3s infinite; }
+.pill__icon-path--5 { animation: icon-draw 2.5s ease 0.4s infinite; }
+.pill__icon-path--6 { animation: icon-draw 2.5s ease 0.5s infinite; }
+.pill__icon-path--7 { animation: icon-draw 2.5s ease 0.6s infinite; }
+.pill__icon-path--8 { animation: icon-draw 2.5s ease 0.7s infinite; }
+.pill__icon-path--9 { animation: icon-draw 2.5s ease 0.8s infinite; }
+.pill__icon-path--10 { animation: icon-draw 2.5s ease 0.9s infinite; }
+.pill__icon-path--11 { animation: icon-draw 2.5s ease 1.0s infinite; }
+.pill__icon-path--12 { animation: icon-draw 2.5s ease 1.1s infinite; }
+.pill__icon-path--13 { animation: icon-draw 2.5s ease 1.2s infinite; }
+.pill__icon-path--14 { animation: icon-draw 2.5s ease 1.3s infinite; }
+
+@keyframes icon-draw {
+  0%   { stroke-dashoffset: 4000; }
+  18%  { stroke-dashoffset: 0; }
+  78%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 4000; }
+}
+
+/* Hover: pause the draw */
+.pill--icon:hover .pill__icon-path {
+  animation-play-state: paused;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pill__icon-path {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* =========================================
+   BOTTOM CTA
+   ========================================= */
+.cta {
+  background: var(--ink);
+  padding: 72px 28px;
+  text-align: center;
+}
+.cta__title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.cta__sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 24px;
+}
+.cta__btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 0.2s, transform 0.2s;
+}
+.cta__btn:hover { background: #e8e8e8; transform: translateY(-1px); }
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .hero { padding: 72px 20px 60px; }
+  .pill { padding: 12px 24px; font-size: 13px; }
+  .row__track { gap: 10px; }
+  .row::before, .row::after { width: 48px; }
+  .pill__icon-svg { width: 22px; height: 22px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 56px 16px 48px; }
+  .pill { padding: 10px 20px; font-size: 12px; }
+  .row::before, .row::after { width: 32px; }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .row__track {
+    animation: none !important;
+  }
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+::selection { background: var(--ink); color: #fff; }

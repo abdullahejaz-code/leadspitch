@@ -1,7 +1,8 @@
-// Industry Page Generator — New Template
+// Industry Page Generator — Redesigned Template
 // Run: node generate-industries.js
 // Produces: industries/[slug].html for each industry
-// Template: Hero → Products → Bundles → More Industries → FAQs → CTA
+// Template: Hero → One-time → Bundles → Related → Preview → FAQ → Compare → CTA
+// Theme: Dark default, light via toggle (data-theme="light"), persisted to localStorage
 
 const fs = require('fs');
 const path = require('path');
@@ -10,21 +11,15 @@ const industries = [
   {
     slug: "automotive",
     name: "Automotive",
-    metaDesc: "Verified automotive business data — dealerships, repair shops, parts suppliers, and automotive service providers.",
+    metaDesc: "Leads Pitch verified automotive business data — dealerships, repair shops, parts suppliers, and automotive service providers.",
     heroSub: "Dealerships, repair shops, parts suppliers, and automotive businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "27K", price: "$13.99", member: "$8.39", link: "https://whop.com/automotive-leadspitch/starter-automotive", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "105K", price: "$24.99", member: "$14.99", link: "https://whop.com/automotive-leadspitch/growth-automotive", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "180K", price: "$39.99", member: "$23.99", link: "https://whop.com/automotive-leadspitch/professional-automotive", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "375K", price: "$67.99", member: "$40.79", link: "https://whop.com/automotive-leadspitch/business-automotive", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "650K", price: "$99.99", member: "$59.99", link: "https://whop.com/automotive-leadspitch/scale-automotive", badge: "Massive Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "1.15M+", price: "$139.99", member: "$83.99", link: "https://whop.com/automotive-leadspitch/enterprise-automotive", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "25K", leads: "95K+", duration: "12 Months", price: "$84.99", link: "https://whop.com/automotive-leadspitch/starter-automotive-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "50K", leads: "190K+", duration: "6 Months", price: "$94.99", link: "https://whop.com/automotive-leadspitch/growth-automotive-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "75K", leads: "285K+", duration: "4 Months", price: "$104.99", link: "https://whop.com/automotive-leadspitch/professional-automotive-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "100K", leads: "380K+", duration: "3 Months", price: "$119.99", link: "https://whop.com/automotive-leadspitch/business-automotive-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "5K", leads: "27K", price: "$27.98", member: "$16.79", link: "https://whop.com/automotive-leadspitch/starter-automotive", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "105K", price: "$49.98", member: "$29.99", link: "https://whop.com/automotive-leadspitch/growth-automotive", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "180K", price: "$79.98", member: "$47.99", link: "https://whop.com/automotive-leadspitch/professional-automotive", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "375K", price: "$135.98", member: "$81.59", link: "https://whop.com/automotive-leadspitch/business-automotive", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "650K", price: "$199.98", member: "$119.99", link: "https://whop.com/automotive-leadspitch/scale-automotive", badge: "Massive Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "1.15M+", price: "$279.98", member: "$167.99", link: "https://whop.com/automotive-leadspitch/enterprise-automotive", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of automotive businesses are included?", a: "The dataset covers dealerships, auto repair shops, parts suppliers, body shops, car washes, and other automotive service businesses." },
@@ -38,21 +33,15 @@ const industries = [
   {
     slug: "construction",
     name: "Construction",
-    metaDesc: "Verified construction business data — general contractors, builders, subcontractors, and construction companies.",
+    metaDesc: "Leads Pitch verified construction business data — general contractors, builders, subcontractors, and construction companies.",
     heroSub: "General contractors, builders, subcontractors, and construction companies. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$12.99", member: "$7.79", link: "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "105K", price: "$22.99", member: "$13.79", link: "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "175K", price: "$37.99", member: "$22.79", link: "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "360K", price: "$64.99", member: "$38.99", link: "https://whop.com/construction-contractors-leadspitch/business-construction-contractors", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "760K", price: "$99.99", member: "$59.99", link: "https://whop.com/construction-contractors-leadspitch/scale-construction-contractors", badge: "Enterprise Ready" },
-      { plan: "Enterprise", emails: "350K", leads: "1.3M+", price: "$139.99", member: "$83.99", link: "https://whop.com/construction-contractors-leadspitch/enterprise-construction-contractors", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "30K", leads: "110K+", duration: "12 Months", price: "$79.99", link: "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "60K", leads: "220K+", duration: "6 Months", price: "$89.99", link: "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "90K", leads: "320K+", duration: "4 Months", price: "$99.99", link: "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors-monthly-data-plan-for-3-months" },
-      { plan: "Business", emails: "120K", leads: "430K+", duration: "3 Months", price: "$114.99", link: "https://whop.com/construction-contractors-leadspitch/business-construction-contractors-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "105K", price: "$45.98", member: "$27.59", link: "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "175K", price: "$75.98", member: "$45.59", link: "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", link: "https://whop.com/construction-contractors-leadspitch/business-construction-contractors", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "760K", price: "$199.98", member: "$119.99", link: "https://whop.com/construction-contractors-leadspitch/scale-construction-contractors", badge: "Enterprise Ready" },
+      { plan: "Enterprise", emails: "350K", leads: "1.3M+", price: "$279.98", member: "$167.99", link: "https://whop.com/construction-contractors-leadspitch/enterprise-construction-contractors", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of construction companies are included?", a: "The dataset covers general contractors, home builders, subcontractors, specialty trades, and construction management firms." },
@@ -66,19 +55,13 @@ const industries = [
   {
     slug: "accounting-finance",
     name: "Accounting & Finance",
-    metaDesc: "Verified accounting business data — CPAs, bookkeepers, financial advisors, and accounting firms.",
+    metaDesc: "Leads Pitch verified accounting business data — CPAs, bookkeepers, financial advisors, and accounting firms.",
     heroSub: "CPAs, bookkeepers, financial advisors, and accounting firms. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "23K", price: "$11.99", member: "$7.99", link: "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "82K", price: "$19.99", member: "$11.99", link: "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "135K", price: "$32.99", member: "$19.99", link: "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance", badge: "Best Value" },
-      { plan: "Business", emails: "65K", leads: "185K", price: "$49.99", member: "$29.99", link: "https://whop.com/accounting-finance-leadspitch/business-accounting-finance", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "5K", leads: "16K+", duration: "12 Months", price: "$34.99", link: "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "10.5K", leads: "33K+", duration: "6 Months", price: "$39.99", link: "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "16K", leads: "48K+", duration: "4 Months", price: "$44.99", link: "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance-monthly-data-plan-for-12-months" },
-      { plan: "Business", emails: "21K", leads: "66K+", duration: "3 Months", price: "$49.99", link: "https://whop.com/accounting-finance-leadspitch/business-accounting-finance-monthly-data-plan-for-12-months" }
+      { plan: "Starter", emails: "5K", leads: "23K", price: "$23.98", member: "$14.39", link: "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "82K", price: "$39.98", member: "$23.99", link: "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "135K", price: "$65.98", member: "$39.59", link: "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance", badge: "Best Value" },
+      { plan: "Business", emails: "65K", leads: "185K", price: "$99.98", member: "$59.99", link: "https://whop.com/accounting-finance-leadspitch/business-accounting-finance", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of accounting businesses are included?", a: "The dataset covers CPA firms, bookkeeping services, financial advisors, tax preparation firms, and other accounting and finance businesses." },
@@ -92,19 +75,13 @@ const industries = [
   {
     slug: "clinics",
     name: "Clinics & Healthcare",
-    metaDesc: "Verified healthcare business data — practices, clinics, hospitals, and medical providers.",
-    heroSub: "Practices, clinics, hospitals, and healthcare providers. Industry-specific contact data for outreach and partnerships.",
+    metaDesc: "Leads Pitch verified healthcare business data — practices, clinics, hospitals, and medical providers.",
+    heroSub: "Practices, clinics, hospitals, and healthcare providers. Niche-specific contact data for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26.4K", price: "$11.99", member: "$7.19", link: "https://whop.com/health-care-leads/starter-clinics-leads", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$19.99", member: "$11.99", link: "https://whop.com/health-care-leads/growth-clinics-leads", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "130.7K", price: "$34.99", member: "$20.99", link: "https://whop.com/health-care-leads/professional-clinics-leads", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "307.8K", price: "$59.99", member: "$35.99", link: "https://whop.com/health-care-leads/business-clinics-leads", badge: "High Volume" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "8K", leads: "42K+", duration: "12 Months", price: "$39.99", link: "https://whop.com/health-care-leads/clinics-starter-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "17K", leads: "89K+", duration: "6 Months", price: "$44.99", link: "https://whop.com/health-care-leads/clinics-growth-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "25K", leads: "132K+", duration: "4 Months", price: "$49.99", link: "https://whop.com/health-care-leads/clinics-professional-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "34K", leads: "180K+", duration: "3 Months", price: "$54.99", link: "https://whop.com/health-care-leads/clinics-business-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "5K", leads: "26.4K", price: "$23.98", member: "$14.39", link: "https://whop.com/health-care-leads/starter-clinics-leads", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$39.98", member: "$23.99", link: "https://whop.com/health-care-leads/growth-clinics-leads", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "130.7K", price: "$69.98", member: "$41.99", link: "https://whop.com/health-care-leads/professional-clinics-leads", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "307.8K", price: "$119.98", member: "$71.99", link: "https://whop.com/health-care-leads/business-clinics-leads", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of healthcare practices are included?", a: "The dataset covers medical practices, clinics, hospitals, specialty care providers, urgent care centers, and other healthcare facilities." },
@@ -118,19 +95,13 @@ const industries = [
   {
     slug: "dentists",
     name: "Dentists",
-    metaDesc: "Verified dental business data — dental practices, orthodontists, oral surgeons, and dental labs.",
+    metaDesc: "Leads Pitch verified dental business data — dental practices, orthodontists, oral surgeons, and dental labs.",
     heroSub: "Dental practices, orthodontists, oral surgeons, and dental labs. Verified contacts for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "28K", price: "$12.99", member: "$7.79", link: "https://whop.com/destists-leads/starter-dentist-leads", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$22.99", member: "$13.79", link: "https://whop.com/destists-leads/growth-dentist-leads", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "145K", price: "$37.99", member: "$22.79", link: "https://whop.com/destists-leads/professional-dentist-leads", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "330K", price: "$64.99", member: "$38.99", link: "https://whop.com/destists-leads/business-dentist-leads", badge: "High Volume" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "9K", leads: "50K+", duration: "12 Months", price: "$42.99", link: "https://whop.com/destists-leads/dentists-starter-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "19K", leads: "105K+", duration: "6 Months", price: "$47.99", link: "https://whop.com/destists-leads/dentists-growth-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "28K", leads: "155K+", duration: "4 Months", price: "$54.99", link: "https://whop.com/destists-leads/dentists-professional-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "38K", leads: "210K+", duration: "3 Months", price: "$59.99", link: "https://whop.com/destists-leads/dentists-business-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "5K", leads: "28K", price: "$25.98", member: "$15.59", link: "https://whop.com/destists-leads/starter-dentist-leads", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", link: "https://whop.com/destists-leads/growth-dentist-leads", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "145K", price: "$75.98", member: "$45.59", link: "https://whop.com/destists-leads/professional-dentist-leads", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "330K", price: "$129.98", member: "$77.99", link: "https://whop.com/destists-leads/business-dentist-leads", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of dental practices are included?", a: "The dataset covers general dentistry practices, orthodontists, oral surgeons, pediatric dentists, dental labs, and other dental providers." },
@@ -144,20 +115,14 @@ const industries = [
   {
     slug: "education",
     name: "Education & Training",
-    metaDesc: "Verified education business data — schools, universities, training centers, and education providers.",
-    heroSub: "Schools, universities, training centers, and education providers. Industry-specific contact data for outreach.",
+    metaDesc: "Leads Pitch verified education business data — schools, universities, training centers, and education providers.",
+    heroSub: "Schools, universities, training centers, and education providers. Niche-specific contact data for outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "25K", price: "$11.99", member: "$7.19", link: "https://whop.com/education-training-c476/starter-education-training", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$21.99", member: "$13.19", link: "https://whop.com/education-training-c476/growth-education-training", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$35.99", member: "$21.59", link: "https://whop.com/education-training-c476/professional-education-training", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "330K", price: "$61.99", member: "$37.19", link: "https://whop.com/education-training-c476/business-education-training", badge: "High Volume" },
-      { plan: "Enterprise", emails: "175K", leads: "590K+", price: "$94.99", member: "$56.99", link: "https://whop.com/education-training-c476/enterprise-education-training", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "14.5K", leads: "50K+", duration: "12 Months", price: "$59.99", link: "https://whop.com/education-training-c476/starter-education-training-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "29.5K", leads: "100K+", duration: "6 Months", price: "$64.99", link: "https://whop.com/education-training-c476/growth-education-training-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "44K", leads: "150K+", duration: "4 Months", price: "$69.99", link: "https://whop.com/education-training-c476/professional-education-training-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "69K", leads: "200K+", duration: "3 Months", price: "$74.99", link: "https://whop.com/education-training-c476/business-education-training-monthly-data-plan-for-12-months/" }
+      { plan: "Starter", emails: "5K", leads: "25K", price: "$23.98", member: "$14.39", link: "https://whop.com/education-training-c476/starter-education-training", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$43.98", member: "$26.39", link: "https://whop.com/education-training-c476/growth-education-training", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$71.98", member: "$43.19", link: "https://whop.com/education-training-c476/professional-education-training", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "330K", price: "$123.98", member: "$74.39", link: "https://whop.com/education-training-c476/business-education-training", badge: "High Volume" },
+      { plan: "Enterprise", emails: "175K", leads: "590K+", price: "$189.98", member: "$113.99", link: "https://whop.com/education-training-c476/enterprise-education-training", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of education institutions are included?", a: "The dataset covers schools, universities, training centers, tutoring services, online education providers, and other education businesses." },
@@ -171,22 +136,16 @@ const industries = [
   {
     slug: "home-services",
     name: "Home Services",
-    metaDesc: "Verified home services business data — plumbers, electricians, HVAC, landscapers, and home improvement pros.",
+    metaDesc: "Leads Pitch verified home services business data — plumbers, electricians, HVAC, landscapers, and home improvement pros.",
     heroSub: "Plumbers, electricians, HVAC, landscapers, and home improvement pros. Verified contacts for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$12.99", member: "$7.79", link: "https://whop.com/home-services-leadspitch/starter-home-services/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$22.99", member: "$13.79", link: "https://whop.com/home-services-leadspitch/growth-home-services/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$37.99", member: "$22.79", link: "https://whop.com/home-services-leadspitch/professional-home-services/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "350K", price: "$64.99", member: "$38.99", link: "https://whop.com/home-services-leadspitch/business-home-services/", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "700K", price: "$99.99", member: "$59.99", link: "https://whop.com/home-services-leadspitch/scale-home-services/", badge: "Growing Enterprise" },
-      { plan: "Enterprise", emails: "300K", leads: "1.05M", price: "$129.99", member: "$77.99", link: "https://whop.com/home-services-leadspitch/enterprise-home-services/", badge: "Enterprise Ready" },
-      { plan: "Complete Database", emails: "430K+", leads: "1.5M+", price: "$159.99", member: "$95.99", link: "https://whop.com/home-services-leadspitch/complete-database-home-services/", badge: "Complete Coverage" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "36K", leads: "125K+", duration: "12 Months", price: "$89.99", link: "https://whop.com/home-services-leadspitch/starter-home-services-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "72K", leads: "250K+", duration: "6 Months", price: "$99.99", link: "https://whop.com/home-services-leadspitch/growth-home-services-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "108K", leads: "375K+", duration: "4 Months", price: "$114.99", link: "https://whop.com/home-services-leadspitch/professional-home-services-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "144K", leads: "500K+", duration: "3 Months", price: "$129.99", link: "https://whop.com/home-services-leadspitch/business-home-services-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/home-services-leadspitch/starter-home-services/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$45.98", member: "$27.59", link: "https://whop.com/home-services-leadspitch/growth-home-services/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$75.98", member: "$45.59", link: "https://whop.com/home-services-leadspitch/professional-home-services/", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", link: "https://whop.com/home-services-leadspitch/business-home-services/", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "700K", price: "$199.98", member: "$119.99", link: "https://whop.com/home-services-leadspitch/scale-home-services/", badge: "Growing Enterprise" },
+      { plan: "Enterprise", emails: "300K", leads: "1.05M", price: "$259.98", member: "$155.99", link: "https://whop.com/home-services-leadspitch/enterprise-home-services/", badge: "Enterprise Ready" },
+      { plan: "Complete Database", emails: "430K+", leads: "1.5M+", price: "$319.98", member: "$191.99", link: "https://whop.com/home-services-leadspitch/complete-database-home-services/", badge: "Complete Coverage" }
     ],
     faqs: [
       { q: "What types of home service businesses are included?", a: "The dataset covers plumbers, electricians, HVAC contractors, landscapers, roofers, painters, and other home improvement professionals." },
@@ -200,20 +159,14 @@ const industries = [
   {
     slug: "restaurants-cafes",
     name: "Restaurants & Cafes",
-    metaDesc: "Verified restaurant and cafe business data — restaurants, cafes, coffee shops, bakeries, and food service businesses.",
-    heroSub: "Restaurants, cafes, coffee shops, bakeries, and food service businesses. Industry-specific contact data for outreach and partnerships.",
+    metaDesc: "Leads Pitch verified restaurant and cafe business data — restaurants, cafes, coffee shops, bakeries, and food service businesses.",
+    heroSub: "Restaurants, cafes, coffee shops, bakeries, and food service businesses. Niche-specific contact data for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "28K", price: "$13.99", member: "$8.39", link: "https://whop.com/restaurants-cafes/starter-restaurants-cafes/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$24.99", member: "$14.99", link: "https://whop.com/restaurants-cafes/growth-restaurants-cafes/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$34.99", member: "$20.99", link: "https://whop.com/restaurants-cafes/professional-restaurants-cafes/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "360K", price: "$64.99", member: "$38.99", link: "https://whop.com/restaurants-cafes/business-restaurants-cafes/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "200K", leads: "760K+", price: "$99.99", member: "$59.99", link: "https://whop.com/restaurants-cafes/enterprise-restaurants-cafes/", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "17K", leads: "60K+", duration: "12 Months", price: "$64.99", link: "https://whop.com/restaurants-cafes/starter-restaurants-cafes-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "34K", leads: "120K+", duration: "6 Months", price: "$69.99", link: "https://whop.com/restaurants-cafes/growth-restaurants-cafes-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "50K", leads: "180K+", duration: "4 Months", price: "$74.99", link: "https://whop.com/restaurants-cafes/professional-restaurants-cafes-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "67K", leads: "240K+", duration: "3 Months", price: "$79.99", link: "https://whop.com/restaurants-cafes/business-restaurants-cafes-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "28K", price: "$27.98", member: "$16.79", link: "https://whop.com/restaurants-cafes/starter-restaurants-cafes/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$49.98", member: "$29.99", link: "https://whop.com/restaurants-cafes/growth-restaurants-cafes/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$69.98", member: "$41.99", link: "https://whop.com/restaurants-cafes/professional-restaurants-cafes/", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", link: "https://whop.com/restaurants-cafes/business-restaurants-cafes/", badge: "High Volume" },
+      { plan: "Enterprise", emails: "200K", leads: "760K+", price: "$199.98", member: "$119.99", link: "https://whop.com/restaurants-cafes/enterprise-restaurants-cafes/", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of restaurants are included?", a: "The dataset covers full-service restaurants, fast casual, cafes, coffee shops, bakeries, food trucks, and other food service businesses." },
@@ -227,19 +180,13 @@ const industries = [
   {
     slug: "events-leisure",
     name: "Events & Leisure",
-    metaDesc: "Verified events and leisure business data — event venues, planners, entertainment, and recreation providers.",
+    metaDesc: "Leads Pitch verified events and leisure business data — event venues, planners, entertainment, and recreation providers.",
     heroSub: "Event venues, planners, entertainment companies, and recreation businesses. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$12.99", member: "$7.79", link: "https://whop.com/events-leisure-leadspitch/starter-events-leisure/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$22.99", member: "$13.79", link: "https://whop.com/events-leisure-leadspitch/growth-events-leisure/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$37.99", member: "$22.79", link: "https://whop.com/events-leisure-leadspitch/professional-events-leisure/", badge: "Best Value" },
-      { plan: "Business", emails: "110K", leads: "330K", price: "$62.99", member: "$37.79", link: "https://whop.com/events-leisure-leadspitch/business-events-leisure/", badge: "High Volume" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "9K", leads: "30K+", duration: "12 Months", price: "$44.99", link: "https://whop.com/events-leisure-leadspitch/starter-events-leisure-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "18K", leads: "60K+", duration: "6 Months", price: "$49.99", link: "https://whop.com/events-leisure-leadspitch/growth-events-leisure-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "27K", leads: "90K+", duration: "4 Months", price: "$54.99", link: "https://whop.com/events-leisure-leadspitch/professional-events-leisure-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "37K", leads: "125K+", duration: "3 Months", price: "$59.99", link: "https://whop.com/events-leisure-leadspitch/business-events-leisure-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/events-leisure-leadspitch/starter-events-leisure/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", link: "https://whop.com/events-leisure-leadspitch/growth-events-leisure/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$75.98", member: "$45.59", link: "https://whop.com/events-leisure-leadspitch/professional-events-leisure/", badge: "Best Value" },
+      { plan: "Business", emails: "110K", leads: "330K", price: "$125.98", member: "$75.59", link: "https://whop.com/events-leisure-leadspitch/business-events-leisure/", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of events businesses are included?", a: "The dataset covers event venues, event planners, entertainment companies, recreation facilities, and leisure businesses." },
@@ -253,20 +200,14 @@ const industries = [
   {
     slug: "food-beverage",
     name: "Food & Beverage Suppliers",
-    metaDesc: "Verified food and beverage supplier business data — distributors, manufacturers, and suppliers.",
+    metaDesc: "Leads Pitch verified food and beverage supplier business data — distributors, manufacturers, and suppliers.",
     heroSub: "Food distributors, beverage suppliers, manufacturers, and wholesale businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$13.99", member: "$8.39", link: "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$24.99", member: "$14.99", link: "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "165K", price: "$39.99", member: "$23.99", link: "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "340K", price: "$67.99", member: "$40.79", link: "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "170K", leads: "620K+", price: "$109.99", member: "$65.99", link: "https://whop.com/food-beverage-suppliers/enterprise-food-beverage-suppliers/", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "14K", leads: "50K+", duration: "12 Months", price: "$69.99", link: "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "28K", leads: "100K+", duration: "6 Months", price: "$74.99", link: "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "42K", leads: "150K+", duration: "4 Months", price: "$79.99", link: "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "56K", leads: "200K+", duration: "3 Months", price: "$84.99", link: "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$27.98", member: "$16.79", link: "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$49.98", member: "$29.99", link: "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "165K", price: "$79.98", member: "$47.99", link: "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers/", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "340K", price: "$135.98", member: "$81.59", link: "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers/", badge: "High Volume" },
+      { plan: "Enterprise", emails: "170K", leads: "620K+", price: "$219.98", member: "$131.99", link: "https://whop.com/food-beverage-suppliers/enterprise-food-beverage-suppliers/", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of food and beverage businesses are included?", a: "The dataset covers food distributors, beverage suppliers, manufacturers, wholesalers, and other F&B supply chain businesses." },
@@ -280,20 +221,14 @@ const industries = [
   {
     slug: "agencies-business",
     name: "Agencies & Business Services",
-    metaDesc: "Verified agency and business services data — marketing agencies, consulting firms, and B2B service providers.",
+    metaDesc: "Leads Pitch verified agency and business services data — marketing agencies, consulting firms, and B2B service providers.",
     heroSub: "Marketing agencies, consulting firms, IT services, and B2B service providers. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$12.99", member: "$7.79", link: "https://whop.com/agencies-business-services/starter-agencies-business-services/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$23.99", member: "$14.39", link: "https://whop.com/agencies-business-services/growth-agencies-business-services/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$38.99", member: "$23.39", link: "https://whop.com/agencies-business-services/professional-agencies-business-services/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "350K", price: "$64.99", member: "$38.99", link: "https://whop.com/agencies-business-services/business-agencies-business-services/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "1.05M+", price: "$134.99", member: "$80.99", link: "https://whop.com/agencies-business-services/enterprise-agencies-business-services/", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "25K", leads: "88K+", duration: "12 Months", price: "$79.99", link: "https://whop.com/agencies-business-services/starter-agencies-business-services-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "50K", leads: "176K+", duration: "6 Months", price: "$89.99", link: "https://whop.com/agencies-business-services/growth-agencies-business-services-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "75K", leads: "264K+", duration: "4 Months", price: "$99.99", link: "https://whop.com/agencies-business-services/professional-agencies-business-services-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "100K", leads: "352K+", duration: "3 Months", price: "$114.99", link: "https://whop.com/agencies-business-services/business-agencies-business-services-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/agencies-business-services/starter-agencies-business-services/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$47.98", member: "$28.79", link: "https://whop.com/agencies-business-services/growth-agencies-business-services/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$77.98", member: "$46.79", link: "https://whop.com/agencies-business-services/professional-agencies-business-services/", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", link: "https://whop.com/agencies-business-services/business-agencies-business-services/", badge: "High Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "1.05M+", price: "$269.98", member: "$161.99", link: "https://whop.com/agencies-business-services/enterprise-agencies-business-services/", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of agencies are included?", a: "The dataset covers marketing agencies, advertising firms, consulting companies, IT service providers, and other B2B service businesses." },
@@ -307,20 +242,14 @@ const industries = [
   {
     slug: "beauty-wellness",
     name: "Beauty & Wellness",
-    metaDesc: "Verified beauty and wellness business data — salons, spas, clinics, and wellness providers.",
+    metaDesc: "Leads Pitch verified beauty and wellness business data — salons, spas, clinics, and wellness providers.",
     heroSub: "Salons, spas, wellness centers, and beauty businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$11.99", member: "$7.19", link: "https://whop.com/beauty-wellness-leadspitch/starter-beauty-wellness", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$21.99", member: "$13.19", link: "https://whop.com/beauty-wellness-leadspitch/growth-beauty-wellness", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "150K", price: "$35.99", member: "$21.59", link: "https://whop.com/beauty-wellness-leadspitch/professional-beauty-wellness", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "320K", price: "$61.99", member: "$37.19", link: "https://whop.com/beauty-wellness-leadspitch/business-beauty-wellness", badge: "High Volume" },
-      { plan: "Enterprise", emails: "200K", leads: "680K+", price: "$94.99", member: "$56.99", link: "https://whop.com/beauty-wellness-leadspitch/enterprise-beauty-wellness", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "8K", leads: "28K+", duration: "12 Months", price: "$39.99", link: "https://whop.com/beauty-wellness-leadspitch/starter-beauty-wellness-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "16K", leads: "56K+", duration: "6 Months", price: "$44.99", link: "https://whop.com/beauty-wellness-leadspitch/growth-beauty-wellness-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "24K", leads: "84K+", duration: "4 Months", price: "$49.99", link: "https://whop.com/beauty-wellness-leadspitch/professional-beauty-wellness-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "32K", leads: "112K+", duration: "3 Months", price: "$54.99", link: "https://whop.com/beauty-wellness-leadspitch/business-beauty-wellness-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", link: "https://whop.com/beauty-wellness-leadspitch/starter-beauty-wellness", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$43.98", member: "$26.39", link: "https://whop.com/beauty-wellness-leadspitch/growth-beauty-wellness", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "150K", price: "$71.98", member: "$43.19", link: "https://whop.com/beauty-wellness-leadspitch/professional-beauty-wellness", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "320K", price: "$123.98", member: "$74.39", link: "https://whop.com/beauty-wellness-leadspitch/business-beauty-wellness", badge: "High Volume" },
+      { plan: "Enterprise", emails: "200K", leads: "680K+", price: "$189.98", member: "$113.99", link: "https://whop.com/beauty-wellness-leadspitch/enterprise-beauty-wellness", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of beauty and wellness businesses are included?", a: "The dataset covers hair salons, nail salons, spas, day spas, med spas, wellness centers, and other beauty and wellness service providers." },
@@ -334,19 +263,13 @@ const industries = [
   {
     slug: "hotels-hospitality",
     name: "Hotels & Hospitality",
-    metaDesc: "Verified hotel and hospitality business data — hotels, resorts, B&Bs, and hospitality providers.",
+    metaDesc: "Leads Pitch verified hotel and hospitality business data — hotels, resorts, B&Bs, and hospitality providers.",
     heroSub: "Hotels, resorts, bed & breakfasts, and hospitality businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "25K", price: "$15.99", member: "$9.59", link: "https://whop.com/hotels-hospitality/starter-hotels-hospitality", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$27.99", member: "$16.79", link: "https://whop.com/hotels-hospitality/growth-hotels-hospitality", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$44.99", member: "$26.99", link: "https://whop.com/hotels-hospitality/professional-hotels-hospitality", badge: "Best Value" },
-      { plan: "Business", emails: "75K", leads: "250K", price: "$69.99", member: "$41.99", link: "https://whop.com/hotels-hospitality/business-hotels-hospitality", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "6.5K", leads: "22K+", duration: "12 Months", price: "$49.99", link: "https://whop.com/hotels-hospitality/starter-hotels-hospitality-monthly-data-plan-for-12-months" },
-      { plan: "Growth", emails: "13K", leads: "44K+", duration: "6 Months", price: "$54.99", link: "https://whop.com/hotels-hospitality/growth-hotels-hospitality-monthly-data-plan-for-6-months" },
-      { plan: "Professional", emails: "19K", leads: "66K+", duration: "4 Months", price: "$59.99", link: "https://whop.com/hotels-hospitality/professional-hotels-hospitality-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "26K", leads: "88K+", duration: "3 Months", price: "$64.99", link: "https://whop.com/hotels-hospitality/business-hotels-hospitality-monthly-data-plan-for-12-months" }
+      { plan: "Starter", emails: "5K", leads: "25K", price: "$31.98", member: "$19.19", link: "https://whop.com/hotels-hospitality/starter-hotels-hospitality", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$55.98", member: "$33.59", link: "https://whop.com/hotels-hospitality/growth-hotels-hospitality", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$89.98", member: "$53.99", link: "https://whop.com/hotels-hospitality/professional-hotels-hospitality", badge: "Best Value" },
+      { plan: "Business", emails: "75K", leads: "250K", price: "$139.98", member: "$83.99", link: "https://whop.com/hotels-hospitality/business-hotels-hospitality", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of hospitality businesses are included?", a: "The dataset covers hotels, resorts, bed & breakfasts, inns, motels, and other hospitality providers." },
@@ -360,20 +283,14 @@ const industries = [
   {
     slug: "legal",
     name: "Legal",
-    metaDesc: "Verified legal industry business data — law firms, attorneys, and legal practices.",
+    metaDesc: "Leads Pitch verified legal niche business data — law firms, attorneys, and legal practices.",
     heroSub: "Law firms, solo practitioners, and legal service providers. Verified contact data for business development and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$13.99", member: "$8.39", link: "https://whop.com/legal-leadspitch/starter-lawyer-leads/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$20.99", member: "$12.59", link: "https://whop.com/legal-leadspitch/growth-lawyer-leads/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "145K", price: "$34.99", member: "$20.99", link: "https://whop.com/legal-leadspitch/professional-lawyer-leads/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "300K", price: "$59.99", member: "$35.99", link: "https://whop.com/legal-leadspitch/business-lawyer-leads/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "900K+", price: "$129.99", member: "$77.99", link: "https://whop.com/legal-leadspitch/enterprise-lawyer-leads/", badge: "Complete Database" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "25K", leads: "75K+", duration: "12 Months", price: "$79.99", link: "https://whop.com/legal-leadspitch/lawyers-starter-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "50K", leads: "150K+", duration: "6 Months", price: "$89.99", link: "https://whop.com/legal-leadspitch/lawyers-growth-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "75K", leads: "225K+", duration: "4 Months", price: "$99.99", link: "https://whop.com/legal-leadspitch/lawyers-professional-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "100K", leads: "300K+", duration: "3 Months", price: "$109.99", link: "https://whop.com/legal-leadspitch/lawyers-enterprise-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$27.98", member: "$16.79", link: "https://whop.com/legal-leadspitch/starter-lawyer-leads/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$41.98", member: "$25.19", link: "https://whop.com/legal-leadspitch/growth-lawyer-leads/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "145K", price: "$69.98", member: "$41.99", link: "https://whop.com/legal-leadspitch/professional-lawyer-leads/", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "300K", price: "$119.98", member: "$71.99", link: "https://whop.com/legal-leadspitch/business-lawyer-leads/", badge: "High Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "900K+", price: "$259.98", member: "$155.99", link: "https://whop.com/legal-leadspitch/enterprise-lawyer-leads/", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of legal practices are included?", a: "The dataset covers law firms of all sizes, solo practitioners, corporate legal departments, and legal service providers." },
@@ -387,19 +304,13 @@ const industries = [
   {
     slug: "logistics",
     name: "Logistics & Transportation",
-    metaDesc: "Verified logistics and transportation business data — freight, trucking, warehousing, and supply chain companies.",
+    metaDesc: "Leads Pitch verified logistics and transportation business data — freight, trucking, warehousing, and supply chain companies.",
     heroSub: "Freight companies, trucking firms, warehouses, and supply chain businesses. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$11.99", member: "$7.19", link: "https://whop.com/logistics-and-others/starter-logistics-and-others/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "85K", price: "$19.99", member: "$11.99", link: "https://whop.com/logistics-and-others/growth-logistics-and-others/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "140K", price: "$32.99", member: "$19.79", link: "https://whop.com/logistics-and-others/professional-logistics-and-others/", badge: "Best Value" },
-      { plan: "Business", emails: "85K", leads: "255K", price: "$54.99", member: "$32.99", link: "https://whop.com/logistics-and-others/business-logistics-and-others/", badge: "High Volume" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "7K", leads: "21K+", duration: "12 Months", price: "$36.99", link: "https://whop.com/logistics-and-others/starter-logistics-and-others-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "14K", leads: "42K+", duration: "6 Months", price: "$41.99", link: "https://whop.com/logistics-and-others/growth-logistics-and-others-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "21K", leads: "63K+", duration: "4 Months", price: "$46.99", link: "https://whop.com/logistics-and-others/professional-logistics-and-others-monthly-data-plan-for-4-months/" },
-      { plan: "Business", emails: "28K", leads: "84K+", duration: "3 Months", price: "$51.99", link: "https://whop.com/logistics-and-others/business-logistics-and-others-monthly-data-plan-for-3-months/" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", link: "https://whop.com/logistics-and-others/starter-logistics-and-others/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "85K", price: "$39.98", member: "$23.99", link: "https://whop.com/logistics-and-others/growth-logistics-and-others/", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "140K", price: "$65.98", member: "$39.59", link: "https://whop.com/logistics-and-others/professional-logistics-and-others/", badge: "Best Value" },
+      { plan: "Business", emails: "85K", leads: "255K", price: "$109.98", member: "$65.99", link: "https://whop.com/logistics-and-others/business-logistics-and-others/", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of logistics companies are included?", a: "The dataset covers freight carriers, trucking companies, warehousing, 3PL providers, last-mile delivery, and supply chain businesses." },
@@ -413,21 +324,15 @@ const industries = [
   {
     slug: "real-estate",
     name: "Real Estate",
-    metaDesc: "Verified real estate business data — realtors, brokers, property managers, and real estate professionals.",
+    metaDesc: "Leads Pitch verified real estate business data — realtors, brokers, property managers, and real estate professionals.",
     heroSub: "Realtors, brokers, property managers, and real estate professionals. Verified contacts for targeted campaigns.",
     oneTime: [
-      { plan: "Starter", emails: "1K", leads: "3K", price: "$7.99", member: "$4.79", link: "https://whop.com/real-estate-leads-d0ea/real-estate-leades-1k/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "2.5K", leads: "8K", price: "$11.99", member: "$7.19", link: "https://whop.com/real-estate-leads-d0ea/growth-real-estate-leads", badge: "Great Value" },
-      { plan: "Professional", emails: "5K", leads: "16K", price: "$17.99", member: "$10.79", link: "https://whop.com/real-estate-leads-d0ea/professional-real-estate-leads", badge: "Most Popular" },
-      { plan: "Business", emails: "10K", leads: "32K", price: "$27.99", member: "$16.79", link: "https://whop.com/real-estate-leads-d0ea/business-real-estate-leads-83/", badge: "Best Value" },
-      { plan: "Scale", emails: "25K", leads: "80K", price: "$44.99", member: "$26.99", link: "https://whop.com/real-estate-leads-d0ea/scale-real-estate-leads", badge: "High Volume" },
-      { plan: "Enterprise", emails: "50K", leads: "160K", price: "$69.99", member: "$41.99", link: "https://whop.com/real-estate-leads-d0ea/enterprise-real-estate-leads", badge: "Complete Coverage" }
-    ],
-    monthly: [
-      { plan: "Starter", emails: "5K", leads: "~15K", duration: "12 Months", price: "$49.99", link: "https://whop.com/real-estate-leads-d0ea/real-estate-starter-monthly-data-plan-for-12-months/" },
-      { plan: "Growth", emails: "10K", leads: "~30K", duration: "6 Months", price: "$59.99", link: "https://whop.com/real-estate-leads-d0ea/real-estate-growth-monthly-data-plan-for-6-months/" },
-      { plan: "Professional", emails: "15K", leads: "~45K", duration: "4 Months", price: "$69.99", link: "https://whop.com/real-estate-leads-d0ea/real-estate-professional-monthly-data-plan-for-4-months" },
-      { plan: "Business", emails: "20K", leads: "~60K", duration: "3 Months", price: "$79.99", link: "https://whop.com/real-estate-leads-d0ea/real-estate-business-monthly-data-plan-for-3-months" }
+      { plan: "Starter", emails: "1K", leads: "3K", price: "$15.98", member: "$9.59", link: "https://whop.com/real-estate-leads-d0ea/real-estate-leades-1k/", badge: "Entry Plan" },
+      { plan: "Growth", emails: "2.5K", leads: "8K", price: "$23.98", member: "$14.39", link: "https://whop.com/real-estate-leads-d0ea/growth-real-estate-leads", badge: "Great Value" },
+      { plan: "Professional", emails: "5K", leads: "16K", price: "$35.98", member: "$21.59", link: "https://whop.com/real-estate-leads-d0ea/professional-real-estate-leads", badge: "Most Popular" },
+      { plan: "Business", emails: "10K", leads: "32K", price: "$55.98", member: "$33.59", link: "https://whop.com/real-estate-leads-d0ea/business-real-estate-leads-83/", badge: "Best Value" },
+      { plan: "Scale", emails: "25K", leads: "80K", price: "$89.98", member: "$53.99", link: "https://whop.com/real-estate-leads-d0ea/scale-real-estate-leads", badge: "High Volume" },
+      { plan: "Enterprise", emails: "50K", leads: "160K", price: "$139.98", member: "$83.99", link: "https://whop.com/real-estate-leads-d0ea/enterprise-real-estate-leads", badge: "Complete Coverage" }
     ],
     faqs: [
       { q: "What types of real estate professionals are included?", a: "The dataset covers realtors, brokers, property managers, leasing agents, real estate developers, and other real estate professionals." },
@@ -443,99 +348,99 @@ const industries = [
 // Per-industry SEO data (titles, H1s, intro copy, and keyword lists from SEO research)
 const industrySeo = {
   "automotive": {
-    title: "Buy Automotive Leads | Verified Auto Dealer & Repair Shop Contact Lists",
-    h1: "Buy verified automotive leads & contact lists",
-    intro: "Verified automotive business leads for dealerships, repair shops, parts suppliers, and auto service providers. Buy a targeted automotive email list or fresh auto shop leads as a one-time pack or monthly subscription — delivered as a ready-to-use CSV.",
+    title: "Buy Automotive Leads | Verified Auto Dealer & Repair Shop Contact Lists | LeadsPitch",
+    h1: "Get verified automotive leads & contact lists",
+    intro: "Verified automotive business leads for dealerships, repair shops, parts suppliers, and auto service providers. Buy a targeted automotive email list or fresh auto shop leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy automotive leads", "auto dealer contact list", "automotive business email list", "verified auto shop leads", "buy automotive lead packs", "car dealership owner contacts", "local auto service leads", "targeted automotive B2B leads", "fresh automotive contact packs", "automotive decision maker data"]
   },
   "construction": {
-    title: "Buy Construction Leads | Verified Contractor Email Lists & Datasets",
-    h1: "Buy verified construction leads & contractor contact lists",
-    intro: "Target general contractors, builders, and subcontractors with verified construction leads. Buy a contractor email list, local construction leads, or targeted construction B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Construction Leads | Verified Contractor Email Lists & Datasets | LeadsPitch",
+    h1: "Get verified construction leads & contractor contact lists",
+    intro: "Target general contractors, builders, and subcontractors with verified construction leads. Buy a contractor email list, local construction leads, or targeted construction B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy construction leads", "contractor email list", "verified contractor contact database", "construction company owner contacts", "buy contractor lead packs", "local construction leads", "general contractor contact list", "targeted construction B2B leads", "fresh contractor leads for sale", "construction decision maker data"]
   },
   "accounting-finance": {
-    title: "Buy Accounting & Finance Leads | Verified CPA & Bookkeeper Contact Lists",
-    h1: "Buy verified accounting & finance leads",
-    intro: "Reach CPAs, bookkeepers, financial advisors, and accounting firms with verified accounting leads. Buy an accounting email list, local CPA contacts, or targeted finance B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Accounting & Finance Leads | Verified CPA & Bookkeeper Contact Lists | LeadsPitch",
+    h1: "Get verified accounting & finance leads",
+    intro: "Reach CPAs, bookkeepers, financial advisors, and accounting firms with verified accounting leads. Buy an accounting email list, local CPA contacts, or targeted finance B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy accounting leads", "CPA contact list", "accounting firm email list", "verified bookkeeper leads", "buy finance lead packs", "financial advisor contacts", "local accounting business leads", "targeted CPA leads", "fresh accounting contact packs", "accounting decision maker data"]
   },
   "clinics": {
-    title: "Buy Healthcare & Clinic Leads | Verified Medical Practice Contact Lists",
-    h1: "Buy verified healthcare & clinic leads",
-    intro: "Target medical practices, clinics, and healthcare providers with verified healthcare leads. Buy a clinic email list, local practice contacts, or targeted healthcare B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Healthcare & Clinic Leads | Verified Medical Practice Contact Lists | LeadsPitch",
+    h1: "Get verified healthcare & clinic leads",
+    intro: "Target medical practices, clinics, and healthcare providers with verified healthcare leads. Buy a clinic email list, local practice contacts, or targeted healthcare B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy healthcare leads", "clinic contact list", "medical practice email list", "verified healthcare leads", "buy clinic lead packs", "hospital and practice contacts", "local healthcare business leads", "targeted medical leads", "fresh healthcare contact packs", "healthcare decision maker data"]
   },
   "dentists": {
-    title: "Buy Dentist Leads | Verified Dental Practice Contact Lists",
-    h1: "Buy verified dentist leads & dental practice contacts",
-    intro: "Build your dental outreach pipeline with verified dentist leads. Buy a dental practice email list, orthodontist contacts, or local dentist leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Dentist Leads | Verified Dental Practice Contact Lists | LeadsPitch",
+    h1: "Get verified dentist leads & dental practice contacts",
+    intro: "Build your dental outreach pipeline with verified dentist leads. Buy a dental practice email list, orthodontist contacts, or local dentist leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy dentist leads", "dental practice contact list", "dentist email list", "verified dental leads database", "buy orthodontist lead packs", "oral surgeon contacts", "local dental practice leads", "targeted dentist leads", "fresh dental contact packs", "dental decision maker data"]
   },
   "education": {
-    title: "Buy Education & Training Leads | Verified School Contact Lists",
-    h1: "Buy verified education & training leads",
-    intro: "Target schools, universities, training centers, and education providers with verified education leads. Buy a school email list, training center contacts, or targeted education B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Education & Training Leads | Verified School Contact Lists | LeadsPitch",
+    h1: "Get verified education & training leads",
+    intro: "Target schools, universities, training centers, and education providers with verified education leads. Buy a school email list, training center contacts, or targeted education B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy education leads", "school contact list", "education email list", "verified training center leads", "buy education lead packs", "university and school contacts", "local education business leads", "targeted training leads", "fresh education contact packs", "education decision maker data"]
   },
   "home-services": {
-    title: "Buy Home Services Leads | Verified Plumber & HVAC Contact Lists",
-    h1: "Buy verified home services leads",
-    intro: "Reach plumbers, electricians, HVAC contractors, and home improvement professionals with verified home services leads. Buy a contractor email list, local trades contacts, or targeted home services B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Home Services Leads | Verified Plumber & HVAC Contact Lists | LeadsPitch",
+    h1: "Get verified home services leads",
+    intro: "Reach plumbers, electricians, HVAC contractors, and home improvement professionals with verified home services leads. Buy a contractor email list, local trades contacts, or targeted home services B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy home services leads", "plumber contact list", "HVAC email list", "verified contractor leads", "buy home improvement lead packs", "electrician and landscaper contacts", "local home services business leads", "targeted trades leads", "fresh home services contact packs", "home services decision maker data"]
   },
   "restaurants-cafes": {
-    title: "Buy Restaurant Leads | Verified Restaurant & Cafe Contact Lists",
-    h1: "Buy verified restaurant & cafe leads",
-    intro: "Grow your food service client base with verified restaurant leads. Buy a restaurant email list, local restaurant owner contacts, or targeted cafe and coffee shop leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Restaurant Leads | Verified Restaurant & Cafe Contact Lists | LeadsPitch",
+    h1: "Get verified restaurant & cafe leads",
+    intro: "Grow your food service client base with verified restaurant leads. Buy a restaurant email list, local restaurant owner contacts, or targeted cafe and coffee shop leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy restaurant leads", "restaurant owner contact list", "restaurant email list", "verified restaurant leads", "cafe and coffee shop leads", "local restaurant business leads", "restaurant and hotel contacts", "fresh restaurant contact packs", "restaurant decision maker data", "food service leads"]
   },
   "events-leisure": {
-    title: "Buy Events & Leisure Leads | Verified Event Venue Contact Lists",
-    h1: "Buy verified events & leisure leads",
-    intro: "Target event venues, planners, and recreation businesses with verified events leads. Buy an event venue contact list or leisure business leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Events & Leisure Leads | Verified Event Venue Contact Lists | LeadsPitch",
+    h1: "Get verified events & leisure leads",
+    intro: "Target event venues, planners, and recreation businesses with verified events leads. Buy an event venue contact list or leisure business leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy events leads", "event venue contact list", "events email list", "verified events leads", "buy events lead packs", "event planner contacts", "local events business leads", "targeted leisure leads", "fresh events contact packs", "events decision maker data"]
   },
   "food-beverage": {
-    title: "Buy Food & Beverage Supplier Leads | Verified F&B Contact Lists",
-    h1: "Buy verified food & beverage supplier leads",
-    intro: "Reach distributors, manufacturers, and wholesale suppliers with verified food and beverage leads. Buy a food supplier email list or targeted F&B B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Food & Beverage Supplier Leads | Verified F&B Contact Lists | LeadsPitch",
+    h1: "Get verified food & beverage supplier leads",
+    intro: "Reach distributors, manufacturers, and wholesale suppliers with verified food and beverage leads. Buy a food supplier email list or targeted F&B B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy food and beverage leads", "food distributor contact list", "F&B email list", "verified food supplier leads", "buy food supply lead packs", "wholesale food contacts", "local F&B business leads", "targeted beverage supplier leads", "fresh food contact packs", "food and beverage decision maker data"]
   },
   "agencies-business": {
-    title: "Buy Marketing Agency Leads | Verified Agency & Business Services Contacts",
-    h1: "Buy verified marketing agency leads",
-    intro: "Target marketing agencies, consulting firms, and B2B service providers with verified agency leads. Buy an agency email list or professional services contact pack as a one-time CSV or monthly subscription.",
+    title: "Buy Marketing Agency Leads | Verified Agency & Business Services Contacts | LeadsPitch",
+    h1: "Get verified marketing agency leads",
+    intro: "Target marketing agencies, consulting firms, and B2B service providers with verified agency leads. Buy an agency email list or professional services contact pack as a one-time CSV — delivered instantly.",
     keywords: ["buy agency leads", "marketing agency contact list", "agency email list", "verified agency leads database", "buy agency lead packs", "consulting firm owner contacts", "local agency leads", "targeted B2B service leads", "fresh agency contact packs", "agency decision maker data"]
   },
   "beauty-wellness": {
-    title: "Buy Beauty & Wellness Leads | Verified Salon & Spa Contact Lists",
-    h1: "Buy verified beauty & wellness leads",
-    intro: "Target salons, spas, wellness centers, and beauty businesses with verified beauty & wellness leads. Buy a salon email list, spa owner contacts, or targeted beauty business leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Beauty & Wellness Leads | Verified Salon & Spa Contact Lists | LeadsPitch",
+    h1: "Get verified beauty & wellness leads",
+    intro: "Target salons, spas, wellness centers, and beauty businesses with verified beauty & wellness leads. Buy a salon email list, spa owner contacts, or targeted beauty business leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy beauty leads", "salon contact list", "spa email list", "verified beauty business leads", "buy wellness lead packs", "salon owner contacts", "local beauty business leads", "targeted wellness leads", "fresh beauty contact packs", "beauty and wellness decision maker data"]
   },
   "hotels-hospitality": {
-    title: "Buy Hotel & Hospitality Leads | Verified Hotel Owner Contact Lists",
-    h1: "Buy verified hotel & hospitality leads",
-    intro: "Reach hotel owners, resorts, and hospitality providers with verified hospitality leads. Buy a hotel owner contact list or local hotel and travel leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Hotel & Hospitality Leads | Verified Hotel Owner Contact Lists | LeadsPitch",
+    h1: "Get verified hotel & hospitality leads",
+    intro: "Reach hotel owners, resorts, and hospitality providers with verified hospitality leads. Buy a hotel owner contact list or local hotel and travel leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy hospitality leads", "hotel owner contact list", "hotel email list", "verified hospitality leads", "buy hospitality lead packs", "resort and B&B contacts", "local hotel leads", "targeted tourism business leads", "fresh hospitality contact packs", "hospitality decision maker data"]
   },
   "legal": {
-    title: "Buy Lawyer Leads | Verified Attorney & Law Firm Email Lists",
-    h1: "Buy verified lawyer leads & attorney contact lists",
-    intro: "Build your legal business development pipeline with verified lawyer leads. Buy an attorney email list, law firm owner contacts, or local law firm leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Lawyer Leads | Verified Attorney & Law Firm Email Lists | LeadsPitch",
+    h1: "Get verified lawyer leads & attorney contact lists",
+    intro: "Build your legal business development pipeline with verified lawyer leads. Buy an attorney email list, law firm owner contacts, or local law firm leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy lawyer leads", "attorney contact list", "law firm email list", "verified lawyer leads database", "buy attorney lead packs", "legal practice owner contacts", "local law firm leads", "targeted legal professional leads", "fresh lawyer contact packs", "lawyer decision maker data"]
   },
   "logistics": {
-    title: "Buy Logistics & Trucking Leads | Verified Logistics Company Contact Lists",
-    h1: "Buy verified logistics & transportation leads",
-    intro: "Reach freight companies, trucking firms, and warehousing businesses with verified logistics leads. Buy a trucking company contact list or logistics email list as a one-time CSV pack or monthly subscription.",
+    title: "Buy Logistics & Trucking Leads | Verified Logistics Company Contact Lists | LeadsPitch",
+    h1: "Get verified logistics & transportation leads",
+    intro: "Reach freight companies, trucking firms, and warehousing businesses with verified logistics leads. Buy a trucking company contact list or logistics email list as a one-time CSV pack — delivered instantly.",
     keywords: ["buy logistics leads", "trucking company contact list", "logistics and transport email list", "verified logistics leads", "buy transport lead packs", "freight and shipping contacts", "local logistics business leads", "targeted logistics B2B leads", "fresh logistics contact packs", "transport decision maker data"]
   },
   "real-estate": {
-    title: "Buy Real Estate Leads | Verified Realtor & Broker Contact Lists",
-    h1: "Buy verified real estate leads & agent contact lists",
-    intro: "Target realtors, brokers, property managers, and real estate professionals with verified real estate leads. Buy a realtor email list, local agent contacts, or targeted real estate B2B leads as a one-time CSV pack or monthly subscription.",
+    title: "Buy Real Estate Leads | Verified Realtor & Broker Contact Lists | LeadsPitch",
+    h1: "Get verified real estate leads & agent contact lists",
+    intro: "Target realtors, brokers, property managers, and real estate professionals with verified real estate leads. Buy a realtor email list, local agent contacts, or targeted real estate B2B leads as a one-time CSV pack — delivered instantly.",
     keywords: ["buy real estate leads", "realtor contact list", "real estate agent email list", "verified realtor leads", "buy real estate lead packs", "broker and property manager contacts", "local real estate business leads", "targeted real estate agent leads", "fresh real estate contact packs", "real estate decision maker data"]
   },
 };
@@ -545,16 +450,16 @@ const bundleData = {
   "restaurants-hotels-construction": {
     name: "Restaurants, Hotels & Construction",
     industries: ["Restaurants & Cafes", "Hotels & Hospitality", "Construction"],
-    price25k: "$49.99", price25kRetail: "$65.99", price25kSave: "$16",
-    price50k: "$94.99", price50kRetail: "$117.99", price50kSave: "$23",
+    price25k: "$99.98", price25kRetail: "$131.98", price25kSave: "$32",
+    price50k: "$189.98", price50kRetail: "$235.98", price50kSave: "$46",
     link25k: "https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-25k/",
     link50k: "https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-50k/"
   },
   "automotive-logistics-agencies": {
     name: "Automotive, Logistics & Agencies",
     industries: ["Automotive", "Logistics & Transportation", "Agencies & Business Services"],
-    price25k: "$49.99", price25kRetail: "$68.99", price25kSave: "$19",
-    price50k: "$89.99", price50kRetail: "$111.99", price50kSave: "$22",
+    price25k: "$99.98", price25kRetail: "$137.98", price25kSave: "$38",
+    price50k: "$179.98", price50kRetail: "$223.98", price50kSave: "$44",
     link25k: "https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-25k/",
     link50k: "https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-50k/"
   }
@@ -576,16 +481,14 @@ function generatePage(data) {
   const pageUrl = 'https://leadspitch.com/industries/' + data.slug + '.html';
   const availability = soon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock';
 
-  // Build "Explore More Datasets" grid (3-6 related industries)
+  // Build "Explore More Datasets" pills (3-6 related industries, duplicated for seamless loop)
   const exploreIndustries = data.related
     ? data.related.slice(0, 6).map(slug => allIndustryLinks.find(i => i.slug === slug)).filter(Boolean)
     : allIndustryLinks.filter(i => i.slug !== data.slug).slice(0, 6);
-  const exploreIndustriesHtml = exploreIndustries.map(i =>
-    `            <a class="explore-card" href="${i.slug}.html">
-              <h3>${i.name}</h3>
-              <span class="explore-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            </a>`
+  const explorePills = exploreIndustries.map(i =>
+    `              <a class="explore-pill" href="${i.slug}.html">${i.name}</a>`
   ).join('\n');
+  const exploreIndustriesHtml = explorePills + '\n' + explorePills;
 
   // Qualitative comparison table (no specific competitor pricing claims)
   const comparisonHtml = `
@@ -610,7 +513,7 @@ function generatePage(data) {
               </tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Pricing model</th><td>One-time packs + flat monthly</td><td>Per-seat subscriptions with credits</td><td>Usage-based, pay per scrape</td></tr>
+              <tr><th scope="row">Pricing model</th><td>One-time packs, no subscription</td><td>Per-seat subscriptions with credits</td><td>Usage-based, pay per scrape</td></tr>
               <tr><th scope="row">Data verification</th><td>Verified contacts included</td><td>Verification often an add-on</td><td>You verify everything yourself</td></tr>
               <tr><th scope="row">Setup time</th><td>Instant CSV download</td><td>Onboarding, tools, integrations</td><td>Infrastructure and code required</td></tr>
               <tr><th scope="row">Minimum commitment</th><td>None — buy what you need</td><td>Annual contracts are common</td><td>Time and technical effort</td></tr>
@@ -624,42 +527,54 @@ function generatePage(data) {
     </section>`;
 
   // Build one-time pricing cards
+  const badgeTips = {
+    "Entry Plan": "A small, affordable sample to test the quality of the dataset.",
+    "Great Value": "Low cost per record for entry-level outreach.",
+    "Most Popular": "The tier most buyers choose — the best balance of price and volume.",
+    "Best Value": "The best per-record price for most campaign sizes.",
+    "High Volume": "Built for larger campaigns and sustained outreach volume.",
+    "Massive Volume": "For high-volume outreach across a wide audience.",
+    "Enterprise Ready": "Ready for enterprise-scale outreach and integrations.",
+    "Growing Enterprise": "A stepping stone for teams scaling their outreach.",
+    "Complete Database": "Every verified record we currently have for this industry.",
+    "Complete Coverage": "Full coverage of verified records in this industry.",
+    "Scale": "Maximum volume for agency and enterprise campaigns."
+  };
+  const infoIcon = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg>';
   const oneTimeCardsHtml = data.oneTime.map((p, i) => {
     const isFeatured = p.badge === "Most Popular" || p.badge === "Best Value";
     const isLarge = i < 2;
     const featuredClass = isFeatured ? ' product-card--featured' : '';
     const largeClass = isLarge ? ' product-card--large' : '';
-    const badgeHtml = p.badge ? `<span class="product-badge">${p.badge}</span>` : '';
+    const badgeTip = p.badge ? (badgeTips[p.badge] || 'About this ' + data.name + ' plan.') : '';
+    const badgeHtml = p.badge
+      ? `<span class="tooltip-wrap"><span class="product-badge">${p.badge}</span><span class="tooltip">${badgeTip}</span></span>`
+      : '';
     const memberHtml = soon
       ? `<div class="product-member product-member--soon">Coming soon — request access</div>`
-      : `<div class="product-member">40% OFF with membership: ${p.member}</div>`;
+      : `<div class="product-member">40% off with membership: ${p.member}</div>`;
     const ctaHtml = soon
       ? `<a class="product-cta btn-outline" href="../contact.html">Request access</a>`
-      : `<a class="product-cta${isFeatured ? ' btn-primary' : ' btn-outline'}" href="${p.link}" target="_blank" rel="noopener">Buy now</a>`;
+      : `<a class="product-cta btn-primary" href="${p.link}" target="_blank" rel="noopener">Get now</a>`;
+    const leadsTip = `Total ${data.name.toLowerCase()} business records in this dataset.`;
+    const emailsTip = 'Verified email addresses included in this dataset.';
     return `          <div class="product-card${featuredClass}${largeClass}">
-            ${badgeHtml}
-            <h3 class="product-plan">${p.plan}</h3>
+            <div class="product-head">
+              <h3 class="product-plan">${p.plan}</h3>
+              ${badgeHtml}
+            </div>
+            <p class="product-subtitle">
+              <span class="product-subtitle-item"><span class="product-subtitle-num">${p.leads}</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon">${infoIcon}<span class="tooltip">${leadsTip}</span></span></span>
+            </p>
             <div class="product-price-row">
+              <span class="product-badge product-badge--sale">20% OFF</span>
               <span class="product-price">${p.price}</span>
               <span class="product-price-note">one-time</span>
             </div>
             ${memberHtml}
-            <div class="product-stats">
-              <div class="product-stat">
-                <span class="product-stat-num">${p.leads}</span>
-                <span class="product-stat-label">Leads</span>
-              </div>
-              <div class="product-stat-divider"></div>
-              <div class="product-stat">
-                <span class="product-stat-num">${p.emails}</span>
-                <span class="product-stat-label">Emails</span>
-              </div>
-            </div>
+            ${ctaHtml}
             <div class="product-includes">
-              <button class="product-includes-toggle" type="button" aria-expanded="false">
-                What's included
-                <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-              </button>
+              <p class="product-includes-label">What's included</p>
               <ul class="product-includes-list">
                 <li>Verified Emails</li>
                 <li>Phone Numbers</li>
@@ -672,119 +587,20 @@ function generatePage(data) {
                 <li>Industry Information</li>
                 <li>Rating &amp; Reviews</li>
               </ul>
-            </div>
-            ${ctaHtml}
-          </div>`;
-  }).join('\n');
-
-  // Build monthly pricing cards
-  const monthlyCardsHtml = data.monthly.map((p, i) => {
-    const isLarge = i < 2;
-    const largeClass = isLarge ? ' product-card--large' : '';
-    const ctaHtml = soon
-      ? `<a class="product-cta btn-outline" href="../contact.html">Request access</a>`
-      : `<a class="product-cta btn-outline" href="${p.link}" target="_blank" rel="noopener">Start subscription</a>`;
-    return `          <div class="product-card product-card--monthly${largeClass}">
-            <span class="product-badge product-badge--monthly">Monthly</span>
-            <h3 class="product-plan">${p.plan}</h3>
-            <div class="product-price-row">
-              <span class="product-price">${p.price}</span>
-              <span class="product-price-note">/ ${p.duration.toLowerCase()}</span>
-            </div>
-            <div class="product-stats">
-              <div class="product-stat">
-                <span class="product-stat-num">${p.leads}</span>
-                <span class="product-stat-label">Leads/mo</span>
-              </div>
-              <div class="product-stat-divider"></div>
-              <div class="product-stat">
-                <span class="product-stat-num">${p.emails}</span>
-                <span class="product-stat-label">Emails/mo</span>
-              </div>
-            </div>
-            <div class="product-includes">
-              <button class="product-includes-toggle" type="button" aria-expanded="false">
-                What's included
-                <svg viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+              <button class="product-includes-more" type="button" aria-expanded="false">
+                <span class="product-includes-more-label">Show more</span>
+                <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </button>
-              <ul class="product-includes-list">
-                <li>Verified Emails</li>
-                <li>Phone Numbers</li>
-                <li>Company Name</li>
-                <li>Contact Name</li>
-                <li>Competitor Details</li>
-                <li>City &amp; State</li>
-                <li>Property Location</li>
-                <li>Company Website</li>
-                <li>Industry Information</li>
-                <li>Rating &amp; Reviews</li>
-              </ul>
             </div>
-            ${ctaHtml}
           </div>`;
   }).join('\n');
-
-  // Build bundles section
-  let bundlesHtml = '';
-  if (data.bundles && data.bundles.length > 0) {
-    const bundleCards = data.bundles.map(bundleKey => {
-      const b = bundleData[bundleKey];
-      if (!b) return '';
-      return `        <div class="bundle-card">
-          <div class="bundle-card-top">
-            <h3 class="bundle-name">${b.name}</h3>
-            <span class="bundle-save">Save up to ${b.price50kSave}</span>
-          </div>
-          <div class="bundle-tags">
-            ${b.industries.map(ind => `<span class="bundle-tag">${ind}</span>`).join('\n            ')}
-          </div>
-          <div class="bundle-body">
-            <div class="bundle-tiers">
-              <div class="bundle-tier">
-                <span class="bundle-tier-label">25K Emails</span>
-                <div class="bundle-tier-price">
-                  <span class="bundle-old-price">${b.price25kRetail}</span>
-                  <span class="bundle-new-price">${b.price25k}</span>
-                </div>
-                <a class="btn btn-outline btn-sm" href="${b.link25k}" target="_blank" rel="noopener">Get bundle</a>
-              </div>
-              <div class="bundle-tier bundle-tier--featured">
-                <span class="bundle-tier-label">50K Emails</span>
-                <div class="bundle-tier-price">
-                  <span class="bundle-old-price">${b.price50kRetail}</span>
-                  <span class="bundle-new-price">${b.price50k}</span>
-                </div>
-                <a class="btn btn-primary btn-sm" href="${b.link50k}" target="_blank" rel="noopener">Get bundle</a>
-              </div>
-            </div>
-            <p class="bundle-industries">Includes: ${b.industries.join(' + ')}</p>
-          </div>
-        </div>`;
-    }).join('\n');
-
-    bundlesHtml = `
-    <hr class="section-divider">
-
-    <!-- Bundles -->
-    <section id="bundles">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Industry bundles</p>
-          <h2>Save more with multi-industry bundles</h2>
-        </div>
-        <div class="bundles-grid reveal">
-${bundleCards}
-        </div>
-      </div>
-    </section>`;
-  }
 
   // Build FAQs
   const faqsHtml = data.faqs.map((f, i) => `
-          <div class="faq-item${i === 0 ? ' open' : ''}">
-            <button class="faq-q" type="button" aria-expanded="${i === 0 ? 'true' : 'false'}" aria-controls="faq-${i}-answer">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-${i}-answer">
               ${f.q}
-              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </button>
             <div class="faq-a" id="faq-${i}-answer"><div class="faq-a-text">
               ${f.a}
@@ -794,7 +610,23 @@ ${bundleCards}
   return `<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../public/apple-touch-icon.png">
+  <link rel="manifest" href="../public/site.webmanifest">
   <title>${seo.title}</title>
   <meta name="description" content="${data.metaDesc}">
   <meta name="keywords" content="${seo.keywords.join(', ')}">
@@ -817,9 +649,10 @@ ${bundleCards}
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "LeadsPitch",
+    "alternateName": ["Leads Pitch", "Lead Pitch", "leadspitch.com", "leadspitch"],
     "url": "https://leadspitch.com",
-    "logo": "https://leadspitch.com/public/logo.svg",
-    "description": "Business data platform offering one-time dataset purchases and monthly subscriptions across 15 industries.",
+    "logo": "https://leadspitch.com/public/logo.png",
+    "description": "Business data platform offering one-time dataset purchases and membership discounts across 15 industries.",
     "sameAs": []
   }
   </script>
@@ -877,6 +710,30 @@ ${data.faqs.map(f => `      {
   </script>
   <style>
     :root {
+      --bg: #000000;
+      --bg-elevated: #0a0a0a;
+      --surface: #111113;
+      --surface-2: #1a1a1e;
+      --fg: #f0f0f2;
+      --muted: #a0a0a8;
+      --faint: #6b6b73;
+      --border: #222228;
+      --border-soft: #1a1a1e;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.1);
+      --accent-text: #3b82f6;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --radius: 999px;
+      --max: 1120px;
+      --gutter: clamp(1.25rem, 4vw, 2.5rem);
+      --nav-h: 72px;
+    }
+    [data-theme="light"] {
       --bg: #ffffff;
       --bg-elevated: #f9fafb;
       --surface: #ffffff;
@@ -886,17 +743,9 @@ ${data.faqs.map(f => `      {
       --faint: #6b7280;
       --border: #e5e7eb;
       --border-soft: #f3f4f6;
-      --accent: #111111;
-      --accent-soft: rgba(17, 17, 17, 0.05);
-      --accent-text: #111111;
-      --success: #10b981;
-      --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
-      --radius: 12px;
-      --max: 1120px;
-      --gutter: clamp(1.25rem, 4vw, 2.5rem);
-      --nav-h: 72px;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.08);
+      --accent-text: #3b82f6;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -921,17 +770,39 @@ ${data.faqs.map(f => `      {
       transition: background 200ms ease;
     }
     .site-header.is-scrolled {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(15, 15, 15, 0.92);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
     .nav {
       height: var(--nav-h);
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
       position: relative;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--ink);
+      flex-shrink: 0;
+      margin-left: 0.35rem;
+    }
+    .header-logo:hover { opacity: 0.7; }
+    .header-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+    }
+    .header-logo-text {
+      font-family: "Gevora", "Arial Black", Impact, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      text-transform: uppercase;
     }
     .logo {
       display: inline-flex;
@@ -959,7 +830,7 @@ ${data.faqs.map(f => `      {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     @media (min-width: 768px) {
-      .nav-pill { display: inline-flex; }
+      .nav-pill { display: inline-flex; margin: 0 auto; }
     }
     .nav-pill a,
     .nav-pill .nav-dropdown-toggle {
@@ -1009,7 +880,9 @@ ${data.faqs.map(f => `      {
       position: absolute;
       top: calc(100% + 12px);
       left: 50%;
-      min-width: 240px;
+      width: 480px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -1064,9 +937,9 @@ ${data.faqs.map(f => `      {
     /* Nav CTA */
     .nav-cta { display: none; }
     .nav-cta .btn-primary {
-      background: var(--fg);
+      background: var(--accent);
       color: #ffffff;
-      border: 1px solid var(--fg);
+      border: 1px solid var(--accent);
       font-size: 0.8125rem;
       font-weight: 500;
       padding: 0.5rem 1.25rem;
@@ -1076,8 +949,8 @@ ${data.faqs.map(f => `      {
       text-decoration: none;
     }
     .nav-cta .btn-primary:hover {
-      background: #242424;
-      border-color: #242424;
+      background: #2563eb;
+      border-color: #2563eb;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       transform: translateY(-1px);
     }
@@ -1133,8 +1006,8 @@ ${data.faqs.map(f => `      {
       z-index: 100;
       background: var(--bg);
       flex-direction: column;
-      justify-content: center;
-      padding: 5rem var(--gutter) 3rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .mobile-panel.open { display: flex; }
     .mobile-panel .mobile-nav-links {
@@ -1144,14 +1017,14 @@ ${data.faqs.map(f => `      {
       flex-direction: column;
       gap: 0;
       width: 100%;
-      max-width: 320px;
+      padding: 5rem var(--gutter) 2rem;
     }
     .mobile-panel .mobile-nav-links a {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 1.1rem 0;
-      font-size: 1.5rem;
+      min-height: 48px;
+      padding: 0.75rem 0;
+      font-size: 1.25rem;
       font-family: var(--font-display);
       font-weight: 400;
       color: var(--muted);
@@ -1169,9 +1042,9 @@ ${data.faqs.map(f => `      {
     .mobile-dropdown-toggle {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1.1rem 0;
-      font-size: 1.5rem;
+      min-height: 48px;
+      padding: 0.75rem 0;
+      font-size: 1.25rem;
       font-family: var(--font-display);
       font-weight: 400;
       color: var(--muted);
@@ -1185,8 +1058,8 @@ ${data.faqs.map(f => `      {
       transition: color 200ms ease, padding-left 200ms ease;
     }
     .mobile-dropdown-toggle svg {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .mobile-dropdown-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
@@ -1203,14 +1076,17 @@ ${data.faqs.map(f => `      {
     }
     .mobile-dropdown-panel.open {
       display: flex;
-      max-height: 600px;
+      max-height: 50vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       opacity: 1;
     }
     .mobile-dropdown-panel a {
       display: flex;
       align-items: center;
-      padding: 0.7rem 0;
-      font-size: 1.1rem;
+      min-height: 40px;
+      padding: 0.5rem 0;
+      font-size: 1rem;
       font-family: var(--font-display);
       font-weight: 400;
       color: var(--faint);
@@ -1222,20 +1098,19 @@ ${data.faqs.map(f => `      {
     .mobile-panel .mobile-nav-cta {
       position: relative;
       z-index: 1;
-      margin-top: 2rem;
+      padding: 1rem var(--gutter) 2rem;
       width: 100%;
-      max-width: 320px;
     }
     .mobile-panel .mobile-nav-cta .btn {
       width: 100%;
-      background: var(--fg);
+      background: var(--accent);
       color: #ffffff;
       border: none;
     }
-    .mobile-panel .mobile-nav-cta .btn:hover { background: #242424; }
+    .mobile-panel .mobile-nav-cta .btn:hover { background: #2563eb; }
     .mobile-close {
       position: absolute;
-      top: 1.25rem;
+      top: 1rem;
       right: var(--gutter);
       z-index: 2;
       width: 44px;
@@ -1251,12 +1126,34 @@ ${data.faqs.map(f => `      {
     }
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
+    .mobile-theme-btn {
+      position: absolute;
+      top: 1rem;
+      right: calc(var(--gutter) + 52px);
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: none;
+      border-radius: 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: background 150ms ease, color 150ms ease;
+    }
+    .mobile-theme-btn:hover { background: var(--surface-2); color: var(--fg); }
+    .mobile-theme-btn svg { width: 18px; height: 18px; }
+    .mobile-theme-btn .icon-moon { display: block; }
+    .mobile-theme-btn .icon-sun { display: none; }
+    [data-theme="dark"] .mobile-theme-btn .icon-moon { display: none; }
+    [data-theme="dark"] .mobile-theme-btn .icon-sun { display: block; }
 
     @media (min-width: 768px) {
       .nav-cta { display: flex; }
       .nav-toggle, .mobile-panel { display: none !important; }
     }
-    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown.open .nav-dropdown-menu { display: grid; }
     .nav-dropdown-menu a {
       display: block; padding: 0.5rem 0.75rem; font-size: 0.8125rem;
       color: var(--muted); border-radius: 8px; white-space: nowrap;
@@ -1312,113 +1209,203 @@ ${data.faqs.map(f => `      {
     .breadcrumbs { padding: 1rem 0 0; font-size: 0.8125rem; color: var(--faint); }
     .breadcrumbs a { color: var(--muted); transition: color 160ms ease; }
     .breadcrumbs a:hover { color: var(--fg); }
-    .breadcrumbs span { margin: 0 0.4rem; }
+    .breadcrumbs .sep { margin: 0 0.4rem; }
 
     /* Hero */
-    .hero { padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem); }
+    .hero {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(4rem, 8vw, 6rem);
+      text-align: center;
+    }
     .hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600; line-height: 1.12; letter-spacing: -0.02em;
-      margin: 0.75rem 0 0.75rem;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.12; letter-spacing: -0.02em;
+      max-width: 28ch; margin: 0.75rem auto;
     }
     .hero-sub {
       font-size: clamp(0.95rem, 1.3vw, 1.05rem); line-height: 1.65;
-      color: var(--muted); max-width: 52ch;
+      color: var(--muted); max-width: 52ch; margin-inline: auto;
     }
     .hero-intro {
       margin-top: 1rem; font-size: 0.95rem; line-height: 1.7;
-      color: var(--muted); max-width: 56ch;
+      color: var(--muted); max-width: 56ch; margin-inline: auto;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1.5rem; }
 
     /* Section */
     section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
     .section-head { display: grid; gap: 0.6rem; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
     .section-head h2 {
       font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-      font-weight: 600; letter-spacing: -0.02em; line-height: 1.15;
+      font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
     }
 
-    /* Product Cards — New Design */
+    /* Product Cards - stacked containers */
+    .pricing-grid-wrap {
+      margin: 0;
+    }
     .pricing-grid {
-      display: grid; gap: 1rem;
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      align-items: stretch;
     }
     .product-card {
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--surface); padding: 1.25rem;
-      display: grid; gap: 0.4rem; position: relative;
-      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      background: #18181c;
+      border: 1px solid #222228;
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      position: relative;
+      transition: background 200ms ease, border-color 200ms ease;
     }
-    .product-card:hover {
-      border-color: var(--accent); transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    .product-card:hover { background: #1c1c20; border-color: #2a2a30; }
+    .product-card--featured { background: #131317; border-color: #3b82f6; }
+    .product-card--featured:hover { background: #16161b; border-color: #60a5fa; }
+    .product-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
     }
-    .product-card--featured {
-      border-color: var(--accent); border-width: 2px;
-      background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
-    }
-    .product-card--featured:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
     .product-badge {
       display: inline-block; width: fit-content;
-      font-family: var(--font-mono); font-size: 0.6rem; font-weight: 600;
+      font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
       letter-spacing: 0.08em; text-transform: uppercase;
       padding: 0.2rem 0.5rem; border-radius: 6px;
       background: var(--accent); color: #fff;
+      white-space: nowrap;
     }
-    .product-badge--monthly { background: var(--surface-2); color: var(--muted); }
+    .product-badge--sale { background: #ef4444; color: #fff; }
     .product-plan {
-      font-family: var(--font-display); font-size: 1.1rem;
-      font-weight: 600; letter-spacing: -0.015em; margin-top: 0.25rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin: 0;
     }
+    .product-subtitle {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .product-subtitle-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .product-subtitle-num { font-weight: 700; color: var(--fg); }
+    .product-subtitle-label { color: var(--muted); }
+    .product-subtitle-sep { color: var(--faint); }
+    .product-subtitle .tooltip-icon { color: var(--faint); }
     .product-price-row { display: flex; align-items: baseline; gap: 0.35rem; }
     .product-price {
-      font-family: var(--font-display); font-size: 1.75rem;
-      font-weight: 700; letter-spacing: -0.03em;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1;
     }
     .product-price-note { font-size: 0.8rem; color: var(--faint); font-weight: 400; }
     .product-member { font-size: 0.75rem; color: var(--success); font-weight: 500; }
-    .product-stats {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 0.6rem 0; margin: 0.15rem 0;
-      border-top: 1px solid var(--border-soft);
-      border-bottom: 1px solid var(--border-soft);
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 46px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
     }
-    .product-stat { display: flex; flex-direction: column; }
-    .product-stat-num {
-      font-family: var(--font-display); font-size: 1.15rem;
-      font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;
+    .product-cta:active { transform: translateY(1px); }
+    .product-includes { margin-top: 0.1rem; }
+    .product-includes-label {
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--faint);
+      margin: 0 0 0.6rem;
     }
-    .product-stat-label {
-      font-size: 0.7rem; color: var(--faint); text-transform: uppercase;
-      letter-spacing: 0.05em; font-weight: 500;
-    }
-    .product-stat-divider { width: 1px; height: 28px; background: var(--border); }
-    .product-includes { margin: 0.15rem 0; }
-    .product-includes-toggle {
-      display: flex; align-items: center; gap: 0.4rem;
-      font-size: 0.75rem; font-weight: 500; color: var(--muted);
-      padding: 0.35rem 0; width: 100%; text-align: left;
-      transition: color 160ms ease;
-    }
-    .product-includes-toggle svg { width: 14px; height: 14px; transition: transform 200ms ease; }
-    .product-includes-toggle[aria-expanded="true"] svg { transform: rotate(45deg); }
     .product-includes-list {
       list-style: none; padding: 0; margin: 0;
-      display: none; grid; gap: 0.2rem; padding-bottom: 0.5rem;
+      display: grid; gap: 0.5rem;
+      max-height: 6.75rem;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, black 58%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 58%, transparent 100%);
+      transition: max-height 280ms ease, mask-image 280ms ease, -webkit-mask-image 280ms ease;
     }
-    .product-includes-list.open { display: grid; }
+    .product-includes.open .product-includes-list {
+      max-height: 50rem;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
     .product-includes-list li {
-      font-size: 0.78rem; color: var(--muted);
-      padding-left: 1rem; position: relative;
+      font-size: 0.8125rem; color: var(--muted);
+      padding-left: 1.15rem; position: relative;
     }
     .product-includes-list li::before {
       content: "\\2713"; position: absolute; left: 0; top: 0;
       color: var(--success); font-size: 0.7rem; font-weight: 700;
     }
-    .product-cta { width: 100%; margin-top: 0.5rem; text-align: center; }
-    .product-card--monthly { background: var(--bg-elevated); }
+    .product-includes-more {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 0.65rem;
+      font-size: 0.8125rem; font-weight: 600;
+      color: var(--accent-text);
+      background: none; border: none; cursor: pointer; padding: 0;
+      transition: color 160ms ease;
+    }
+    .product-includes-more:hover { color: #60a5fa; }
+    .product-includes-more svg { width: 14px; height: 14px; transition: transform 200ms ease; }
+    .product-includes.open .product-includes-more svg { transform: rotate(180deg); }
     .product-member--soon { color: var(--faint); font-weight: 500; }
+    [data-theme="light"] .pricing-grid { gap: 1.25rem; }
+    [data-theme="light"] .product-card { background: #ffffff; border-color: #e5e7eb; }
+    [data-theme="light"] .product-card:hover { background: #f9fafb; border-color: #d1d5db; }
+    [data-theme="light"] .product-card--featured { background: #f8fafc; border-color: #3b82f6; }
+    [data-theme="light"] .product-card--featured:hover { background: #f1f5f9; border-color: #60a5fa; }
+    [data-theme="light"] .product-badge--sale { background: #ef4444; color: #fff; }
+
+    /* Tooltip */
+    .tooltip-wrap { position: relative; display: inline-flex; align-items: center; }
+    .tooltip {
+      position: absolute; bottom: calc(100% + 8px); right: -8px;
+      width: 220px; padding: 0.65rem 0.75rem;
+      background: #1a1a1e; border: 1px solid #2a2a2e; border-radius: 8px;
+      font-size: 0.75rem; line-height: 1.5; color: #d4d4d8;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      opacity: 0; pointer-events: none;
+      transform: translateY(4px);
+      transition: opacity 180ms ease, transform 180ms ease;
+      z-index: 20;
+    }
+    .tooltip::after {
+      content: ""; position: absolute; top: 100%; right: 14px;
+      border: 5px solid transparent; border-top-color: #2a2a2e;
+    }
+    .tooltip-wrap:hover .tooltip,
+    .tooltip-wrap.active .tooltip {
+      opacity: 1; pointer-events: auto; transform: translateY(0);
+    }
+    [data-theme="light"] .tooltip {
+      background: #fff; border-color: #e5e7eb; color: #374151;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    [data-theme="light"] .tooltip::after { border-top-color: #e5e7eb; }
+    .tooltip-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 16px; height: 16px; margin-left: 0.35rem;
+      color: #52525b; cursor: help; flex-shrink: 0;
+    }
+    .tooltip-icon svg { width: 14px; height: 14px; }
 
     /* Coming soon */
     .soon-pill {
@@ -1453,71 +1440,6 @@ ${data.faqs.map(f => `      {
     .compare-table tbody tr:hover { background: var(--surface-2); }
     .compare-note { margin-top: 1rem; font-size: 0.8rem; color: var(--faint); max-width: 52ch; }
 
-    /* Bundles */
-    .bundles-grid {
-      display: grid; gap: 1.25rem;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-    .bundle-card {
-      border: 1px solid var(--border); border-radius: 16px;
-      background: var(--surface); overflow: hidden;
-      display: grid;
-      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-    }
-    .bundle-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .bundle-card-top {
-      background: linear-gradient(135deg, #111111 0%, #374151 100%);
-      padding: 1.25rem 1.5rem;
-      display: flex; flex-direction: column; gap: 0.6rem;
-    }
-    .bundle-name {
-      font-family: var(--font-display); font-size: 1.15rem;
-      font-weight: 700; letter-spacing: -0.01em; color: #ffffff;
-    }
-    .bundle-save {
-      display: inline-block; width: fit-content;
-      font-size: 0.7rem; font-weight: 700; color: #111111;
-      background: #10b981; padding: 0.25rem 0.6rem; border-radius: 20px;
-      letter-spacing: 0.02em;
-    }
-    .bundle-tags {
-      display: flex; flex-wrap: wrap; gap: 0.35rem;
-      padding: 0 1.5rem; margin-top: -0.5rem; position: relative; z-index: 1;
-    }
-    .bundle-tag {
-      font-size: 0.68rem; font-weight: 500; color: var(--muted);
-      background: var(--surface-2); padding: 0.2rem 0.55rem;
-      border-radius: 20px; border: 1px solid var(--border-soft);
-    }
-    .bundle-body {
-      padding: 1.25rem 1.5rem 1.5rem;
-      display: grid; gap: 0.75rem;
-    }
-    .bundle-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .bundle-tier {
-      display: grid; gap: 0.4rem; padding: 1rem 0.75rem;
-      border: 1px solid var(--border-soft); border-radius: 12px; text-align: center;
-      background: var(--bg-elevated);
-      transition: border-color 160ms ease;
-    }
-    .bundle-tier:hover { border-color: var(--border); }
-    .bundle-tier--featured {
-      border-color: var(--accent); background: var(--surface);
-      position: relative;
-    }
-    .bundle-tier--featured::before {
-      content: "Best value"; position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
-      font-size: 0.6rem; font-weight: 600; color: #fff; background: var(--accent);
-      padding: 0.15rem 0.5rem; border-radius: 10px; white-space: nowrap;
-      letter-spacing: 0.03em; text-transform: uppercase;
-    }
-    .bundle-tier-label { font-size: 0.72rem; color: var(--faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
-    .bundle-tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.35rem; }
-    .bundle-old-price { font-size: 0.78rem; color: var(--faint); text-decoration: line-through; }
-    .bundle-new-price { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
-    .bundle-tier .btn { margin-top: 0.25rem; }
-    .bundle-industries { font-size: 0.75rem; color: var(--faint); text-align: center; line-height: 1.5; }
-
     /* Section divider */
     .section-divider { border-top: 1px solid var(--border-soft); }
 
@@ -1544,50 +1466,68 @@ ${data.faqs.map(f => `      {
     .related-arrow svg { width: 12px; height: 12px; }
     .related-card:hover .related-arrow { color: var(--accent); border-color: var(--accent); }
 
-    /* FAQ */
-    .faq-section { max-width: 720px; }
-    .faq-list {
-      display: grid; gap: 0.5rem;
-      border-top: none;
+    /* FAQ (Subframe style) */
+    .faq-section { max-width: 720px; margin-inline: auto; }
+    .faq-heading {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
     }
+    .faq-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--faint);
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    }
+    .faq-list { display: grid; gap: 0.5rem; }
     .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--surface);
+      border-radius: var(--radius);
+      background: var(--surface-2);
       overflow: hidden;
-      transition: border-color 200ms ease, box-shadow 200ms ease;
+      transition: background 200ms ease;
     }
-    .faq-item:hover { border-color: #d1d5db; }
-    .faq-item.open {
-      border-color: var(--accent);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
+    .faq-item:hover { background: #222226; }
+    .faq-item.open { background: #222226; }
     .faq-q {
-      width: 100%; display: flex; align-items: center;
-      justify-content: space-between; gap: 1rem;
-      text-align: left; padding: 1rem 1.25rem;
-      font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.01em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
     }
     .faq-q svg {
-      width: 18px; height: 18px; color: var(--faint);
-      flex: 0 0 auto; transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+      width: 20px; height: 20px;
+      color: var(--faint);
+      flex: 0 0 auto;
+      transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .faq-item.open .faq-q svg { transform: rotate(45deg); color: var(--fg); }
-    .faq-a {
-      display: grid; grid-template-rows: 0fr;
-      transition: grid-template-rows 350ms cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .faq-item.open .faq-a { grid-template-rows: 1fr; }
-    .faq-a > div { overflow: hidden; }
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 320ms cubic-bezier(0.22, 1, 0.36, 1); }
+    .faq-item.open .faq-a { max-height: 300px; }
     .faq-a-text {
-      padding: 0 1.25rem 1.25rem; color: var(--muted);
-      font-size: 0.9rem; line-height: 1.65; max-width: 62ch;
-    }
-    .faq-more {
-      margin-top: 1.5rem;
-      font-size: 0.92rem;
+      padding: 0 1.5rem 1.25rem;
       color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.65;
+      max-width: 62ch;
     }
+    .faq-more { margin-top: 1.5rem; font-size: 0.875rem; color: var(--faint); text-align: center; }
+    [data-theme="light"] .faq-item:hover,
+    [data-theme="light"] .faq-item.open { background: #ededf0; }
 
     /* Bottom CTA */
     .bottom-cta { padding: clamp(2.5rem, 5vw, 4rem) 0; text-align: center; }
@@ -1602,28 +1542,31 @@ ${data.faqs.map(f => `      {
     }
     .bottom-cta-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 
-    /* Footer — Full black */
-    .site-footer {
-      background: #000000; color: #d1d5db;
-      padding: clamp(3rem, 6vw, 5rem) 0 0; margin-top: 1rem; text-align: center;
-    }
-    .footer-display {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: clamp(3rem, 10vw, 7.5rem); letter-spacing: -0.03em; line-height: 0.95;
-      color: #ffffff; padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      border-bottom: 1px solid #374151; margin-bottom: clamp(2rem, 4vw, 3rem);
-      text-wrap: balance;
-    }
-    .footer-logo { display: flex; justify-content: center; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); border-bottom: 1px solid #374151; }
-    .footer-logo img { height: clamp(64px, 9vw, 120px); width: auto; }
-    .footer-grid { display: grid; gap: 2rem; justify-items: center; }
-    .footer-grid a { color: #9ca3af; transition: color 150ms ease; }
-    .footer-grid a:hover { color: #ffffff; }
-    .footer-brand p { margin-top: 0; color: #6b7280; font-size: 0.92rem; line-height: 1.55; max-width: 28ch; }
-    .footer-col h4 { font-size: 0.78rem; font-family: var(--font-body); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.9rem; }
-    .footer-col a { display: block; color: #9ca3af; font-size: 0.92rem; padding: 0.25rem 0; transition: color 150ms ease; }
-    .footer-col a:hover { color: #ffffff; }
-    .footer-bottom { margin-top: 2.5rem; padding: 1.25rem 0; border-top: 1px solid #374151; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: center; color: #6b7280; font-size: 0.82rem; }
+    /* Gevora Font */
+    @font-face { font-family: "Gevora"; src: url("../public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+
+    /* Footer — dark theme (default), matching membership.html */
+    .site-footer { background: #0f0f0f; color: #a0a0a8; padding: clamp(2.5rem, 5vw, 4rem) 0 0; margin-top: 1rem; border-top: 1px solid var(--border-soft); }
+    .footer-top { display: grid; gap: 2rem; grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--border-soft); }
+    @media (min-width: 700px) { .footer-top { grid-template-columns: 26ch 1fr; } }
+    .footer-brand .logo { font-family: "Gevora", "Arial Black", Impact, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; margin-bottom: 0.9rem; }
+    .footer-brand p { color: #a0a0a8; font-size: var(--text-sm); line-height: 1.55; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+    .footer-col h4 { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; margin-bottom: 0.9rem; }
+    .footer-col a { display: block; color: #a0a0a8; font-size: var(--text-sm); padding: 0.25rem 0; transition: color 150ms ease; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid var(--border-soft); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #a0a0a8; font-size: var(--text-xs); }
+    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
+    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #1a1a1e; user-select: none; }
+    [data-theme="light"] .site-footer { background: #fff; color: #374151; border-top-color: #e5e7eb; }
+    [data-theme="light"] .footer-brand .logo { color: #111; }
+    [data-theme="light"] .footer-brand p { color: #6b7280; }
+    [data-theme="light"] .footer-col h4 { color: #111; }
+    [data-theme="light"] .footer-col a { color: #6b7280; }
+    [data-theme="light"] .footer-col a:hover { color: #111; }
+    [data-theme="light"] .footer-bottom { color: #9ca3af; border-top-color: #e5e7eb; }
+    [data-theme="light"] .footer-giant__text { color: #e5e7eb; }
 
     /* Reveal */
     .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease, transform 700ms ease; }
@@ -1638,55 +1581,63 @@ ${data.faqs.map(f => `      {
     }
     .sample-preview img { width: 100%; height: auto; display: block; }
 
-    /* Explore More Datasets */
-    .explore-grid {
-      display: grid; gap: 0.75rem;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* Explore Related Datasets Marquee */
+    .explore-marquee {
+      overflow: hidden; position: relative;
+      padding: 0.75rem 0;
     }
-    .explore-card {
-      display: grid; grid-template-columns: 1fr auto; align-items: center;
-      gap: 0.75rem; padding: 1rem 1.25rem;
-      border: 1px solid var(--border); border-radius: var(--radius);
+    .explore-marquee::before, .explore-marquee::after {
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: 80px; z-index: 2; pointer-events: none;
+    }
+    .explore-marquee::before {
+      left: 0; background: linear-gradient(to right, var(--bg), transparent);
+    }
+    .explore-marquee::after {
+      right: 0; background: linear-gradient(to left, var(--bg), transparent);
+    }
+    .explore-marquee__track {
+      display: flex; gap: 0.75rem; width: max-content;
+      animation: explore-scroll 20s linear infinite;
+    }
+    .explore-marquee:hover .explore-marquee__track {
+      animation-play-state: paused;
+    }
+    .explore-pill {
+      flex-shrink: 0;
+      padding: 0.625rem 1.25rem;
+      border: 1px solid var(--border); border-radius: 999px;
       background: var(--surface);
-      transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--fg); text-decoration: none; white-space: nowrap;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
     }
-    .explore-card:hover {
-      border-color: var(--accent); transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    .explore-pill:hover {
+      border-color: var(--accent); background: var(--surface-2);
+      transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .explore-card h3 { font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.01em; }
-    .explore-arrow {
-      width: 26px; height: 26px; border-radius: 50%;
-      border: 1px solid var(--border); display: grid; place-items: center;
-      color: var(--muted); flex-shrink: 0;
-      transition: color 160ms ease, border-color 160ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+    @keyframes explore-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .explore-arrow svg { width: 13px; height: 13px; }
-    .explore-card:hover .explore-arrow {
-      color: var(--accent); border-color: var(--accent); transform: translateX(2px);
+    @media (prefers-reduced-motion: reduce) {
+      .explore-marquee__track { animation: none !important; }
     }
 
     @media (max-width: 699px) {
-      .hero { padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(2rem, 4vw, 3rem); }
+      .hero { padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(5rem, 10vw, 8rem); }
       .hero h1 { font-size: clamp(1.6rem, 5vw, 2rem); }
       .hero-sub { font-size: 0.9rem; }
       .pricing-grid { grid-template-columns: 1fr; }
-      .bundles-grid { grid-template-columns: 1fr; }
       .related-grid { grid-template-columns: 1fr; }
-      .explore-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-      .explore-card { padding: 0.75rem 1rem; }
-      .explore-card h3 { font-size: 0.8125rem; }
       .bottom-cta { padding: clamp(2rem, 5vw, 3rem) 0; }
       .bottom-cta h2 { font-size: 1.25rem; }
       .bottom-cta p { font-size: 0.875rem; margin-bottom: 1.25rem; }
       .bottom-cta-actions { flex-direction: column; }
       .bottom-cta-actions .btn { width: 100%; }
-      .mobile-panel .mobile-nav-links a { font-size: 1.2rem; padding: 0.85rem 0; }
-      .mobile-panel { padding: 4rem var(--gutter) 2rem; }
     }
     @media (min-width: 700px) and (max-width: 900px) {
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-      .explore-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (min-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
     @media (prefers-reduced-motion: reduce) {
@@ -1695,21 +1646,138 @@ ${data.faqs.map(f => `      {
         transition-duration: 0.01ms !important; scroll-behavior: auto !important;
       }
     }
-  </style>
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+      flex-shrink: 0;
+      color: var(--muted);
+    }
+    .theme-toggle:hover { background: var(--surface-2); color: var(--fg); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    @media (max-width: 767px) {
+      .header-logo + .nav-pill + .theme-toggle { display: none; }
+      .header-logo-img { display: block; }
+      .header-logo-text { display: none; }
+    }
+    .mobile-theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 0;
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border-soft);
+      width: 100%;
+      text-align: left;
+      transition: color 200ms ease, padding-left 200ms ease;
+    }
+    .mobile-theme-toggle:hover, .mobile-theme-toggle:active { color: var(--fg); padding-left: 0.75rem; }
+    .mobile-theme-toggle .icon-moon { display: block; }
+    .mobile-theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .mobile-theme-toggle .icon-sun { display: block; }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] .site-header.is-scrolled { background: rgba(255,255,255,0.92); }
+    [data-theme="light"] .nav-pill { background: #fff; border-color: #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    [data-theme="light"] .site-footer { background: #fff; color: #374151; border-top-color: #e5e7eb; }
+    [data-theme="light"] .footer-top { border-bottom-color: #e5e7eb; }
+    [data-theme="light"] .footer-brand .logo { color: #111; }
+    [data-theme="light"] .footer-brand p { color: #6b7280; }
+    [data-theme="light"] .footer-col h4 { color: #9ca3af; }
+    [data-theme="light"] .footer-col a { color: #6b7280; }
+    [data-theme="light"] .footer-col a:hover { color: #111; }
+    [data-theme="light"] .footer-bottom { border-top-color: #e5e7eb; color: #9ca3af; }
+    [data-theme="light"] .footer-giant__text { color: #111; }
+    [data-theme="dark"] .btn-primary { background: #ffffff; color: #000000; border-color: #ffffff; }
+    [data-theme="dark"] .btn-outline { background: transparent; color: #fff; border-color: #333; }
+    [data-theme="light"] .btn-primary { background: #111; color: #fff; border-color: #111; }
+    [data-theme="light"] .btn-primary:hover { background: #333; border-color: #333; }
+    [data-theme="light"] .btn-outline { background: transparent; color: #111; border-color: #d1d5db; }
+    [data-theme="light"] .btn-outline:hover { background: #111; color: #fff; border-color: #111; }
+    [data-theme="light"] .mobile-panel { background: #fff; }
+    [data-theme="light"] .mobile-nav-cta .btn { background: #111; color: #fff; }
+    [data-theme="light"] .mobile-close { background: #f3f4f6; border-color: #e5e7eb; }
+    [data-theme="light"] .nav-toggle { background: #f3f4f6; border-color: #e5e7eb; }
+    [data-theme="light"] .nav-toggle span,
+    [data-theme="light"] .nav-toggle span::before,
+    [data-theme="light"] .nav-toggle span::after { background: #111; }
+    [data-theme="light"] .theme-toggle { color: #6b7280; }
+    [data-theme="light"] .theme-toggle:hover { background: #f3f4f6; color: #111; }
+  
+    /* ── Footer reveal (Mobbin-style) ────────────────────────── */
+    main {
+      position: relative;
+      z-index: 1;
+      background: var(--bg);
+      min-height: calc(100vh - var(--nav-h));
+      border-radius: 0 0 46px 46px;
+      box-shadow: 0 1px 2px rgba(20, 20, 28, 0.05), 0 24px 48px -20px rgba(20, 20, 28, 0.18);
+      overflow: clip;
+    }
+    html { background-color: #0a0a0a; }
+    .site-footer,
+    [data-theme="dark"] .site-footer,
+    [data-theme="light"] .site-footer {
+      position: static;
+      background: #0a0a0a;
+      color: #d1d5db;
+      border-top: 0;
+    }
+    .site-footer .footer-brand .logo,
+    [data-theme="dark"] .site-footer .footer-brand .logo,
+    [data-theme="light"] .site-footer .footer-brand .logo { color: #ffffff; }
+    .site-footer .footer-brand p,
+    [data-theme="dark"] .site-footer .footer-brand p,
+    [data-theme="light"] .site-footer .footer-brand p { color: #9ca3af; }
+    .site-footer .footer-col h4,
+    [data-theme="dark"] .site-footer .footer-col h4,
+    [data-theme="light"] .site-footer .footer-col h4 { color: #9ca3af; }
+    .site-footer .footer-col a,
+    [data-theme="dark"] .site-footer .footer-col a,
+    [data-theme="light"] .site-footer .footer-col a { color: #a0a0a8; }
+    .site-footer .footer-col a:hover,
+    [data-theme="dark"] .site-footer .footer-col a:hover,
+    [data-theme="light"] .site-footer .footer-col a:hover { color: #ffffff; }
+    .site-footer .footer-top,
+    [data-theme="dark"] .site-footer .footer-top,
+    [data-theme="light"] .site-footer .footer-top { border-bottom-color: #1f1f23; }
+    .site-footer .footer-bottom,
+    [data-theme="dark"] .site-footer .footer-bottom,
+    [data-theme="light"] .site-footer .footer-bottom { color: #6b7280; border-top-color: #1f1f23; }
+    .site-footer .footer-giant__text,
+    [data-theme="light"] .site-footer .footer-giant__text { color: rgba(255, 255, 255, 0.08); }
+    [data-theme="dark"] .site-footer .footer-giant__text { color: #1a1a1e; }
+    @media (max-width: 600px) {
+      main { border-radius: 0 0 28px 28px; }
+    }
+</style>
 </head>
 <body>
 
   <header class="site-header" id="top">
     <div class="wrap nav">
-      <a class="logo" href="../index.html" aria-label="LeadsPitch home">
-        <img src="../public/logo.svg" alt="LeadsPitch" onerror="this.insertAdjacentText('afterend','LeadsPitch');this.remove()">
-      </a>
+      <a class="header-logo" href="../index.html" aria-label="LeadsPitch home"><img src="../public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
       <nav class="nav-pill" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="../about.html">About</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
-            Industries
+            Niches
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
@@ -1722,7 +1790,7 @@ ${data.faqs.map(f => `      {
             <a href="dentists.html" role="menuitem">Dentists</a>
             <a href="education.html" role="menuitem">Education &amp; Training</a>
             <a href="events-leisure.html" role="menuitem">Events &amp; Leisure</a>
-            <a href="food-beverage.html" role="menuitem">Food &amp; Beverage Suppliers</a>
+            <a href="food-beverage.html" role="menuitem">Food &amp; Beverage</a>
             <a href="home-services.html" role="menuitem">Home Services</a>
             <a href="hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
             <a href="legal.html" role="menuitem">Legal</a>
@@ -1736,24 +1804,31 @@ ${data.faqs.map(f => `      {
         <a href="../faq.html">FAQs</a>
         <a href="../contact.html">Contact</a>
       </nav>
-      <div class="nav-cta">
-        <a class="btn-primary" href="../contact.html">Request Data</a>
-      </div>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
+      <div class="nav-right">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="mobile-panel" id="mobile-nav">
+  <div class="mobile-panel" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="mobile-close" type="button" aria-label="Close menu">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"></path></svg>
+    </button>
+    <button class="mobile-theme-btn" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
     </button>
     <div class="mobile-nav-links">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
       <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
-        Industries
+        Niches
         <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="mobile-dropdown-panel">
@@ -1766,7 +1841,7 @@ ${data.faqs.map(f => `      {
         <a href="dentists.html">Dentists</a>
         <a href="education.html">Education &amp; Training</a>
         <a href="events-leisure.html">Events &amp; Leisure</a>
-        <a href="food-beverage.html">Food &amp; Beverage Suppliers</a>
+        <a href="food-beverage.html">Food &amp; Beverage</a>
         <a href="home-services.html">Home Services</a>
         <a href="hotels-hospitality.html">Hotels &amp; Hospitality</a>
         <a href="legal.html">Legal</a>
@@ -1774,9 +1849,13 @@ ${data.faqs.map(f => `      {
         <a href="real-estate.html">Real Estate</a>
         <a href="restaurants-cafes.html">Restaurants &amp; Cafes</a>
       </div>
+      <a href="../bundles.html">Bundles</a>
+      <a href="../membership.html">Membership</a>
+      <a href="../faq.html">FAQs</a>
+      <a href="../contact.html">Contact</a>
     </div>
     <div class="mobile-nav-cta">
-      <a class="btn btn-primary" href="../contact.html">Request Data</a>
+      <a class="btn btn-primary" href="../bundles.html">See Bundles</a>
     </div>
   </div>
 
@@ -1785,17 +1864,18 @@ ${data.faqs.map(f => `      {
     <!-- Breadcrumbs -->
     <div class="wrap">
       <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a><span>&rsaquo;</span>
-        <a href="../industries.html">Industries</a><span>&rsaquo;</span>
-        <span>${data.name}</span>
+        <a href="../index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="../industries.html">Niches</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">${data.name}</span>
       </nav>
     </div>
 
     <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow reveal">${data.name} Dataset${soon ? ' <span class="soon-pill">Coming soon</span>' : ''}</p>
-        <h1 class="reveal">${seo.h1}</h1>
+        <h1 class="reveal">${seo.h1}${soon ? ' <span class="soon-pill">Coming soon</span>' : ''}</h1>
         <p class="hero-sub reveal">${data.heroSub}</p>
         <p class="hero-intro reveal">${seo.intro}</p>
         <div class="hero-actions reveal">
@@ -1814,23 +1894,27 @@ ${data.faqs.map(f => `      {
           <h2>Buy a single dataset</h2>
         </div>
         ${soon ? '<p class="coming-soon-note">This dataset is coming soon. Pricing below is indicative — <a class="link-inline" href="../contact.html">request access</a> and we\'ll notify you when it\'s live.</p>' : ''}
-        <div class="pricing-grid reveal">
+        <div class="pricing-grid-wrap">
+          <div class="pricing-grid reveal">
 ${oneTimeCardsHtml}
+          </div>
         </div>
       </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- Monthly Pricing -->
-    <section>
+    <!-- Related Industries -->
+    <section id="related">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Monthly subscription</p>
-          <h2>Get fresh data every month</h2>
+          <p class="eyebrow">Related niches</p>
+          <h2>Explore related datasets</h2>
         </div>
-        <div class="pricing-grid reveal">
-${monthlyCardsHtml}
+      </div>
+      <div class="explore-marquee">
+        <div class="explore-marquee__track">
+${exploreIndustriesHtml}
         </div>
       </div>
     </section>
@@ -1850,29 +1934,12 @@ ${monthlyCardsHtml}
         </div>
       </div>
     </section>
-${comparisonHtml}
-${bundlesHtml}
-
-    <!-- Explore More Datasets -->
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Explore more</p>
-          <h2>More datasets to explore</h2>
-        </div>
-        <div class="explore-grid reveal">
-${exploreIndustriesHtml}
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ -->
     <section id="faqs">
       <div class="wrap faq-section">
-        <div class="section-head">
-          <p class="eyebrow">FAQ</p>
-          <h2>Questions about this dataset</h2>
-        </div>
+        <h2 class="faq-heading">FAQ.</h2>
+        <p class="faq-subtitle">Questions about this dataset.</p>
         <div class="faq-list">
 ${faqsHtml}
         </div>
@@ -1881,16 +1948,17 @@ ${faqsHtml}
         </p>
       </div>
     </section>
+${comparisonHtml}
 
     <!-- Bottom CTA -->
     <section class="bottom-cta">
       <div class="wrap">
         <div class="reveal">
           <h2>Ready to get ${data.name.toLowerCase()} data?</h2>
-          <p>${soon ? 'This dataset is coming soon. Request access and we\'ll notify you the moment it\'s live.' : 'Choose a one-time dataset or subscribe for fresh data every month.'}</p>
+          <p>${soon ? 'This dataset is coming soon. Request access and we\'ll notify you the moment it\'s live.' : 'Choose a one-time dataset that fits your outreach needs.'}</p>
           <div class="bottom-cta-actions">
             ${soon
-              ? '<a class="btn btn-primary" href="../contact.html">Request access</a>\n            <a class="btn btn-outline" href="../industries.html">Browse industries</a>'
+              ? '<a class="btn btn-primary" href="../contact.html">Request access</a>\n            <a class="btn btn-outline" href="../industries.html">Browse niches</a>'
               : '<a class="btn btn-primary" href="#pricing">See pricing</a>\n            <a class="btn btn-outline" href="../contact.html">Contact us</a>'}
           </div>
         </div>
@@ -1900,20 +1968,47 @@ ${faqsHtml}
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-logo">
-        <img src="../public/leadspitch-footer.png" alt="LeadsPitch" onerror="this.parentElement.innerHTML='<span style=&quot;color:#fff;font-size:1.5rem;font-weight:700&quot;>LeadsPitch</span>'">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <p class="logo">LeadsPitch</p>
+        <p>Verified B2B lead data, delivered as CSV. One-time purchases and membership discounts across 19+ niches.</p>
+        <p style="margin-top:0.75rem"><a href="mailto:contact@leadspitch.com" style="color:var(--faint);font-size:var(--text-sm);text-decoration:none;transition:color 150ms ease;">contact@leadspitch.com</a></p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="../index.html#how-it-works">How it works</a>
+          <a href="../industries.html">Niches</a>
+          <a href="../bundles.html">B2B datasets</a>
+          <a href="../membership.html">Membership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="../refund.html">Refund Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Popular</h4>
+          <a href="../industries/real-estate.html">Real Estate leads</a>
+          <a href="../industries/clinics.html">Clinics leads</a>
+          <a href="../industries/dentists.html">Dentists leads</a>
+          <a href="../industries/legal.html">Lawyers leads</a>
+        </div>
       </div>
     </div>
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><p>Business data platform. Subscriptions, one-time purchases, and membership discounts across 16 industries.</p></div>
-      <div class="footer-col"><h4>Product</h4><a href="../index.html#how-it-works">How it works</a><a href="../industries.html">Industries</a><a href="../bundles.html">Bundles</a><a href="../faq.html">FAQ</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../membership.html">Memberships</a><a href="../index.html#trust">Trust</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../refund.html">Refund Policy</a></div>
-    </div>
     <div class="wrap footer-bottom">
-      <span>&copy; 2026 LeadsPitch</span>
-      <span>Business data, delivered your way.</span>
+      <span>&copy; <span id="y"></span> LeadsPitch</span>
+      <span>Verified B2B data, delivered your way.</span>
+    </div>
+    <div class="footer-giant" id="footer-giant">
+      <span class="footer-giant__text" id="giant-text">LEADSPITCH</span>
     </div>
   </footer>
 
@@ -1995,14 +2090,28 @@ ${faqsHtml}
         });
       });
 
-      document.querySelectorAll(".product-includes-toggle").forEach(function (btn) {
+      document.querySelectorAll(".product-includes-more").forEach(function (btn) {
         btn.addEventListener("click", function () {
-          var list = btn.nextElementSibling;
-          if (!list) return;
-          var isOpen = btn.getAttribute("aria-expanded") === "true";
+          var includes = btn.closest(".product-includes");
+          if (!includes) return;
+          var isOpen = includes.classList.contains("open");
+          includes.classList.toggle("open");
           btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
-          list.classList.toggle("open");
+          var label = btn.querySelector(".product-includes-more-label");
+          if (label) label.textContent = isOpen ? "Show more" : "Show less";
         });
+      });
+
+      document.querySelectorAll(".tooltip-wrap").forEach(function (wrap) {
+        wrap.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var wasActive = wrap.classList.contains("active");
+          document.querySelectorAll(".tooltip-wrap.active").forEach(function (w) { w.classList.remove("active"); });
+          if (!wasActive) wrap.classList.add("active");
+        });
+      });
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".tooltip-wrap.active").forEach(function (w) { w.classList.remove("active"); });
       });
 
       var observer = new IntersectionObserver(function (entries) {
@@ -2011,8 +2120,66 @@ ${faqsHtml}
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+
+      (function () {
+        var container = document.getElementById("footer-giant");
+        var text = document.getElementById("giant-text");
+        if (!container || !text) return;
+        function fit() {
+          var avail = container.offsetWidth;
+          if (!avail) return;
+          text.style.fontSize = "100px";
+          var textW = text.offsetWidth;
+          if (!textW) return;
+          text.style.fontSize = Math.floor((avail / textW) * 100) + "px";
+        }
+        fit(); setTimeout(fit,100); setTimeout(fit,300); setTimeout(fit,600); setTimeout(fit,1000);
+        var rt; window.addEventListener("resize",function(){ if(rt) clearTimeout(rt); rt=setTimeout(fit,100); });
+      })();
+
+      var year = document.getElementById("y");
+      if (year) year.textContent = String(new Date().getFullYear());
+    })();
+    /* Theme Toggle */
+    (function () {
+      var root = document.documentElement;
+      var toggles = document.querySelectorAll(".theme-toggle, .mobile-theme-toggle");
+      var mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+      var hasSaved = (function () { try { return localStorage.getItem("theme") !== null; } catch (e) { return false; } })();
+      function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+      function updateToggleLabel() {
+        var isLight = current() === "light";
+        for (var i = 0; i < toggles.length; i++) {
+          var span = toggles[i].querySelector("span");
+          if (span) span.textContent = isLight ? "Light mode" : "Dark mode";
+          toggles[i].setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+        }
+      }
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem("theme", theme); } catch (e) {}
+        hasSaved = true;
+        updateToggleLabel();
+      }
+      function toggleTheme() { setTheme(current() === "light" ? "dark" : "light"); }
+      function onSystemChange() {
+        if (hasSaved) return;
+        root.setAttribute("data-theme", mql.matches ? "light" : "dark");
+        updateToggleLabel();
+      }
+      updateToggleLabel();
+      for (var i = 0; i < toggles.length; i++) {
+        toggles[i].addEventListener("click", toggleTheme);
+      }
+      if (mql) {
+        if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
+        else if (mql.addListener) mql.addListener(onSystemChange);
+      }
     })();
   </script>
+
+  <script src="../search-data.js"></script>
+  <script src="../search.js"></script>
 
 </body></html>`;
 }

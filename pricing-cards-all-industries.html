@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadsPitch — All Industries Pricing Preview</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--tx:#1a1a2e;--tx2:#555770;--tx3:#8a8ca5;--ac:#2563eb;--ac2:#1d4ed8;--ac-bg:#eff4ff;--bd:#e2e4ea;--bd2:#f0f1f5;--bg:#f5f6fa;--card:#fff;--bb:#fef3e6;--bt:#b45309;--mb:#f0fdf4;--mt:#166534;--ok:#16a34a;--r:8px;--rs:5px;--sh:0 1px 3px rgba(0,0,0,.06);--sh2:0 4px 12px rgba(0,0,0,.07)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:32px 20px 80px}
+.pt{font-size:20px;font-weight:700;margin-bottom:4px}
+.ps{font-size:13px;color:var(--tx3);margin-bottom:32px}
+.ind{margin-bottom:32px}
+.ih{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.in{font-size:15px;font-weight:700}
+.ic{font-size:11px;color:var(--tx3)}
+.cr{display:grid;gap:12px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);padding:14px 12px 12px;box-shadow:var(--sh);display:flex;flex-direction:column}
+.c:hover{box-shadow:var(--sh2)}
+.cb{font-size:9px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:1px}
+.cn{font-size:13px;font-weight:700;margin-bottom:8px;line-height:1.2}
+.pb{margin-bottom:6px}
+.po{font-size:11px;color:var(--tx3);text-decoration:line-through}
+.pf{font-size:11px;font-weight:700;line-height:1.1}
+.pl{font-size:10px;color:var(--tx2)}
+.db{display:inline-block;background:var(--bb);color:var(--bt);font-size:9px;font-weight:600;padding:2px 5px;border-radius:3px;margin-top:3px}
+.ms{font-size:10px;color:var(--mt);background:var(--mb);padding:3px 6px;border-radius:var(--rs);margin-top:5px;line-height:1.3}
+.ms b{font-weight:600}
+.st{display:flex;gap:8px;margin:6px 0;padding:6px 0;border-top:1px solid var(--bd2);border-bottom:1px solid var(--bd2)}
+.st>div{flex:1;text-align:center}
+.sv{font-size:14px;font-weight:700;display:block}
+.sl{font-size:9px;color:var(--tx3);text-transform:uppercase;letter-spacing:.3px}
+.fh{font-size:10px;font-weight:600;color:var(--tx2);margin-bottom:4px}
+.fl{list-style:none}
+.fl li{font-size:10.5px;color:var(--tx2);padding:1.5px 0;display:flex;align-items:center;gap:5px}
+.fl .ck{color:var(--ok);font-weight:700;font-size:10px;flex-shrink:0}
+.ff{position:relative;overflow:hidden;max-height:0;transition:max-height .3s ease}
+.ff.open{max-height:180px}
+.fm{position:relative}
+.fm::after{content:'';position:absolute;bottom:0;left:0;right:0;height:20px;background:linear-gradient(to bottom,transparent,var(--card));pointer-events:none;transition:opacity .3s}
+.fm.open::after{opacity:0}
+.smb{background:none;border:none;color:var(--ac);font-size:10px;font-weight:500;cursor:pointer;padding:3px 0;margin-top:1px;display:inline-flex;align-items:center;gap:3px}
+.smb:hover{text-decoration:underline}
+.smb .ar{transition:transform .2s;font-size:7px}
+.smb.open .ar{transform:rotate(180deg)}
+.cta{display:block;width:100%;padding:7px 10px;background:var(--ac);color:#fff;border:none;border-radius:var(--rs);font-size:12px;font-weight:600;cursor:pointer;text-align:center;transition:background .2s;margin-top:auto;text-decoration:none}
+.cta:hover{background:var(--ac2)}
+.bun{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;max-width:340px;margin-top:16px}
+.bh{padding:12px 14px 8px;border-bottom:1px solid var(--bd2)}
+.bh .cb{color:var(--ac)}.bh .cn{font-size:13px;margin-bottom:2px}
+.bs{font-size:11px;font-weight:600;color:var(--ok)}
+.bt2{padding:8px 14px}
+.br{display:flex;justify-content:space-between;align-items:center;padding:5px 0}
+.br:not(:last-child){border-bottom:1px solid var(--bd2)}
+.brl{font-size:11px;color:var(--tx2)}
+.brp{text-align:right}
+.bro{font-size:10px;color:var(--tx3);text-decoration:line-through}
+.brc{font-size:13px;font-weight:700}
+.bi{padding:6px 14px;border-top:1px solid var(--bd2);font-size:10px;color:var(--tx2);line-height:1.4}
+.bc{padding:0 14px 12px}
+.bv{display:inline-block;background:var(--ac-bg);color:var(--ac);font-size:8px;font-weight:600;padding:1px 4px;border-radius:3px;margin-left:4px;vertical-align:middle}
+@media(max-width:1100px){.cr-5,.cr-6{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:768px){.cr-4,.cr-5,.cr-6{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.cr-4,.cr-5,.cr-6{grid-template-columns:1fr!important}.wrap{padding:16px 12px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="pt">LeadsPitch — All Industries Pricing Cards</div>
+<div class="ps">Compact preview with real product data, fixed buy links, and 20% discount pricing</div>
+<div id="app"></div>
+</div>
+<script>
+const D=[
+{n:"Automotive",plans:[
+{b:"Entry Plan",nm:"Starter",o:27.98,l:"27K",e:"5K",lnk:"https://whop.com/automotive-leadspitch/starter-automotive",mp:16.79},
+{b:"Most Popular",nm:"Growth",o:49.98,l:"105K",e:"25K",lnk:"https://whop.com/automotive-leadspitch/growth-automotive",mp:29.99},
+{b:"Best Value",nm:"Professional",o:79.98,l:"180K",e:"50K",lnk:"https://whop.com/automotive-leadspitch/professional-automotive",mp:47.99},
+{b:"High Volume",nm:"Business",o:135.98,l:"375K",e:"100K",lnk:"https://whop.com/automotive-leadspitch/business-automotive",mp:81.59},
+{b:"Enterprise Ready",nm:"Scale",o:199.98,l:"650K",e:"200K",lnk:"https://whop.com/automotive-leadspitch/scale-automotive",mp:119.99},
+{b:"Complete Database",nm:"Enterprise",o:279.98,l:"1.15M+",e:"300K",lnk:"https://whop.com/automotive-leadspitch/enterprise-automotive",mp:167.99}
+]},
+{n:"Construction",plans:[
+{b:"Entry Plan",nm:"Starter",o:25.98,l:"26K",e:"5K",lnk:"https://whop.com/construction-contractors-leadspitch/starter-construction-contractors",mp:15.59},
+{b:"Most Popular",nm:"Growth",o:45.98,l:"105K",e:"25K",lnk:"https://whop.com/construction-contractors-leadspitch/growth-construction-contractors",mp:27.59},
+{b:"Best Value",nm:"Professional",o:75.98,l:"175K",e:"50K",lnk:"https://whop.com/construction-contractors-leadspitch/professional-construction-contractors",mp:45.59},
+{b:"High Volume",nm:"Business",o:129.98,l:"360K",e:"100K",lnk:"https://whop.com/construction-contractors-leadspitch/business-construction-contractors",mp:77.99},
+{b:"Enterprise Ready",nm:"Scale",o:199.98,l:"760K",e:"200K",lnk:"https://whop.com/construction-contractors-leadspitch/scale-construction-contractors",mp:119.99},
+{b:"Complete Database",nm:"Enterprise",o:279.98,l:"1.3M+",e:"350K",lnk:"https://whop.com/construction-contractors-leadspitch/enterprise-construction-contractors",mp:167.99}
+]},
+{n:"Accounting & Finance",plans:[
+{b:"Entry Plan",nm:"Starter",o:23.98,l:"23K",e:"5K",lnk:"https://whop.com/accounting-finance-leadspitch/starter-accounting-finance",mp:14.39},
+{b:"Most Popular",nm:"Growth",o:39.98,l:"82K",e:"25K",lnk:"https://whop.com/accounting-finance-leadspitch/growth-accounting-finance",mp:23.99},
+{b:"Best Value",nm:"Professional",o:65.98,l:"135K",e:"50K",lnk:"https://whop.com/accounting-finance-leadspitch/professional-accounting-finance",mp:39.59},
+{b:"Complete Database",nm:"Business",o:99.98,l:"185K",e:"65K",lnk:"https://whop.com/accounting-finance-leadspitch/business-accounting-finance",mp:59.99}
+]},
+{n:"Clinics & Healthcare",plans:[
+{b:"Entry Plan",nm:"Starter",o:23.98,l:"26.4K",e:"5K",lnk:"https://whop.com/health-care-leads/starter-clinics-leads",mp:14.39},
+{b:"Most Popular",nm:"Growth",o:39.98,l:"90K",e:"25K",lnk:"https://whop.com/health-care-leads/growth-clinics-leads",mp:23.99},
+{b:"Best Value",nm:"Professional",o:69.98,l:"130.7K",e:"50K",lnk:"https://whop.com/health-care-leads/professional-clinics-leads",mp:41.99},
+{b:"High Volume",nm:"Business",o:119.98,l:"307.8K",e:"100K",lnk:"https://whop.com/health-care-leads/business-clinics-leads",mp:71.99}
+]},
+{n:"Dentists",plans:[
+{b:"Entry Plan",nm:"Starter",o:25.98,l:"28K",e:"5K",lnk:"https://whop.com/destists-leads/starter-dentist-leads",mp:15.59},
+{b:"Most Popular",nm:"Growth",o:45.98,l:"95K",e:"25K",lnk:"https://whop.com/destists-leads/growth-dentist-leads",mp:27.59},
+{b:"Best Value",nm:"Professional",o:75.98,l:"145K",e:"50K",lnk:"https://whop.com/destists-leads/professional-dentist-leads",mp:45.59},
+{b:"High Volume",nm:"Business",o:129.98,l:"330K",e:"100K",lnk:"https://whop.com/destists-leads/business-dentist-leads",mp:77.99}
+]},
+{n:"Education & Training",plans:[
+{b:"Entry Plan",nm:"Starter",o:23.98,l:"25K",e:"5K",lnk:"https://whop.com/education-training-c476/starter-education-training",mp:14.39},
+{b:"Most Popular",nm:"Growth",o:43.98,l:"95K",e:"25K",lnk:"https://whop.com/education-training-c476/growth-education-training",mp:26.39},
+{b:"Best Value",nm:"Professional",o:71.98,l:"155K",e:"50K",lnk:"https://whop.com/education-training-c476/professional-education-training",mp:43.19},
+{b:"High Volume",nm:"Business",o:123.98,l:"330K",e:"100K",lnk:"https://whop.com/education-training-c476/business-education-training",mp:74.39},
+{b:"Complete Database",nm:"Enterprise",o:189.98,l:"590K+",e:"175K",lnk:"https://whop.com/education-training-c476/enterprise-education-training",mp:113.99}
+]},
+{n:"Home Services",plans:[
+{b:"Entry Plan",nm:"Starter",o:25.98,l:"26K",e:"5K",lnk:"https://whop.com/home-services-leadspitch/starter-home-services/",mp:15.59},
+{b:"Most Popular",nm:"Growth",o:45.98,l:"100K",e:"25K",lnk:"https://whop.com/home-services-leadspitch/growth-home-services/",mp:27.59},
+{b:"Best Value",nm:"Professional",o:75.98,l:"170K",e:"50K",lnk:"https://whop.com/home-services-leadspitch/professional-home-services/",mp:45.59},
+{b:"High Volume",nm:"Business",o:129.98,l:"350K",e:"100K",lnk:"https://whop.com/home-services-leadspitch/business-home-services/",mp:77.99}
+]},
+{n:"Restaurants & Cafes",plans:[
+{b:"Entry Plan",nm:"Starter",o:27.98,l:"28K",e:"5K",lnk:"https://whop.com/restaurants-cafes/starter-restaurants-cafes/",mp:16.79},
+{b:"Most Popular",nm:"Growth",o:49.98,l:"100K",e:"25K",lnk:"https://whop.com/restaurants-cafes/growth-restaurants-cafes/",mp:29.99},
+{b:"Best Value",nm:"Professional",o:69.98,l:"170K",e:"50K",lnk:"https://whop.com/restaurants-cafes/professional-restaurants-cafes/",mp:41.99},
+{b:"High Volume",nm:"Business",o:129.98,l:"360K",e:"100K",lnk:"https://whop.com/restaurants-cafes/business-restaurants-cafes/",mp:77.99},
+{b:"Complete Database",nm:"Enterprise",o:199.98,l:"760K+",e:"200K",lnk:"https://whop.com/restaurants-cafes/enterprise-restaurants-cafes/",mp:119.99}
+]},
+{n:"Events & Leisure",plans:[
+{b:"Entry Plan",nm:"Starter",o:25.98,l:"26K",e:"5K",lnk:"https://whop.com/events-leisure-leadspitch/starter-events-leisure/",mp:15.59},
+{b:"Most Popular",nm:"Growth",o:45.98,l:"95K",e:"25K",lnk:"https://whop.com/events-leisure-leadspitch/growth-events-leisure/",mp:27.59},
+{b:"Best Value",nm:"Professional",o:75.98,l:"155K",e:"50K",lnk:"https://whop.com/events-leisure-leadspitch/professional-events-leisure/",mp:45.59},
+{b:"High Volume",nm:"Business",o:125.98,l:"330K",e:"110K",lnk:"https://whop.com/events-leisure-leadspitch/business-events-leisure/",mp:75.59}
+]},
+{n:"Food & Beverage Suppliers",plans:[
+{b:"Entry Plan",nm:"Starter",o:27.98,l:"26K",e:"5K",lnk:"https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers/",mp:16.79},
+{b:"Most Popular",nm:"Growth",o:49.98,l:"95K",e:"25K",lnk:"https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers/",mp:29.99},
+{b:"Best Value",nm:"Professional",o:79.98,l:"165K",e:"50K",lnk:"https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers/",mp:47.99},
+{b:"High Volume",nm:"Business",o:135.98,l:"340K",e:"100K",lnk:"https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers/",mp:81.59},
+{b:"Complete Database",nm:"Enterprise",o:219.98,l:"620K+",e:"170K",lnk:"https://whop.com/food-beverage-suppliers/enterprise-food-beverage-suppliers/",mp:131.99}
+]},
+{n:"Agencies & Business Services",plans:[
+{b:"Entry Plan",nm:"Starter",o:25.98,l:"26K",e:"5K",lnk:"https://whop.com/agencies-business-services/starter-agencies-business-services/",mp:15.59},
+{b:"Most Popular",nm:"Growth",o:47.98,l:"100K",e:"25K",lnk:"https://whop.com/agencies-business-services/growth-agencies-business-services/",mp:28.79},
+{b:"Best Value",nm:"Professional",o:77.98,l:"170K",e:"50K",lnk:"https://whop.com/agencies-business-services/professional-agencies-business-services/",mp:46.79},
+{b:"High Volume",nm:"Business",o:129.98,l:"350K",e:"100K",lnk:"https://whop.com/agencies-business-services/business-agencies-business-services/",mp:77.99},
+{b:"Complete Database",nm:"Enterprise",o:269.98,l:"1.05M+",e:"300K",lnk:"https://whop.com/agencies-business-services/enterprise-agencies-business-services/",mp:161.99}
+]},
+{n:"Beauty & Wellness",plans:[
+{b:"Entry Plan",nm:"Starter",o:23.98,l:"24K",e:"5K",lnk:"https://whop.com/beauty-wellness-leadspitch/starter-beauty-wellness",mp:14.39},
+{b:"Most Popular",nm:"Growth",o:43.98,l:"90K",e:"25K",lnk:"https://whop.com/beauty-wellness-leadspitch/growth-beauty-wellness",mp:26.39},
+{b:"Best Value",nm:"Professional",o:71.98,l:"150K",e:"50K",lnk:"https://whop.com/beauty-wellness-leadspitch/professional-beauty-wellness",mp:43.19},
+{b:"High Volume",nm:"Business",o:123.98,l:"320K",e:"100K",lnk:"https://whop.com/beauty-wellness-leadspitch/business-beauty-wellness",mp:74.39},
+{b:"Complete Database",nm:"Enterprise",o:189.98,l:"680K+",e:"200K",lnk:"https://whop.com/beauty-wellness-leadspitch/enterprise-beauty-wellness",mp:113.99}
+]},
+{n:"Hotels & Hospitality",plans:[
+{b:"Entry Plan",nm:"Starter",o:31.98,l:"25K",e:"5K",lnk:"https://whop.com/hotels-hospitality/starter-hotels-hospitality",mp:19.19},
+{b:"Most Popular",nm:"Growth",o:55.98,l:"90K",e:"25K",lnk:"https://whop.com/hotels-hospitality/growth-hotels-hospitality",mp:33.59},
+{b:"Best Value",nm:"Professional",o:89.98,l:"155K",e:"50K",lnk:"https://whop.com/hotels-hospitality/professional-hotels-hospitality",mp:53.99},
+{b:"Complete Database",nm:"Business",o:139.98,l:"250K",e:"75K",lnk:"https://whop.com/hotels-hospitality/business-hotels-hospitality",mp:83.99}
+]},
+{n:"Legal",plans:[
+{b:"Entry Plan",nm:"Starter",o:27.98,l:"24K",e:"5K",lnk:"https://whop.com/legal-leadspitch/starter-lawyer-leads/",mp:16.79},
+{b:"Most Popular",nm:"Growth",o:41.98,l:"90K",e:"25K",lnk:"https://whop.com/legal-leadspitch/growth-lawyer-leads/",mp:25.19},
+{b:"Best Value",nm:"Professional",o:69.98,l:"145K",e:"50K",lnk:"https://whop.com/legal-leadspitch/professional-lawyer-leads/",mp:41.99},
+{b:"High Volume",nm:"Business",o:119.98,l:"300K",e:"100K",lnk:"https://whop.com/legal-leadspitch/business-lawyer-leads/",mp:71.99},
+{b:"Complete Database",nm:"Enterprise",o:259.98,l:"900K+",e:"300K",lnk:"https://whop.com/legal-leadspitch/enterprise-lawyer-leads/",mp:155.99}
+]},
+{n:"Logistics & Transportation",plans:[
+{b:"Entry Plan",nm:"Starter",o:23.98,l:"24K",e:"5K",lnk:"https://whop.com/logistics-and-others/starter-logistics-and-others/",mp:14.39},
+{b:"Most Popular",nm:"Growth",o:39.98,l:"85K",e:"25K",lnk:"https://whop.com/logistics-and-others/growth-logistics-and-others/",mp:23.99},
+{b:"Best Value",nm:"Professional",o:65.98,l:"140K",e:"50K",lnk:"https://whop.com/logistics-and-others/professional-logistics-and-others/",mp:39.59},
+{b:"High Volume",nm:"Business",o:109.98,l:"255K",e:"85K",lnk:"https://whop.com/logistics-and-others/business-logistics-and-others/",mp:65.99}
+]},
+{n:"Real Estate",plans:[
+{b:"Entry Plan",nm:"Starter",o:15.98,l:"3K",e:"1K",lnk:"https://whop.com/real-estate-leads-d0ea/real-estate-leades-1k/",mp:9.59},
+{b:"Great Value",nm:"Growth",o:23.98,l:"8K",e:"2.5K",lnk:"https://whop.com/real-estate-leads-d0ea/growth-real-estate-leads",mp:14.39},
+{b:"Most Popular",nm:"Professional",o:35.98,l:"16K",e:"5K",lnk:"https://whop.com/real-estate-leads-d0ea/professional-real-estate-leads",mp:21.59},
+{b:"Best Value",nm:"Business",o:55.98,l:"32K",e:"10K",lnk:"https://whop.com/real-estate-leads-d0ea/business-real-estate-leads-83/",mp:33.59},
+{b:"High Volume",nm:"Scale",o:89.98,l:"80K",e:"25K",lnk:"https://whop.com/real-estate-leads-d0ea/scale-real-estate-leads",mp:53.99},
+{b:"Complete Coverage",nm:"Enterprise",o:139.98,l:"160K",e:"50K",lnk:"https://whop.com/real-estate-leads-d0ea/enterprise-real-estate-leads",mp:83.99}
+]}
+];
+const FL=["Verified Emails","Phone Numbers","Company Name","Contact Name","Competitor Details","City & State","Property Location","Company Website","Industry Information","Rating & Reviews"];
+let uid=0;
+function card(p,idx){
+const id=uid++,d=(p.o*.8).toFixed(2);
+return`<div class="c"><div class="cb">${p.b}</div><div class="cn">${p.nm}</div><div class="pb"><div class="po">$${p.o.toFixed(2)}</div><div class="pf">$${d}</div><div class="pl">one-time</div><div class="db">20% OFF</div></div><div class="ms"><b>40% OFF with membership</b> · $${p.mp}</div><div class="st"><div><span class="sv">${p.l}</span><span class="sl">Leads</span></div><div><span class="sv">${p.e}</span><span class="sl">Emails</span></div></div><div class="fh">What's included</div><ul class="fl"><li><span class="ck">&#10003;</span> Verified Emails</li><li><span class="ck">&#10003;</span> Phone Numbers</li><li><span class="ck">&#10003;</span> Company Name</li></ul><div class="fm" id="m${id}"><div class="ff" id="f${id}"><ul class="fl">${FL.slice(3).map(f=>`<li><span class="ck">&#10003;</span> ${f}</li>`).join("")}</ul></div></div><button class="smb" onclick="tog('f${id}','m${id}',this)">Show more <span class="ar">&#9660;</span></button><a href="${p.lnk}" class="cta" target="_blank" rel="noopener">Buy now</a></div>`;
+}
+function render(){
+const app=document.getElementById("app");
+let h="";
+D.forEach(ind=>{
+const cols=ind.plans.length<=4?"cr-4":ind.plans.length<=5?"cr-5":"cr-6";
+h+=`<div class="ind"><div class="ih"><span class="in">${ind.n}</span><span class="ic">${ind.plans.length} plans</span></div><div class="cr ${cols}">${ind.plans.map((p,i)=>card(p,i)).join("")}</div></div>`;
+});
+h+=`<div class="ind"><div class="ih"><span class="in">Bundle: Restaurants, Hotels & Construction</span></div><div class="bun"><div class="bh"><div class="cb">Bundle</div><div class="cn">Restaurants, Hotels & Construction</div><div class="bs">Save up to $32</div></div><div class="bt2"><div class="br"><div class="brl">25K Emails</div><div class="brp"><div class="bro">$131.98</div><div class="brc">$99.98</div></div></div><div class="br"><div class="brl">50K Emails <span class="bv">BEST VALUE</span></div><div class="brp"><div class="bro">$235.98</div><div class="brc">$189.98</div></div></div></div><div class="bi">Includes: Restaurants & Cafés + Hotels & Hospitality + Construction</div><div class="bc"><a href="https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-25k/" class="cta" target="_blank" rel="noopener">Get bundle</a></div></div></div>`;
+app.innerHTML=h;
+}
+function tog(f,m,b){const fe=document.getElementById(f),ma=document.getElementById(m);if(fe.classList.contains("open")){fe.classList.remove("open");ma.classList.remove("open");b.classList.remove("open");b.innerHTML='Show more <span class="ar">&#9660;</span>';}else{fe.classList.add("open");ma.classList.add("open");b.classList.add("open");b.innerHTML='Show less <span class="ar">&#9660;</span>';}}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,711 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing - LeadsPitch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f6f7;
+      --surface: #ffffff;
+      --surface-2: #f0f0f2;
+      --ink: #0b0b0d;
+      --muted: #55565b;
+      --faint: #8a8b91;
+      --line: #e5e5e8;
+      --line-strong: #d0d0d5;
+    }
+    [data-theme="dark"] {
+      --bg: #0f0f0f;
+      --bg-soft: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1e;
+      --ink: #f0f0f2;
+      --muted: #a0a0a8;
+      --faint: #6b6b73;
+      --line: #1a1a1e;
+      --line-strong: #333339;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    /* â”€â”€â”€ Layout â”€â”€â”€ */
+    .page { max-width: 1320px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2.5rem); }
+
+    /* â”€â”€â”€ Header â”€â”€â”€ */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 0;
+    }
+    .logo {
+      font-family: "Gevora", "Arial Black", Impact, sans-serif;
+      font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+    }
+    .header-nav {
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .header-nav a {
+      font-size: 0.875rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; transition: color 180ms ease;
+    }
+    .header-nav a:hover { color: var(--ink); }
+
+    /* â”€â”€â”€ Theme Toggle â”€â”€â”€ */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+      flex-shrink: 0;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .theme-toggle:hover { background: var(--surface-2); color: var(--ink); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+
+    /* â”€â”€â”€ Hero â”€â”€â”€ */
+    .hero {
+      text-align: center;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; letter-spacing: -0.04em;
+      line-height: 1.1; color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      color: var(--muted); max-width: 50ch; margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* â”€â”€â”€ Toggle â”€â”€â”€ */
+    .toggle-wrap {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.75rem; margin-top: 2.5rem;
+    }
+    .toggle-label {
+      font-size: 0.875rem; font-weight: 500; color: var(--muted);
+      transition: color 180ms ease;
+    }
+    .toggle-label.active { color: var(--ink); }
+    .toggle {
+      position: relative; width: 48px; height: 26px;
+      background: var(--line-strong); border-radius: 100px; cursor: pointer;
+      border: none; padding: 0; transition: background 200ms ease;
+    }
+    .toggle::after {
+      content: ""; position: absolute; top: 3px; left: 3px;
+      width: 20px; height: 20px; background: var(--ink);
+      border-radius: 50%; transition: transform 200ms cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .toggle.yearly::after { transform: translateX(22px); }
+    .toggle.yearly { background: #3b82f6; }
+    .save-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      color: #22c55e; background: rgba(34,197,94,0.12);
+      padding: 0.2rem 0.6rem; border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    /* â”€â”€â”€ Cards Grid â”€â”€â”€ */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .card {
+      background: var(--bg);
+      padding: 2rem;
+      display: flex; flex-direction: column;
+      transition: background 200ms ease;
+      position: relative;
+    }
+    .card:hover { background: var(--surface); }
+    .card--featured {
+      background: var(--surface);
+    }
+    .card--featured:hover { background: var(--surface-2); }
+
+    /* â”€â”€â”€ Card Content â”€â”€â”€ */
+    .card-badge {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    .card-badge--new {
+      background: var(--ink); color: var(--bg);
+    }
+    .card-badge--popular {
+      background: #3b82f6; color: #fff;
+    }
+    .card-name {
+      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .card-desc {
+      font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+      margin-bottom: 1.5rem; min-height: 2.6em;
+    }
+    .card-price {
+      display: flex; align-items: baseline; gap: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .card-price .currency {
+      font-size: 1.25rem; font-weight: 600; color: var(--ink);
+      align-self: flex-start; margin-top: 0.4rem;
+    }
+    .card-price .amount {
+      font-size: 3rem; font-weight: 700; letter-spacing: -0.03em;
+      color: var(--ink); line-height: 1;
+    }
+    .card-price .period {
+      font-size: 0.9375rem; color: var(--faint); font-weight: 400;
+    }
+    .card-billing {
+      font-size: 0.8125rem; color: var(--faint); margin-bottom: 1.5rem;
+    }
+
+    /* â”€â”€â”€ CTA Button â”€â”€â”€ */
+    .card-cta {
+      display: block; width: 100%; padding: 0.8125rem 1.5rem;
+      font-size: 0.9375rem; font-weight: 600; text-align: center;
+      border-radius: 8px; cursor: pointer; text-decoration: none;
+      transition: all 180ms ease; margin-bottom: 2rem;
+    }
+    .card-cta--outline {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--line-strong);
+    }
+    .card-cta--outline:hover {
+      background: var(--ink); color: var(--bg); border-color: var(--ink);
+    }
+    .card-cta--primary {
+      background: #3b82f6; color: #fff; border: 1px solid #3b82f6;
+    }
+    .card-cta--primary:hover {
+      background: #2563eb; border-color: #2563eb;
+    }
+
+    /* â”€â”€â”€ Divider â”€â”€â”€ */
+    .card-divider {
+      border: none; border-top: 1px solid var(--line);
+      margin-bottom: 1.5rem;
+    }
+
+    /* â”€â”€â”€ Features â”€â”€â”€ */
+    .card-features-label {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--faint); margin-bottom: 1rem;
+    }
+    .card-features {
+      list-style: none; display: grid; gap: 0.75rem;
+      flex: 1;
+    }
+    .card-features li {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.875rem; color: var(--muted); line-height: 1.45;
+    }
+    .card-features li .icon {
+      flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-features li .icon svg {
+      width: 16px; height: 16px; color: #3b82f6;
+    }
+    .card-features li .info {
+      flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--faint); margin-left: auto;
+    }
+    .card-features li .info svg {
+      width: 14px; height: 14px;
+    }
+
+    /* â”€â”€â”€ Info Section â”€â”€â”€ */
+    .info-section {
+      background: var(--surface-2); border-radius: 16px;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 4rem;
+    }
+    .info-section h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 0.75rem;
+    }
+    .info-section p {
+      font-size: 0.9375rem; color: var(--muted);
+      max-width: 60ch; line-height: 1.6;
+    }
+
+    /* â”€â”€â”€ Footer â”€â”€â”€ */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer p {
+      font-size: 0.8125rem; color: var(--faint);
+    }
+    .footer-links {
+      display: flex; gap: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.8125rem; color: var(--faint); text-decoration: none;
+      transition: color 150ms ease;
+    }
+    .footer-links a:hover { color: var(--muted); }
+
+    /* â”€â”€â”€ Responsive â”€â”€â”€ */
+    @media (max-width: 1024px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+      .header-nav { display: none; }
+      .card { padding: 1.5rem; }
+    }
+      /* Gevora Font */
+    @font-face { font-family: "Gevora"; src: url("public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+
+    /* Hero Marquee */
+    .hero-marquee { overflow: hidden; position: relative; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.65rem 0; background: var(--bg); margin-top: 2rem; }
+    .hero-marquee::before, .hero-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+    .hero-marquee::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .hero-marquee::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .hero-marquee__track { display: flex; gap: 2rem; width: max-content; animation: marquee-scroll 25s linear infinite; }
+    .hero-marquee:hover .hero-marquee__track { animation-play-state: paused; }
+    .hero-marquee__pill { flex-shrink: 0; font-size: 14px; font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: var(--faint); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+    .hero-marquee__pill:hover { color: var(--ink); }
+    @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .hero-marquee__track { animation: none !important; } }
+  
+    /* ── Footer reveal (Mobbin-style) ────────────────────────── */
+    html { background-color: #0a0a0a; }
+    body { background-color: #0a0a0a; }
+    .page {
+      position: relative;
+      z-index: 1;
+      background: var(--bg);
+      min-height: 100vh;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 1px 2px rgba(20, 20, 28, 0.05), 0 24px 48px -20px rgba(20, 20, 28, 0.18);
+      overflow: clip;
+    }
+    .footer {
+      position: static;
+      margin-top: 2.5rem;
+      background: #0a0a0a;
+      color: #d1d5db;
+      border-top: 0;
+    }
+    .footer p,
+    [data-theme="dark"] .footer p,
+    [data-theme="light"] .footer p { color: #9ca3af; }
+    .footer-links a,
+    [data-theme="dark"] .footer-links a,
+    [data-theme="light"] .footer-links a { color: #9ca3af; }
+    .footer-links a:hover,
+    [data-theme="dark"] .footer-links a:hover,
+    [data-theme="light"] .footer-links a:hover { color: #ffffff; }
+    @media (max-width: 640px) {
+      .page { border-radius: 0 0 24px 24px; }
+    }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <a href="index.html" class="logo">LeadsPitch</a>
+      <nav class="header-nav">
+        <a href="industries.html">Niches</a>
+        <a href="bundles.html">Bundles</a>
+        <a href="membership.html">Membership</a>
+        <a href="faq.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Simple, transparent pricing</h1>
+      <p>Get verified B2B lead data across 19+ industries. Choose a membership tier and save 40% on every purchase.</p>
+
+      <div class="toggle-wrap">
+        <span class="toggle-label active" id="lbl-monthly">One-time</span>
+        <button class="toggle yearly" id="billing-toggle" aria-label="Toggle billing"></button>
+        <span class="toggle-label" id="lbl-yearly">Annual</span>
+        <span class="save-badge">Save 20%</span>
+      </div>
+      <div class="hero-marquee reveal" aria-label="Browse industries">
+        <div class="hero-marquee__track">
+          <a class="hero-marquee__pill" href="industries/home-services.html">Home Services</a>
+          <a class="hero-marquee__pill" href="industries/automotive.html">Automotive</a>
+          <a class="hero-marquee__pill" href="industries/construction.html">Construction</a>
+          <a class="hero-marquee__pill" href="industries/agencies-business.html">Agencies &amp; Business</a>
+          <a class="hero-marquee__pill" href="industries/clinics.html">Clinics</a>
+          <a class="hero-marquee__pill" href="industries/dentists.html">Dentists</a>
+          <a class="hero-marquee__pill" href="industries/legal.html">Legal</a>
+          <a class="hero-marquee__pill" href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+          <a class="hero-marquee__pill" href="industries/real-estate.html">Real Estate</a>
+          <a class="hero-marquee__pill" href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+          <a class="hero-marquee__pill" href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+          <a class="hero-marquee__pill" href="industries/food-beverage.html">Food &amp; Beverage</a>
+          <a class="hero-marquee__pill" href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+          <a class="hero-marquee__pill" href="industries/education.html">Education</a>
+          <a class="hero-marquee__pill" href="industries/logistics.html">Logistics</a>
+          <a class="hero-marquee__pill" href="industries/events-leisure.html">Events &amp; Leisure</a>
+          <a class="hero-marquee__pill" href="industries/home-services.html">Home Services</a>
+          <a class="hero-marquee__pill" href="industries/automotive.html">Automotive</a>
+          <a class="hero-marquee__pill" href="industries/construction.html">Construction</a>
+          <a class="hero-marquee__pill" href="industries/agencies-business.html">Agencies &amp; Business</a>
+          <a class="hero-marquee__pill" href="industries/clinics.html">Clinics</a>
+          <a class="hero-marquee__pill" href="industries/dentists.html">Dentists</a>
+          <a class="hero-marquee__pill" href="industries/legal.html">Legal</a>
+          <a class="hero-marquee__pill" href="industries/beauty-wellness.html">Beauty &amp; Wellness</a>
+          <a class="hero-marquee__pill" href="industries/real-estate.html">Real Estate</a>
+          <a class="hero-marquee__pill" href="industries/accounting-finance.html">Accounting &amp; Finance</a>
+          <a class="hero-marquee__pill" href="industries/restaurants-cafes.html">Restaurants &amp; Cafes</a>
+          <a class="hero-marquee__pill" href="industries/food-beverage.html">Food &amp; Beverage</a>
+          <a class="hero-marquee__pill" href="industries/hotels-hospitality.html">Hotels &amp; Hospitality</a>
+          <a class="hero-marquee__pill" href="industries/education.html">Education</a>
+          <a class="hero-marquee__pill" href="industries/logistics.html">Logistics</a>
+          <a class="hero-marquee__pill" href="industries/events-leisure.html">Events &amp; Leisure</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <div class="cards">
+
+      <!-- Starter -->
+      <div class="card">
+        <h2 class="card-name">Starter</h2>
+        <p class="card-desc">For exploring and experimenting with LeadsPitch data.</p>
+        <div class="card-price">
+          <span class="currency">$</span>
+          <span class="amount">0</span>
+        </div>
+        <p class="card-billing">Free forever</p>
+        <a href="https://whop.com/leadspitch-memebership/starter-membership-3/" class="card-cta card-cta--primary" target="_blank" rel="noopener">Start for free</a>
+        <hr class="card-divider">
+        <ul class="card-features">
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            1 industry sample access
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Limited CSV export
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Basic lead fields
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Community support
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Basic -->
+      <div class="card">
+        <h2 class="card-name">Basic</h2>
+        <p class="card-desc">For simple projects that need targeted industry data.</p>
+        <div class="card-price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="19.99" data-yearly="15.99">19.99</span>
+        </div>
+        <p class="card-billing">one-time purchase</p>
+        <a href="https://whop.com/leadspitch-memebership/starter-membership-3/" class="card-cta card-cta--outline" target="_blank" rel="noopener">Get Basic</a>
+        <hr class="card-divider">
+        <ul class="card-features">
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            40% off 3 industries
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            25K verified emails per industry
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Full CSV export
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Email &amp; phone data
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Events &amp; Leisure
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Education &amp; Training
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Construction
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pro -->
+      <div class="card card--featured">
+        <span class="card-badge card-badge--popular">Most Popular</span>
+        <h2 class="card-name">Pro</h2>
+        <p class="card-desc">For content-rich projects with robust data needs.</p>
+        <div class="card-price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="29.99" data-yearly="23.99">29.99</span>
+        </div>
+        <p class="card-billing">one-time purchase</p>
+        <a href="https://whop.com/leadspitch-memebership/leadspitch-growth-membership/" class="card-cta card-cta--primary" target="_blank" rel="noopener">Get Pro</a>
+        <hr class="card-divider">
+        <p class="card-features-label">Everything in Basic, plus:</p>
+        <ul class="card-features">
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            40% off 10 industries
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            50K verified emails per industry
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Agencies &amp; Business
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Automotive
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Logistics
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Hotels &amp; Hospitality
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Home Services
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Legal
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Priority support
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Max -->
+      <div class="card">
+        <span class="card-badge card-badge--new">NEW</span>
+        <h2 class="card-name">Max</h2>
+        <p class="card-desc">For growing teams that need full data access without limits.</p>
+        <div class="card-price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="49.99" data-yearly="39.99">49.99</span>
+        </div>
+        <p class="card-billing">one-time purchase</p>
+        <a href="https://whop.com/leadspitch-memebership/membership-max/" class="card-cta card-cta--outline" target="_blank" rel="noopener">Get Max</a>
+        <hr class="card-divider">
+        <p class="card-features-label">Everything in Pro, plus:</p>
+        <ul class="card-features">
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            40% off ALL 16 industries
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            40% off ALL bundles
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Bonus leads &amp; records
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Priority access to new industries
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Real Estate
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Clinics &amp; Healthcare
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Dentists
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            All other industries
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+          <li>
+            <span class="icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Priority support
+            <span class="info"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+      <h2>All memberships include</h2>
+      <p>One-time purchase with lifetime access. No subscriptions, no recurring charges. Your discount is applied automatically on every eligible purchase through your member portal.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 LeadsPitch. Verified B2B data, delivered your way.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="refund.html">Refund</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('billing-toggle');
+      var lblMonthly = document.getElementById('lbl-monthly');
+      var lblYearly = document.getElementById('lbl-yearly');
+      var amounts = document.querySelectorAll('.amount[data-monthly]');
+      var billingTexts = document.querySelectorAll('.card-billing');
+
+      toggle.addEventListener('click', function() {
+        var isYearly = toggle.classList.toggle('yearly');
+        lblMonthly.classList.toggle('active', !isYearly);
+        lblYearly.classList.toggle('active', isYearly);
+
+        amounts.forEach(function(el) {
+          el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+        });
+
+        billingTexts.forEach(function(el) {
+          if (el.textContent === 'one-time purchase' || el.textContent === 'one-time purchase (billed yearly)') {
+            el.textContent = isYearly ? 'one-time purchase (billed yearly)' : 'one-time purchase';
+          }
+        });
+      });
+    })();
+    (function () {
+      var root = document.documentElement;
+      var toggles = document.querySelectorAll(".theme-toggle");
+      var mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+      var hasSaved = (function () { try { return localStorage.getItem("theme") !== null; } catch (e) { return false; } })();
+      function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        try { localStorage.setItem("theme", theme); } catch (e) {}
+        hasSaved = true;
+      }
+      function toggleTheme() { setTheme(current() === "light" ? "dark" : "light"); }
+      function onSystemChange() {
+        if (hasSaved) return;
+        root.setAttribute("data-theme", mql.matches ? "light" : "dark");
+      }
+      for (var i = 0; i < toggles.length; i++) {
+        toggles[i].addEventListener("click", toggleTheme);
+      }
+      if (mql) {
+        if (mql.addEventListener) mql.addEventListener("change", onSystemChange);
+        else if (mql.addListener) mql.addListener(onSystemChange);
+      }
+    })();
+  </script>
+  <script src="search-data.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

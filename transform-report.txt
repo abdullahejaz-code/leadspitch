@@ -1,0 +1,46 @@
+=== INDUSTRY PAGES (19) ===
+OK industries/accounting-finance.html | prices 12->12 | badges 8 | bundleBadges 0
+OK industries/agencies-business.html | prices 18->18 | badges 9 | bundleBadges 1
+OK industries/automotive.html | prices 20->20 | badges 10 | bundleBadges 1
+OK industries/beauty-wellness.html | prices 14->14 | badges 9 | bundleBadges 0
+OK industries/bundles.html | prices 12->12 | badges 0 | bundleBadges 3
+OK industries/clinics.html | prices 12->12 | badges 8 | bundleBadges 0
+OK industries/construction.html | prices 20->20 | badges 10 | bundleBadges 1
+OK industries/dentists.html | prices 12->12 | badges 8 | bundleBadges 0
+OK industries/education.html | prices 14->14 | badges 9 | bundleBadges 0
+OK industries/events-leisure.html | prices 12->12 | badges 8 | bundleBadges 0
+OK industries/food-beverage.html | prices 14->14 | badges 9 | bundleBadges 0
+OK industries/home-services.html | prices 18->18 | badges 11 | bundleBadges 0
+OK industries/hotels-hospitality.html | prices 16->16 | badges 8 | bundleBadges 1
+NO CHANGE: industries/index.html
+NO CHANGE: industries/industries.html
+OK industries/legal.html | prices 14->14 | badges 9 | bundleBadges 0
+OK industries/logistics.html | prices 16->16 | badges 8 | bundleBadges 1
+OK industries/real-estate.html | prices 16->16 | badges 10 | bundleBadges 0
+OK industries/restaurants-cafes.html | prices 18->18 | badges 9 | bundleBadges 1
+=== bundles.html updated: badges=3 | has hero $46=true
+=== industries.html products strings doubled (17 lines) ===
+=== index.html updated: has $15.98=true | badge=true | membership intact=true
+=== search-data.js | pricesChanged=143 membersChanged=75 bundleFields=15 | memberships untouched=true
+=== generate-search-data.js bundles updated ===
+=== generate-industries.js updated ===
+=== PRODUCT CSVs ===
+OK  Accounting & Finance - Sheet1.csv (changed rows: 8)
+OK  Agencies & Business Services - Sheet1.csv (changed rows: 9)
+OK  Automotive - Sheet1.csv (changed rows: 10)
+OK  beauty and wellness plans - Sheet1.csv (changed rows: 9)
+OK  Clinics.csv (changed rows: 8)
+OK  Construction & Contractors - Sheet1.csv (changed rows: 10)
+OK  Dentist.csv (changed rows: 8)
+OK  Education & Training - Sheet1.csv (changed rows: 9)
+OK  Events & Leisure - Sheet1.csv (changed rows: 8)
+OK  Food & Beverage Suppliers - Sheet1.csv (changed rows: 9)
+OK  home services plans - Sheet1.csv (changed rows: 11)
+OK  Hotels & Hospitality - Sheet1.csv (changed rows: 8)
+OK  Lawyers plans - Sheet1.csv (changed rows: 9)
+OK  logistics plans - Sheet1.csv (changed rows: 8)
+OK  real estate.csv (changed rows: 10)
+OK  Restaurants & Cafés - Sheet1 (1).csv (changed rows: 9)
+=== BUNDLES CSV ===
+OK  pricing models  - Bundles (1).csv (changed rows: 5)
+=== Membership CSV skipped (membership prices not doubled) ===
