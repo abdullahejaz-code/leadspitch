@@ -13,11 +13,11 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
-  <link rel="manifest" href="public/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="https://leadspitch.com/public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://leadspitch.com/public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://leadspitch.com/public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://leadspitch.com/public/apple-touch-icon.png">
+  <link rel="manifest" href="https://leadspitch.com/public/site.webmanifest">
   <title>Niche Bundles | LeadsPitch – Leads Pitch</title>
   <meta name="description" content="Save more when you buy multiple industry datasets together. Bundle pricing for 25K and 50K email packages.">
   <meta name="keywords" content="lead list bundles, buy multiple lead lists, bulk B2B contact data, multi-industry lead package, discounted lead lists, bulk lead emails, B2B data bundle, lead pack combo, 25K email list, 50K email list, leads pitch, lead pitch, leadspitch, leadspitch.com">
@@ -702,6 +702,18 @@
       }
       .reveal.is-in { opacity: 1; transform: none; }
     }
+    /* Heading fall from above — hidden by default via CSS (no JS flash) */
+    h1:not(.no-heading-fall), h2:not(.no-heading-fall), h3:not(.no-heading-fall) {
+      opacity: 0; transform: translateY(-16px);
+      transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal h1:not(.no-heading-fall), .reveal h2:not(.no-heading-fall), .reveal h3:not(.no-heading-fall) {
+      transition: opacity 650ms ease 120ms, transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+    }
+    .reveal.is-in h1:not(.no-heading-fall), .reveal.is-in h2:not(.no-heading-fall), .reveal.is-in h3:not(.no-heading-fall),
+    h1.is-in:not(.no-heading-fall), h2.is-in:not(.no-heading-fall), h3.is-in:not(.no-heading-fall) {
+      opacity: 1; transform: none;
+    }
 
     /* --- Mobile --- */
     @media (max-width: 767px) {
@@ -785,7 +797,10 @@
     .hero-marquee__pill { flex-shrink: 0; font-size: 15px; font-style: italic; font-weight: 400; letter-spacing: 0.06em; color: var(--faint); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
     .hero-marquee__pill:hover { color: var(--fg); }
     @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    @media (prefers-reduced-motion: reduce) { .hero-marquee__track { animation: none !important; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-marquee__track { animation: none !important; }
+      .reveal h1, .reveal h2, .reveal h3, h1, h2, h3 { opacity: 1; transform: none; }
+    }
 </style>
 </head>
 <body>
@@ -1219,6 +1234,23 @@
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+
+      /* Heading fall — standalone headings outside .reveal get their own observer */
+      (function () {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!("IntersectionObserver" in window)) return;
+        var hIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              hIo.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        document.querySelectorAll("h1:not(.no-heading-fall), h2:not(.no-heading-fall), h3:not(.no-heading-fall)").forEach(function (h) {
+          if (!h.closest(".reveal") && !h.closest(".site-footer")) hIo.observe(h);
+        });
+      })();
 
       (function () {
         var container = document.getElementById("footer-giant");

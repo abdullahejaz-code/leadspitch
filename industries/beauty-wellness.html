@@ -13,11 +13,11 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../public/apple-touch-icon.png">
-  <link rel="manifest" href="../public/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="https://leadspitch.com/public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://leadspitch.com/public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://leadspitch.com/public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://leadspitch.com/public/apple-touch-icon.png">
+  <link rel="manifest" href="https://leadspitch.com/public/site.webmanifest">
   <title>Buy Beauty & Wellness Leads | Verified Salon & Spa Contact Lists | LeadsPitch</title>
   <meta name="description" content="Leads Pitch verified beauty and wellness business data — salons, spas, clinics, and wellness providers.">
   <meta name="keywords" content="buy beauty leads, salon contact list, spa email list, verified beauty business leads, buy wellness lead packs, salon owner contacts, local beauty business leads, targeted wellness leads, fresh beauty contact packs, beauty and wellness decision maker data">
@@ -532,28 +532,6 @@
     }
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
-    .mobile-theme-btn {
-      position: absolute;
-      top: 1rem;
-      right: calc(var(--gutter) + 52px);
-      z-index: 2;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border: none;
-      border-radius: 100px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      transition: background 150ms ease, color 150ms ease;
-    }
-    .mobile-theme-btn:hover { background: var(--surface-2); color: var(--fg); }
-    .mobile-theme-btn svg { width: 18px; height: 18px; }
-    .mobile-theme-btn .icon-moon { display: block; }
-    .mobile-theme-btn .icon-sun { display: none; }
-    [data-theme="dark"] .mobile-theme-btn .icon-moon { display: none; }
-    [data-theme="dark"] .mobile-theme-btn .icon-sun { display: block; }
 
     @media (min-width: 768px) {
       .nav-cta { display: flex; }
@@ -589,10 +567,6 @@
     .mobile-dropdown-panel a:hover { color: var(--fg); padding-left: 0.5rem; }
 
     /* Shared */
-    .eyebrow {
-      font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text);
-    }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
       min-height: 44px; padding: 0.7rem 1.25rem; font-size: 0.9375rem; font-weight: 500;
@@ -680,7 +654,7 @@
       font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
       letter-spacing: 0.08em; text-transform: uppercase;
       padding: 0.2rem 0.5rem; border-radius: 6px;
-      background: var(--accent); color: #fff;
+      background: #39FF14; color: #000;
       white-space: nowrap;
     }
     .product-badge--sale { background: #ef4444; color: #fff; }
@@ -965,6 +939,9 @@
     .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid var(--border-soft); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #a0a0a8; font-size: var(--text-xs); }
     .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
     .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #1a1a1e; user-select: none; }
+    .footer-email { margin-top: 0.75rem; }
+    .footer-email a { color: var(--faint); font-size: var(--text-sm); text-decoration: none; transition: color 150ms ease; }
+    .footer-email a:hover { color: var(--fg); }
     [data-theme="light"] .site-footer { background: #fff; color: #374151; border-top-color: #e5e7eb; }
     [data-theme="light"] .footer-brand .logo { color: #111; }
     [data-theme="light"] .footer-brand p { color: #6b7280; }
@@ -972,20 +949,32 @@
     [data-theme="light"] .footer-col a { color: #6b7280; }
     [data-theme="light"] .footer-col a:hover { color: #111; }
     [data-theme="light"] .footer-bottom { color: #9ca3af; border-top-color: #e5e7eb; }
-    [data-theme="light"] .footer-giant__text { color: #e5e7eb; }
 
     /* Reveal */
     .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease, transform 700ms ease; }
     .reveal.is-in { opacity: 1; transform: none; }
 
-    /* Sample Data Preview */
-    .sample-lede { color: var(--muted); max-width: 52ch; font-size: 0.95rem; line-height: 1.65; }
-    .sample-preview {
-      border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; background: var(--surface);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    /* Heading fall from above — hidden by default via CSS (no JS flash) */
+    h1:not(.no-heading-fall),
+    h2:not(.no-heading-fall),
+    h3:not(.no-heading-fall) {
+      opacity: 0; transform: translateY(-16px);
+      transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .sample-preview img { width: 100%; height: auto; display: block; }
+    /* Inside .reveal sections: parent reveal triggers heading fall automatically */
+    .reveal h1:not(.no-heading-fall),
+    .reveal h2:not(.no-heading-fall),
+    .reveal h3:not(.no-heading-fall) {
+      transition: opacity 650ms ease 120ms, transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+    }
+    .reveal.is-in h1:not(.no-heading-fall),
+    .reveal.is-in h2:not(.no-heading-fall),
+    .reveal.is-in h3:not(.no-heading-fall),
+    h1.is-in:not(.no-heading-fall),
+    h2.is-in:not(.no-heading-fall),
+    h3.is-in:not(.no-heading-fall) {
+      opacity: 1; transform: none;
+    }
 
     /* Explore Related Datasets Marquee */
     .explore-marquee {
@@ -1004,7 +993,7 @@
     }
     .explore-marquee__track {
       display: flex; gap: 0.75rem; width: max-content;
-      animation: explore-scroll 20s linear infinite;
+      animation: explore-scroll 12s linear infinite;
     }
     .explore-marquee:hover .explore-marquee__track {
       animation-play-state: paused;
@@ -1051,6 +1040,8 @@
         animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important; scroll-behavior: auto !important;
       }
+      .reveal h1, .reveal h2, .reveal h3,
+      h1, h2, h3 { opacity: 1; transform: none; }
     }
 
     /* Theme Toggle */
@@ -1166,8 +1157,8 @@
     [data-theme="dark"] .site-footer .footer-bottom,
     [data-theme="light"] .site-footer .footer-bottom { color: #6b7280; border-top-color: #1f1f23; }
     .site-footer .footer-giant__text,
-    [data-theme="light"] .site-footer .footer-giant__text { color: rgba(255, 255, 255, 0.08); }
-    [data-theme="dark"] .site-footer .footer-giant__text { color: #1a1a1e; }
+    [data-theme="light"] .site-footer .footer-giant__text,
+    [data-theme="dark"] .site-footer .footer-giant__text { color: rgba(255, 255, 255, 0.08); }
     @media (max-width: 600px) {
       main { border-radius: 0 0 28px 28px; }
     }
@@ -1209,6 +1200,17 @@
         <a href="../membership.html">Membership</a>
         <a href="../faq.html">FAQs</a>
         <a href="../contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+            Legal
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="../privacy.html" role="menuitem">Privacy Policy</a>
+            <a href="../terms.html" role="menuitem">Terms of Service</a>
+            <a href="../refund.html" role="menuitem">Refund Policy</a>
+          </div>
+        </div>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
@@ -1225,10 +1227,6 @@
   <div class="mobile-panel" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="mobile-close" type="button" aria-label="Close menu">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"></path></svg>
-    </button>
-    <button class="mobile-theme-btn" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
     </button>
     <div class="mobile-nav-links">
       <a href="../index.html">Home</a>
@@ -1259,6 +1257,20 @@
       <a href="../membership.html">Membership</a>
       <a href="../faq.html">FAQs</a>
       <a href="../contact.html">Contact</a>
+      <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+        Legal
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mobile-dropdown-panel">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../refund.html">Refund Policy</a>
+      </div>
+      <button class="mobile-theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <span>Dark mode</span>
+      </button>
     </div>
     <div class="mobile-nav-cta">
       <a class="btn btn-primary" href="../bundles.html">See Bundles</a>
@@ -1295,7 +1307,6 @@
     <section id="pricing">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">One-time purchase</p>
           <h2>Buy a single dataset</h2>
         </div>
         
@@ -1487,7 +1498,6 @@
     <section id="related">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Related niches</p>
           <h2>Explore related datasets</h2>
         </div>
       </div>
@@ -1496,25 +1506,21 @@
               <a class="explore-pill" href="clinics.html">Clinics & Healthcare</a>
               <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
               <a class="explore-pill" href="home-services.html">Home Services</a>
+              <a class="explore-pill" href="dentists.html">Dentists</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
               <a class="explore-pill" href="clinics.html">Clinics & Healthcare</a>
               <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
               <a class="explore-pill" href="home-services.html">Home Services</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Sample Data -->
-    <section id="sample-data">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Sample preview</p>
-          <h2>See what you get</h2>
-          <p class="sample-lede">Every dataset includes verified business names, contact details, emails, phone numbers, ratings, and more — delivered as a ready-to-use CSV.</p>
-        </div>
-        <div class="sample-preview reveal">
-          <img src="../public/sample-excel.png" alt="Sample Beauty & Wellness dataset preview showing columns for name, owner, emails, phone, address, website, description, reviews, rating, and competitors" width="1200" height="400" loading="lazy">
+              <a class="explore-pill" href="dentists.html">Dentists</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
+              <a class="explore-pill" href="clinics.html">Clinics & Healthcare</a>
+              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
+              <a class="explore-pill" href="home-services.html">Home Services</a>
+              <a class="explore-pill" href="dentists.html">Dentists</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
         </div>
       </div>
     </section>
@@ -1578,7 +1584,6 @@
     <section id="compare">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Why LeadsPitch</p>
           <h2>How we compare with typical B2B data platforms</h2>
           <p class="compare-lede">No per-seat software, no credit meters, no dashboard to learn. You get a finished dataset and get on with outreach.</p>
         </div>
@@ -1626,8 +1631,8 @@
     <div class="wrap footer-top">
       <div class="footer-brand">
         <p class="logo">LeadsPitch</p>
-        <p>Verified B2B lead data, delivered as CSV. One-time purchases and membership discounts across 19+ niches.</p>
-        <p style="margin-top:0.75rem"><a href="mailto:contact@leadspitch.com" style="color:var(--faint);font-size:var(--text-sm);text-decoration:none;transition:color 150ms ease;">contact@leadspitch.com</a></p>
+        <p>Verified B2B lead data, delivered as CSV. Subscriptions, one-time purchases, and membership discounts across 19+ niches.</p>
+        <p class="footer-email"><a href="mailto:contact@leadspitch.com">contact@leadspitch.com</a></p>
       </div>
       <div class="footer-grid">
         <div class="footer-col">
@@ -1775,6 +1780,23 @@
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+
+      /* Heading fall — standalone headings outside .reveal get their own observer */
+      (function () {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!("IntersectionObserver" in window)) return;
+        var hIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              hIo.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        document.querySelectorAll("h1:not(.no-heading-fall), h2:not(.no-heading-fall), h3:not(.no-heading-fall)").forEach(function (h) {
+          if (!h.closest(".reveal") && !h.closest(".site-footer")) hIo.observe(h);
+        });
+      })();
 
       (function () {
         var container = document.getElementById("footer-giant");

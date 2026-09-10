@@ -13,11 +13,11 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
-  <link rel="manifest" href="public/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="https://leadspitch.com/public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://leadspitch.com/public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://leadspitch.com/public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://leadspitch.com/public/apple-touch-icon.png">
+  <link rel="manifest" href="https://leadspitch.com/public/site.webmanifest">
   <title>Refund Policy | LeadsPitch – Leads Pitch</title>
   <meta name="description" content="Learn how billing, cancellations, and refunds work for LeadsPitch business data subscriptions, including how we handle billing errors and failed deliveries.">
   <meta name="keywords" content="LeadsPitch refund, lead data refund, subscription cancellation, billing error, data subscription refund, leads pitch, lead pitch, leadspitch, leadspitch.com">
@@ -635,6 +635,21 @@
       .reveal { opacity: 0; transform: translateY(12px); transition: opacity 700ms ease, transform 700ms ease; }
       .reveal.is-in { opacity: 1; transform: none; }
     }
+    /* Heading fall from above — hidden by default via CSS (no JS flash) */
+    h1:not(.no-heading-fall), h2:not(.no-heading-fall), h3:not(.no-heading-fall) {
+      opacity: 0; transform: translateY(-16px);
+      transition: opacity 650ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal h1:not(.no-heading-fall), .reveal h2:not(.no-heading-fall), .reveal h3:not(.no-heading-fall) {
+      transition: opacity 650ms ease 120ms, transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+    }
+    .reveal.is-in h1:not(.no-heading-fall), .reveal.is-in h2:not(.no-heading-fall), .reveal.is-in h3:not(.no-heading-fall),
+    h1.is-in:not(.no-heading-fall), h2.is-in:not(.no-heading-fall), h3.is-in:not(.no-heading-fall) {
+      opacity: 1; transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal h1, .reveal h2, .reveal h3, h1, h2, h3 { opacity: 1; transform: none; }
+    }
 
     /* --- Mobile --- */
     @media (max-width: 860px) {
@@ -1166,6 +1181,23 @@
         });
       }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
       document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+
+      /* Heading fall — standalone headings outside .reveal get their own observer */
+      (function () {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!("IntersectionObserver" in window)) return;
+        var hIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              hIo.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        document.querySelectorAll("h1:not(.no-heading-fall), h2:not(.no-heading-fall), h3:not(.no-heading-fall)").forEach(function (h) {
+          if (!h.closest(".reveal") && !h.closest(".site-footer")) hIo.observe(h);
+        });
+      })();
 
       (function () {
         var container = document.getElementById("footer-giant");
