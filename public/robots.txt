@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Favicon: https://leadspitch.com/favicon.ico
 
 # Allow AI search crawlers for visibility in AI-powered search
 User-agent: GPTBot
