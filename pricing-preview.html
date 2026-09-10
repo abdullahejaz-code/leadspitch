@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -52,10 +52,10 @@
       transition: background 200ms ease, color 200ms ease;
     }
 
-    /* â”€â”€â”€ Layout â”€â”€â”€ */
+    /* ─── Layout ─── */
     .page { max-width: 1320px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2.5rem); }
 
-    /* â”€â”€â”€ Header â”€â”€â”€ */
+    /* ─── Header ─── */
     .header {
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.5rem 0;
@@ -75,7 +75,7 @@
     }
     .header-nav a:hover { color: var(--ink); }
 
-    /* â”€â”€â”€ Theme Toggle â”€â”€â”€ */
+    /* ─── Theme Toggle ─── */
     .theme-toggle {
       display: inline-flex;
       align-items: center;
@@ -96,7 +96,7 @@
     [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
     [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 
-    /* â”€â”€â”€ Hero â”€â”€â”€ */
+    /* ─── Hero ─── */
     .hero {
       text-align: center;
       padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
@@ -113,7 +113,7 @@
       line-height: 1.6;
     }
 
-    /* â”€â”€â”€ Toggle â”€â”€â”€ */
+    /* ─── Toggle ─── */
     .toggle-wrap {
       display: flex; align-items: center; justify-content: center;
       gap: 0.75rem; margin-top: 2.5rem;
@@ -142,7 +142,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* â”€â”€â”€ Cards Grid â”€â”€â”€ */
+    /* ─── Cards Grid ─── */
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -166,7 +166,7 @@
     }
     .card--featured:hover { background: var(--surface-2); }
 
-    /* â”€â”€â”€ Card Content â”€â”€â”€ */
+    /* ─── Card Content ─── */
     .card-badge {
       position: absolute; top: 1.5rem; right: 1.5rem;
       font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
@@ -206,7 +206,7 @@
       font-size: 0.8125rem; color: var(--faint); margin-bottom: 1.5rem;
     }
 
-    /* â”€â”€â”€ CTA Button â”€â”€â”€ */
+    /* ─── CTA Button ─── */
     .card-cta {
       display: block; width: 100%; padding: 0.8125rem 1.5rem;
       font-size: 0.9375rem; font-weight: 600; text-align: center;
@@ -227,13 +227,13 @@
       background: #2563eb; border-color: #2563eb;
     }
 
-    /* â”€â”€â”€ Divider â”€â”€â”€ */
+    /* ─── Divider ─── */
     .card-divider {
       border: none; border-top: 1px solid var(--line);
       margin-bottom: 1.5rem;
     }
 
-    /* â”€â”€â”€ Features â”€â”€â”€ */
+    /* ─── Features ─── */
     .card-features-label {
       font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
       letter-spacing: 0.06em; color: var(--faint); margin-bottom: 1rem;
@@ -262,7 +262,7 @@
       width: 14px; height: 14px;
     }
 
-    /* â”€â”€â”€ Info Section â”€â”€â”€ */
+    /* ─── Info Section ─── */
     .info-section {
       background: var(--surface-2); border-radius: 16px;
       padding: clamp(2rem, 4vw, 3.5rem);
@@ -278,7 +278,7 @@
       max-width: 60ch; line-height: 1.6;
     }
 
-    /* â”€â”€â”€ Footer â”€â”€â”€ */
+    /* ─── Footer ─── */
     .footer {
       border-top: 1px solid var(--line);
       padding: 2rem 0;
@@ -297,7 +297,7 @@
     }
     .footer-links a:hover { color: var(--muted); }
 
-    /* â”€â”€â”€ Responsive â”€â”€â”€ */
+    /* ─── Responsive ─── */
     @media (max-width: 1024px) {
       .cards { grid-template-columns: repeat(2, 1fr); }
     }
@@ -321,7 +321,7 @@
     @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { .hero-marquee__track { animation: none !important; } }
   
-    /* ── Footer reveal (Mobbin-style) ────────────────────────── */
+    /* -- Footer reveal (Mobbin-style) -------------------------- */
     html { background-color: #0a0a0a; }
     body { background-color: #0a0a0a; }
     .page {
