@@ -28,7 +28,7 @@ const industries = [
       { q: "How current is the automotive data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["logistics", "construction", "food-beverage", "home-services", "real-estate", "agencies-business"],
-    bundles: ["automotive-logistics-agencies"]
+    bundles: ["trades-services", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "construction",
@@ -50,7 +50,7 @@ const industries = [
       { q: "How current is the construction data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["automotive", "logistics", "hotels-hospitality", "real-estate", "home-services", "legal"],
-    bundles: ["restaurants-hotels-construction"]
+    bundles: ["real-estate-property", "trades-services", "ultimate-local", "all-industry"]
   },
   {
     slug: "accounting-finance",
@@ -70,7 +70,7 @@ const industries = [
       { q: "How current is the accounting data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["agencies-business", "legal", "home-services", "real-estate", "education", "clinics"],
-    bundles: []
+    bundles: ["professional-services", "premium-high-ticket", "all-industry"]
   },
   {
     slug: "clinics",
@@ -90,7 +90,7 @@ const industries = [
       { q: "How current is the healthcare data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["dentists", "home-services", "beauty-wellness", "education", "agencies-business", "legal"],
-    bundles: []
+    bundles: ["healthcare-wellness", "premium-high-ticket", "all-industry"]
   },
   {
     slug: "dentists",
@@ -110,7 +110,7 @@ const industries = [
       { q: "How current is the dental data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["clinics", "home-services", "agencies-business", "beauty-wellness", "education", "legal"],
-    bundles: []
+    bundles: ["healthcare-wellness", "premium-high-ticket", "all-industry"]
   },
   {
     slug: "education",
@@ -131,7 +131,7 @@ const industries = [
       { q: "How current is the education data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["events-leisure", "home-services", "agencies-business", "clinics", "dentists", "legal"],
-    bundles: []
+    bundles: ["ecommerce-marketing", "all-industry"]
   },
   {
     slug: "home-services",
@@ -154,7 +154,7 @@ const industries = [
       { q: "How current is the home services data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["construction", "automotive", "agencies-business", "real-estate", "education", "events-leisure"],
-    bundles: []
+    bundles: ["starter-duo", "real-estate-property", "trades-services", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "restaurants-cafes",
@@ -175,7 +175,7 @@ const industries = [
       { q: "How current is the restaurant data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["events-leisure", "food-beverage", "hotels-hospitality", "beauty-wellness", "home-services", "logistics"],
-    bundles: ["restaurants-hotels-construction"]
+    bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "events-leisure",
@@ -195,7 +195,7 @@ const industries = [
       { q: "How current is the events data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["restaurants-cafes", "beauty-wellness", "hotels-hospitality", "food-beverage", "education", "home-services"],
-    bundles: []
+    bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "food-beverage",
@@ -216,7 +216,7 @@ const industries = [
       { q: "How current is the F&B data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["restaurants-cafes", "logistics", "agencies-business", "hotels-hospitality", "events-leisure", "construction"],
-    bundles: []
+    bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "agencies-business",
@@ -237,7 +237,7 @@ const industries = [
       { q: "How current is the agency data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["automotive", "logistics", "food-beverage", "legal", "accounting-finance", "education"],
-    bundles: ["automotive-logistics-agencies"]
+    bundles: ["professional-services", "ecommerce-marketing", "all-industry"]
   },
   {
     slug: "beauty-wellness",
@@ -258,7 +258,7 @@ const industries = [
       { q: "How current is the beauty & wellness data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["clinics", "events-leisure", "home-services", "dentists", "restaurants-cafes", "hotels-hospitality"],
-    bundles: []
+    bundles: ["starter-duo", "healthcare-wellness", "local-business", "ultimate-local", "all-industry"]
   },
   {
     slug: "hotels-hospitality",
@@ -278,7 +278,7 @@ const industries = [
       { q: "How current is the hospitality data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["legal", "restaurants-cafes", "beauty-wellness", "events-leisure", "construction", "food-beverage"],
-    bundles: ["restaurants-hotels-construction"]
+    bundles: ["hospitality-leisure", "ultimate-local", "all-industry"]
   },
   {
     slug: "legal",
@@ -299,7 +299,7 @@ const industries = [
       { q: "How often is the legal dataset updated?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["agencies-business", "construction", "hotels-hospitality", "accounting-finance", "real-estate", "education"],
-    bundles: []
+    bundles: ["professional-services", "premium-high-ticket", "all-industry"]
   },
   {
     slug: "logistics",
@@ -319,7 +319,7 @@ const industries = [
       { q: "How current is the logistics data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["automotive", "construction", "agencies-business", "food-beverage", "real-estate", "home-services"],
-    bundles: ["automotive-logistics-agencies"]
+    bundles: ["ecommerce-marketing", "trades-services", "all-industry"]
   },
   {
     slug: "real-estate",
@@ -341,7 +341,7 @@ const industries = [
       { q: "How current is the real estate data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
     related: ["construction", "home-services", "legal", "automotive", "logistics", "agencies-business"],
-    bundles: []
+    bundles: ["real-estate-property", "premium-high-ticket", "all-industry"]
   }
 ];
 
@@ -447,21 +447,115 @@ const industrySeo = {
 
 // Bundle data
 const bundleData = {
-  "restaurants-hotels-construction": {
-    name: "Restaurants, Hotels & Construction",
-    industries: ["Restaurants & Cafes", "Hotels & Hospitality", "Construction"],
-    price25k: "$99.98", price25kRetail: "$131.98", price25kSave: "$32",
-    price50k: "$189.98", price50kRetail: "$235.98", price50kSave: "$46",
-    link25k: "https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-25k/",
-    link50k: "https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-50k/"
+  "starter-duo": {
+    name: "Starter Duo Pack",
+    industries: ["Home Services", "Beauty & Wellness"],
+    tiers: [
+      { label: "5K/niche", price: "$79", planId: "plan_pa1W11zZOlnur" },
+      { label: "25K/niche", price: "$299", planId: "plan_xayb8cL86uwWd" },
+      { label: "50K/niche", price: "$499", planId: "plan_GOujg0WhjvMu3" }
+    ],
+    save: "$100"
   },
-  "automotive-logistics-agencies": {
-    name: "Automotive, Logistics & Agencies",
-    industries: ["Automotive", "Logistics & Transportation", "Agencies & Business Services"],
-    price25k: "$99.98", price25kRetail: "$137.98", price25kSave: "$38",
-    price50k: "$179.98", price50kRetail: "$223.98", price50kSave: "$44",
-    link25k: "https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-25k/",
-    link50k: "https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-50k/"
+  "healthcare-wellness": {
+    name: "Healthcare & Wellness Pack",
+    industries: ["Clinics", "Dentists", "Beauty & Wellness"],
+    tiers: [
+      { label: "5K/niche", price: "$119", planId: "plan_jXy1ZlO5l6TcK" },
+      { label: "25K/niche", price: "$429", planId: "plan_6lmHM90X3Umy4" },
+      { label: "50K/niche", price: "$699", planId: "plan_FhskaTVegQ4rO" }
+    ],
+    save: "$200"
+  },
+  "real-estate-property": {
+    name: "Real Estate & Property Pack",
+    industries: ["Real Estate", "Construction", "Home Services"],
+    tiers: [
+      { label: "5K/niche", price: "$139", planId: "plan_IQJOItoAnyUS5" },
+      { label: "25K/niche", price: "$499", planId: "plan_Q0KmxoQlNBs2j" },
+      { label: "50K/niche", price: "$829", planId: "plan_qonxYDoFFjM2r" }
+    ],
+    save: "$70"
+  },
+  "professional-services": {
+    name: "Professional Services Pack",
+    industries: ["Legal", "Accounting & Finance", "Agencies & Business Services"],
+    tiers: [
+      { label: "5K/niche", price: "$139", planId: "plan_79rDxSo35wYFt" },
+      { label: "25K/niche", price: "$499", planId: "plan_tbxF5LC6aDf5x" },
+      { label: "50K/niche", price: "$829", planId: "plan_JuDx5EnzLqwTf" }
+    ],
+    save: "$70"
+  },
+  "ecommerce-marketing": {
+    name: "E-commerce & Marketing Pack",
+    industries: ["Agencies & Business Services", "Logistics & Transportation", "Education & Training"],
+    tiers: [
+      { label: "5K/niche", price: "$119", planId: "plan_Zq7rsVu3XN79k" },
+      { label: "25K/niche", price: "$429", planId: "plan_Q3YqRzfdM7hj3" },
+      { label: "50K/niche", price: "$699", planId: "plan_7hwzboPBsTIBi" }
+    ],
+    save: "$200"
+  },
+  "trades-services": {
+    name: "Trades & Services Pack",
+    industries: ["Construction", "Automotive", "Home Services", "Logistics & Transportation"],
+    tiers: [
+      { label: "5K/niche", price: "$159", planId: "plan_a17sf40GB4sSq" },
+      { label: "25K/niche", price: "$579", planId: "plan_s8ai146OhdlBs" },
+      { label: "50K/niche", price: "$949", planId: "plan_UDVIHrsM4EPZz" }
+    ],
+    save: "$250"
+  },
+  "hospitality-leisure": {
+    name: "Hospitality & Leisure Pack",
+    industries: ["Hotels & Hospitality", "Restaurants & Cafes", "Events & Leisure", "Food & Beverage Suppliers"],
+    tiers: [
+      { label: "5K/niche", price: "$149", planId: "plan_ygqz0vFsjxwcr" },
+      { label: "25K/niche", price: "$549", planId: "plan_HGQxn8uJQeVvt" },
+      { label: "50K/niche", price: "$899", planId: "plan_qQaXtvMLSuWNa" }
+    ],
+    save: "$300"
+  },
+  "premium-high-ticket": {
+    name: "Premium High-Ticket Pack",
+    industries: ["Legal", "Accounting & Finance", "Real Estate", "Clinics", "Dentists"],
+    tiers: [
+      { label: "5K/niche", price: "$199", planId: "plan_ft4tybCPjJLmX" },
+      { label: "25K/niche", price: "$749", planId: "plan_1eHcyozlhMQKT" },
+      { label: "50K/niche", price: "$1,249", planId: "plan_cj1q71o9E3UCt" }
+    ],
+    save: "$250"
+  },
+  "local-business": {
+    name: "Local Business Pack",
+    industries: ["Home Services", "Beauty & Wellness", "Food & Beverage Suppliers", "Restaurants & Cafes", "Automotive", "Events & Leisure"],
+    tiers: [
+      { label: "5K/niche", price: "$249", planId: "plan_h4Fmt2aBvClcu" },
+      { label: "25K/niche", price: "$899", planId: "plan_1sGv0yL2wDjxH" },
+      { label: "50K/niche", price: "$1,499", planId: "plan_CcZS2C0ZnayaD" }
+    ],
+    save: "$300"
+  },
+  "ultimate-local": {
+    name: "Ultimate Local Domination",
+    industries: ["Home Services", "Beauty & Wellness", "Food & Beverage Suppliers", "Restaurants & Cafes", "Automotive", "Events & Leisure", "Hotels & Hospitality", "Construction"],
+    tiers: [
+      { label: "5K/niche", price: "$279", planId: "plan_4WA6zwoGOKYXx" },
+      { label: "25K/niche", price: "$999", planId: "plan_v9DKFQz6VqKPa" },
+      { label: "50K/niche", price: "$1,699", planId: "plan_xT3Fjhem1lnrK" }
+    ],
+    save: "$700"
+  },
+  "all-industry": {
+    name: "All-Industry Domination",
+    industries: ["Automotive", "Construction", "Accounting & Finance", "Clinics", "Dentists", "Education & Training", "Home Services", "Restaurants & Cafes", "Events & Leisure", "Food & Beverage Suppliers", "Agencies & Business Services", "Beauty & Wellness", "Hotels & Hospitality", "Legal", "Logistics & Transportation", "Real Estate"],
+    tiers: [
+      { label: "5K/niche", price: "$599", planId: "plan_5zuWegWTFoKO8" },
+      { label: "25K/niche", price: "$1,999", planId: "plan_RqlSlFod3fdse" },
+      { label: "50K/niche", price: "$2,500", planId: "plan_X1oLU4JIVRuYE" }
+    ],
+    save: "$1,800"
   }
 };
 
@@ -1418,6 +1512,31 @@ ${data.faqs.map(f => `      {
     /* Section divider */
     .section-divider { border-top: 1px solid var(--border-soft); }
 
+    /* Bundle cards on industry pages */
+    .industry-bundles-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .industry-bundle-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--surface); padding: 1.25rem 1.5rem;
+      display: grid; gap: 0.75rem;
+    }
+    .industry-bundle-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+    .industry-bundle-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 0; }
+    .industry-bundle-save { font-size: 0.72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: 0.01em; }
+    .industry-bundle-niches { font-size: 0.75rem; color: var(--faint); line-height: 1.5; margin: 0; }
+    .industry-bundle-tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+    .industry-bundle-tier {
+      display: grid; gap: 0.2rem; padding: 0.7rem 0.5rem;
+      border: 1px solid var(--border-soft); border-radius: 8px; text-align: center;
+      background: var(--bg-elevated);
+    }
+    .industry-bundle-tier-label { font-size: 0.68rem; color: var(--faint); font-weight: 500; letter-spacing: 0.02em; }
+    .industry-bundle-tier-price { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
+    .industry-bundle-tier .btn { margin-top: 0.25rem; min-height: 32px; padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+    .industry-bundle-link { display: inline-block; font-size: 0.78rem; color: var(--muted); text-decoration: none; margin-top: 0.25rem; }
+    .industry-bundle-link:hover { color: var(--text); text-decoration: underline; }
+    @media (max-width: 699px) { .industry-bundles-grid { grid-template-columns: 1fr; } .industry-bundle-tiers { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px) { .industry-bundle-tiers { grid-template-columns: 1fr; } }
+
     /* Related / More Industries */
     .related-grid {
       display: grid; gap: 0.75rem;
@@ -2033,6 +2152,41 @@ ${oneTimeCardsHtml}
 
     <hr class="section-divider">
 
+    <!-- Bundles -->
+    <section id="bundles">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Bundles that include ${data.name}</h2>
+          <p class="section-sub">Save more when you buy multiple niche datasets together.</p>
+        </div>
+        <div class="industry-bundles-grid reveal">
+${data.bundles.map(key => {
+  const b = bundleData[key];
+  if (!b) return '';
+  const nichesText = b.industries.join(' + ');
+  const tiersHtml = b.tiers.map(t => `            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">${t.label}</span>
+              <span class="industry-bundle-tier-price">${t.price}</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="${key}-${t.label.replace(/[^a-z0-9]/gi,'').toLowerCase()}" type="button">Get bundle</button>
+            </div>`).join('\n');
+  return `          <div class="industry-bundle-card">
+            <div class="industry-bundle-head">
+              <h3 class="industry-bundle-name">${b.name}</h3>
+              <span class="industry-bundle-save">Save up to ${b.save}</span>
+            </div>
+            <p class="industry-bundle-niches">Includes: ${nichesText}</p>
+            <div class="industry-bundle-tiers">
+${tiersHtml}
+            </div>
+            <a class="industry-bundle-link" href="../bundles.html">See all bundles &rarr;</a>
+          </div>`;
+}).join('\n')}
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
     <!-- Related Industries -->
     <section id="related">
       <div class="wrap">
@@ -2334,7 +2488,15 @@ ${comparisonHtml}
       var closeBtn = document.getElementById('checkout-modal-close');
 
       var plans = {
-${data.oneTime.map(p => `        '${p.plan.toLowerCase().replace(/\s+/g, '-')}': { id: '${p.planId}', name: '${p.plan}' }`).join(',\n')}
+${data.oneTime.map(p => `        '${p.plan.toLowerCase().replace(/\s+/g, '-')}': { id: '${p.planId}', name: '${p.plan}' }`).join(',\n')},
+${data.bundles.map(key => {
+  const b = bundleData[key];
+  if (!b) return '';
+  return b.tiers.map(t => {
+    const planKey = key + '-' + t.label.replace(/[^a-z0-9]/gi,'').toLowerCase();
+    return `        '${planKey}': { id: '${t.planId}', name: '${b.name} ' + '${t.label}' }`;
+  }).join(',\n');
+}).join(',\n')}
       };
 
       function openCheckout(planKey) {
@@ -2381,6 +2543,14 @@ ${data.oneTime.map(p => `        '${p.plan.toLowerCase().replace(/\s+/g, '-')}':
       });
 
       document.querySelectorAll('.product-cta[data-plan]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var planKey = btn.getAttribute('data-plan');
+          openCheckout(planKey);
+        });
+      });
+
+      document.querySelectorAll('.industry-bundle-cta[data-plan]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
           var planKey = btn.getAttribute('data-plan');

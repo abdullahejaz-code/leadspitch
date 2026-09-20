@@ -42,6 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -585,78 +586,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* --- Bundles --- */
     main > section:first-of-type { padding: var(--section-gap) 0; }
     .bundles-grid {
-      display: grid; gap: 1.25rem;
+      display: grid; gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
     .bundle-card {
-      border: 1px solid var(--border); border-radius: 16px;
+      border: 1px solid var(--border); border-radius: 14px;
       background: var(--surface); overflow: hidden;
       display: grid;
-      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      transition: transform 240ms ease, box-shadow 240ms ease;
     }
-    .bundle-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .bundle-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px -12px rgba(0,0,0,0.25);
+    }
     .bundle-card-top {
-      background: linear-gradient(135deg, #111111 0%, #374151 100%);
-      padding: 1.25rem 1.5rem;
-      display: flex; flex-direction: column; gap: 0.6rem;
+      padding: 1.5rem 1.5rem 0;
     }
     .bundle-name {
-      font-family: var(--font-display); font-size: 1.15rem;
-      font-weight: 700; letter-spacing: -0.01em; color: #ffffff;
-    }
-    .bundle-sale-badge {
-      display: inline-block; width: fit-content;
-      font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.2rem 0.5rem; border-radius: 6px;
-      background: #ef4444; color: #fff;
-      white-space: nowrap;
+      font-family: var(--font-display); font-size: 1.3rem;
+      font-weight: 700; letter-spacing: -0.02em; color: var(--text);
+      margin: 0; line-height: 1.2;
     }
     .bundle-save {
       display: inline-block; width: fit-content;
-      font-size: 0.7rem; font-weight: 700; color: #111111;
-      background: #10b981; padding: 0.25rem 0.6rem; border-radius: 20px;
-      letter-spacing: 0.02em;
+      font-size: 0.78rem; font-weight: 700; color: var(--accent-green, #39FF14);
+      margin-top: 0.5rem; letter-spacing: 0.01em;
+      background: rgba(57, 255, 20, 0.1); padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+    [data-theme="light"] .bundle-save {
+      color: #16a34a; background: rgba(22, 163, 74, 0.08);
     }
     .bundle-tags {
       display: flex; flex-wrap: wrap; gap: 0.35rem;
-      padding: 0 1.5rem; margin-top: -0.5rem; position: relative; z-index: 1;
+      padding: 0.75rem 1.5rem 0;
     }
     .bundle-tag {
-      font-size: 0.68rem; font-weight: 500; color: var(--muted);
+      font-size: 0.7rem; font-weight: 500; color: var(--faint);
       background: var(--surface-2); padding: 0.2rem 0.55rem;
-      border-radius: 20px; border: 1px solid var(--border-soft);
+      border-radius: 5px; border: 1px solid var(--border-soft);
     }
     .bundle-body {
-      padding: 1.25rem 1.5rem 1.5rem;
+      padding: 1rem 1.5rem 1.5rem;
       display: grid; gap: 0.75rem;
     }
-    .bundle-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .bundle-tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
     .bundle-tier {
-      display: grid; gap: 0.4rem; padding: 1rem 0.75rem;
-      border: 1px solid var(--border-soft); border-radius: 12px; text-align: center;
+      display: grid; gap: 0.3rem; padding: 0.9rem 0.6rem;
+      border: 1px solid var(--border-soft); border-radius: 10px; text-align: center;
       background: var(--bg-elevated);
-      transition: border-color 160ms ease;
+      transition: border-color 200ms ease;
     }
     .bundle-tier:hover { border-color: var(--border); }
     .bundle-tier--featured {
-      border-color: var(--accent); background: var(--surface);
+      border-color: var(--accent-green, #39FF14);
+      background: var(--surface);
       position: relative;
     }
-    .bundle-tier--featured::before {
-      content: "Best value"; position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
-      font-size: 0.6rem; font-weight: 600; color: #fff; background: var(--accent);
-      padding: 0.15rem 0.5rem; border-radius: 10px; white-space: nowrap;
-      letter-spacing: 0.03em; text-transform: uppercase;
+    [data-theme="light"] .bundle-tier--featured {
+      border-color: #16a34a;
     }
-    .bundle-tier-label { font-size: 0.72rem; color: var(--faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
-    .bundle-tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.35rem; }
+    .bundle-tier-label { font-size: 0.7rem; color: var(--faint); font-weight: 500; letter-spacing: 0.02em; line-height: 1.3; }
+    .bundle-tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.3rem; }
     .bundle-old-price { font-size: 0.78rem; color: var(--faint); text-decoration: line-through; }
-    .bundle-new-price { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
-    .bundle-tier .btn { margin-top: 0.25rem; }
-    .bundle-industries { font-size: 0.75rem; color: var(--faint); text-align: center; line-height: 1.5; }
+    .bundle-new-price { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+    .bundle-tier .btn { margin-top: 0.4rem; }
+    .bundle-industries { font-size: 0.72rem; color: var(--faint); text-align: center; line-height: 1.5; margin: 0; padding-top: 0.25rem; border-top: 1px solid var(--border-soft); }
     .btn-sm { min-height: 36px; padding: 0.45rem 0.9rem; font-size: 0.8125rem; }
-    @media (max-width: 699px) { .bundles-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 699px) { .bundles-grid { grid-template-columns: 1fr; } .bundle-tiers { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px) { .bundle-tiers { grid-template-columns: 1fr; } }
 
     /* --- CTA --- */
     .bottom-cta {
@@ -685,6 +683,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       justify-content: center;
       flex-wrap: wrap;
     }
+
+    /* Checkout Modal */
+    .checkout-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);z-index:99999;display:none;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity .25s ease;isolation:isolate}
+    .checkout-modal-overlay.active{display:flex;opacity:1}
+    .checkout-modal{background:#1a1a1e;border:1px solid rgba(255,255,255,0.1);border-radius:16px;width:100%;max-width:520px;height:auto;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;position:relative;box-shadow:0 25px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.05);transform:translateY(20px);transition:transform .3s cubic-bezier(0.22,1,0.36,1);z-index:1}
+    .checkout-modal-overlay.active .checkout-modal{transform:translateY(0)}
+    .checkout-modal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);background:#1a1a1e;position:relative;z-index:2;flex-shrink:0}
+    .checkout-modal-header h3{margin:0;font-size:1rem;font-weight:600;color:#fff}
+    .checkout-modal-close{width:32px;height:32px;border-radius:8px;border:none;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s}
+    .checkout-modal-close:hover{background:rgba(255,255,255,0.2)}
+    .checkout-modal-body{padding:0;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;background:#1a1a1e}
+    .checkout-modal-body iframe{width:100%!important;min-height:600px!important;border:none!important}
+    .whop-checkout-container{width:100%;min-height:600px;background:#1a1a1e}
+    @media(max-width:520px){.checkout-modal{max-width:100%;max-height:100vh;border-radius:0;height:100%}.checkout-modal-overlay{padding:0}.checkout-modal-body iframe{min-height:500px!important}}
+    @media(min-height:800px){.checkout-modal{max-height:85vh}}
 
     /* Footer */
     .site-footer { background: #ffffff; color: #374151; padding: clamp(2.5rem, 5vw, 4rem) 0 0; margin-top: 1rem; }
@@ -810,6 +823,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .reveal h1, .reveal h2, .reveal h3, h1, h2, h3 { opacity: 1; transform: none; }
     }
 </style>
+  <link rel="stylesheet" href="large-screens.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -943,7 +957,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="hero hero--compact">
       <div class="wrap">
         <h1 class="reveal">Save more with multi-niche bundles</h1>
-        <p class="reveal hero-sub">Buy multiple niche datasets together and save up to $46 per bundle. Each bundle includes verified leads and emails across 3 related niches.</p>
+        <p class="reveal hero-sub">Buy multiple niche datasets together and save up to $700+ per bundle. Each bundle includes verified leads and emails across related niches.</p>
         <div class="hero-marquee reveal" aria-label="Browse industries">
         <div class="hero-marquee__track">
           <a class="hero-marquee__pill" href="industries/home-services">Home Services</a>
@@ -988,108 +1002,441 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="wrap">
         <div class="bundles-grid">
 
-          <!-- Bundle 1: Restaurants, Hotels & Construction -->
+          <!-- Bundle 1: Starter Duo Pack -->
           <div class="bundle-card">
             <div class="bundle-card-top">
-              <h3 class="bundle-name">Restaurants, Hotels & Construction</h3>
-                <span class="bundle-sale-badge">20% OFF</span>
-              <span class="bundle-save">Save up to $46</span>
+              <h3 class="bundle-name">Starter Duo Pack</h3>
+              <span class="bundle-save">Save up to $100</span>
             </div>
             <div class="bundle-tags">
+              <span class="bundle-tag">Home Services</span>
+              <span class="bundle-tag">Beauty & Wellness</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (10K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$79</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="starter-duo-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (50K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$299</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="starter-duo-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (100K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$499</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="starter-duo-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Home Services + Beauty & Wellness</p>
+            </div>
+          </div>
+
+          <!-- Bundle 2: Healthcare & Wellness Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Healthcare & Wellness Pack</h3>
+              <span class="bundle-save">Save up to $200</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Clinics</span>
+              <span class="bundle-tag">Dentists</span>
+              <span class="bundle-tag">Beauty & Wellness</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (15K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$119</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="healthcare-wellness-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (75K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$429</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="healthcare-wellness-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (150K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$699</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="healthcare-wellness-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Clinics + Dentists + Beauty & Wellness</p>
+            </div>
+          </div>
+
+          <!-- Bundle 3: Real Estate & Property Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Real Estate & Property Pack</h3>
+              <span class="bundle-save">Save up to $70</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Real Estate</span>
+              <span class="bundle-tag">Construction</span>
+              <span class="bundle-tag">Home Services</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (15K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$139</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="real-estate-property-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (75K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$499</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="real-estate-property-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (150K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$829</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="real-estate-property-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Real Estate + Construction + Home Services</p>
+            </div>
+          </div>
+
+          <!-- Bundle 4: Professional Services Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Professional Services Pack</h3>
+              <span class="bundle-save">Save up to $70</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Legal</span>
+              <span class="bundle-tag">Accounting & Finance</span>
+              <span class="bundle-tag">Agencies & Business</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (15K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$139</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="professional-services-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (75K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$499</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="professional-services-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (150K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$829</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="professional-services-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Legal + Accounting & Finance + Agencies & Business</p>
+            </div>
+          </div>
+
+          <!-- Bundle 5: E-commerce & Marketing Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">E-commerce & Marketing Pack</h3>
+              <span class="bundle-save">Save up to $200</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Agencies & Business</span>
+              <span class="bundle-tag">Logistics</span>
+              <span class="bundle-tag">Education</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (15K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$119</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="ecommerce-marketing-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (75K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$429</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="ecommerce-marketing-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (150K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$699</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="ecommerce-marketing-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Agencies & Business + Logistics + Education</p>
+            </div>
+          </div>
+
+          <!-- Bundle 6: Trades & Services Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Trades & Services Pack</h3>
+              <span class="bundle-save">Save up to $250</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Construction</span>
+              <span class="bundle-tag">Automotive</span>
+              <span class="bundle-tag">Home Services</span>
+              <span class="bundle-tag">Logistics</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (20K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$159</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="trades-services-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (100K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$579</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="trades-services-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (200K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$949</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="trades-services-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Construction + Automotive + Home Services + Logistics</p>
+            </div>
+          </div>
+
+          <!-- Bundle 7: Hospitality & Leisure Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Hospitality & Leisure Pack</h3>
+              <span class="bundle-save">Save up to $300</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Hotels & Hospitality</span>
               <span class="bundle-tag">Restaurants & Cafes</span>
+              <span class="bundle-tag">Events & Leisure</span>
+              <span class="bundle-tag">Food & Beverage</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (20K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$149</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="hospitality-leisure-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (100K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$549</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="hospitality-leisure-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (200K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$899</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="hospitality-leisure-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Hotels & Hospitality + Restaurants & Cafes + Events & Leisure + Food & Beverage</p>
+            </div>
+          </div>
+
+          <!-- Bundle 8: Premium High-Ticket Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Premium High-Ticket Pack</h3>
+              <span class="bundle-save">Save up to $250</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Legal</span>
+              <span class="bundle-tag">Accounting & Finance</span>
+              <span class="bundle-tag">Real Estate</span>
+              <span class="bundle-tag">Clinics</span>
+              <span class="bundle-tag">Dentists</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (25K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$199</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="premium-high-ticket-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (125K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$749</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="premium-high-ticket-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (250K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$1,249</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="premium-high-ticket-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Legal + Accounting & Finance + Real Estate + Clinics + Dentists</p>
+            </div>
+          </div>
+
+          <!-- Bundle 9: Local Business Pack -->
+          <div class="bundle-card">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Local Business Pack</h3>
+              <span class="bundle-save">Save up to $300</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Home Services</span>
+              <span class="bundle-tag">Beauty & Wellness</span>
+              <span class="bundle-tag">Food & Beverage</span>
+              <span class="bundle-tag">Restaurants & Cafes</span>
+              <span class="bundle-tag">Automotive</span>
+              <span class="bundle-tag">Events & Leisure</span>
+            </div>
+            <div class="bundle-body">
+              <div class="bundle-tiers">
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">5K per niche (30K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$249</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="local-business-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (150K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$899</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="local-business-25k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier bundle-tier--featured">
+                  <span class="bundle-tier-label">50K per niche (300K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$1,499</span>
+                  </div>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="local-business-50k" type="button">Get bundle</button>
+                </div>
+              </div>
+              <p class="bundle-industries">Includes: Home Services + Beauty & Wellness + Food & Beverage + Restaurants & Cafes + Automotive + Events & Leisure</p>
+            </div>
+          </div>
+
+          <!-- Bundle 10: Ultimate Local Domination -->
+          <div class="bundle-card bundle-card--featured">
+            <div class="bundle-card-top">
+              <h3 class="bundle-name">Ultimate Local Domination</h3>
+              <span class="bundle-save">Save up to $700</span>
+            </div>
+            <div class="bundle-tags">
+              <span class="bundle-tag">Home Services</span>
+              <span class="bundle-tag">Beauty & Wellness</span>
+              <span class="bundle-tag">Food & Beverage</span>
+              <span class="bundle-tag">Restaurants & Cafes</span>
+              <span class="bundle-tag">Automotive</span>
+              <span class="bundle-tag">Events & Leisure</span>
               <span class="bundle-tag">Hotels & Hospitality</span>
               <span class="bundle-tag">Construction</span>
             </div>
             <div class="bundle-body">
               <div class="bundle-tiers">
                 <div class="bundle-tier">
-                  <span class="bundle-tier-label">25K Emails</span>
+                  <span class="bundle-tier-label">5K per niche (40K total)</span>
                   <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$131.98</span>
-                    <span class="bundle-new-price">$99.98</span>
+                    <span class="bundle-new-price">$279</span>
                   </div>
-                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-25k/" target="_blank" rel="noopener">Get bundle</a>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="ultimate-local-5k" type="button">Get bundle</button>
+                </div>
+                <div class="bundle-tier">
+                  <span class="bundle-tier-label">25K per niche (200K total)</span>
+                  <div class="bundle-tier-price">
+                    <span class="bundle-new-price">$999</span>
+                  </div>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="ultimate-local-25k" type="button">Get bundle</button>
                 </div>
                 <div class="bundle-tier bundle-tier--featured">
-                  <span class="bundle-tier-label">50K Emails</span>
+                  <span class="bundle-tier-label">50K per niche (400K total)</span>
                   <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$235.98</span>
-                    <span class="bundle-new-price">$189.98</span>
+                    <span class="bundle-new-price">$1,699</span>
                   </div>
-                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-restaurants-hotels-hospitality-construction-50k/" target="_blank" rel="noopener">Get bundle</a>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="ultimate-local-50k" type="button">Get bundle</button>
                 </div>
               </div>
-              <p class="bundle-industries">Includes: Restaurants & Cafes + Hotels & Hospitality + Construction</p>
+              <p class="bundle-industries">Includes: Home Services + Beauty & Wellness + Food & Beverage + Restaurants & Cafes + Automotive + Events & Leisure + Hotels & Hospitality + Construction</p>
             </div>
           </div>
 
-          <!-- Bundle 4: Automotive, Logistics & Agencies -->
-          <div class="bundle-card">
+          <!-- Bundle 11: All-Industry Domination -->
+          <div class="bundle-card bundle-card--featured">
             <div class="bundle-card-top">
-              <h3 class="bundle-name">Automotive, Logistics & Agencies</h3>
-                <span class="bundle-sale-badge">20% OFF</span>
-              <span class="bundle-save">Save up to $44</span>
+              <h3 class="bundle-name">All-Industry Domination</h3>
+              <span class="bundle-save">Save up to $1,800</span>
             </div>
             <div class="bundle-tags">
-              <span class="bundle-tag">Automotive</span>
-              <span class="bundle-tag">Logistics & Transportation</span>
-              <span class="bundle-tag">Agencies & Business Services</span>
+              <span class="bundle-tag">All 16 Industries</span>
             </div>
             <div class="bundle-body">
               <div class="bundle-tiers">
                 <div class="bundle-tier">
-                  <span class="bundle-tier-label">25K Emails</span>
+                  <span class="bundle-tier-label">5K per niche (80K total)</span>
                   <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$137.98</span>
-                    <span class="bundle-new-price">$99.98</span>
+                    <span class="bundle-new-price">$599</span>
                   </div>
-                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-25k/" target="_blank" rel="noopener">Get bundle</a>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="all-industry-5k" type="button">Get bundle</button>
                 </div>
-                <div class="bundle-tier bundle-tier--featured">
-                  <span class="bundle-tier-label">50K Emails</span>
-                  <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$223.98</span>
-                    <span class="bundle-new-price">$179.98</span>
-                  </div>
-                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s2-automotive-logistics-agencies-business-services-50k/" target="_blank" rel="noopener">Get bundle</a>
-                </div>
-              </div>
-              <p class="bundle-industries">Includes: Automotive + Logistics & Transportation + Agencies & Business Services</p>
-            </div>
-          </div>
-
-          <!-- Bundle 5: Education, Events & Leisure -->
-          <div class="bundle-card">
-            <div class="bundle-card-top">
-              <h3 class="bundle-name">Education, Events & Leisure</h3>
-                <span class="bundle-sale-badge">20% OFF</span>
-              <span class="bundle-save">Save up to $44</span>
-            </div>
-            <div class="bundle-tags">
-              <span class="bundle-tag">Education</span>
-              <span class="bundle-tag">Events & Leisure</span>
-              <span class="bundle-tag">Accounting & Finance</span>
-            </div>
-            <div class="bundle-body">
-              <div class="bundle-tiers">
                 <div class="bundle-tier">
-                  <span class="bundle-tier-label">25K Emails</span>
+                  <span class="bundle-tier-label">25K per niche (400K total)</span>
                   <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$129.98</span>
-                    <span class="bundle-new-price">$99.98</span>
+                    <span class="bundle-new-price">$1,999</span>
                   </div>
-                  <a class="btn btn-outline btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-education-training-events-leisure-accounting-finance-25k/" target="_blank" rel="noopener">Get bundle</a>
+                  <button class="btn btn-outline btn-sm bundle-cta" data-plan="all-industry-25k" type="button">Get bundle</button>
                 </div>
                 <div class="bundle-tier bundle-tier--featured">
-                  <span class="bundle-tier-label">50K Emails</span>
+                  <span class="bundle-tier-label">50K per niche (800K total)</span>
                   <div class="bundle-tier-price">
-                    <span class="bundle-old-price">$213.98</span>
-                    <span class="bundle-new-price">$169.98</span>
+                    <span class="bundle-new-price">$2,500</span>
                   </div>
-                  <a class="btn btn-primary btn-sm" href="https://whop.com/bundles-leadspitch/bundle-s1-education-training-events-leisure-accounting-finance-50k/" target="_blank" rel="noopener">Get bundle</a>
+                  <button class="btn btn-primary btn-sm bundle-cta" data-plan="all-industry-50k" type="button">Get bundle</button>
                 </div>
               </div>
-              <p class="bundle-industries">Includes: Education + Events & Leisure + Accounting & Finance</p>
+              <p class="bundle-industries">Includes: All 16 Industries — complete market coverage</p>
             </div>
           </div>
 
@@ -1104,15 +1451,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="how-steps reveal">
           <div class="how-step">
             <span class="how-step-num">1</span>
-            <div><strong>Pick a bundle</strong><p>Choose from 3 curated bundles across related industries.</p></div>
+            <div><strong>Pick a bundle</strong><p>Choose from 11 curated bundles across related industries.</p></div>
           </div>
           <div class="how-step">
             <span class="how-step-num">2</span>
-            <div><strong>Select email volume</strong><p>Pick 25K or 50K verified emails per industry.</p></div>
+            <div><strong>Select email volume</strong><p>Pick 5K, 25K, or 50K verified emails per industry.</p></div>
           </div>
           <div class="how-step">
             <span class="how-step-num">3</span>
-            <div><strong>Get your data</strong><p>Receive verified datasets for all 3 industries in one delivery.</p></div>
+            <div><strong>Get your data</strong><p>Receive verified datasets for all industries in one delivery.</p></div>
           </div>
         </div>
       </div>
@@ -1319,5 +1666,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   <script src="search-data.js"></script>
   <script src="search.js"></script>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal-overlay" id="checkout-modal-overlay">
+    <div class="checkout-modal">
+      <div class="checkout-modal-header">
+        <h3 id="checkout-modal-title">Complete your purchase</h3>
+        <button class="checkout-modal-close" id="checkout-modal-close" aria-label="Close checkout">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="checkout-modal-body" id="checkout-modal-body">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('checkout-modal-overlay');
+      var modalBody = document.getElementById('checkout-modal-body');
+      var modalTitle = document.getElementById('checkout-modal-title');
+      var closeBtn = document.getElementById('checkout-modal-close');
+
+      var plans = {
+        'starter-duo-5k': { id: 'plan_pa1W11zZOlnur', name: 'Starter Duo - 5K' },
+        'starter-duo-25k': { id: 'plan_xayb8cL86uwWd', name: 'Starter Duo - 25K' },
+        'starter-duo-50k': { id: 'plan_GOujg0WhjvMu3', name: 'Starter Duo - 50K' },
+        'healthcare-wellness-5k': { id: 'plan_jXy1ZlO5l6TcK', name: 'Healthcare & Wellness - 5K' },
+        'healthcare-wellness-25k': { id: 'plan_6lmHM90X3Umy4', name: 'Healthcare & Wellness - 25K' },
+        'healthcare-wellness-50k': { id: 'plan_FhskaTVegQ4rO', name: 'Healthcare & Wellness - 50K' },
+        'real-estate-property-5k': { id: 'plan_IQJOItoAnyUS5', name: 'Real Estate & Property - 5K' },
+        'real-estate-property-25k': { id: 'plan_Q0KmxoQlNBs2j', name: 'Real Estate & Property - 25K' },
+        'real-estate-property-50k': { id: 'plan_qonxYDoFFjM2r', name: 'Real Estate & Property - 50K' },
+        'professional-services-5k': { id: 'plan_79rDxSo35wYFt', name: 'Professional Services - 5K' },
+        'professional-services-25k': { id: 'plan_tbxF5LC6aDf5x', name: 'Professional Services - 25K' },
+        'professional-services-50k': { id: 'plan_JuDx5EnzLqwTf', name: 'Professional Services - 50K' },
+        'ecommerce-marketing-5k': { id: 'plan_Zq7rsVu3XN79k', name: 'E-commerce & Marketing - 5K' },
+        'ecommerce-marketing-25k': { id: 'plan_Q3YqRzfdM7hj3', name: 'E-commerce & Marketing - 25K' },
+        'ecommerce-marketing-50k': { id: 'plan_7hwzboPBsTIBi', name: 'E-commerce & Marketing - 50K' },
+        'trades-services-5k': { id: 'plan_a17sf40GB4sSq', name: 'Trades & Services - 5K' },
+        'trades-services-25k': { id: 'plan_s8ai146OhdlBs', name: 'Trades & Services - 25K' },
+        'trades-services-50k': { id: 'plan_UDVIHrsM4EPZz', name: 'Trades & Services - 50K' },
+        'hospitality-leisure-5k': { id: 'plan_ygqz0vFsjxwcr', name: 'Hospitality & Leisure - 5K' },
+        'hospitality-leisure-25k': { id: 'plan_HGQxn8uJQeVvt', name: 'Hospitality & Leisure - 25K' },
+        'hospitality-leisure-50k': { id: 'plan_qQaXtvMLSuWNa', name: 'Hospitality & Leisure - 50K' },
+        'premium-high-ticket-5k': { id: 'plan_ft4tybCPjJLmX', name: 'Premium High-Ticket - 5K' },
+        'premium-high-ticket-25k': { id: 'plan_1eHcyozlhMQKT', name: 'Premium High-Ticket - 25K' },
+        'premium-high-ticket-50k': { id: 'plan_cj1q71o9E3UCt', name: 'Premium High-Ticket - 50K' },
+        'local-business-5k': { id: 'plan_h4Fmt2aBvClcu', name: 'Local Business - 5K' },
+        'local-business-25k': { id: 'plan_1sGv0yL2wDjxH', name: 'Local Business - 25K' },
+        'local-business-50k': { id: 'plan_CcZS2C0ZnayaD', name: 'Local Business - 50K' },
+        'ultimate-local-5k': { id: 'plan_4WA6zwoGOKYXx', name: 'Ultimate Local - 5K' },
+        'ultimate-local-25k': { id: 'plan_v9DKFQz6VqKPa', name: 'Ultimate Local - 25K' },
+        'ultimate-local-50k': { id: 'plan_xT3Fjhem1lnrK', name: 'Ultimate Local - 50K' },
+        'all-industry-5k': { id: 'plan_5zuWegWTFoKO8', name: 'All-Industry - 5K' },
+        'all-industry-25k': { id: 'plan_RqlSlFod3fdse', name: 'All-Industry - 25K' },
+        'all-industry-50k': { id: 'plan_X1oLU4JIVRuYE', name: 'All-Industry - 50K' }
+      };
+
+      function openCheckout(planKey) {
+        var plan = plans[planKey];
+        if (!plan) return;
+
+        modalTitle.textContent = plan.name;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        modalBody.innerHTML = '';
+
+        var container = document.createElement('div');
+        container.className = 'whop-checkout-container';
+        container.setAttribute('data-whop-checkout-plan-id', plan.id);
+        container.setAttribute('data-whop-checkout-theme', 'dark');
+        container.style.width = '100%';
+        container.style.minHeight = '600px';
+        modalBody.appendChild(container);
+
+        if (window.WhopCheckout && typeof window.WhopCheckout.load === 'function') {
+          try {
+            window.WhopCheckout.load().then(function(sdk) {
+              if (sdk && typeof sdk.mountCheckout === 'function') {
+                sdk.mountCheckout(container, { planId: plan.id, theme: 'dark' });
+              }
+            }).catch(function() {});
+          } catch(e) {}
+        }
+      }
+
+      function closeCheckout() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        modalBody.innerHTML = '';
+      }
+
+      closeBtn.addEventListener('click', closeCheckout);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeCheckout();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeCheckout();
+      });
+
+      document.querySelectorAll('.bundle-cta[data-plan]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var planKey = btn.getAttribute('data-plan');
+          openCheckout(planKey);
+        });
+      });
+
+      window.LeadsPitchCheckout = { open: openCheckout, close: closeCheckout };
+    })();
+  </script>
 </body>
 </html>

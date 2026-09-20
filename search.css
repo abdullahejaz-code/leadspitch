@@ -131,6 +131,16 @@
 }
 .ls-overlay__input::placeholder { color: var(--ls-faint); }
 .ls-overlay__input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.ls-overlay__kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.15rem 0.45rem; border-radius: 5px;
+  font-family: var(--font-mono, "SF Mono", "Menlo", monospace);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--ls-faint); background: var(--ls-surface-2);
+  border: 1px solid var(--ls-border); flex-shrink: 0;
+  line-height: 1.4; white-space: nowrap;
+}
+@media (max-width: 480px) { .ls-overlay__kbd { display: none; } }
 .ls-overlay__close {
   width: 34px;
   height: 34px;

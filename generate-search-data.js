@@ -25,32 +25,58 @@ const NICHES = [
 ];
 
 const CSV_FILES = {
-  "accounting-finance": "Accounting & Finance - Sheet1.csv",
-  "agencies-business": "Agencies & Business Services - Sheet1.csv",
-  "automotive": "Automotive - Sheet1.csv",
-  "beauty-wellness": "beauty and wellness plans - Sheet1.csv",
-  "clinics": "Clinics.csv",
-  "construction": "Construction & Contractors - Sheet1.csv",
-  "dentists": "Dentist.csv",
-  "education": "Education & Training - Sheet1.csv",
-  "events-leisure": "Events & Leisure - Sheet1.csv",
-  "food-beverage": "Food & Beverage Suppliers - Sheet1.csv",
-  "home-services": "home services plans - Sheet1.csv",
-  "hotels-hospitality": "Hotels & Hospitality - Sheet1.csv",
-  "legal": "Lawyers plans - Sheet1.csv",
-  "logistics": "logistics plans - Sheet1.csv",
-  "real-estate": "real estate.csv",
-  "restaurants-cafes": "Restaurants & Caf\u00e9s - Sheet1 (1).csv"
+  "accounting-finance": "pricings and details - Accounting & Finance.csv",
+  "agencies-business": "pricings and details - Agencies & Business Services.csv",
+  "automotive": "pricings and details - Automotive.csv",
+  "beauty-wellness": "pricings and details - Beauty and Wellness.csv",
+  "clinics": "pricings and details - Clinics.csv",
+  "construction": "pricings and details - Construction & Contractors.csv",
+  "dentists": "pricings and details - Dentist.csv",
+  "education": "pricings and details - Education & Traning.csv",
+  "events-leisure": "pricings and details - Events & Leisure.csv",
+  "food-beverage": "pricings and details - Food & Beverage.csv",
+  "home-services": "pricings and details - home services.csv",
+  "hotels-hospitality": "pricings and details - Hotels & Hospitality.csv",
+  "legal": "pricings and details - Legal.csv",
+  "logistics": "pricings and details - logistics.csv",
+  "real-estate": "pricings and details - real estate (1).csv",
+  "restaurants-cafes": "pricings and details - Restaurants and cafes.csv"
 };
 
 function parseCSV(file) {
   const raw = fs.readFileSync(path.join(csvPath, file), "utf8");
-  const lines = raw.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n").split("\n");
+  const text = raw.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
   const rows = [];
-  for (const line of lines) {
-    if (!line.trim()) continue;
-    rows.push(parseCSVLine(line));
+  let curRow = "";
+  let inQuote = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inQuote) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') {
+          curRow += '""';
+          i++;
+        } else {
+          inQuote = false;
+          curRow += ch;
+        }
+      } else {
+        curRow += ch;
+      }
+    } else {
+      if (ch === '"') {
+        inQuote = true;
+        curRow += ch;
+      } else if (ch === '\n') {
+        if (curRow.trim()) rows.push(parseCSVLine(curRow));
+        curRow = "";
+      } else {
+        curRow += ch;
+      }
+    }
   }
+  if (curRow.trim()) rows.push(parseCSVLine(curRow));
   return rows;
 }
 
@@ -116,6 +142,7 @@ function buildNiche(slug, meta) {
       const pname = clean(row[0]);
       if (!pname) break;
       if (/^(plan|monthly)$/i.test(pname)) break;
+      if (/[<>{}();!\\]|^import |^export |^from |^var |^const |^let /.test(pname)) continue;
 
       // Extract price: prefer explicit price col; else first "$x.xx"
       let price = cols.price != null ? clean(row[cols.price]) : "";
@@ -179,9 +206,17 @@ function buildNiche(slug, meta) {
 const niches = NICHES.map((n) => buildNiche(n.slug, n));
 
 const bundles = [
-  { name: "Restaurants, Hotels & Construction", desc: "Bundle of Restaurants & Cafes + Hotels & Hospitality + Construction datasets. Save up to $46.", includes: ["Restaurants & Cafes", "Hotels & Hospitality", "Construction"], price25: "$99.98", old25: "$131.98", price50: "$189.98", old50: "$235.98", save: "$46", url: "bundles.html" },
-  { name: "Automotive, Logistics & Agencies", desc: "Bundle of Automotive + Logistics & Transportation + Agencies & Business Services datasets. Save up to $44.", includes: ["Automotive", "Logistics & Transportation", "Agencies & Business Services"], price25: "$99.98", old25: "$137.98", price50: "$179.98", old50: "$223.98", save: "$44", url: "bundles.html" },
-  { name: "Education, Events & Leisure", desc: "Bundle of Education + Events & Leisure + Accounting & Finance datasets. Save up to $44.", includes: ["Education", "Events & Leisure", "Accounting & Finance"], price25: "$99.98", old25: "$129.98", price50: "$169.98", old50: "$213.98", save: "$44", url: "bundles.html" }
+  { name: "Starter Duo Pack", desc: "Bundle of Home Services + Beauty & Wellness datasets. Save up to $100.", includes: ["Home Services", "Beauty & Wellness"], price5k: "$79", price25k: "$299", price50k: "$499", save: "$100", url: "bundles.html" },
+  { name: "Healthcare & Wellness Pack", desc: "Bundle of Clinics + Dentists + Beauty & Wellness datasets. Save up to $200.", includes: ["Clinics", "Dentists", "Beauty & Wellness"], price5k: "$119", price25k: "$429", price50k: "$699", save: "$200", url: "bundles.html" },
+  { name: "Real Estate & Property Pack", desc: "Bundle of Real Estate + Construction + Home Services datasets. Save up to $70.", includes: ["Real Estate", "Construction", "Home Services"], price5k: "$139", price25k: "$499", price50k: "$829", save: "$70", url: "bundles.html" },
+  { name: "Professional Services Pack", desc: "Bundle of Legal + Accounting & Finance + Agencies & Business Services datasets. Save up to $70.", includes: ["Legal", "Accounting & Finance", "Agencies & Business Services"], price5k: "$139", price25k: "$499", price50k: "$829", save: "$70", url: "bundles.html" },
+  { name: "E-commerce & Marketing Pack", desc: "Bundle of Agencies & Business Services + Logistics & Transportation + Education & Training datasets. Save up to $200.", includes: ["Agencies & Business Services", "Logistics & Transportation", "Education & Training"], price5k: "$119", price25k: "$429", price50k: "$699", save: "$200", url: "bundles.html" },
+  { name: "Trades & Services Pack", desc: "Bundle of Construction + Automotive + Home Services + Logistics & Transportation datasets. Save up to $250.", includes: ["Construction", "Automotive", "Home Services", "Logistics & Transportation"], price5k: "$159", price25k: "$579", price50k: "$949", save: "$250", url: "bundles.html" },
+  { name: "Hospitality & Leisure Pack", desc: "Bundle of Hotels & Hospitality + Restaurants & Cafes + Events & Leisure + Food & Beverage Suppliers datasets. Save up to $300.", includes: ["Hotels & Hospitality", "Restaurants & Cafes", "Events & Leisure", "Food & Beverage Suppliers"], price5k: "$149", price25k: "$549", price50k: "$899", save: "$300", url: "bundles.html" },
+  { name: "Premium High-Ticket Pack", desc: "Bundle of Legal + Accounting & Finance + Real Estate + Clinics + Dentists datasets. Save up to $250.", includes: ["Legal", "Accounting & Finance", "Real Estate", "Clinics", "Dentists"], price5k: "$199", price25k: "$749", price50k: "$1,249", save: "$250", url: "bundles.html" },
+  { name: "Local Business Pack", desc: "Bundle of Home Services + Beauty & Wellness + Food & Beverage Suppliers + Restaurants & Cafes + Automotive + Events & Leisure datasets. Save up to $300.", includes: ["Home Services", "Beauty & Wellness", "Food & Beverage Suppliers", "Restaurants & Cafes", "Automotive", "Events & Leisure"], price5k: "$249", price25k: "$899", price50k: "$1,499", save: "$300", url: "bundles.html" },
+  { name: "Ultimate Local Domination", desc: "Bundle of 8 local business datasets. Save up to $700.", includes: ["Home Services", "Beauty & Wellness", "Food & Beverage Suppliers", "Restaurants & Cafes", "Automotive", "Events & Leisure", "Hotels & Hospitality", "Construction"], price5k: "$279", price25k: "$999", price50k: "$1,699", save: "$700", url: "bundles.html" },
+  { name: "All-Industry Domination", desc: "All 16 industry datasets in one bundle. Save up to $1,800.", includes: ["Automotive", "Construction", "Accounting & Finance", "Clinics", "Dentists", "Education & Training", "Home Services", "Restaurants & Cafes", "Events & Leisure", "Food & Beverage Suppliers", "Agencies & Business Services", "Beauty & Wellness", "Hotels & Hospitality", "Legal", "Logistics & Transportation", "Real Estate"], price5k: "$599", price25k: "$1,999", price50k: "$2,500", save: "$1,800", url: "bundles.html" }
 ];
 
 const memberships = [

@@ -1,0 +1,51 @@
+/* ===== LARGE SCREENS — universal scaling ===== */
+
+/* ---------- 1440px+ ---------- */
+@media (min-width: 1440px) {
+  :root {
+    --max: 1320px;
+    --gutter: clamp(2rem, 4vw, 3rem);
+    --section: clamp(5rem, 8vw, 8rem);
+    --section-gap: clamp(5rem, 8vw, 8rem);
+  }
+  .wrap {
+    width: min(1320px, calc(100% - var(--gutter) * 2));
+    max-width: 1320px;
+  }
+  .section-head { max-width: 46rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+  .section-head h2 { font-size: clamp(2.5rem, 4.5vw, 3.5rem); }
+  .step { padding: 2rem 1.75rem; }
+  .step h3 { font-size: 1.15rem; }
+  .pricing-card { padding: 2.5rem 2rem; }
+  .faq-section { max-width: 800px; }
+  .faq-heading { font-size: clamp(4rem, 8vw, 7rem); }
+  .faq-q { padding: 1.5rem 1.75rem; font-size: clamp(1rem, 2vw, 1.2rem); }
+  .faq-a-text { padding: 0 1.75rem 1.5rem; }
+  .final-cta-title { font-size: clamp(2.5rem, 4.5vw, 3.8rem); }
+  .site-footer { padding: clamp(3rem, 5vw, 5rem) 0 0; }
+}
+
+/* ---------- 1920px+ ---------- */
+@media (min-width: 1920px) {
+  :root {
+    --max: 1480px;
+    --gutter: 3rem;
+    --section: 8rem;
+    --section-gap: 8rem;
+  }
+  .wrap {
+    width: min(1480px, calc(100% - var(--gutter) * 2));
+    max-width: 1480px;
+  }
+  .section-head { max-width: 50rem; }
+  .section-head h2 { font-size: clamp(2.75rem, 4vw, 4rem); }
+  .step { padding: 2.25rem 2rem; }
+  .step h3 { font-size: 1.25rem; }
+  .pricing-card { padding: 2.75rem 2.25rem; }
+  .faq-section { max-width: 860px; }
+  .faq-heading { font-size: clamp(5rem, 7vw, 8rem); }
+  .faq-q { padding: 1.75rem 2rem; font-size: clamp(1.05rem, 1.8vw, 1.3rem); }
+  .faq-a-text { padding: 0 2rem 1.75rem; }
+  .final-cta-title { font-size: clamp(2.75rem, 4vw, 4.25rem); }
+  .site-footer { padding: clamp(3.5rem, 5vw, 5rem) 0 0; }
+}

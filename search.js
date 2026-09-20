@@ -67,15 +67,16 @@
           _b: [p.emails, p.leads, p.price, p.member, n.desc].filter(Boolean).join(" ").toLowerCase()
         });
       });
+    });
 
     DATA.bundles.forEach(function (b) {
       records.push({
         type: "bundle",
         label: "Bundle",
         title: b.name,
-        price: b.price25,
-        member: b.price50,
-        subtitle: "25K " + b.price25 + " / 50K " + b.price50 + " · save up to " + b.save,
+        price: b.price5k || b.price25,
+        member: b.price50k || b.price50,
+        subtitle: "5K " + (b.price5k || "-") + " / 25K " + (b.price25k || "-") + " / 50K " + (b.price50k || "-") + " · save " + b.save,
         url: BASE + b.url,
         external: false,
         _t: b.name.toLowerCase(),
@@ -186,6 +187,9 @@
     }
 
     /* ── Overlay DOM ──────────────────────────────────────────── */
+    var isMac = navigator.platform && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+    var kbdLabel = isMac ? "\u2318K" : "Ctrl+K";
+
     var overlay = document.createElement("div");
     overlay.className = "ls-overlay";
     overlay.setAttribute("role", "dialog");
@@ -197,6 +201,7 @@
         '<div class="ls-overlay__head">' +
           '<svg class="ls-overlay__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7.5" cy="7.5" r="5.5"></circle><path d="M12 12l4 4"></path></svg>' +
           '<input class="ls-overlay__input" type="search" placeholder="Search niches, datasets, plans, prices, FAQs\u2026" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search LeadsPitch">' +
+          '<kbd class="ls-overlay__kbd">' + kbdLabel + '</kbd>' +
           '<button class="ls-overlay__close" type="button" aria-label="Close search">' +
             '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"></path></svg>' +
           '</button>' +
@@ -243,7 +248,8 @@
     var desktopBtn = document.createElement("button");
     desktopBtn.type = "button";
     desktopBtn.className = "ls-search-trigger ls-search-trigger--desktop";
-    desktopBtn.setAttribute("aria-label", "Search LeadsPitch");
+    desktopBtn.setAttribute("aria-label", "Search LeadsPitch (Ctrl+K)");
+    desktopBtn.setAttribute("title", "Search (" + kbdLabel + ")");
     desktopBtn.innerHTML = triggerSVG;
     desktopBtn.addEventListener("click", openSearch);
 
@@ -260,6 +266,7 @@
     mobileBtn.type = "button";
     mobileBtn.className = "ls-search-trigger ls-search-trigger--mobile";
     mobileBtn.setAttribute("aria-label", "Search LeadsPitch");
+    mobileBtn.setAttribute("title", "Search");
     mobileBtn.innerHTML = triggerSVG;
     mobileBtn.addEventListener("click", openSearch);
 
@@ -294,9 +301,9 @@
       mobileLinks.insertBefore(searchLink, mobileLinks.firstChild);
     }
 
-    // "/" keyboard shortcut
+    // "/" and Ctrl+K / Cmd+K keyboard shortcuts
     document.addEventListener("keydown", function (e) {
-      if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement.tagName || "")) {
+      if ((e.key === "/" || (e.key === "k" && (e.ctrlKey || e.metaKey))) && !/input|textarea|select/i.test(document.activeElement.tagName || "")) {
         e.preventDefault();
         openSearch();
       }

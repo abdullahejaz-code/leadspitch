@@ -1051,14 +1051,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         width: calc(100% - 32px);
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+        min-height: auto;
+      }
+      .hero {
+        min-height: auto;
       }
       .copy {
         max-width: 520px;
         padding: 2rem 0;
       }
       .visual {
-        min-height: 420px;
-        max-height: 500px;
+        min-height: 320px;
+        max-height: 420px;
       }
       #hero-heading {
         font-size: clamp(36px, 4.5vw, 60px);
@@ -1069,18 +1073,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (max-width: 780px) {
       .hero {
-        min-height: 100svh;
+        min-height: auto;
         background: var(--bg) !important;
       }
       .hero-inner {
         width: calc(100% - 24px);
-        min-height: 100svh;
+        min-height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         padding-top: 26px;
-        padding-bottom: 52px;
+        padding-bottom: 24px;
         text-align: center;
       }
       .copy {
@@ -1142,7 +1146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hero-marquee::before, .hero-marquee::after { width: 40px; }
     }
     @media (max-width: 460px) {
-      .hero-inner { padding-top: 22px; padding-bottom: 44px; }
+      .hero-inner { padding-top: 22px; padding-bottom: 20px; }
       .eyebrow { margin-bottom: 15px; }
       #hero-heading {
         max-width: 365px;
@@ -1432,8 +1436,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-col a { display: block; color: #6b7280; font-size: var(--text-sm); padding: 0.25rem 0; transition: color 150ms ease; }
     .footer-col a:hover { color: #0a0a0c; }
     .footer-bottom { margin-top: 2rem; padding: 1.25rem 0; border-top: 1px solid #e5e7eb; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; color: #9ca3af; font-size: var(--text-xs); }
-    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; }
-    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 12rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #0a0a0c; -webkit-user-select: none; user-select: none; }
+    .footer-giant { width: 100%; padding-top: clamp(0.75rem, 2vw, 2rem); text-align: center; overflow: hidden; }
+    .footer-giant__text { font-family: "Gevora", "Arial Black", Impact, sans-serif; font-size: clamp(2rem, 7.5vw, 10rem); line-height: 0.85; letter-spacing: 0.01em; white-space: nowrap; color: #0a0a0c; -webkit-user-select: none; user-select: none; display: inline-block; max-width: 100%; }
 
 /* Reveal on scroll */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
@@ -1471,6 +1475,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       /* Gevora Font */
     @font-face { font-family: "Gevora"; src: url("public/Gevora font.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
 </style>
+  <link rel="stylesheet" href="large-screens.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1640,10 +1645,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="btn btn-ghost" type="button" id="open-industry-popup-pricing">See all niches</button>
           </div>
           <div class="pricing-card pricing-card--featured reveal">
-            <span class="pricing-card__name">Membership <span class="member-perk">Best value</span></span>
-            <span class="pricing-card__price">$19.99 <span>/mo</span></span>
-            <p class="pricing-card__desc">Discounted datasets, priority requests, and more.</p>
-            <a class="btn btn-primary" href="membership">Become A Member</a>
+            <span class="pricing-card__name">Bundles <span class="member-perk">Best value</span></span>
+            <span class="pricing-card__price">Save up to $1,800</span>
+            <p class="pricing-card__desc">Buy multiple niche datasets together and save big.</p>
+            <a class="btn btn-primary" href="bundles">See Bundles</a>
           </div>
         </div>
       </div>
@@ -2173,13 +2178,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var container = document.getElementById("footer-giant");
         var text = document.getElementById("giant-text");
         if (!container || !text) return;
+        var MAX_PX = 192;
         function fit() {
           var avail = container.offsetWidth;
           if (!avail) return;
           text.style.fontSize = "100px";
           var textW = text.offsetWidth;
           if (!textW) return;
-          text.style.fontSize = Math.floor((avail / textW) * 100) + "px";
+          var size = Math.floor((avail / textW) * 100);
+          text.style.fontSize = Math.min(size, MAX_PX) + "px";
         }
         fit(); setTimeout(fit,100); setTimeout(fit,300); setTimeout(fit,600); setTimeout(fit,1000);
         var rt; window.addEventListener("resize",function(){ if(rt) clearTimeout(rt); rt=setTimeout(fit,100); });

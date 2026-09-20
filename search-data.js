@@ -21,81 +21,41 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Accounting & Finance",
           "slug": "accounting-finance",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "23K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance"
+          "link": null
         },
         {
           "niche": "Accounting & Finance",
           "slug": "accounting-finance",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "82K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance"
+          "link": null
         },
         {
           "niche": "Accounting & Finance",
           "slug": "accounting-finance",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "135K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance"
+          "link": null
         },
         {
           "niche": "Accounting & Finance",
           "slug": "accounting-finance",
           "plan": "Business",
-          "emails": "65K",
-          "leads": "185K",
-          "price": null,
+          "emails": null,
+          "leads": "65K",
+          "price": "$329.99",
           "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/business-accounting-finance"
-        },
-        {
-          "niche": "Accounting & Finance",
-          "slug": "accounting-finance",
-          "plan": "Starter",
-          "emails": "5K",
-          "leads": "16K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Accounting & Finance",
-          "slug": "accounting-finance",
-          "plan": "Growth",
-          "emails": "10.5K",
-          "leads": "33K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Accounting & Finance",
-          "slug": "accounting-finance",
-          "plan": "Professional",
-          "emails": "16K",
-          "leads": "48K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Accounting & Finance",
-          "slug": "accounting-finance",
-          "plan": "Business",
-          "emails": "21K",
-          "leads": "66K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/accounting-finance-leadspitch/business-accounting-finance-monthly-data-plan-for-12-months"
+          "link": null
         }
       ]
     },
@@ -118,91 +78,61 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Agencies & Business",
           "slug": "agencies-business",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "26K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/agencies-business-services/starter-agencies-business-services/"
+          "link": null
         },
         {
           "niche": "Agencies & Business",
           "slug": "agencies-business",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "100K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/agencies-business-services/growth-agencies-business-services/"
+          "link": null
         },
         {
           "niche": "Agencies & Business",
           "slug": "agencies-business",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "170K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/agencies-business-services/professional-agencies-business-services/"
+          "link": null
         },
         {
           "niche": "Agencies & Business",
           "slug": "agencies-business",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "350K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$599.99",
           "member": null,
-          "link": "https://whop.com/agencies-business-services/business-agencies-business-services/"
+          "link": null
+        },
+        {
+          "niche": "Agencies & Business",
+          "slug": "agencies-business",
+          "plan": "Scale",
+          "emails": null,
+          "leads": "200k",
+          "price": "$999.99",
+          "member": null,
+          "link": null
         },
         {
           "niche": "Agencies & Business",
           "slug": "agencies-business",
           "plan": "Enterprise",
-          "emails": "300K",
-          "leads": "1.05M+",
-          "price": null,
+          "emails": null,
+          "leads": "300K",
+          "price": "$1,499.99",
           "member": null,
-          "link": "https://whop.com/agencies-business-services/enterprise-agencies-business-services/"
-        },
-        {
-          "niche": "Agencies & Business",
-          "slug": "agencies-business",
-          "plan": "Starter - Agencies & Business Services Monthly Data Plan for 12 Months",
-          "emails": "25K",
-          "leads": "88K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/agencies-business-services/starter-agencies-business-services-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Agencies & Business",
-          "slug": "agencies-business",
-          "plan": "Growth - Agencies & Business Services Monthly Data Plan for 6 Months",
-          "emails": "50K",
-          "leads": "176K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/agencies-business-services/growth-agencies-business-services-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Agencies & Business",
-          "slug": "agencies-business",
-          "plan": "Professional - Agencies & Business Services Monthly Data Plan for 4 Months",
-          "emails": "75K",
-          "leads": "264K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/agencies-business-services/professional-agencies-business-services-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Agencies & Business",
-          "slug": "agencies-business",
-          "plan": "Business",
-          "emails": "100K",
-          "leads": "352K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/agencies-business-services/business-agencies-business-services-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -225,101 +155,61 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "27K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/starter-automotive"
+          "link": null
         },
         {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "105K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/growth-automotive"
+          "link": null
         },
         {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "180K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/professional-automotive"
+          "link": null
         },
         {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "375K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/business-automotive"
+          "link": null
         },
         {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Scale",
-          "emails": "200k",
-          "leads": "650k",
-          "price": null,
+          "emails": null,
+          "leads": "200k",
+          "price": "$999.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/scale-automotive"
+          "link": null
         },
         {
           "niche": "Automotive",
           "slug": "automotive",
           "plan": "Enterprise",
-          "emails": "300K",
-          "leads": "1.15M+",
-          "price": null,
+          "emails": null,
+          "leads": "300K",
+          "price": "$1,499.99",
           "member": null,
-          "link": "https://whop.com/automotive-leadspitch/enterprise-automotive"
-        },
-        {
-          "niche": "Automotive",
-          "slug": "automotive",
-          "plan": "Starter",
-          "emails": "25K",
-          "leads": "95K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/automotive-leadspitch/starter-automotive-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Automotive",
-          "slug": "automotive",
-          "plan": "Growth",
-          "emails": "50K",
-          "leads": "190K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/automotive-leadspitch/growth-automotive-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Automotive",
-          "slug": "automotive",
-          "plan": "Professional",
-          "emails": "75K",
-          "leads": "285K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/automotive-leadspitch/professional-automotive-monthly-data-plan-for-4-months"
-        },
-        {
-          "niche": "Automotive",
-          "slug": "automotive",
-          "plan": "Business",
-          "emails": "100K",
-          "leads": "380K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/automotive-leadspitch/business-automotive-monthly-data-plan-for-3-months"
+          "link": null
         }
       ]
     },
@@ -343,96 +233,56 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Beauty & Wellness",
           "slug": "beauty-wellness",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "28K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/starter-beauty-and-wellness/"
+          "link": null
         },
         {
           "niche": "Beauty & Wellness",
           "slug": "beauty-wellness",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "100K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/growth-beauty-and-wellness/"
+          "link": null
         },
         {
           "niche": "Beauty & Wellness",
           "slug": "beauty-wellness",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "165K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/professional-beauty-and-wellness/"
+          "link": null
         },
         {
           "niche": "Beauty & Wellness",
           "slug": "beauty-wellness",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "340K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/business-beauty-and-wellness/"
+          "link": null
         },
         {
           "niche": "Beauty & Wellness",
           "slug": "beauty-wellness",
           "plan": "Enterprise",
-          "emails": "160K",
-          "leads": "560K+",
-          "price": null,
+          "emails": null,
+          "leads": "160K",
+          "price": "$799.99",
           "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/enterprise-beauty-and-wellness/"
-        },
-        {
-          "niche": "Beauty & Wellness",
-          "slug": "beauty-wellness",
-          "plan": "Starter",
-          "emails": "13K",
-          "leads": "45K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/beauty-and-wellness-starter-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Beauty & Wellness",
-          "slug": "beauty-wellness",
-          "plan": "Growth",
-          "emails": "27K",
-          "leads": "95K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/beauty-and-wellness-growth-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Beauty & Wellness",
-          "slug": "beauty-wellness",
-          "plan": "Professional",
-          "emails": "40K",
-          "leads": "145K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/beauty-and-wellness-professional-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Beauty & Wellness",
-          "slug": "beauty-wellness",
-          "plan": "Business",
-          "emails": "54K",
-          "leads": "195K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/beauty-and-welness-leadspitch/beauty-and-wellness-business-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
     {
-      "name": "Clinics & Healthcare",
+      "name": "Clinics",
       "slug": "clinics",
       "url": "industries/clinics.html",
       "desc": "Practices, clinics, hospitals, and healthcare providers. Industry-specific contact data.",
@@ -447,84 +297,44 @@ window.LEADSPITCH_SEARCH_DATA = {
       ],
       "plans": [
         {
-          "niche": "Clinics & Healthcare",
+          "niche": "Clinics",
           "slug": "clinics",
           "plan": "Starter",
-          "emails": "5",
-          "leads": "000",
-          "price": null,
+          "emails": null,
+          "leads": "5,000",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/health-care-leads/starter-clinics-leads"
+          "link": null
         },
         {
-          "niche": "Clinics & Healthcare",
+          "niche": "Clinics",
           "slug": "clinics",
-          "plan": "Growth ⭐",
-          "emails": "25",
-          "leads": "000",
-          "price": null,
+          "plan": "Growth",
+          "emails": null,
+          "leads": "25,000",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/health-care-leads/growth-clinics-leads"
+          "link": null
         },
         {
-          "niche": "Clinics & Healthcare",
-          "slug": "clinics",
-          "plan": "Professional",
-          "emails": "50",
-          "leads": "000",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/health-care-leads/professional-clinics-leads"
-        },
-        {
-          "niche": "Clinics & Healthcare",
-          "slug": "clinics",
-          "plan": "Business",
-          "emails": "100",
-          "leads": "000",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/health-care-leads/business-clinics-leads"
-        },
-        {
-          "niche": "Clinics & Healthcare",
-          "slug": "clinics",
-          "plan": "Starter",
-          "emails": "8K",
-          "leads": "42K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/health-care-leads/clinics-starter-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Clinics & Healthcare",
-          "slug": "clinics",
-          "plan": "Growth ⭐",
-          "emails": "17K",
-          "leads": "89K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/health-care-leads/clinics-growth-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Clinics & Healthcare",
+          "niche": "Clinics",
           "slug": "clinics",
           "plan": "Professional",
-          "emails": "25K",
-          "leads": "132K+",
-          "price": null,
+          "emails": null,
+          "leads": "50,000",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/health-care-leads/clinics-professional-monthly-data-plan-for-4-months"
+          "link": null
         },
         {
-          "niche": "Clinics & Healthcare",
+          "niche": "Clinics",
           "slug": "clinics",
           "plan": "Business",
-          "emails": "34K",
-          "leads": "180K+",
-          "price": null,
+          "emails": null,
+          "leads": "100,000",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/health-care-leads/clinics-business-monthly-data-plan-for-3-months"
+          "link": null
         }
       ]
     },
@@ -547,101 +357,61 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "26K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors"
+          "link": null
         },
         {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "105K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors"
+          "link": null
         },
         {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "175K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors"
+          "link": null
         },
         {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "360K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/business-construction-contractors"
+          "link": null
         },
         {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Scale",
-          "emails": "200K",
-          "leads": "760K",
-          "price": null,
+          "emails": null,
+          "leads": "200K",
+          "price": "$999.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/scale-construction-contractors"
+          "link": null
         },
         {
           "niche": "Construction",
           "slug": "construction",
           "plan": "Enterprise",
-          "emails": "350K",
-          "leads": "1.3M+",
-          "price": null,
+          "emails": null,
+          "leads": "350K",
+          "price": "$1,599.99",
           "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/enterprise-construction-contractors"
-        },
-        {
-          "niche": "Construction",
-          "slug": "construction",
-          "plan": "Starter",
-          "emails": "30K",
-          "leads": "110K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Construction",
-          "slug": "construction",
-          "plan": "Growth",
-          "emails": "60K",
-          "leads": "220K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Construction",
-          "slug": "construction",
-          "plan": "Professional",
-          "emails": "90K",
-          "leads": "320K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors-monthly-data-plan-for-3-months"
-        },
-        {
-          "niche": "Construction",
-          "slug": "construction",
-          "plan": "Business",
-          "emails": "120K",
-          "leads": "430K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/construction-contractors-leadspitch/business-construction-contractors-monthly-data-plan-for-3-months"
+          "link": null
         }
       ]
     },
@@ -663,81 +433,41 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Dentists",
           "slug": "dentists",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "28K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/destists-leads/starter-dentist-leads"
+          "link": null
         },
         {
           "niche": "Dentists",
           "slug": "dentists",
-          "plan": "Growth ⭐",
-          "emails": "25K",
-          "leads": "95K",
-          "price": null,
+          "plan": "Growth",
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/destists-leads/growth-dentist-leads"
-        },
-        {
-          "niche": "Dentists",
-          "slug": "dentists",
-          "plan": "Professional",
-          "emails": "50K",
-          "leads": "145K",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/destists-leads/professional-dentist-leads"
-        },
-        {
-          "niche": "Dentists",
-          "slug": "dentists",
-          "plan": "Business",
-          "emails": "100K",
-          "leads": "330K",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/destists-leads/business-dentist-leads"
-        },
-        {
-          "niche": "Dentists",
-          "slug": "dentists",
-          "plan": "Starter",
-          "emails": "9K",
-          "leads": "50K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/destists-leads/dentists-starter-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Dentists",
-          "slug": "dentists",
-          "plan": "Growth ⭐",
-          "emails": "19K",
-          "leads": "105K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/destists-leads/dentists-growth-monthly-data-plan-for-6-months"
+          "link": null
         },
         {
           "niche": "Dentists",
           "slug": "dentists",
           "plan": "Professional",
-          "emails": "28K",
-          "leads": "155K+",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/destists-leads/dentists-professional-monthly-data-plan-for-4-months"
+          "link": null
         },
         {
           "niche": "Dentists",
           "slug": "dentists",
           "plan": "Business",
-          "emails": "38K",
-          "leads": "210K+",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/destists-leads/dentists-business-monthly-data-plan-for-3-months"
+          "link": null
         }
       ]
     },
@@ -760,91 +490,51 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Education & Training",
           "slug": "education",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "25K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/education-training-c476/starter-education-training"
+          "link": null
         },
         {
           "niche": "Education & Training",
           "slug": "education",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "95K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/education-training-c476/growth-education-training"
+          "link": null
         },
         {
           "niche": "Education & Training",
           "slug": "education",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "155K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/education-training-c476/professional-education-training"
+          "link": null
         },
         {
           "niche": "Education & Training",
           "slug": "education",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "330K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/education-training-c476/business-education-training"
+          "link": null
         },
         {
           "niche": "Education & Training",
           "slug": "education",
           "plan": "Enterprise",
-          "emails": "175K",
-          "leads": "590K+",
-          "price": null,
+          "emails": null,
+          "leads": "175K",
+          "price": "$699.99",
           "member": null,
-          "link": "https://whop.com/education-training-c476/enterprise-education-training"
-        },
-        {
-          "niche": "Education & Training",
-          "slug": "education",
-          "plan": "Starter",
-          "emails": "14.5K",
-          "leads": "50K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/education-training-c476/starter-education-training-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Education & Training",
-          "slug": "education",
-          "plan": "Growth",
-          "emails": "29.5K",
-          "leads": "100K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/education-training-c476/growth-education-training-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Education & Training",
-          "slug": "education",
-          "plan": "Professional",
-          "emails": "44K",
-          "leads": "150K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/education-training-c476/professional-education-training-monthly-data-plan-for-4-months"
-        },
-        {
-          "niche": "Education & Training",
-          "slug": "education",
-          "plan": "Business",
-          "emails": "69K",
-          "leads": "200K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/education-training-c476/business-education-training-monthly-data-plan-for-12-months/"
+          "link": null
         }
       ]
     },
@@ -867,81 +557,41 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Events & Leisure",
           "slug": "events-leisure",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "26K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/starter-events-leisure/"
+          "link": null
         },
         {
           "niche": "Events & Leisure",
           "slug": "events-leisure",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "95K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/growth-events-leisure/"
+          "link": null
         },
         {
           "niche": "Events & Leisure",
           "slug": "events-leisure",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "155K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/professional-events-leisure/"
+          "link": null
         },
         {
           "niche": "Events & Leisure",
           "slug": "events-leisure",
           "plan": "Business",
-          "emails": "110K",
-          "leads": "330K",
-          "price": null,
+          "emails": null,
+          "leads": "110K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/business-events-leisure/"
-        },
-        {
-          "niche": "Events & Leisure",
-          "slug": "events-leisure",
-          "plan": "Starter",
-          "emails": "9K",
-          "leads": "30K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/starter-events-leisure-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Events & Leisure",
-          "slug": "events-leisure",
-          "plan": "Growth",
-          "emails": "18K",
-          "leads": "60K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/growth-events-leisure-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Events & Leisure",
-          "slug": "events-leisure",
-          "plan": "Professional",
-          "emails": "27K",
-          "leads": "90K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/professional-events-leisure-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Events & Leisure",
-          "slug": "events-leisure",
-          "plan": "Business",
-          "emails": "37K",
-          "leads": "125K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/events-leisure-leadspitch/business-events-leisure-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -964,91 +614,51 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Food & Beverage",
           "slug": "food-beverage",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "26K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers/"
+          "link": null
         },
         {
           "niche": "Food & Beverage",
           "slug": "food-beverage",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "95K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers/"
+          "link": null
         },
         {
           "niche": "Food & Beverage",
           "slug": "food-beverage",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "165K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers/"
+          "link": null
         },
         {
           "niche": "Food & Beverage",
           "slug": "food-beverage",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "340K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers/"
+          "link": null
         },
         {
           "niche": "Food & Beverage",
           "slug": "food-beverage",
           "plan": "Enterprise",
-          "emails": "170K",
-          "leads": "620K+",
-          "price": null,
+          "emails": null,
+          "leads": "170K",
+          "price": "$799.99",
           "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/enterprise-food-beverage-suppliers/"
-        },
-        {
-          "niche": "Food & Beverage",
-          "slug": "food-beverage",
-          "plan": "Starter",
-          "emails": "14K",
-          "leads": "50K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Food & Beverage",
-          "slug": "food-beverage",
-          "plan": "Growth",
-          "emails": "28K",
-          "leads": "100K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Food & Beverage",
-          "slug": "food-beverage",
-          "plan": "Professional",
-          "emails": "42K",
-          "leads": "150K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Food & Beverage",
-          "slug": "food-beverage",
-          "plan": "Business",
-          "emails": "56K",
-          "leads": "200K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -1072,111 +682,71 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "26K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/starter-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "100K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/growth-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "170K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/professional-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "350K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/business-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Scale",
-          "emails": "200K",
-          "leads": "700K",
-          "price": null,
+          "emails": null,
+          "leads": "200K",
+          "price": "$999.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/scale-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Enterprise",
-          "emails": "300K",
-          "leads": "1.05M",
-          "price": null,
+          "emails": null,
+          "leads": "300K",
+          "price": "$1,499.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/enterprise-home-services/"
+          "link": null
         },
         {
           "niche": "Home Services",
           "slug": "home-services",
           "plan": "Complete Database",
-          "emails": "430K+",
-          "leads": "1.5M+",
-          "price": null,
+          "emails": null,
+          "leads": "430K+",
+          "price": "$1,999.99",
           "member": null,
-          "link": "https://whop.com/home-services-leadspitch/complete-database-home-services/"
-        },
-        {
-          "niche": "Home Services",
-          "slug": "home-services",
-          "plan": "Starter",
-          "emails": "36K",
-          "leads": "125K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/home-services-leadspitch/starter-home-services-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Home Services",
-          "slug": "home-services",
-          "plan": "Growth",
-          "emails": "72K",
-          "leads": "250K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/home-services-leadspitch/growth-home-services-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Home Services",
-          "slug": "home-services",
-          "plan": "Professional",
-          "emails": "108K",
-          "leads": "375K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/home-services-leadspitch/professional-home-services-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Home Services",
-          "slug": "home-services",
-          "plan": "Business",
-          "emails": "144K",
-          "leads": "500K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/home-services-leadspitch/business-home-services-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -1199,81 +769,41 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Hotels & Hospitality",
           "slug": "hotels-hospitality",
           "plan": "Starter",
-          "emails": "5K",
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
+          "member": null,
+          "link": null
+        },
+        {
+          "niche": "Hotels & Hospitality",
+          "slug": "hotels-hospitality",
+          "plan": "Growth",
+          "emails": null,
           "leads": "25K",
-          "price": null,
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/hotels-hospitality/starter-hotels-hospitality"
-        },
-        {
-          "niche": "Hotels & Hospitality",
-          "slug": "hotels-hospitality",
-          "plan": "Growth",
-          "emails": "25K",
-          "leads": "90K",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/hotels-hospitality/growth-hotels-hospitality"
+          "link": null
         },
         {
           "niche": "Hotels & Hospitality",
           "slug": "hotels-hospitality",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "155K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/hotels-hospitality/professional-hotels-hospitality"
+          "link": null
         },
         {
           "niche": "Hotels & Hospitality",
           "slug": "hotels-hospitality",
           "plan": "Business",
-          "emails": "75K",
-          "leads": "250K",
-          "price": null,
+          "emails": null,
+          "leads": "75K",
+          "price": "$329.99",
           "member": null,
-          "link": "https://whop.com/hotels-hospitality/business-hotels-hospitality"
-        },
-        {
-          "niche": "Hotels & Hospitality",
-          "slug": "hotels-hospitality",
-          "plan": "Starter",
-          "emails": "6.5K",
-          "leads": "22K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/hotels-hospitality/starter-hotels-hospitality-monthly-data-plan-for-12-months"
-        },
-        {
-          "niche": "Hotels & Hospitality",
-          "slug": "hotels-hospitality",
-          "plan": "Growth",
-          "emails": "13K",
-          "leads": "44K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/hotels-hospitality/growth-hotels-hospitality-monthly-data-plan-for-6-months"
-        },
-        {
-          "niche": "Hotels & Hospitality",
-          "slug": "hotels-hospitality",
-          "plan": "Professional",
-          "emails": "19K",
-          "leads": "66K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/hotels-hospitality/professional-hotels-hospitality-monthly-data-plan-for-4-months"
-        },
-        {
-          "niche": "Hotels & Hospitality",
-          "slug": "hotels-hospitality",
-          "plan": "Business",
-          "emails": "26K",
-          "leads": "88K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/hotels-hospitality/business-hotels-hospitality-monthly-data-plan-for-12-months"
+          "link": null
         }
       ]
     },
@@ -1295,91 +825,61 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Legal",
           "slug": "legal",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "24K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/legal-leadspitch/starter-lawyer-leads/"
+          "link": null
         },
         {
           "niche": "Legal",
           "slug": "legal",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "90K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/legal-leadspitch/growth-lawyer-leads/"
+          "link": null
         },
         {
           "niche": "Legal",
           "slug": "legal",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "145K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/legal-leadspitch/professional-lawyer-leads/"
+          "link": null
         },
         {
           "niche": "Legal",
           "slug": "legal",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "300K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$599.99",
           "member": null,
-          "link": "https://whop.com/legal-leadspitch/business-lawyer-leads/"
+          "link": null
+        },
+        {
+          "niche": "Legal",
+          "slug": "legal",
+          "plan": "Scale",
+          "emails": null,
+          "leads": "200k",
+          "price": "$999.99",
+          "member": null,
+          "link": null
         },
         {
           "niche": "Legal",
           "slug": "legal",
           "plan": "Enterprise",
-          "emails": "300K",
-          "leads": "900K+",
-          "price": null,
+          "emails": null,
+          "leads": "300K",
+          "price": "$1,429.99",
           "member": null,
-          "link": "https://whop.com/legal-leadspitch/enterprise-lawyer-leads/"
-        },
-        {
-          "niche": "Legal",
-          "slug": "legal",
-          "plan": "Starter",
-          "emails": "25K",
-          "leads": "75K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/legal-leadspitch/lawyers-starter-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Legal",
-          "slug": "legal",
-          "plan": "Growth",
-          "emails": "50K",
-          "leads": "150K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/legal-leadspitch/lawyers-growth-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Legal",
-          "slug": "legal",
-          "plan": "Professional",
-          "emails": "75K",
-          "leads": "225K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/legal-leadspitch/lawyers-professional-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Legal",
-          "slug": "legal",
-          "plan": "Business",
-          "emails": "100K",
-          "leads": "300K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/legal-leadspitch/lawyers-enterprise-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -1402,81 +902,41 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Logistics",
           "slug": "logistics",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "24K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/logistics-and-others/starter-logistics-and-others/"
+          "link": null
         },
         {
           "niche": "Logistics",
           "slug": "logistics",
           "plan": "Growth",
-          "emails": "25K",
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
+          "member": null,
+          "link": null
+        },
+        {
+          "niche": "Logistics",
+          "slug": "logistics",
+          "plan": "Professional",
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
+          "member": null,
+          "link": null
+        },
+        {
+          "niche": "Logistics",
+          "slug": "logistics",
+          "plan": "Business",
+          "emails": null,
           "leads": "85K",
-          "price": null,
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/logistics-and-others/growth-logistics-and-others/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Professional",
-          "emails": "50K",
-          "leads": "140K",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/professional-logistics-and-others/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Business",
-          "emails": "85K",
-          "leads": "255K",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/business-logistics-and-others/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Starter",
-          "emails": "7K",
-          "leads": "21K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/starter-logistics-and-others-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Growth",
-          "emails": "14K",
-          "leads": "42K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/growth-logistics-and-others-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Professional",
-          "emails": "21K",
-          "leads": "63K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/professional-logistics-and-others-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Logistics",
-          "slug": "logistics",
-          "plan": "Business",
-          "emails": "28K",
-          "leads": "84K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/logistics-and-others/business-logistics-and-others-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     },
@@ -1499,101 +959,61 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Real Estate",
           "slug": "real-estate",
           "plan": "Starter",
-          "emails": "000",
-          "leads": "3",
-          "price": null,
+          "emails": null,
+          "leads": "1,000",
+          "price": "$29.99",
           "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/real-estate-leades-1k/"
+          "link": null
         },
         {
           "niche": "Real Estate",
           "slug": "real-estate",
           "plan": "Growth",
-          "emails": "000",
-          "leads": "8",
-          "price": null,
+          "emails": null,
+          "leads": "2,500",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/growth-real-estate-leads"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Professional ⭐",
-          "emails": "000",
-          "leads": "16",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/professional-real-estate-leads"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Business",
-          "emails": "000",
-          "leads": "32",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/business-real-estate-leads-83/"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Scale",
-          "emails": "000",
-          "leads": "80",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/scale-real-estate-leads"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Enterprise",
-          "emails": "000",
-          "leads": "160",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/enterprise-real-estate-leads"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Starter",
-          "emails": "5k",
-          "leads": "~15",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/real-estate-starter-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Real Estate",
-          "slug": "real-estate",
-          "plan": "Growth",
-          "emails": "10",
-          "leads": "000",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/real-estate-growth-monthly-data-plan-for-6-months/"
+          "link": null
         },
         {
           "niche": "Real Estate",
           "slug": "real-estate",
           "plan": "Professional",
-          "emails": "15",
-          "leads": "000",
-          "price": null,
+          "emails": null,
+          "leads": "5,000",
+          "price": "$99.99",
           "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/real-estate-professional-monthly-data-plan-for-4-months"
+          "link": null
         },
         {
           "niche": "Real Estate",
           "slug": "real-estate",
           "plan": "Business",
-          "emails": "20",
-          "leads": "000",
-          "price": null,
+          "emails": null,
+          "leads": "10,000",
+          "price": "$149.99",
           "member": null,
-          "link": "https://whop.com/real-estate-leads-d0ea/real-estate-business-monthly-data-plan-for-3-months"
+          "link": null
+        },
+        {
+          "niche": "Real Estate",
+          "slug": "real-estate",
+          "plan": "Scale",
+          "emails": null,
+          "leads": "25,000",
+          "price": "$259.99",
+          "member": null,
+          "link": null
+        },
+        {
+          "niche": "Real Estate",
+          "slug": "real-estate",
+          "plan": "Enterprise",
+          "emails": null,
+          "leads": "50,000",
+          "price": "$399.99",
+          "member": null,
+          "link": null
         }
       ]
     },
@@ -1616,139 +1036,232 @@ window.LEADSPITCH_SEARCH_DATA = {
           "niche": "Restaurants & Cafes",
           "slug": "restaurants-cafes",
           "plan": "Starter",
-          "emails": "5K",
-          "leads": "28K",
-          "price": null,
+          "emails": null,
+          "leads": "5K",
+          "price": "$49.99",
           "member": null,
-          "link": "https://whop.com/restaurants-cafes/starter-restaurants-cafes/"
+          "link": null
         },
         {
           "niche": "Restaurants & Cafes",
           "slug": "restaurants-cafes",
           "plan": "Growth",
-          "emails": "25K",
-          "leads": "100K",
-          "price": null,
+          "emails": null,
+          "leads": "25K",
+          "price": "$179.99",
           "member": null,
-          "link": "https://whop.com/restaurants-cafes/growth-restaurants-cafes/"
+          "link": null
         },
         {
           "niche": "Restaurants & Cafes",
           "slug": "restaurants-cafes",
           "plan": "Professional",
-          "emails": "50K",
-          "leads": "170K",
-          "price": null,
+          "emails": null,
+          "leads": "50K",
+          "price": "$299.99",
           "member": null,
-          "link": "https://whop.com/restaurants-cafes/professional-restaurants-cafes/"
+          "link": null
         },
         {
           "niche": "Restaurants & Cafes",
           "slug": "restaurants-cafes",
           "plan": "Business",
-          "emails": "100K",
-          "leads": "360K",
-          "price": null,
+          "emails": null,
+          "leads": "100K",
+          "price": "$499.99",
           "member": null,
-          "link": "https://whop.com/restaurants-cafes/business-restaurants-cafes/"
+          "link": null
         },
         {
           "niche": "Restaurants & Cafes",
           "slug": "restaurants-cafes",
           "plan": "Enterprise",
-          "emails": "200K",
-          "leads": "760K+",
-          "price": null,
+          "emails": null,
+          "leads": "200K",
+          "price": "$999.99",
           "member": null,
-          "link": "https://whop.com/restaurants-cafes/enterprise-restaurants-cafes/"
-        },
-        {
-          "niche": "Restaurants & Cafes",
-          "slug": "restaurants-cafes",
-          "plan": "Starter",
-          "emails": "17K",
-          "leads": "60K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/restaurants-cafes/starter-restaurants-cafes-monthly-data-plan-for-12-months/"
-        },
-        {
-          "niche": "Restaurants & Cafes",
-          "slug": "restaurants-cafes",
-          "plan": "Growth",
-          "emails": "34K",
-          "leads": "120K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/restaurants-cafes/growth-restaurants-cafes-monthly-data-plan-for-6-months/"
-        },
-        {
-          "niche": "Restaurants & Cafes",
-          "slug": "restaurants-cafes",
-          "plan": "Professional",
-          "emails": "50K",
-          "leads": "180K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/restaurants-cafes/professional-restaurants-cafes-monthly-data-plan-for-4-months/"
-        },
-        {
-          "niche": "Restaurants & Cafes",
-          "slug": "restaurants-cafes",
-          "plan": "Business",
-          "emails": "67K",
-          "leads": "240K+",
-          "price": null,
-          "member": null,
-          "link": "https://whop.com/restaurants-cafes/business-restaurants-cafes-monthly-data-plan-for-3-months/"
+          "link": null
         }
       ]
     }
   ],
   "bundles": [
     {
-      "name": "Restaurants, Hotels & Construction",
-      "desc": "Bundle of Restaurants & Cafes + Hotels & Hospitality + Construction datasets. Save up to $46.",
+      "name": "Starter Duo Pack",
+      "desc": "Bundle of Home Services + Beauty & Wellness datasets. Save up to $100.",
       "includes": [
+        "Home Services",
+        "Beauty & Wellness"
+      ],
+      "price5k": "$79",
+      "price25k": "$299",
+      "price50k": "$499",
+      "save": "$100",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Healthcare & Wellness Pack",
+      "desc": "Bundle of Clinics + Dentists + Beauty & Wellness datasets. Save up to $200.",
+      "includes": [
+        "Clinics",
+        "Dentists",
+        "Beauty & Wellness"
+      ],
+      "price5k": "$119",
+      "price25k": "$429",
+      "price50k": "$699",
+      "save": "$200",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Real Estate & Property Pack",
+      "desc": "Bundle of Real Estate + Construction + Home Services datasets. Save up to $70.",
+      "includes": [
+        "Real Estate",
+        "Construction",
+        "Home Services"
+      ],
+      "price5k": "$139",
+      "price25k": "$499",
+      "price50k": "$829",
+      "save": "$70",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Professional Services Pack",
+      "desc": "Bundle of Legal + Accounting & Finance + Agencies & Business Services datasets. Save up to $70.",
+      "includes": [
+        "Legal",
+        "Accounting & Finance",
+        "Agencies & Business Services"
+      ],
+      "price5k": "$139",
+      "price25k": "$499",
+      "price50k": "$829",
+      "save": "$70",
+      "url": "bundles.html"
+    },
+    {
+      "name": "E-commerce & Marketing Pack",
+      "desc": "Bundle of Agencies & Business Services + Logistics & Transportation + Education & Training datasets. Save up to $200.",
+      "includes": [
+        "Agencies & Business Services",
+        "Logistics & Transportation",
+        "Education & Training"
+      ],
+      "price5k": "$119",
+      "price25k": "$429",
+      "price50k": "$699",
+      "save": "$200",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Trades & Services Pack",
+      "desc": "Bundle of Construction + Automotive + Home Services + Logistics & Transportation datasets. Save up to $250.",
+      "includes": [
+        "Construction",
+        "Automotive",
+        "Home Services",
+        "Logistics & Transportation"
+      ],
+      "price5k": "$159",
+      "price25k": "$579",
+      "price50k": "$949",
+      "save": "$250",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Hospitality & Leisure Pack",
+      "desc": "Bundle of Hotels & Hospitality + Restaurants & Cafes + Events & Leisure + Food & Beverage Suppliers datasets. Save up to $300.",
+      "includes": [
+        "Hotels & Hospitality",
         "Restaurants & Cafes",
+        "Events & Leisure",
+        "Food & Beverage Suppliers"
+      ],
+      "price5k": "$149",
+      "price25k": "$549",
+      "price50k": "$899",
+      "save": "$300",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Premium High-Ticket Pack",
+      "desc": "Bundle of Legal + Accounting & Finance + Real Estate + Clinics + Dentists datasets. Save up to $250.",
+      "includes": [
+        "Legal",
+        "Accounting & Finance",
+        "Real Estate",
+        "Clinics",
+        "Dentists"
+      ],
+      "price5k": "$199",
+      "price25k": "$749",
+      "price50k": "$1,249",
+      "save": "$250",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Local Business Pack",
+      "desc": "Bundle of Home Services + Beauty & Wellness + Food & Beverage Suppliers + Restaurants & Cafes + Automotive + Events & Leisure datasets. Save up to $300.",
+      "includes": [
+        "Home Services",
+        "Beauty & Wellness",
+        "Food & Beverage Suppliers",
+        "Restaurants & Cafes",
+        "Automotive",
+        "Events & Leisure"
+      ],
+      "price5k": "$249",
+      "price25k": "$899",
+      "price50k": "$1,499",
+      "save": "$300",
+      "url": "bundles.html"
+    },
+    {
+      "name": "Ultimate Local Domination",
+      "desc": "Bundle of 8 local business datasets. Save up to $700.",
+      "includes": [
+        "Home Services",
+        "Beauty & Wellness",
+        "Food & Beverage Suppliers",
+        "Restaurants & Cafes",
+        "Automotive",
+        "Events & Leisure",
         "Hotels & Hospitality",
         "Construction"
       ],
-      "price25": "$99.98",
-      "old25": "$131.98",
-      "price50": "$189.98",
-      "old50": "$235.98",
-      "save": "$46",
+      "price5k": "$279",
+      "price25k": "$999",
+      "price50k": "$1,699",
+      "save": "$700",
       "url": "bundles.html"
     },
     {
-      "name": "Automotive, Logistics & Agencies",
-      "desc": "Bundle of Automotive + Logistics & Transportation + Agencies & Business Services datasets. Save up to $44.",
+      "name": "All-Industry Domination",
+      "desc": "All 16 industry datasets in one bundle. Save up to $1,800.",
       "includes": [
         "Automotive",
-        "Logistics & Transportation",
-        "Agencies & Business Services"
-      ],
-      "price25": "$99.98",
-      "old25": "$137.98",
-      "price50": "$179.98",
-      "old50": "$223.98",
-      "save": "$44",
-      "url": "bundles.html"
-    },
-    {
-      "name": "Education, Events & Leisure",
-      "desc": "Bundle of Education + Events & Leisure + Accounting & Finance datasets. Save up to $44.",
-      "includes": [
-        "Education",
+        "Construction",
+        "Accounting & Finance",
+        "Clinics",
+        "Dentists",
+        "Education & Training",
+        "Home Services",
+        "Restaurants & Cafes",
         "Events & Leisure",
-        "Accounting & Finance"
+        "Food & Beverage Suppliers",
+        "Agencies & Business Services",
+        "Beauty & Wellness",
+        "Hotels & Hospitality",
+        "Legal",
+        "Logistics & Transportation",
+        "Real Estate"
       ],
-      "price25": "$99.98",
-      "old25": "$129.98",
-      "price50": "$169.98",
-      "old50": "$213.98",
-      "save": "$44",
+      "price5k": "$599",
+      "price25k": "$1,999",
+      "price50k": "$2,500",
+      "save": "$1,800",
       "url": "bundles.html"
     }
   ],
