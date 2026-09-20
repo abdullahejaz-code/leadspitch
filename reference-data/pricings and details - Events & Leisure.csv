@@ -1,0 +1,49 @@
+Plan,Leads,Regular Price,Badge,
+Starter,5K,$49.99,Entry Plan,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_rQGK7oEwVAUY1"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth ,25K,$179.99,Most Popular,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Jsdjhlr4EoV0n"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional,50K,$299.99,Best Value,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Ol8Q9Ons3d3bH"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,110K,$499.99,High Volume,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_SALSxQPpqpXEZ"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

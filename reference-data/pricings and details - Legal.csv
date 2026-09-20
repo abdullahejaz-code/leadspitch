@@ -1,0 +1,73 @@
+Plan,Leads,Regular Price,Badge,Best For,Embed checkout code
+Starter,5K,$49.99,Entry Plan,Solo outreach,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_blFovqQUkQlgO"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth ,25K,$179.99,Most Popular,Small agencies,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_axHYteeaF6X31"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional,50K,$299.99,Best Value,Growing sales teams,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_9PQiFOoZGAMHI"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,100K,$599.99,High Volume,Large campaigns,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_0crzreWdanZmf"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Scale,200k,$999.99,Most Covarage,Agencies,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_o3q9ey76HaitS"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Enterprise,300K,"$1,429.99",Complete Database,Full market coverage,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_SHLvXWJZcuRKQ"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

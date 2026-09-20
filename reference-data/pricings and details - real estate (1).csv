@@ -1,0 +1,73 @@
+Plan,Leads,Regular Price,Badge,Value,Embed checkout code
+Starter,"1,000",$29.99,Entry Plan,Perfect for getting started,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_1xeQn9BxBQy6H"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth,"2,500",$49.99,Great Value,Save 43% per lead vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_k5KCXjTYEJ5tT"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional ,"5,000",$99.99,Most Popular,Save 58% per lead vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_1S7ufkiT91vAh"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,"10,000",$149.99,Best Value,Save 67% per lead vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_WwQZaGAU9sAwZ"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Scale,"25,000",$259.99,High Volume,Save 79% per lead vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_gFmnytXJab25o"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Enterprise,"50,000",$399.99,Complete Coverage,Save 83% per lead vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_i9dflQdPIbgw4"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

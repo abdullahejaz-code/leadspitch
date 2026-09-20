@@ -1,0 +1,49 @@
+Plan,Leads,Regular Price,Badge,Best For,Embed Checkout Code
+Starter,5K,$49.99,Entry Plan,Small campaigns,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_KnDso3aEfemUP"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth ,25K,$179.99,Most Popular,Agencies & marketers,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Cl6ge8GnVX7r0"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional,50K,$299.99,Best Value,Growing businesses,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_sHrsVW9guBIaV"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,85K,$499.99,Complete Database,Large-scale outreach,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_aZszGE9qHLc4M"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

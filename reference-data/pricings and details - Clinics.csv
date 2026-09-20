@@ -1,0 +1,49 @@
+Plan,Leads,Regular Price,Best For,Value,Embed checkout code
+Starter,"5,000",$49.99,Freelancers ,Perfect for getting started,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_UyqaxhhOeZJbG"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth ,"25,000",$179.99,Agencies & Growing Campaigns,Save 65% per 1K emails vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_ND7Ee33dJFeHu"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional,"50,000",$299.99,Sales Teams & Large Campaigns,Save 71% per 1K emails vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_9EReD9jkX2RbA"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,"100,000",$499.99,Enterprise Outreach,Save 75% per 1K emails vs Starter,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_cPJy4Q4EsCW8p"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

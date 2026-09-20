@@ -31,11 +31,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
   <title>LeadsPitch – Buy Verified B2B Lead Data by Niche | CSV Datasets</title>
   <meta name="description" content="LeadsPitch (also known as Leads Pitch) — buy verified B2B leads and niche-specific business data as ready-to-use CSV datasets. Emails, phones, and websites across 19+ niches. One flat price, no credits, no software.">
   <meta name="keywords" content="leadspitch, leads pitch, lead pitch, leadspitch.com, b2b leads, business data, csv datasets, lead lists, niche leads">
@@ -365,7 +365,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       position: absolute;
       top: calc(100% + 12px);
       left: 50%;
-      width: 460px;
+      max-width: 460px;
+      width: 90vw;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
@@ -474,7 +475,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .mobile-close:hover { background: var(--surface-2); }
     .mobile-close svg { width: 18px; height: 18px; }
 
-    @media (min-width: 900px) {
+    @media (min-width: 768px) {
       .nav-pill { display: inline-flex; margin: 0 auto; }
       .nav-right { display: none !important; }
       .mobile-panel { display: none !important; }
@@ -530,7 +531,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 100%;
       height: min(820px, 100svh);
       min-height: 540px;
-      overflow: visible;
+      overflow: hidden;
       z-index: 1;
     }
     .visual #app {
@@ -1045,13 +1046,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .niche-std-grid { grid-template-columns: repeat(2, 1fr); }
       .niche-strip-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 1080px) {
+    @media (max-width: 1080px) and (min-width: 781px) {
       .hero-inner {
         width: calc(100% - 32px);
-        grid-template-columns: minmax(360px, .92fr) minmax(460px, 1.08fr);
-        overflow: visible;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
       }
-      .visual { min-height: 500px; }
+      .copy {
+        max-width: 520px;
+        padding: 2rem 0;
+      }
+      .visual {
+        min-height: 420px;
+        max-height: 500px;
+      }
+      #hero-heading {
+        font-size: clamp(36px, 4.5vw, 60px);
+      }
+      .hero-description {
+        font-size: clamp(14px, 1.3vw, 17px);
+      }
     }
     @media (max-width: 780px) {
       .hero {
@@ -1063,42 +1077,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         min-height: 100svh;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         justify-content: flex-start;
         padding-top: 26px;
         padding-bottom: 52px;
+        text-align: center;
       }
       .copy {
         max-width: 680px;
         padding: 0;
         flex: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .visual {
         position: relative;
-        flex: 1 1 auto;
-        min-height: 245px;
+        flex: 0 1 auto;
+        min-height: 180px;
+        max-height: 38vh;
         height: auto;
-        margin-top: 0;
+        margin-top: 1rem;
+        order: -1;
+        width: 100%;
+        max-width: 400px;
       }
       .eyebrow {
         margin-bottom: 17px;
         font-size: 9.5px;
+        justify-content: center;
       }
       #hero-heading {
         max-width: 600px;
         font-size: clamp(32px, 10vw, 52px);
         line-height: 0.94;
-        text-align: left;
+        text-align: center;
       }
       .hero-description {
         max-width: 540px;
         margin-top: 17px;
         font-size: 14px;
         line-height: 1.5;
+        text-align: center;
       }
       .hero-actions {
         margin-top: 20px;
         gap: 9px;
+        justify-content: center;
       }
       .hero .btn {
         min-height: 44px;
@@ -1109,6 +1134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         margin-top: 17px;
         gap: 7px 15px;
         font-size: 9.5px;
+        justify-content: center;
       }
       .hero-marquee { padding: 0.7rem 0; }
       .hero-marquee__pill { font-size: 13px; letter-spacing: 0.04em; }
@@ -1141,7 +1167,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         max-width: 360px;
       }
       .visual {
-        min-height: 225px;
+        min-height: 150px;
+        max-height: 32vh;
+        max-width: 320px;
       }
       .hero-marquee { padding: 0.6rem 0; }
       .hero-marquee__pill { font-size: 12px; letter-spacing: 0.03em; }
@@ -1199,8 +1227,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       transition: background 180ms ease, color 180ms ease;
       flex-shrink: 0;

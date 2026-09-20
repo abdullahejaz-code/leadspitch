@@ -20,11 +20,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
   <title>Memberships - LeadsPitch – Leads Pitch</title>
   <meta name="description" content="Get 40% off every purchase with LeadsPitch membership plans. Choose from Basic, Pro, or Max tiers to save on industry datasets and bundles.">
   <meta name="keywords" content="LeadsPitch membership, lead list discounts, B2B data membership, industry data discount, membership plans, save on leads, leads pitch, lead pitch, leadspitch, leadspitch.com">
@@ -296,7 +296,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       position: absolute;
       top: calc(100% + 12px);
       left: 50%;
-      width: 480px;
+      max-width: 480px;
+      width: 90vw;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -854,6 +855,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .cta-actions { flex-direction: column; }
       .cta-actions .btn { width: 100%; justify-content: center; }
       .hero h1 { max-width: 100%; }
+      .hero-subtitle { max-width: 100%; font-size: 0.95rem; }
       .comparison-table { display: block; overflow-x: auto; }
     }
 
@@ -862,8 +864,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       transition: background 180ms ease, color 180ms ease;
       flex-shrink: 0;

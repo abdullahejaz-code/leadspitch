@@ -7,8 +7,10 @@
   "rewrites": [
     { "source": "/industries/:slug", "destination": "/industries/:slug.html" },
     { "source": "/favicon.ico", "destination": "/public/favicon.ico" },
-    { "source": "/favicon.svg", "destination": "/public/favicon.svg" },
-    { "source": "/apple-touch-icon.png", "destination": "/public/apple-touch-icon.png" }
+    { "source": "/favicon-32x32.png", "destination": "/public/favicon-32x32.png" },
+    { "source": "/favicon-16x16.png", "destination": "/public/favicon-16x16.png" },
+    { "source": "/apple-touch-icon.png", "destination": "/public/apple-touch-icon.png" },
+    { "source": "/site.webmanifest", "destination": "/public/site.webmanifest" }
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true }

@@ -1,0 +1,61 @@
+Plan,Leads,Regular Price,Badge,Best For,Embed checkout code
+Starter,5K,$49.99,Entry Plan,Small campaigns,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_kMjdnOSXKhGqD"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Growth ,25K,$179.99,Most Popular,Agencies & freelancers,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_V6HKj416jPjel"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Professional,50K,$299.99,Best Value,Growing businesses,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_ErkQqGSiYMD2a"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Business,100K,$499.99,High Volume,Large outreach campaigns,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_0vE0wYXnJGXME"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"
+Enterprise,175K,$699.99,Complete Database,Full education market,"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_o0gy4HHXJvW8s"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}"

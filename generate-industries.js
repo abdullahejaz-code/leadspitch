@@ -14,12 +14,12 @@ const industries = [
     metaDesc: "Leads Pitch verified automotive business data — dealerships, repair shops, parts suppliers, and automotive service providers.",
     heroSub: "Dealerships, repair shops, parts suppliers, and automotive businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "27K", price: "$27.98", member: "$16.79", link: "https://whop.com/automotive-leadspitch/starter-automotive", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "105K", price: "$49.98", member: "$29.99", link: "https://whop.com/automotive-leadspitch/growth-automotive", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "180K", price: "$79.98", member: "$47.99", link: "https://whop.com/automotive-leadspitch/professional-automotive", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "375K", price: "$135.98", member: "$81.59", link: "https://whop.com/automotive-leadspitch/business-automotive", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "650K", price: "$199.98", member: "$119.99", link: "https://whop.com/automotive-leadspitch/scale-automotive", badge: "Massive Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "1.15M+", price: "$279.98", member: "$167.99", link: "https://whop.com/automotive-leadspitch/enterprise-automotive", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "27K", price: "$27.98", member: "$16.79", planId: "plan_Cu3F9t93BukgK", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "105K", price: "$49.98", member: "$29.99", planId: "plan_hR7mjOUxc8F6t", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "180K", price: "$79.98", member: "$47.99", planId: "plan_pBDfqlXAXsXdo", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "375K", price: "$135.98", member: "$81.59", planId: "plan_hu9ZU6e0UECtq", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "650K", price: "$199.98", member: "$119.99", planId: "plan_cym5Kt7UNLrPl", badge: "Massive Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "1.15M+", price: "$279.98", member: "$167.99", planId: "plan_aEJf73xKt4igl", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of automotive businesses are included?", a: "The dataset covers dealerships, auto repair shops, parts suppliers, body shops, car washes, and other automotive service businesses." },
@@ -36,12 +36,12 @@ const industries = [
     metaDesc: "Leads Pitch verified construction business data — general contractors, builders, subcontractors, and construction companies.",
     heroSub: "General contractors, builders, subcontractors, and construction companies. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/construction-contractors-leadspitch/starter-construction-contractors", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "105K", price: "$45.98", member: "$27.59", link: "https://whop.com/construction-contractors-leadspitch/growth-construction-contractors", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "175K", price: "$75.98", member: "$45.59", link: "https://whop.com/construction-contractors-leadspitch/professional-construction-contractors", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", link: "https://whop.com/construction-contractors-leadspitch/business-construction-contractors", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "760K", price: "$199.98", member: "$119.99", link: "https://whop.com/construction-contractors-leadspitch/scale-construction-contractors", badge: "Enterprise Ready" },
-      { plan: "Enterprise", emails: "350K", leads: "1.3M+", price: "$279.98", member: "$167.99", link: "https://whop.com/construction-contractors-leadspitch/enterprise-construction-contractors", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", planId: "plan_4016VESqCmBfG", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "105K", price: "$45.98", member: "$27.59", planId: "plan_W8waYmfC8Dk5h", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "175K", price: "$75.98", member: "$45.59", planId: "plan_RTk0RLBUBJ2mE", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", planId: "plan_GmPSYV2Oetev6", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "760K", price: "$199.98", member: "$119.99", planId: "plan_SORdfInzkB3Qt", badge: "Enterprise Ready" },
+      { plan: "Enterprise", emails: "350K", leads: "1.3M+", price: "$279.98", member: "$167.99", planId: "plan_S8REQ5hVMCoxT", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of construction companies are included?", a: "The dataset covers general contractors, home builders, subcontractors, specialty trades, and construction management firms." },
@@ -58,10 +58,10 @@ const industries = [
     metaDesc: "Leads Pitch verified accounting business data — CPAs, bookkeepers, financial advisors, and accounting firms.",
     heroSub: "CPAs, bookkeepers, financial advisors, and accounting firms. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "23K", price: "$23.98", member: "$14.39", link: "https://whop.com/accounting-finance-leadspitch/starter-accounting-finance", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "82K", price: "$39.98", member: "$23.99", link: "https://whop.com/accounting-finance-leadspitch/growth-accounting-finance", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "135K", price: "$65.98", member: "$39.59", link: "https://whop.com/accounting-finance-leadspitch/professional-accounting-finance", badge: "Best Value" },
-      { plan: "Business", emails: "65K", leads: "185K", price: "$99.98", member: "$59.99", link: "https://whop.com/accounting-finance-leadspitch/business-accounting-finance", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "23K", price: "$23.98", member: "$14.39", planId: "plan_Kl8EV5U6fxGXN", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "82K", price: "$39.98", member: "$23.99", planId: "plan_FZIXCJHW8E0Cz", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "135K", price: "$65.98", member: "$39.59", planId: "plan_XeaKRTtwCqHZc", badge: "Best Value" },
+      { plan: "Business", emails: "65K", leads: "185K", price: "$99.98", member: "$59.99", planId: "plan_HUtmdH3lzvGnn", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of accounting businesses are included?", a: "The dataset covers CPA firms, bookkeeping services, financial advisors, tax preparation firms, and other accounting and finance businesses." },
@@ -74,14 +74,14 @@ const industries = [
   },
   {
     slug: "clinics",
-    name: "Clinics & Healthcare",
+    name: "Clinics",
     metaDesc: "Leads Pitch verified healthcare business data — practices, clinics, hospitals, and medical providers.",
     heroSub: "Practices, clinics, hospitals, and healthcare providers. Niche-specific contact data for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26.4K", price: "$23.98", member: "$14.39", link: "https://whop.com/health-care-leads/starter-clinics-leads", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$39.98", member: "$23.99", link: "https://whop.com/health-care-leads/growth-clinics-leads", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "130.7K", price: "$69.98", member: "$41.99", link: "https://whop.com/health-care-leads/professional-clinics-leads", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "307.8K", price: "$119.98", member: "$71.99", link: "https://whop.com/health-care-leads/business-clinics-leads", badge: "High Volume" }
+      { plan: "Starter", emails: "5K", leads: "26.4K", price: "$23.98", member: "$14.39", planId: "plan_UyqaxhhOeZJbG", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$39.98", member: "$23.99", planId: "plan_ND7Ee33dJFeHu", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "130.7K", price: "$69.98", member: "$41.99", planId: "plan_9EReD9jkX2RbA", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "307.8K", price: "$119.98", member: "$71.99", planId: "plan_cPJy4Q4EsCW8p", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of healthcare practices are included?", a: "The dataset covers medical practices, clinics, hospitals, specialty care providers, urgent care centers, and other healthcare facilities." },
@@ -98,10 +98,10 @@ const industries = [
     metaDesc: "Leads Pitch verified dental business data — dental practices, orthodontists, oral surgeons, and dental labs.",
     heroSub: "Dental practices, orthodontists, oral surgeons, and dental labs. Verified contacts for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "28K", price: "$25.98", member: "$15.59", link: "https://whop.com/destists-leads/starter-dentist-leads", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", link: "https://whop.com/destists-leads/growth-dentist-leads", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "145K", price: "$75.98", member: "$45.59", link: "https://whop.com/destists-leads/professional-dentist-leads", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "330K", price: "$129.98", member: "$77.99", link: "https://whop.com/destists-leads/business-dentist-leads", badge: "High Volume" }
+      { plan: "Starter", emails: "5K", leads: "28K", price: "$25.98", member: "$15.59", planId: "plan_ujCgorFTIT12O", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", planId: "plan_nnOkSiUmcaj1B", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "145K", price: "$75.98", member: "$45.59", planId: "plan_8vGKTKyWnI3KP", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "330K", price: "$129.98", member: "$77.99", planId: "plan_0YBRcmjccogXz", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of dental practices are included?", a: "The dataset covers general dentistry practices, orthodontists, oral surgeons, pediatric dentists, dental labs, and other dental providers." },
@@ -118,11 +118,11 @@ const industries = [
     metaDesc: "Leads Pitch verified education business data — schools, universities, training centers, and education providers.",
     heroSub: "Schools, universities, training centers, and education providers. Niche-specific contact data for outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "25K", price: "$23.98", member: "$14.39", link: "https://whop.com/education-training-c476/starter-education-training", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$43.98", member: "$26.39", link: "https://whop.com/education-training-c476/growth-education-training", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$71.98", member: "$43.19", link: "https://whop.com/education-training-c476/professional-education-training", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "330K", price: "$123.98", member: "$74.39", link: "https://whop.com/education-training-c476/business-education-training", badge: "High Volume" },
-      { plan: "Enterprise", emails: "175K", leads: "590K+", price: "$189.98", member: "$113.99", link: "https://whop.com/education-training-c476/enterprise-education-training", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "25K", price: "$23.98", member: "$14.39", planId: "plan_kMjdnOSXKhGqD", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$43.98", member: "$26.39", planId: "plan_V6HKj416jPjel", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$71.98", member: "$43.19", planId: "plan_ErkQqGSiYMD2a", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "330K", price: "$123.98", member: "$74.39", planId: "plan_0vE0wYXnJGXME", badge: "High Volume" },
+      { plan: "Enterprise", emails: "175K", leads: "590K+", price: "$189.98", member: "$113.99", planId: "plan_o0gy4HHXJvW8s", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of education institutions are included?", a: "The dataset covers schools, universities, training centers, tutoring services, online education providers, and other education businesses." },
@@ -139,13 +139,13 @@ const industries = [
     metaDesc: "Leads Pitch verified home services business data — plumbers, electricians, HVAC, landscapers, and home improvement pros.",
     heroSub: "Plumbers, electricians, HVAC, landscapers, and home improvement pros. Verified contacts for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/home-services-leadspitch/starter-home-services/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$45.98", member: "$27.59", link: "https://whop.com/home-services-leadspitch/growth-home-services/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$75.98", member: "$45.59", link: "https://whop.com/home-services-leadspitch/professional-home-services/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", link: "https://whop.com/home-services-leadspitch/business-home-services/", badge: "High Volume" },
-      { plan: "Scale", emails: "200K", leads: "700K", price: "$199.98", member: "$119.99", link: "https://whop.com/home-services-leadspitch/scale-home-services/", badge: "Growing Enterprise" },
-      { plan: "Enterprise", emails: "300K", leads: "1.05M", price: "$259.98", member: "$155.99", link: "https://whop.com/home-services-leadspitch/enterprise-home-services/", badge: "Enterprise Ready" },
-      { plan: "Complete Database", emails: "430K+", leads: "1.5M+", price: "$319.98", member: "$191.99", link: "https://whop.com/home-services-leadspitch/complete-database-home-services/", badge: "Complete Coverage" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", planId: "plan_rYOE7Pa1IwtEX", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$45.98", member: "$27.59", planId: "plan_fNNqudcMlAfUS", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$75.98", member: "$45.59", planId: "plan_VK3Mh1DEZaAJh", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", planId: "plan_29buO0Nuxi5AY", badge: "High Volume" },
+      { plan: "Scale", emails: "200K", leads: "700K", price: "$199.98", member: "$119.99", planId: "plan_u7qkytrQyD4O3", badge: "Massive Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "1.05M", price: "$259.98", member: "$155.99", planId: "plan_cSbkrBP0VNNfm", badge: "Enterprise Ready" },
+      { plan: "Complete Database", emails: "430K+", leads: "1.5M+", price: "$319.98", member: "$191.99", planId: "plan_FvQ4t6j8p9bxl", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of home service businesses are included?", a: "The dataset covers plumbers, electricians, HVAC contractors, landscapers, roofers, painters, and other home improvement professionals." },
@@ -162,11 +162,11 @@ const industries = [
     metaDesc: "Leads Pitch verified restaurant and cafe business data — restaurants, cafes, coffee shops, bakeries, and food service businesses.",
     heroSub: "Restaurants, cafes, coffee shops, bakeries, and food service businesses. Niche-specific contact data for outreach and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "28K", price: "$27.98", member: "$16.79", link: "https://whop.com/restaurants-cafes/starter-restaurants-cafes/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$49.98", member: "$29.99", link: "https://whop.com/restaurants-cafes/growth-restaurants-cafes/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$69.98", member: "$41.99", link: "https://whop.com/restaurants-cafes/professional-restaurants-cafes/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", link: "https://whop.com/restaurants-cafes/business-restaurants-cafes/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "200K", leads: "760K+", price: "$199.98", member: "$119.99", link: "https://whop.com/restaurants-cafes/enterprise-restaurants-cafes/", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "28K", price: "$27.98", member: "$16.79", planId: "plan_mMF0oShgEGSQ8", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$49.98", member: "$29.99", planId: "plan_KUWsYxK9okQIJ", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$69.98", member: "$41.99", planId: "plan_fG1BGh7hVvOzP", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "360K", price: "$129.98", member: "$77.99", planId: "plan_luUtDGUArZ6PD", badge: "High Volume" },
+      { plan: "Enterprise", emails: "200K", leads: "760K+", price: "$199.98", member: "$119.99", planId: "plan_ocxXLHcwhISGX", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of restaurants are included?", a: "The dataset covers full-service restaurants, fast casual, cafes, coffee shops, bakeries, food trucks, and other food service businesses." },
@@ -183,10 +183,10 @@ const industries = [
     metaDesc: "Leads Pitch verified events and leisure business data — event venues, planners, entertainment, and recreation providers.",
     heroSub: "Event venues, planners, entertainment companies, and recreation businesses. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/events-leisure-leadspitch/starter-events-leisure/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", link: "https://whop.com/events-leisure-leadspitch/growth-events-leisure/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$75.98", member: "$45.59", link: "https://whop.com/events-leisure-leadspitch/professional-events-leisure/", badge: "Best Value" },
-      { plan: "Business", emails: "110K", leads: "330K", price: "$125.98", member: "$75.59", link: "https://whop.com/events-leisure-leadspitch/business-events-leisure/", badge: "High Volume" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", planId: "plan_rQGK7oEwVAUY1", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$45.98", member: "$27.59", planId: "plan_Jsdjhlr4EoV0n", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$75.98", member: "$45.59", planId: "plan_Ol8Q9Ons3d3bH", badge: "Best Value" },
+      { plan: "Business", emails: "110K", leads: "330K", price: "$125.98", member: "$75.59", planId: "plan_SALSxQPpqpXEZ", badge: "High Volume" }
     ],
     faqs: [
       { q: "What types of events businesses are included?", a: "The dataset covers event venues, event planners, entertainment companies, recreation facilities, and leisure businesses." },
@@ -203,11 +203,11 @@ const industries = [
     metaDesc: "Leads Pitch verified food and beverage supplier business data — distributors, manufacturers, and suppliers.",
     heroSub: "Food distributors, beverage suppliers, manufacturers, and wholesale businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$27.98", member: "$16.79", link: "https://whop.com/food-beverage-suppliers/starter-food-beverage-suppliers/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "95K", price: "$49.98", member: "$29.99", link: "https://whop.com/food-beverage-suppliers/growth-food-beverage-suppliers/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "165K", price: "$79.98", member: "$47.99", link: "https://whop.com/food-beverage-suppliers/professional-food-beverage-suppliers/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "340K", price: "$135.98", member: "$81.59", link: "https://whop.com/food-beverage-suppliers/business-food-beverage-suppliers/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "170K", leads: "620K+", price: "$219.98", member: "$131.99", link: "https://whop.com/food-beverage-suppliers/enterprise-food-beverage-suppliers/", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$27.98", member: "$16.79", planId: "plan_lFpGgxKnvWr8b", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "95K", price: "$49.98", member: "$29.99", planId: "plan_ndKq3UlhuOB6M", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "165K", price: "$79.98", member: "$47.99", planId: "plan_jwlcTHlCbwphB", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "340K", price: "$135.98", member: "$81.59", planId: "plan_1sCGEBxSkFqZ3", badge: "High Volume" },
+      { plan: "Enterprise", emails: "170K", leads: "620K+", price: "$219.98", member: "$131.99", planId: "plan_ZnHpu2j2usvzX", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of food and beverage businesses are included?", a: "The dataset covers food distributors, beverage suppliers, manufacturers, wholesalers, and other F&B supply chain businesses." },
@@ -224,11 +224,11 @@ const industries = [
     metaDesc: "Leads Pitch verified agency and business services data — marketing agencies, consulting firms, and B2B service providers.",
     heroSub: "Marketing agencies, consulting firms, IT services, and B2B service providers. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", link: "https://whop.com/agencies-business-services/starter-agencies-business-services/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "100K", price: "$47.98", member: "$28.79", link: "https://whop.com/agencies-business-services/growth-agencies-business-services/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "170K", price: "$77.98", member: "$46.79", link: "https://whop.com/agencies-business-services/professional-agencies-business-services/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", link: "https://whop.com/agencies-business-services/business-agencies-business-services/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "1.05M+", price: "$269.98", member: "$161.99", link: "https://whop.com/agencies-business-services/enterprise-agencies-business-services/", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "26K", price: "$25.98", member: "$15.59", planId: "plan_nAfRyWgBLPUGR", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "100K", price: "$47.98", member: "$28.79", planId: "plan_7lQdttPlCVPjT", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "170K", price: "$77.98", member: "$46.79", planId: "plan_3sP56E6iEeyrP", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "350K", price: "$129.98", member: "$77.99", planId: "plan_LDvgfXk9GIy3U", badge: "High Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "1.05M+", price: "$269.98", member: "$161.99", planId: "plan_CkJzlt32zgUCU", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of agencies are included?", a: "The dataset covers marketing agencies, advertising firms, consulting companies, IT service providers, and other B2B service businesses." },
@@ -245,11 +245,11 @@ const industries = [
     metaDesc: "Leads Pitch verified beauty and wellness business data — salons, spas, clinics, and wellness providers.",
     heroSub: "Salons, spas, wellness centers, and beauty businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", link: "https://whop.com/beauty-wellness-leadspitch/starter-beauty-wellness", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$43.98", member: "$26.39", link: "https://whop.com/beauty-wellness-leadspitch/growth-beauty-wellness", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "150K", price: "$71.98", member: "$43.19", link: "https://whop.com/beauty-wellness-leadspitch/professional-beauty-wellness", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "320K", price: "$123.98", member: "$74.39", link: "https://whop.com/beauty-wellness-leadspitch/business-beauty-wellness", badge: "High Volume" },
-      { plan: "Enterprise", emails: "200K", leads: "680K+", price: "$189.98", member: "$113.99", link: "https://whop.com/beauty-wellness-leadspitch/enterprise-beauty-wellness", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", planId: "plan_hmiPPHfCuoFES", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$43.98", member: "$26.39", planId: "plan_fRYKIPQCp1y7B", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "150K", price: "$71.98", member: "$43.19", planId: "plan_gvnuFaCL4KARR", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "320K", price: "$123.98", member: "$74.39", planId: "plan_QJBO3labbblD0", badge: "High Volume" },
+      { plan: "Enterprise", emails: "200K", leads: "680K+", price: "$189.98", member: "$113.99", planId: "plan_bUc6UHgQA9TBT", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of beauty and wellness businesses are included?", a: "The dataset covers hair salons, nail salons, spas, day spas, med spas, wellness centers, and other beauty and wellness service providers." },
@@ -266,10 +266,10 @@ const industries = [
     metaDesc: "Leads Pitch verified hotel and hospitality business data — hotels, resorts, B&Bs, and hospitality providers.",
     heroSub: "Hotels, resorts, bed & breakfasts, and hospitality businesses. Verified contact data for B2B outreach.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "25K", price: "$31.98", member: "$19.19", link: "https://whop.com/hotels-hospitality/starter-hotels-hospitality", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$55.98", member: "$33.59", link: "https://whop.com/hotels-hospitality/growth-hotels-hospitality", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "155K", price: "$89.98", member: "$53.99", link: "https://whop.com/hotels-hospitality/professional-hotels-hospitality", badge: "Best Value" },
-      { plan: "Business", emails: "75K", leads: "250K", price: "$139.98", member: "$83.99", link: "https://whop.com/hotels-hospitality/business-hotels-hospitality", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "25K", price: "$31.98", member: "$19.19", planId: "plan_RNOO9E7FfPV3d", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$55.98", member: "$33.59", planId: "plan_etAl1Y5sjlREF", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "155K", price: "$89.98", member: "$53.99", planId: "plan_6ALX0u0p5tZ1H", badge: "Best Value" },
+      { plan: "Business", emails: "75K", leads: "250K", price: "$139.98", member: "$83.99", planId: "plan_yoU0XHohrynoD", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of hospitality businesses are included?", a: "The dataset covers hotels, resorts, bed & breakfasts, inns, motels, and other hospitality providers." },
@@ -286,11 +286,11 @@ const industries = [
     metaDesc: "Leads Pitch verified legal niche business data — law firms, attorneys, and legal practices.",
     heroSub: "Law firms, solo practitioners, and legal service providers. Verified contact data for business development and partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$27.98", member: "$16.79", link: "https://whop.com/legal-leadspitch/starter-lawyer-leads/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "90K", price: "$41.98", member: "$25.19", link: "https://whop.com/legal-leadspitch/growth-lawyer-leads/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "145K", price: "$69.98", member: "$41.99", link: "https://whop.com/legal-leadspitch/professional-lawyer-leads/", badge: "Best Value" },
-      { plan: "Business", emails: "100K", leads: "300K", price: "$119.98", member: "$71.99", link: "https://whop.com/legal-leadspitch/business-lawyer-leads/", badge: "High Volume" },
-      { plan: "Enterprise", emails: "300K", leads: "900K+", price: "$259.98", member: "$155.99", link: "https://whop.com/legal-leadspitch/enterprise-lawyer-leads/", badge: "Complete Database" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$27.98", member: "$16.79", planId: "plan_blFovqQUkQlgO", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "90K", price: "$41.98", member: "$25.19", planId: "plan_axHYteeaF6X31", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "145K", price: "$69.98", member: "$41.99", planId: "plan_9PQiFOoZGAMHI", badge: "Best Value" },
+      { plan: "Business", emails: "100K", leads: "300K", price: "$119.98", member: "$71.99", planId: "plan_0crzreWdanZmf", badge: "High Volume" },
+      { plan: "Enterprise", emails: "300K", leads: "900K+", price: "$259.98", member: "$155.99", planId: "plan_SHLvXWJZcuRKQ", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of legal practices are included?", a: "The dataset covers law firms of all sizes, solo practitioners, corporate legal departments, and legal service providers." },
@@ -307,10 +307,10 @@ const industries = [
     metaDesc: "Leads Pitch verified logistics and transportation business data — freight, trucking, warehousing, and supply chain companies.",
     heroSub: "Freight companies, trucking firms, warehouses, and supply chain businesses. Verified contact data for partnerships.",
     oneTime: [
-      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", link: "https://whop.com/logistics-and-others/starter-logistics-and-others/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "25K", leads: "85K", price: "$39.98", member: "$23.99", link: "https://whop.com/logistics-and-others/growth-logistics-and-others/", badge: "Most Popular" },
-      { plan: "Professional", emails: "50K", leads: "140K", price: "$65.98", member: "$39.59", link: "https://whop.com/logistics-and-others/professional-logistics-and-others/", badge: "Best Value" },
-      { plan: "Business", emails: "85K", leads: "255K", price: "$109.98", member: "$65.99", link: "https://whop.com/logistics-and-others/business-logistics-and-others/", badge: "High Volume" }
+      { plan: "Starter", emails: "5K", leads: "24K", price: "$23.98", member: "$14.39", planId: "plan_KnDso3aEfemUP", badge: "Entry Plan" },
+      { plan: "Growth", emails: "25K", leads: "85K", price: "$39.98", member: "$23.99", planId: "plan_Cl6ge8GnVX7r0", badge: "Most Popular" },
+      { plan: "Professional", emails: "50K", leads: "140K", price: "$65.98", member: "$39.59", planId: "plan_sHrsVW9guBIaV", badge: "Best Value" },
+      { plan: "Business", emails: "85K", leads: "255K", price: "$109.98", member: "$65.99", planId: "plan_aZszGE9qHLc4M", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of logistics companies are included?", a: "The dataset covers freight carriers, trucking companies, warehousing, 3PL providers, last-mile delivery, and supply chain businesses." },
@@ -327,12 +327,12 @@ const industries = [
     metaDesc: "Leads Pitch verified real estate business data — realtors, brokers, property managers, and real estate professionals.",
     heroSub: "Realtors, brokers, property managers, and real estate professionals. Verified contacts for targeted campaigns.",
     oneTime: [
-      { plan: "Starter", emails: "1K", leads: "3K", price: "$15.98", member: "$9.59", link: "https://whop.com/real-estate-leads-d0ea/real-estate-leades-1k/", badge: "Entry Plan" },
-      { plan: "Growth", emails: "2.5K", leads: "8K", price: "$23.98", member: "$14.39", link: "https://whop.com/real-estate-leads-d0ea/growth-real-estate-leads", badge: "Great Value" },
-      { plan: "Professional", emails: "5K", leads: "16K", price: "$35.98", member: "$21.59", link: "https://whop.com/real-estate-leads-d0ea/professional-real-estate-leads", badge: "Most Popular" },
-      { plan: "Business", emails: "10K", leads: "32K", price: "$55.98", member: "$33.59", link: "https://whop.com/real-estate-leads-d0ea/business-real-estate-leads-83/", badge: "Best Value" },
-      { plan: "Scale", emails: "25K", leads: "80K", price: "$89.98", member: "$53.99", link: "https://whop.com/real-estate-leads-d0ea/scale-real-estate-leads", badge: "High Volume" },
-      { plan: "Enterprise", emails: "50K", leads: "160K", price: "$139.98", member: "$83.99", link: "https://whop.com/real-estate-leads-d0ea/enterprise-real-estate-leads", badge: "Complete Coverage" }
+      { plan: "Starter", emails: "1K", leads: "3K", price: "$15.98", member: "$9.59", planId: "plan_1xeQn9BxBQy6H", badge: "Entry Plan" },
+      { plan: "Growth", emails: "2.5K", leads: "8K", price: "$23.98", member: "$14.39", planId: "plan_k5KCXjTYEJ5tT", badge: "Most Popular" },
+      { plan: "Professional", emails: "5K", leads: "16K", price: "$35.98", member: "$21.59", planId: "plan_1S7ufkiT91vAh", badge: "Most Popular" },
+      { plan: "Business", emails: "10K", leads: "32K", price: "$55.98", member: "$33.59", planId: "plan_WwQZaGAU9sAwZ", badge: "Best Value" },
+      { plan: "Scale", emails: "25K", leads: "80K", price: "$89.98", member: "$53.99", planId: "plan_gFmnytXJab25o", badge: "High Volume" },
+      { plan: "Enterprise", emails: "50K", leads: "160K", price: "$139.98", member: "$83.99", planId: "plan_i9dflQdPIbgw4", badge: "Complete Database" }
     ],
     faqs: [
       { q: "What types of real estate professionals are included?", a: "The dataset covers realtors, brokers, property managers, leasing agents, real estate developers, and other real estate professionals." },
@@ -479,6 +479,7 @@ function generatePage(data) {
     keywords: []
   };
   const pageUrl = 'https://leadspitch.com/industries/' + data.slug + '.html';
+  const canonicalUrl = 'https://leadspitch.com/industries/' + data.slug;
   const availability = soon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock';
 
   // Build "Explore More Datasets" pills (3-6 related industries, duplicated for seamless loop)
@@ -554,7 +555,7 @@ function generatePage(data) {
       : `<div class="product-member">40% off with membership: ${p.member}</div>`;
     const ctaHtml = soon
       ? `<a class="product-cta btn-outline" href="../contact.html">Request access</a>`
-      : `<a class="product-cta btn-primary" href="${p.link}" target="_blank" rel="noopener">Get now</a>`;
+      : `<button class="product-cta btn-primary" data-plan="${p.plan.toLowerCase().replace(/\s+/g, '-')}" type="button">Get now</button>`;
     const leadsTip = `Total ${data.name.toLowerCase()} business records in this dataset.`;
     const emailsTip = 'Verified email addresses included in this dataset.';
     return `          <div class="product-card${featuredClass}${largeClass}">
@@ -621,19 +622,19 @@ function generatePage(data) {
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="https://leadspitch.com/public/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://leadspitch.com/public/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://leadspitch.com/public/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://leadspitch.com/public/apple-touch-icon.png">
-  <link rel="manifest" href="https://leadspitch.com/public/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../public/apple-touch-icon.png">
+  <link rel="manifest" href="../public/site.webmanifest">
   <title>${seo.title}</title>
   <meta name="description" content="${data.metaDesc}">
   <meta name="keywords" content="${seo.keywords.join(', ')}">
-  <link rel="canonical" href="${pageUrl}">
+  <link rel="canonical" href="${canonicalUrl}">
   <meta property="og:title" content="${seo.title}">
   <meta property="og:description" content="${data.metaDesc}">
   <meta property="og:type" content="product">
-  <meta property="og:url" content="${pageUrl}">
+  <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:site_name" content="LeadsPitch">
   <meta property="og:image" content="https://leadspitch.com/public/sample-excel.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -643,6 +644,7 @@ function generatePage(data) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1624,6 +1626,14 @@ ${data.faqs.map(f => `      {
       .bottom-cta-actions { flex-direction: column; }
       .bottom-cta-actions .btn { width: 100%; }
     }
+    @media (max-width: 480px) {
+      .product-card { padding: 1.25rem; }
+      .product-plan { font-size: 1.25rem; }
+      .product-price { font-size: 2rem; }
+      .product-includes-list { gap: 0.4rem; }
+      .product-includes-list li { font-size: 0.75rem; }
+      .faq-heading { font-size: clamp(2.5rem, 10vw, 4rem); }
+    }
     @media (min-width: 700px) and (max-width: 900px) {
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1642,8 +1652,8 @@ ${data.faqs.map(f => `      {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       transition: background 180ms ease, color 180ms ease;
       flex-shrink: 0;
@@ -1755,6 +1765,115 @@ ${data.faqs.map(f => `      {
     @media (max-width: 600px) {
       main { border-radius: 0 0 28px 28px; }
     }
+
+    /* Checkout Modal */
+    .checkout-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      isolation: isolate;
+    }
+    .checkout-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .checkout-modal {
+      background: #1a1a1e;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transform: translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 1;
+    }
+    .checkout-modal-overlay.active .checkout-modal {
+      transform: translateY(0);
+    }
+    .checkout-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: #1a1a1e;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .checkout-modal-header h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .checkout-modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.15s, color 0.15s;
+    }
+    .checkout-modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .checkout-modal-body {
+      padding: 0;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #1a1a1e;
+    }
+    .checkout-modal-body iframe {
+      width: 100% !important;
+      min-height: 600px !important;
+      border: none !important;
+    }
+    .whop-checkout-container {
+      width: 100%;
+      min-height: 600px;
+      background: #1a1a1e;
+    }
+    @media (max-width: 520px) {
+      .checkout-modal {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        height: 100%;
+      }
+      .checkout-modal-overlay {
+        padding: 0;
+      }
+      .checkout-modal-body iframe {
+        min-height: 500px !important;
+      }
+    }
+    @media (min-height: 800px) {
+      .checkout-modal {
+        max-height: 85vh;
+      }
+    }
 </style>
 </head>
 <body>
@@ -1775,7 +1894,7 @@ ${data.faqs.map(f => `      {
             <a href="agencies-business.html" role="menuitem">Agencies &amp; Business</a>
             <a href="automotive.html" role="menuitem">Automotive</a>
             <a href="beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
-            <a href="clinics.html" role="menuitem">Clinics &amp; Healthcare</a>
+            <a href="clinics.html" role="menuitem">Clinics</a>
             <a href="construction.html" role="menuitem">Construction</a>
             <a href="dentists.html" role="menuitem">Dentists</a>
             <a href="education.html" role="menuitem">Education &amp; Training</a>
@@ -1833,7 +1952,7 @@ ${data.faqs.map(f => `      {
         <a href="agencies-business.html">Agencies &amp; Business</a>
         <a href="automotive.html">Automotive</a>
         <a href="beauty-wellness.html">Beauty &amp; Wellness</a>
-        <a href="clinics.html">Clinics &amp; Healthcare</a>
+        <a href="clinics.html">Clinics</a>
         <a href="construction.html">Construction</a>
         <a href="dentists.html">Dentists</a>
         <a href="education.html">Education &amp; Training</a>
@@ -2190,6 +2309,88 @@ ${comparisonHtml}
 
   <script src="../search-data.js"></script>
   <script src="../search.js"></script>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal-overlay" id="checkout-modal-overlay">
+    <div class="checkout-modal">
+      <div class="checkout-modal-header">
+        <h3 id="checkout-modal-title">Complete your purchase</h3>
+        <button class="checkout-modal-close" id="checkout-modal-close" aria-label="Close checkout">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="checkout-modal-body" id="checkout-modal-body">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('checkout-modal-overlay');
+      var modalBody = document.getElementById('checkout-modal-body');
+      var modalTitle = document.getElementById('checkout-modal-title');
+      var closeBtn = document.getElementById('checkout-modal-close');
+
+      var plans = {
+${data.oneTime.map(p => `        '${p.plan.toLowerCase().replace(/\s+/g, '-')}': { id: '${p.planId}', name: '${p.plan}' }`).join(',\n')}
+      };
+
+      function openCheckout(planKey) {
+        var plan = plans[planKey];
+        if (!plan) return;
+
+        modalTitle.textContent = plan.name + ' Plan';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        modalBody.innerHTML = '';
+
+        var container = document.createElement('div');
+        container.className = 'whop-checkout-container';
+        container.setAttribute('data-whop-checkout-plan-id', plan.id);
+        container.setAttribute('data-whop-checkout-theme', 'dark');
+        container.style.width = '100%';
+        container.style.minHeight = '600px';
+        modalBody.appendChild(container);
+
+        if (window.WhopCheckout && typeof window.WhopCheckout.load === 'function') {
+          try {
+            window.WhopCheckout.load().then(function(sdk) {
+              if (sdk && typeof sdk.mountCheckout === 'function') {
+                sdk.mountCheckout(container, { planId: plan.id, theme: 'dark' });
+              }
+            }).catch(function() {});
+          } catch(e) {}
+        }
+      }
+
+      function closeCheckout() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        modalBody.innerHTML = '';
+      }
+
+      closeBtn.addEventListener('click', closeCheckout);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeCheckout();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeCheckout();
+      });
+
+      document.querySelectorAll('.product-cta[data-plan]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var planKey = btn.getAttribute('data-plan');
+          openCheckout(planKey);
+        });
+      });
+
+      window.LeadsPitchCheckout = { open: openCheckout, close: closeCheckout };
+    })();
+  </script>
 
 </body></html>`;
 }

@@ -1,0 +1,375 @@
+Pack Name,Niches Included,5K per Niche (Total Qty),Embed code checkout for 5k leads,25K per Niche (Total Qty),Embed code checkout for 25k leads,50K per Niche (Total Qty),Embed code checkout for 50k leads,Value / vs (Savings),Badge
+Starter Duo Pack,"Home Services, Beauty and Wellness",$79 (10K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_pa1W11zZOlnur"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$299 (50K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_xayb8cL86uwWd"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$499 (100K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_GOujg0WhjvMu3"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $20.98 / $60.98 / $100.98,Starter
+Local Business Pack,"Home Services, Beauty and Wellness, Food & Beverage, Restaurants and cafes, Automotive, Events & Leisure",$249 (30K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_h4Fmt2aBvClcu"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$899 (150K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_1sGv0yL2wDjxH"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","$1,499 (300K)","import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_CcZS2C0ZnayaD"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $50.94 / $180.94 / $300.94,Best value ⭐
+Healthcare & Wellness Pack,"Clinics HealthCare, Dentist healthcare, Beauty and Wellness",$119 (15K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_jXy1ZlO5l6TcK"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$429 (75K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_6lmHM90X3Umy4"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$699 (150K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_FhskaTVegQ4rO"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $30.97 / $110.97 / $200.97,High ROI
+Real Estate & Property Pack,"Real Estate, Construction & Contractors, Home Services",$139 (15K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_IQJOItoAnyUS5"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$499 (75K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Q0KmxoQlNBs2j"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$829 (150K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_qonxYDoFFjM2r"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $10.97 / $40.97 / $70.97,High Ticket
+Professional Services Pack,"Legal, Accounting & Finance, Agencies & Business Services",$139 (15K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_79rDxSo35wYFt"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$499 (75K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_tbxF5LC6aDf5x"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$829 (150K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_JuDx5EnzLqwTf"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $10.97 / $40.97 / $70.97,B2B Focus
+E-commerce & Marketing Pack,"Agencies & Business Services, Logistics, Education & Traning",$119 (15K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Zq7rsVu3XN79k"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$429 (75K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_Q3YqRzfdM7hj3"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$699 (150K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_7hwzboPBsTIBi"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $30.97 / $110.97 / $200.97,Growth
+Trades & Services Pack,"Construction & Contractors, Automotive, Home Services, Logistics",$159 (20K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_a17sf40GB4sSq"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$579 (100K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_s8ai146OhdlBs"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$949 (200K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_UDVIHrsM4EPZz"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $40.96 / $140.96 / $250.96,Trades Choice
+Hospitality & Leisure Pack,"Hotels & Hospitality, Restaurants and cafes, Events & Leisure, Food & Beverage",$149 (20K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_ygqz0vFsjxwcr"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$549 (100K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_HGQxn8uJQeVvt"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$899 (200K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_qQaXtvMLSuWNa"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $50.96 / $170.96 / $300.96,Local Favorite
+Premium High-Ticket Pack,"Legal, Accounting & Finance, Real Estate, Clinics HealthCare, Dentist healthcare",$199 (25K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_ft4tybCPjJLmX"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$749 (125K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_1eHcyozlhMQKT"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","$1,249 (250K)","import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_cj1q71o9E3UCt"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $50.95 / $150.95 / $250.95,Premium ROI
+Ultimate Local Domination,"Home Services, Beauty and Wellness, Food & Beverage, Restaurants and cafes, Automotive, Events & Leisure, Hotels & Hospitality, Construction & Contractors",$279 (40K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_4WA6zwoGOKYXx"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",$999 (200K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_v9DKFQz6VqKPa"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","$1,699 (400K)","import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_xT3Fjhem1lnrK"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}",Save $120.92 / $440.92 / $700.92,Ultimate Local
+All-Industry Domination,All 16 Niches,$599 (80K),"import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_5zuWegWTFoKO8"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","$1,999 (400K)","import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_RqlSlFod3fdse"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","$2,500 (800K)","import { loadWhop } from ""@whop/elements"";
+import { Checkout, CheckoutElement, WhopElements } from ""@whop/elements-react"";
+
+export function EmbeddedCheckout() {
+  return (
+    <WhopElements elements={loadWhop()}>
+      <Checkout plan=""plan_X1oLU4JIVRuYE"">
+        <CheckoutElement />
+      </Checkout>
+    </WhopElements>
+  );
+}","Save $200.84 / $880.84 / $1,800.84",Best Value ⭐
