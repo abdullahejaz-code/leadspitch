@@ -69,8 +69,8 @@
     "category": "Education & Training",
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "49.99",
-      "highPrice": "699.99",
+      "lowPrice": "23.98",
+      "highPrice": "189.98",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     }
@@ -824,6 +824,31 @@
     /* Section divider */
     .section-divider { border-top: 1px solid var(--border-soft); }
 
+    /* Bundle cards on industry pages */
+    .industry-bundles-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .industry-bundle-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--surface); padding: 1.25rem 1.5rem;
+      display: grid; gap: 0.75rem;
+    }
+    .industry-bundle-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+    .industry-bundle-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 0; }
+    .industry-bundle-save { font-size: 0.72rem; font-weight: 600; color: var(--muted); white-space: nowrap; letter-spacing: 0.01em; }
+    .industry-bundle-niches { font-size: 0.75rem; color: var(--faint); line-height: 1.5; margin: 0; }
+    .industry-bundle-tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+    .industry-bundle-tier {
+      display: grid; gap: 0.2rem; padding: 0.7rem 0.5rem;
+      border: 1px solid var(--border-soft); border-radius: 8px; text-align: center;
+      background: var(--bg-elevated);
+    }
+    .industry-bundle-tier-label { font-size: 0.68rem; color: var(--faint); font-weight: 500; letter-spacing: 0.02em; }
+    .industry-bundle-tier-price { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
+    .industry-bundle-tier .btn { margin-top: 0.25rem; min-height: 32px; padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+    .industry-bundle-link { display: inline-block; font-size: 0.78rem; color: var(--muted); text-decoration: none; margin-top: 0.25rem; }
+    .industry-bundle-link:hover { color: var(--text); text-decoration: underline; }
+    @media (max-width: 699px) { .industry-bundles-grid { grid-template-columns: 1fr; } .industry-bundle-tiers { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px) { .industry-bundle-tiers { grid-template-columns: 1fr; } }
+
     /* Related / More Industries */
     .related-grid {
       display: grid; gap: 0.75rem;
@@ -1436,12 +1461,14 @@
               <span class="tooltip-wrap"><span class="product-badge">Entry Plan</span><span class="tooltip">A small, affordable sample to test the quality of the dataset.</span></span>
             </div>
             <p class="product-subtitle">
-              <span class="product-subtitle-item"><span class="product-subtitle-num">5K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
+              <span class="product-subtitle-item"><span class="product-subtitle-num">25K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
             </p>
             <div class="product-price-row">
-              <span class="product-price">$49.99</span>
+              <span class="product-badge product-badge--sale">20% OFF</span>
+              <span class="product-price">$23.98</span>
               <span class="product-price-note">one-time</span>
             </div>
+            <div class="product-member">40% off with membership: $14.39</div>
             <button class="product-cta btn-primary" data-plan="starter" type="button">Get now</button>
             <div class="product-includes">
               <p class="product-includes-label">What's included</p>
@@ -1463,18 +1490,20 @@
               </button>
             </div>
           </div>
-<div class="product-card product-card--featured product-card--large">
+          <div class="product-card product-card--featured product-card--large">
             <div class="product-head">
               <h3 class="product-plan">Growth</h3>
               <span class="tooltip-wrap"><span class="product-badge">Most Popular</span><span class="tooltip">The tier most buyers choose — the best balance of price and volume.</span></span>
             </div>
             <p class="product-subtitle">
-              <span class="product-subtitle-item"><span class="product-subtitle-num">25K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
+              <span class="product-subtitle-item"><span class="product-subtitle-num">95K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
             </p>
             <div class="product-price-row">
-              <span class="product-price">$179.99</span>
+              <span class="product-badge product-badge--sale">20% OFF</span>
+              <span class="product-price">$43.98</span>
               <span class="product-price-note">one-time</span>
             </div>
+            <div class="product-member">40% off with membership: $26.39</div>
             <button class="product-cta btn-primary" data-plan="growth" type="button">Get now</button>
             <div class="product-includes">
               <p class="product-includes-label">What's included</p>
@@ -1496,18 +1525,20 @@
               </button>
             </div>
           </div>
-<div class="product-card product-card--featured">
+          <div class="product-card product-card--featured">
             <div class="product-head">
               <h3 class="product-plan">Professional</h3>
               <span class="tooltip-wrap"><span class="product-badge">Best Value</span><span class="tooltip">The best per-record price for most campaign sizes.</span></span>
             </div>
             <p class="product-subtitle">
-              <span class="product-subtitle-item"><span class="product-subtitle-num">50K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
+              <span class="product-subtitle-item"><span class="product-subtitle-num">155K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
             </p>
             <div class="product-price-row">
-              <span class="product-price">$299.99</span>
+              <span class="product-badge product-badge--sale">20% OFF</span>
+              <span class="product-price">$71.98</span>
               <span class="product-price-note">one-time</span>
             </div>
+            <div class="product-member">40% off with membership: $43.19</div>
             <button class="product-cta btn-primary" data-plan="professional" type="button">Get now</button>
             <div class="product-includes">
               <p class="product-includes-label">What's included</p>
@@ -1529,18 +1560,20 @@
               </button>
             </div>
           </div>
-<div class="product-card">
+          <div class="product-card">
             <div class="product-head">
               <h3 class="product-plan">Business</h3>
               <span class="tooltip-wrap"><span class="product-badge">High Volume</span><span class="tooltip">Built for larger campaigns and sustained outreach volume.</span></span>
             </div>
             <p class="product-subtitle">
-              <span class="product-subtitle-item"><span class="product-subtitle-num">100K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
+              <span class="product-subtitle-item"><span class="product-subtitle-num">330K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
             </p>
             <div class="product-price-row">
-              <span class="product-price">$499.99</span>
+              <span class="product-badge product-badge--sale">20% OFF</span>
+              <span class="product-price">$123.98</span>
               <span class="product-price-note">one-time</span>
             </div>
+            <div class="product-member">40% off with membership: $74.39</div>
             <button class="product-cta btn-primary" data-plan="business" type="button">Get now</button>
             <div class="product-includes">
               <p class="product-includes-label">What's included</p>
@@ -1562,18 +1595,20 @@
               </button>
             </div>
           </div>
-<div class="product-card">
+          <div class="product-card">
             <div class="product-head">
               <h3 class="product-plan">Enterprise</h3>
               <span class="tooltip-wrap"><span class="product-badge">Complete Database</span><span class="tooltip">Every verified record we currently have for this industry.</span></span>
             </div>
             <p class="product-subtitle">
-              <span class="product-subtitle-item"><span class="product-subtitle-num">175K</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
+              <span class="product-subtitle-item"><span class="product-subtitle-num">590K+</span> <span class="product-subtitle-label">Leads</span> <span class="tooltip-wrap tooltip-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor"/><path d="M8 7v4M8 5.5v0" stroke="currentColor" stroke-linecap="round"/></svg><span class="tooltip">Total education & training business records in this dataset.</span></span></span>
             </p>
             <div class="product-price-row">
-              <span class="product-price">$699.99</span>
+              <span class="product-badge product-badge--sale">20% OFF</span>
+              <span class="product-price">$189.98</span>
               <span class="product-price-note">one-time</span>
             </div>
+            <div class="product-member">40% off with membership: $113.99</div>
             <button class="product-cta btn-primary" data-plan="enterprise" type="button">Get now</button>
             <div class="product-includes">
               <p class="product-includes-label">What's included</p>
@@ -1602,6 +1637,70 @@
 
     <hr class="section-divider">
 
+    <!-- Bundles -->
+    <section id="bundles">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Bundles that include Education & Training</h2>
+          <p class="section-sub">Save more when you buy multiple niche datasets together.</p>
+        </div>
+        <div class="industry-bundles-grid reveal">
+          <div class="industry-bundle-card">
+            <div class="industry-bundle-head">
+              <h3 class="industry-bundle-name">E-commerce & Marketing Pack</h3>
+              <span class="industry-bundle-save">Save up to $200</span>
+            </div>
+            <p class="industry-bundle-niches">Includes: Agencies & Business Services + Logistics & Transportation + Education & Training</p>
+            <div class="industry-bundle-tiers">
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">5K/niche</span>
+              <span class="industry-bundle-tier-price">$119</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="ecommerce-marketing-5kniche" type="button">Get bundle</button>
+            </div>
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">25K/niche</span>
+              <span class="industry-bundle-tier-price">$429</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="ecommerce-marketing-25kniche" type="button">Get bundle</button>
+            </div>
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">50K/niche</span>
+              <span class="industry-bundle-tier-price">$699</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="ecommerce-marketing-50kniche" type="button">Get bundle</button>
+            </div>
+            </div>
+            <a class="industry-bundle-link" href="../bundles.html">See all bundles &rarr;</a>
+          </div>
+          <div class="industry-bundle-card">
+            <div class="industry-bundle-head">
+              <h3 class="industry-bundle-name">All-Industry Domination</h3>
+              <span class="industry-bundle-save">Save up to $1,800</span>
+            </div>
+            <p class="industry-bundle-niches">Includes: Automotive + Construction + Accounting & Finance + Clinics + Dentists + Education & Training + Home Services + Restaurants & Cafes + Events & Leisure + Food & Beverage Suppliers + Agencies & Business Services + Beauty & Wellness + Hotels & Hospitality + Legal + Logistics & Transportation + Real Estate</p>
+            <div class="industry-bundle-tiers">
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">5K/niche</span>
+              <span class="industry-bundle-tier-price">$599</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="all-industry-5kniche" type="button">Get bundle</button>
+            </div>
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">25K/niche</span>
+              <span class="industry-bundle-tier-price">$1,999</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="all-industry-25kniche" type="button">Get bundle</button>
+            </div>
+            <div class="industry-bundle-tier">
+              <span class="industry-bundle-tier-label">50K/niche</span>
+              <span class="industry-bundle-tier-price">$2,500</span>
+              <button class="btn btn-outline industry-bundle-cta" data-plan="all-industry-50kniche" type="button">Get bundle</button>
+            </div>
+            </div>
+            <a class="industry-bundle-link" href="../bundles.html">See all bundles &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
     <!-- Related Industries -->
     <section id="related">
       <div class="wrap">
@@ -1611,24 +1710,51 @@
       </div>
       <div class="explore-marquee">
         <div class="explore-marquee__track">
-              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
-              <a class="explore-pill" href="home-services.html">Home Services</a>
-              <a class="explore-pill" href="agencies-business.html">Agencies & Business Services</a>
+              <a class="explore-pill" href="automotive.html">Automotive</a>
+              <a class="explore-pill" href="construction.html">Construction</a>
+              <a class="explore-pill" href="accounting-finance.html">Accounting & Finance</a>
               <a class="explore-pill" href="clinics.html">Clinics</a>
               <a class="explore-pill" href="dentists.html">Dentists</a>
-              <a class="explore-pill" href="legal.html">Legal</a>
-              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
               <a class="explore-pill" href="home-services.html">Home Services</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
+              <a class="explore-pill" href="food-beverage.html">Food & Beverage Suppliers</a>
               <a class="explore-pill" href="agencies-business.html">Agencies & Business Services</a>
+              <a class="explore-pill" href="beauty-wellness.html">Beauty & Wellness</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
+              <a class="explore-pill" href="legal.html">Legal</a>
+              <a class="explore-pill" href="logistics.html">Logistics & Transportation</a>
+              <a class="explore-pill" href="real-estate.html">Real Estate</a>
+              <a class="explore-pill" href="automotive.html">Automotive</a>
+              <a class="explore-pill" href="construction.html">Construction</a>
+              <a class="explore-pill" href="accounting-finance.html">Accounting & Finance</a>
               <a class="explore-pill" href="clinics.html">Clinics</a>
               <a class="explore-pill" href="dentists.html">Dentists</a>
-              <a class="explore-pill" href="legal.html">Legal</a>
-              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
               <a class="explore-pill" href="home-services.html">Home Services</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
+              <a class="explore-pill" href="food-beverage.html">Food & Beverage Suppliers</a>
               <a class="explore-pill" href="agencies-business.html">Agencies & Business Services</a>
+              <a class="explore-pill" href="beauty-wellness.html">Beauty & Wellness</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
+              <a class="explore-pill" href="legal.html">Legal</a>
+              <a class="explore-pill" href="logistics.html">Logistics & Transportation</a>
+              <a class="explore-pill" href="real-estate.html">Real Estate</a>
+              <a class="explore-pill" href="automotive.html">Automotive</a>
+              <a class="explore-pill" href="construction.html">Construction</a>
+              <a class="explore-pill" href="accounting-finance.html">Accounting & Finance</a>
               <a class="explore-pill" href="clinics.html">Clinics</a>
               <a class="explore-pill" href="dentists.html">Dentists</a>
+              <a class="explore-pill" href="home-services.html">Home Services</a>
+              <a class="explore-pill" href="restaurants-cafes.html">Restaurants & Cafes</a>
+              <a class="explore-pill" href="events-leisure.html">Events & Leisure</a>
+              <a class="explore-pill" href="food-beverage.html">Food & Beverage Suppliers</a>
+              <a class="explore-pill" href="agencies-business.html">Agencies & Business Services</a>
+              <a class="explore-pill" href="beauty-wellness.html">Beauty & Wellness</a>
+              <a class="explore-pill" href="hotels-hospitality.html">Hotels & Hospitality</a>
               <a class="explore-pill" href="legal.html">Legal</a>
+              <a class="explore-pill" href="logistics.html">Logistics & Transportation</a>
+              <a class="explore-pill" href="real-estate.html">Real Estate</a>
         </div>
       </div>
     </section>
@@ -1994,7 +2120,13 @@
         'growth': { id: 'plan_V6HKj416jPjel', name: 'Growth' },
         'professional': { id: 'plan_ErkQqGSiYMD2a', name: 'Professional' },
         'business': { id: 'plan_0vE0wYXnJGXME', name: 'Business' },
-        'enterprise': { id: 'plan_o0gy4HHXJvW8s', name: 'Enterprise' }
+        'enterprise': { id: 'plan_o0gy4HHXJvW8s', name: 'Enterprise' },
+        'ecommerce-marketing-5kniche': { id: 'plan_Zq7rsVu3XN79k', name: 'E-commerce & Marketing Pack ' + '5K/niche' },
+        'ecommerce-marketing-25kniche': { id: 'plan_Q3YqRzfdM7hj3', name: 'E-commerce & Marketing Pack ' + '25K/niche' },
+        'ecommerce-marketing-50kniche': { id: 'plan_7hwzboPBsTIBi', name: 'E-commerce & Marketing Pack ' + '50K/niche' },
+        'all-industry-5kniche': { id: 'plan_5zuWegWTFoKO8', name: 'All-Industry Domination ' + '5K/niche' },
+        'all-industry-25kniche': { id: 'plan_RqlSlFod3fdse', name: 'All-Industry Domination ' + '25K/niche' },
+        'all-industry-50kniche': { id: 'plan_X1oLU4JIVRuYE', name: 'All-Industry Domination ' + '50K/niche' }
       };
 
       function openCheckout(planKey) {
@@ -2041,6 +2173,14 @@
       });
 
       document.querySelectorAll('.product-cta[data-plan]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var planKey = btn.getAttribute('data-plan');
+          openCheckout(planKey);
+        });
+      });
+
+      document.querySelectorAll('.industry-bundle-cta[data-plan]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
           var planKey = btn.getAttribute('data-plan');

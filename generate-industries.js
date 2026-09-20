@@ -27,7 +27,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the automotive data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["logistics", "construction", "food-beverage", "home-services", "real-estate", "agencies-business"],
+    related: ["construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["trades-services", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -49,7 +49,7 @@ const industries = [
       { q: "Is this data for licensed contractors only?", a: "The dataset includes businesses in the construction industry. License verification is not included." },
       { q: "How current is the construction data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["automotive", "logistics", "hotels-hospitality", "real-estate", "home-services", "legal"],
+    related: ["automotive", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["real-estate-property", "trades-services", "ultimate-local", "all-industry"]
   },
   {
@@ -69,7 +69,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the accounting data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["agencies-business", "legal", "home-services", "real-estate", "education", "clinics"],
+    related: ["automotive", "construction", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["professional-services", "premium-high-ticket", "all-industry"]
   },
   {
@@ -89,7 +89,7 @@ const industries = [
       { q: "Is this data for US practices only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the healthcare data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["dentists", "home-services", "beauty-wellness", "education", "agencies-business", "legal"],
+    related: ["automotive", "construction", "accounting-finance", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["healthcare-wellness", "premium-high-ticket", "all-industry"]
   },
   {
@@ -109,7 +109,7 @@ const industries = [
       { q: "Is this data for US practices only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the dental data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["clinics", "home-services", "agencies-business", "beauty-wellness", "education", "legal"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["healthcare-wellness", "premium-high-ticket", "all-industry"]
   },
   {
@@ -130,7 +130,7 @@ const industries = [
       { q: "Is this data for US institutions only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the education data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["events-leisure", "home-services", "agencies-business", "clinics", "dentists", "legal"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["ecommerce-marketing", "all-industry"]
   },
   {
@@ -153,7 +153,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the home services data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["construction", "automotive", "agencies-business", "real-estate", "education", "events-leisure"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["starter-duo", "real-estate-property", "trades-services", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -174,7 +174,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the restaurant data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["events-leisure", "food-beverage", "hotels-hospitality", "beauty-wellness", "home-services", "logistics"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -194,7 +194,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the events data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["restaurants-cafes", "beauty-wellness", "hotels-hospitality", "food-beverage", "education", "home-services"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -215,7 +215,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the F&B data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["restaurants-cafes", "logistics", "agencies-business", "hotels-hospitality", "events-leisure", "construction"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["hospitality-leisure", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -236,7 +236,7 @@ const industries = [
       { q: "Is this data for US agencies only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the agency data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["automotive", "logistics", "food-beverage", "legal", "accounting-finance", "education"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "beauty-wellness", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["professional-services", "ecommerce-marketing", "all-industry"]
   },
   {
@@ -257,7 +257,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the beauty & wellness data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["clinics", "events-leisure", "home-services", "dentists", "restaurants-cafes", "hotels-hospitality"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "hotels-hospitality", "legal", "logistics", "real-estate"],
     bundles: ["starter-duo", "healthcare-wellness", "local-business", "ultimate-local", "all-industry"]
   },
   {
@@ -277,7 +277,7 @@ const industries = [
       { q: "Is this data for US businesses only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the hospitality data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["legal", "restaurants-cafes", "beauty-wellness", "events-leisure", "construction", "food-beverage"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "legal", "logistics", "real-estate"],
     bundles: ["hospitality-leisure", "ultimate-local", "all-industry"]
   },
   {
@@ -298,7 +298,7 @@ const industries = [
       { q: "Is this data compliant with legal advertising rules?", a: "We provide publicly available business contact information. Review your jurisdiction's advertising rules before starting outreach." },
       { q: "How often is the legal dataset updated?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["agencies-business", "construction", "hotels-hospitality", "accounting-finance", "real-estate", "education"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "logistics", "real-estate"],
     bundles: ["professional-services", "premium-high-ticket", "all-industry"]
   },
   {
@@ -318,7 +318,7 @@ const industries = [
       { q: "Is this data for US companies only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the logistics data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["automotive", "construction", "agencies-business", "food-beverage", "real-estate", "home-services"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "real-estate"],
     bundles: ["ecommerce-marketing", "trades-services", "all-industry"]
   },
   {
@@ -340,7 +340,7 @@ const industries = [
       { q: "Is this data for US professionals only?", a: "The primary dataset covers US businesses. International datasets are available on request." },
       { q: "How current is the real estate data?", a: "Subscription data refreshes on your billing cycle. One-time datasets reflect current data at purchase." }
     ],
-    related: ["construction", "home-services", "legal", "automotive", "logistics", "agencies-business"],
+    related: ["automotive", "construction", "accounting-finance", "clinics", "dentists", "education", "home-services", "restaurants-cafes", "events-leisure", "food-beverage", "agencies-business", "beauty-wellness", "hotels-hospitality", "legal", "logistics"],
     bundles: ["real-estate-property", "premium-high-ticket", "all-industry"]
   }
 ];
@@ -576,10 +576,10 @@ function generatePage(data) {
   const canonicalUrl = 'https://leadspitch.com/industries/' + data.slug;
   const availability = soon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock';
 
-  // Build "Explore More Datasets" pills (3-6 related industries, duplicated for seamless loop)
+  // Build "Explore More Datasets" pills (all related industries, duplicated for seamless loop)
   const exploreIndustries = data.related
-    ? data.related.slice(0, 6).map(slug => allIndustryLinks.find(i => i.slug === slug)).filter(Boolean)
-    : allIndustryLinks.filter(i => i.slug !== data.slug).slice(0, 6);
+    ? data.related.map(slug => allIndustryLinks.find(i => i.slug === slug)).filter(Boolean)
+    : allIndustryLinks.filter(i => i.slug !== data.slug);
   const explorePills = exploreIndustries.map(i =>
     `              <a class="explore-pill" href="${i.slug}.html">${i.name}</a>`
   ).join('\n');
