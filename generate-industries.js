@@ -572,7 +572,7 @@ function generatePage(data) {
     intro: data.heroSub,
     keywords: []
   };
-  const pageUrl = 'https://leadspitch.com/industries/' + data.slug + '.html';
+  const pageUrl = 'https://leadspitch.com/industries/' + data.slug;
   const canonicalUrl = 'https://leadspitch.com/industries/' + data.slug;
   const availability = soon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock';
 
@@ -581,7 +581,7 @@ function generatePage(data) {
     ? data.related.map(slug => allIndustryLinks.find(i => i.slug === slug)).filter(Boolean)
     : allIndustryLinks.filter(i => i.slug !== data.slug);
   const explorePills = exploreIndustries.map(i =>
-    `              <a class="explore-pill" href="${i.slug}.html">${i.name}</a>`
+    `              <a class="explore-pill" href="/industries/${i.slug}">${i.name}</a>`
   ).join('\n');
   const exploreIndustriesHtml = explorePills + '\n' + explorePills + '\n' + explorePills;
 
@@ -648,7 +648,7 @@ function generatePage(data) {
       ? `<div class="product-member product-member--soon">Coming soon — request access</div>`
       : `<div class="product-member">40% off with membership: ${p.member}</div>`;
     const ctaHtml = soon
-      ? `<a class="product-cta btn-outline" href="../contact.html">Request access</a>`
+      ? `<a class="product-cta btn-outline" href="/contact">Request access</a>`
       : `<button class="product-cta btn-primary" data-plan="${p.plan.toLowerCase().replace(/\s+/g, '-')}" type="button">Get now</button>`;
     const leadsTip = `Total ${data.name.toLowerCase()} business records in this dataset.`;
     const emailsTip = 'Verified email addresses included in this dataset.';
@@ -784,8 +784,8 @@ function generatePage(data) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leadspitch.com/index.html" },
-      { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://leadspitch.com/industries.html" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leadspitch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://leadspitch.com/industries" },
       { "@type": "ListItem", "position": 3, "name": "${data.name}", "item": "${pageUrl}" }
     ]
   }
@@ -1999,47 +1999,47 @@ ${data.faqs.map(f => `      {
 
   <header class="site-header" id="top">
     <div class="wrap nav">
-      <a class="header-logo" href="../index.html" aria-label="LeadsPitch home"><img src="../public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
+      <a class="header-logo" href="/" aria-label="LeadsPitch home"><img src="../public/logo.png" alt="" class="header-logo-img"><span class="header-logo-text">LeadsPitch</span></a>
       <nav class="nav-pill" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
             Niches
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="accounting-finance.html" role="menuitem">Accounting &amp; Finance</a>
-            <a href="agencies-business.html" role="menuitem">Agencies &amp; Business</a>
-            <a href="automotive.html" role="menuitem">Automotive</a>
-            <a href="beauty-wellness.html" role="menuitem">Beauty &amp; Wellness</a>
-            <a href="clinics.html" role="menuitem">Clinics</a>
-            <a href="construction.html" role="menuitem">Construction</a>
-            <a href="dentists.html" role="menuitem">Dentists</a>
-            <a href="education.html" role="menuitem">Education &amp; Training</a>
-            <a href="events-leisure.html" role="menuitem">Events &amp; Leisure</a>
-            <a href="food-beverage.html" role="menuitem">Food &amp; Beverage</a>
-            <a href="home-services.html" role="menuitem">Home Services</a>
-            <a href="hotels-hospitality.html" role="menuitem">Hotels &amp; Hospitality</a>
-            <a href="legal.html" role="menuitem">Legal</a>
-            <a href="logistics.html" role="menuitem">Logistics</a>
-            <a href="real-estate.html" role="menuitem">Real Estate</a>
-            <a href="restaurants-cafes.html" role="menuitem">Restaurants &amp; Cafes</a>
+            <a href="/industries/accounting-finance" role="menuitem">Accounting &amp; Finance</a>
+            <a href="/industries/agencies-business" role="menuitem">Agencies &amp; Business</a>
+            <a href="/industries/automotive" role="menuitem">Automotive</a>
+            <a href="/industries/beauty-wellness" role="menuitem">Beauty &amp; Wellness</a>
+            <a href="/industries/clinics" role="menuitem">Clinics</a>
+            <a href="/industries/construction" role="menuitem">Construction</a>
+            <a href="/industries/dentists" role="menuitem">Dentists</a>
+            <a href="/industries/education" role="menuitem">Education &amp; Training</a>
+            <a href="/industries/events-leisure" role="menuitem">Events &amp; Leisure</a>
+            <a href="/industries/food-beverage" role="menuitem">Food &amp; Beverage</a>
+            <a href="/industries/home-services" role="menuitem">Home Services</a>
+            <a href="/industries/hotels-hospitality" role="menuitem">Hotels &amp; Hospitality</a>
+            <a href="/industries/legal" role="menuitem">Legal</a>
+            <a href="/industries/logistics" role="menuitem">Logistics</a>
+            <a href="/industries/real-estate" role="menuitem">Real Estate</a>
+            <a href="/industries/restaurants-cafes" role="menuitem">Restaurants &amp; Cafes</a>
           </div>
         </div>
-        <a href="../bundles.html">Bundles</a>
-        <a href="../membership.html">Membership</a>
-        <a href="../faq.html">FAQs</a>
-        <a href="../contact.html">Contact</a>
+        <a href="/bundles">Bundles</a>
+        <a href="/membership">Membership</a>
+        <a href="/faq">FAQs</a>
+        <a href="/contact">Contact</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
             Legal
             <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="../privacy.html" role="menuitem">Privacy Policy</a>
-            <a href="../terms.html" role="menuitem">Terms of Service</a>
-            <a href="../refund.html" role="menuitem">Refund Policy</a>
+            <a href="/privacy" role="menuitem">Privacy Policy</a>
+            <a href="/terms" role="menuitem">Terms of Service</a>
+            <a href="/refund" role="menuitem">Refund Policy</a>
           </div>
         </div>
       </nav>
@@ -2060,42 +2060,42 @@ ${data.faqs.map(f => `      {
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"></path></svg>
     </button>
     <div class="mobile-nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
       <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
         Niches
         <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="mobile-dropdown-panel">
-        <a href="accounting-finance.html">Accounting &amp; Finance</a>
-        <a href="agencies-business.html">Agencies &amp; Business</a>
-        <a href="automotive.html">Automotive</a>
-        <a href="beauty-wellness.html">Beauty &amp; Wellness</a>
-        <a href="clinics.html">Clinics</a>
-        <a href="construction.html">Construction</a>
-        <a href="dentists.html">Dentists</a>
-        <a href="education.html">Education &amp; Training</a>
-        <a href="events-leisure.html">Events &amp; Leisure</a>
-        <a href="food-beverage.html">Food &amp; Beverage</a>
-        <a href="home-services.html">Home Services</a>
-        <a href="hotels-hospitality.html">Hotels &amp; Hospitality</a>
-        <a href="legal.html">Legal</a>
-        <a href="logistics.html">Logistics</a>
-        <a href="real-estate.html">Real Estate</a>
-        <a href="restaurants-cafes.html">Restaurants &amp; Cafes</a>
+        <a href="/industries/accounting-finance">Accounting &amp; Finance</a>
+        <a href="/industries/agencies-business">Agencies &amp; Business</a>
+        <a href="/industries/automotive">Automotive</a>
+        <a href="/industries/beauty-wellness">Beauty &amp; Wellness</a>
+        <a href="/industries/clinics">Clinics</a>
+        <a href="/industries/construction">Construction</a>
+        <a href="/industries/dentists">Dentists</a>
+        <a href="/industries/education">Education &amp; Training</a>
+        <a href="/industries/events-leisure">Events &amp; Leisure</a>
+        <a href="/industries/food-beverage">Food &amp; Beverage</a>
+        <a href="/industries/home-services">Home Services</a>
+        <a href="/industries/hotels-hospitality">Hotels &amp; Hospitality</a>
+        <a href="/industries/legal">Legal</a>
+        <a href="/industries/logistics">Logistics</a>
+        <a href="/industries/real-estate">Real Estate</a>
+        <a href="/industries/restaurants-cafes">Restaurants &amp; Cafes</a>
       </div>
-      <a href="../bundles.html">Bundles</a>
-      <a href="../membership.html">Membership</a>
-      <a href="../faq.html">FAQs</a>
-      <a href="../contact.html">Contact</a>
+      <a href="/bundles">Bundles</a>
+      <a href="/membership">Membership</a>
+      <a href="/faq">FAQs</a>
+      <a href="/contact">Contact</a>
       <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
         Legal
         <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="mobile-dropdown-panel">
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms of Service</a>
-        <a href="../refund.html">Refund Policy</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/refund">Refund Policy</a>
       </div>
       <button class="mobile-theme-toggle" type="button" aria-label="Toggle dark mode">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.14 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z"/></svg>
@@ -2104,7 +2104,7 @@ ${data.faqs.map(f => `      {
       </button>
     </div>
     <div class="mobile-nav-cta">
-      <a class="btn btn-primary" href="../bundles.html">See Bundles</a>
+      <a class="btn btn-primary" href="/bundles">See Bundles</a>
     </div>
   </div>
 
@@ -2113,9 +2113,9 @@ ${data.faqs.map(f => `      {
     <!-- Breadcrumbs -->
     <div class="wrap">
       <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
+        <a href="/">Home</a>
         <span class="sep" aria-hidden="true">/</span>
-        <a href="../industries.html">Niches</a>
+        <a href="/industries">Niches</a>
         <span class="sep" aria-hidden="true">/</span>
         <span aria-current="page">${data.name}</span>
       </nav>
@@ -2129,7 +2129,7 @@ ${data.faqs.map(f => `      {
         <p class="hero-intro reveal">${seo.intro}</p>
         <div class="hero-actions reveal">
           ${soon
-            ? '<a class="btn btn-primary" href="../contact.html">Request access</a>\n          <a class="btn btn-outline" href="#pricing">See pricing</a>'
+            ? '<a class="btn btn-primary" href="/contact">Request access</a>\n          <a class="btn btn-outline" href="#pricing">See pricing</a>'
             : '<a class="btn btn-primary" href="#pricing">See pricing</a>\n          <a class="btn btn-outline" href="#faqs">FAQs</a>'}
         </div>
       </div>
@@ -2141,7 +2141,7 @@ ${data.faqs.map(f => `      {
         <div class="section-head">
           <h2>Buy a single dataset</h2>
         </div>
-        ${soon ? '<p class="coming-soon-note">This dataset is coming soon. Pricing below is indicative — <a class="link-inline" href="../contact.html">request access</a> and we\'ll notify you when it\'s live.</p>' : ''}
+        ${soon ? '<p class="coming-soon-note">This dataset is coming soon. Pricing below is indicative — <a class="link-inline" href="/contact">request access</a> and we\'ll notify you when it\'s live.</p>' : ''}
         <div class="pricing-grid-wrap">
           <div class="pricing-grid reveal">
 ${oneTimeCardsHtml}
@@ -2178,7 +2178,7 @@ ${data.bundles.map(key => {
             <div class="industry-bundle-tiers">
 ${tiersHtml}
             </div>
-            <a class="industry-bundle-link" href="../bundles.html">See all bundles &rarr;</a>
+            <a class="industry-bundle-link" href="/bundles">See all bundles &rarr;</a>
           </div>`;
 }).join('\n')}
         </div>
@@ -2210,7 +2210,7 @@ ${exploreIndustriesHtml}
 ${faqsHtml}
         </div>
         <p class="faq-more">
-          More questions? <a class="link-inline" href="../faq.html">See all FAQs</a> or <a class="link-inline" href="../contact.html">contact us</a>.
+          More questions? <a class="link-inline" href="/faq">See all FAQs</a> or <a class="link-inline" href="/contact">contact us</a>.
         </p>
       </div>
     </section>
@@ -2224,8 +2224,8 @@ ${comparisonHtml}
           <p>${soon ? 'This dataset is coming soon. Request access and we\'ll notify you the moment it\'s live.' : 'Choose a one-time dataset that fits your outreach needs.'}</p>
           <div class="bottom-cta-actions">
             ${soon
-              ? '<a class="btn btn-primary" href="../contact.html">Request access</a>\n            <a class="btn btn-outline" href="../industries.html">Browse niches</a>'
-              : '<a class="btn btn-primary" href="#pricing">See pricing</a>\n            <a class="btn btn-outline" href="../contact.html">Contact us</a>'}
+              ? '<a class="btn btn-primary" href="/contact">Request access</a>\n            <a class="btn btn-outline" href="/industries">Browse niches</a>'
+              : '<a class="btn btn-primary" href="#pricing">See pricing</a>\n            <a class="btn btn-outline" href="/contact">Contact us</a>'}
           </div>
         </div>
       </div>
@@ -2243,29 +2243,29 @@ ${comparisonHtml}
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Product</h4>
-          <a href="../index.html#how-it-works">How it works</a>
-          <a href="../industries.html">Niches</a>
-          <a href="../bundles.html">B2B datasets</a>
-          <a href="../membership.html">Membership</a>
+          <a href="/#how-it-works">How it works</a>
+          <a href="/industries">Niches</a>
+          <a href="/bundles">B2B datasets</a>
+          <a href="/membership">Membership</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="../about.html">About</a>
-          <a href="../contact.html">Contact</a>
-          <a href="../faq.html">FAQ</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/faq">FAQ</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../refund.html">Refund Policy</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/refund">Refund Policy</a>
         </div>
         <div class="footer-col">
           <h4>Popular</h4>
-          <a href="../industries/real-estate.html">Real Estate leads</a>
-          <a href="../industries/clinics.html">Clinics leads</a>
-          <a href="../industries/dentists.html">Dentists leads</a>
-          <a href="../industries/legal.html">Lawyers leads</a>
+          <a href="/industries/real-estate">Real Estate leads</a>
+          <a href="/industries/clinics">Clinics leads</a>
+          <a href="/industries/dentists">Dentists leads</a>
+          <a href="/industries/legal">Lawyers leads</a>
         </div>
       </div>
     </div>
