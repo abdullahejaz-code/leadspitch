@@ -350,97 +350,97 @@ const industrySeo = {
   "automotive": {
     title: "Buy Automotive Leads | Verified Auto Dealer & Repair Shop Contact Lists | LeadsPitch",
     h1: "Get verified automotive leads & contact lists",
-    intro: "Verified automotive business leads for dealerships, repair shops, parts suppliers, and auto service providers. Get verified ${data.name.toLowerCase()} business data — contacts and decision-makers as a one-time CSV pack — delivered instantly.",
+    intro: "Verified automotive business leads for dealerships, repair shops, parts suppliers, and auto service providers. Get verified ${data.name.toLowerCase()} business data — contacts and decision-makers as a one-time CSV pack —.",
     keywords: ["buy automotive leads", "auto dealer contact list", "automotive business business database", "verified auto shop leads", "buy automotive lead packs", "car dealership owner contacts", "local auto service leads", "targeted automotive B2B leads", "fresh automotive contact packs", "automotive decision maker data"]
   },
   "construction": {
     title: "Buy Construction Leads | Verified Contractor business databases & Datasets | LeadsPitch",
     h1: "Get verified construction leads & contractor contact lists",
-    intro: "Target general contractors, builders, and subcontractors with verified construction leads. Buy a contractor business database, local construction leads, or targeted construction B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target general contractors, builders, and subcontractors with verified construction leads. Buy a contractor business database, local construction leads, or targeted construction B2B leads as a one-time CSV pack —.",
     keywords: ["buy construction leads", "contractor business database", "verified contractor contact database", "construction company owner contacts", "buy contractor lead packs", "local construction leads", "general contractor contact list", "targeted construction B2B leads", "fresh contractor leads for sale", "construction decision maker data"]
   },
   "accounting-finance": {
     title: "Buy Accounting & Finance Leads | Verified CPA & Bookkeeper Contact Lists | LeadsPitch",
     h1: "Get verified accounting & finance leads",
-    intro: "Reach CPAs, bookkeepers, financial advisors, and accounting firms with verified accounting leads. Buy an accounting business database, local CPA contacts, or targeted finance B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Reach CPAs, bookkeepers, financial advisors, and accounting firms with verified accounting leads. Buy an accounting business database, local CPA contacts, or targeted finance B2B leads as a one-time CSV pack —.",
     keywords: ["buy accounting leads", "CPA contact list", "accounting firm business database", "verified bookkeeper leads", "buy finance lead packs", "financial advisor contacts", "local accounting business leads", "targeted CPA leads", "fresh accounting contact packs", "accounting decision maker data"]
   },
   "clinics": {
     title: "Buy Healthcare & Clinic Leads | Verified Medical Practice Contact Lists | LeadsPitch",
     h1: "Get verified healthcare & clinic leads",
-    intro: "Target medical practices, clinics, and healthcare providers with verified healthcare leads. Buy a clinic business database, local practice contacts, or targeted healthcare B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target medical practices, clinics, and healthcare providers with verified healthcare leads. Buy a clinic business database, local practice contacts, or targeted healthcare B2B leads as a one-time CSV pack —.",
     keywords: ["buy healthcare leads", "clinic contact list", "medical practice business database", "verified healthcare leads", "buy clinic lead packs", "hospital and practice contacts", "local healthcare business leads", "targeted medical leads", "fresh healthcare contact packs", "healthcare decision maker data"]
   },
   "dentists": {
     title: "Buy Dentist Leads | Verified Dental Practice Contact Lists | LeadsPitch",
     h1: "Get verified dentist leads & dental practice contacts",
-    intro: "Build your dental outreach pipeline with verified dentist leads. Buy a dental practice business database, orthodontist contacts, or local dentist leads as a one-time CSV pack — delivered instantly.",
+    intro: "Build your dental outreach pipeline with verified dentist leads. Buy a dental practice business database, orthodontist contacts, or local dentist leads as a one-time CSV pack —.",
     keywords: ["buy dentist leads", "dental practice contact list", "dentist business database", "verified dental leads database", "buy orthodontist lead packs", "oral surgeon contacts", "local dental practice leads", "targeted dentist leads", "fresh dental contact packs", "dental decision maker data"]
   },
   "education": {
     title: "Buy Education & Training Leads | Verified School Contact Lists | LeadsPitch",
     h1: "Get verified education & training leads",
-    intro: "Target schools, universities, training centers, and education providers with verified education leads. Buy a school business database, training center contacts, or targeted education B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target schools, universities, training centers, and education providers with verified education leads. Buy a school business database, training center contacts, or targeted education B2B leads as a one-time CSV pack —.",
     keywords: ["buy education leads", "school contact list", "education business database", "verified training center leads", "buy education lead packs", "university and school contacts", "local education business leads", "targeted training leads", "fresh education contact packs", "education decision maker data"]
   },
   "home-services": {
     title: "Buy Home Services Leads | Verified Plumber & HVAC Contact Lists | LeadsPitch",
     h1: "Get verified home services leads",
-    intro: "Reach plumbers, electricians, HVAC contractors, and home improvement professionals with verified home services leads. Buy a contractor business database, local trades contacts, or targeted home services B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Reach plumbers, electricians, HVAC contractors, and home improvement professionals with verified home services leads. Buy a contractor business database, local trades contacts, or targeted home services B2B leads as a one-time CSV pack —.",
     keywords: ["buy home services leads", "plumber contact list", "HVAC business database", "verified contractor leads", "buy home improvement lead packs", "electrician and landscaper contacts", "local home services business leads", "targeted trades leads", "fresh home services contact packs", "home services decision maker data"]
   },
   "restaurants-cafes": {
     title: "Buy Restaurant Leads | Verified Restaurant & Cafe Contact Lists | LeadsPitch",
     h1: "Get verified restaurant & cafe leads",
-    intro: "Grow your food service client base with verified restaurant leads. Buy a restaurant business database, local restaurant owner contacts, or targeted cafe and coffee shop leads as a one-time CSV pack — delivered instantly.",
+    intro: "Grow your food service client base with verified restaurant leads. Buy a restaurant business database, local restaurant owner contacts, or targeted cafe and coffee shop leads as a one-time CSV pack —.",
     keywords: ["buy restaurant leads", "restaurant owner contact list", "restaurant business database", "verified restaurant leads", "cafe and coffee shop leads", "local restaurant business leads", "restaurant and hotel contacts", "fresh restaurant contact packs", "restaurant decision maker data", "food service leads"]
   },
   "events-leisure": {
     title: "Buy Events & Leisure Leads | Verified Event Venue Contact Lists | LeadsPitch",
     h1: "Get verified events & leisure leads",
-    intro: "Target event venues, planners, and recreation businesses with verified events leads. Buy an event venue contact list or leisure business leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target event venues, planners, and recreation businesses with verified events leads. Buy an event venue contact list or leisure business leads as a one-time CSV pack —.",
     keywords: ["buy events leads", "event venue contact list", "events business database", "verified events leads", "buy events lead packs", "event planner contacts", "local events business leads", "targeted leisure leads", "fresh events contact packs", "events decision maker data"]
   },
   "food-beverage": {
     title: "Buy Food & Beverage Supplier Leads | Verified F&B Contact Lists | LeadsPitch",
     h1: "Get verified food & beverage supplier leads",
-    intro: "Reach distributors, manufacturers, and wholesale suppliers with verified food and beverage leads. Buy a food supplier business database or targeted F&B B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Reach distributors, manufacturers, and wholesale suppliers with verified food and beverage leads. Buy a food supplier business database or targeted F&B B2B leads as a one-time CSV pack —.",
     keywords: ["buy food and beverage leads", "food distributor contact list", "F&B business database", "verified food supplier leads", "buy food supply lead packs", "wholesale food contacts", "local F&B business leads", "targeted beverage supplier leads", "fresh food contact packs", "food and beverage decision maker data"]
   },
   "agencies-business": {
     title: "Buy Marketing Agency Leads | Verified Agency & Business Services Contacts | LeadsPitch",
     h1: "Get verified business services agency leads",
-    intro: "Target business services agencies, consulting firms, and B2B service providers with verified agency leads. Get an agency business database or professional services contact pack as a one-time CSV — delivered instantly.",
+    intro: "Target business services agencies, consulting firms, and B2B service providers with verified agency leads. Get an agency business database or professional services contact pack as a one-time CSV —.",
     keywords: ["buy agency leads", "business agency contact list", "agency business database", "verified agency leads database", "buy agency lead packs", "consulting firm owner contacts", "local agency leads", "targeted B2B service leads", "fresh agency contact packs", "agency decision maker data"]
   },
   "beauty-wellness": {
     title: "Buy Beauty & Wellness Leads | Verified Salon & Spa Contact Lists | LeadsPitch",
     h1: "Get verified beauty & wellness leads",
-    intro: "Target salons, spas, wellness centers, and beauty businesses with verified beauty & wellness leads. Buy a salon business database, spa owner contacts, or targeted beauty business leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target salons, spas, wellness centers, and beauty businesses with verified beauty & wellness leads. Buy a salon business database, spa owner contacts, or targeted beauty business leads as a one-time CSV pack —.",
     keywords: ["buy beauty leads", "salon contact list", "spa business database", "verified beauty business leads", "buy wellness lead packs", "salon owner contacts", "local beauty business leads", "targeted wellness leads", "fresh beauty contact packs", "beauty and wellness decision maker data"]
   },
   "hotels-hospitality": {
     title: "Buy Hotel & Hospitality Leads | Verified Hotel Owner Contact Lists | LeadsPitch",
     h1: "Get verified hotel & hospitality leads",
-    intro: "Reach hotel owners, resorts, and hospitality providers with verified hospitality leads. Buy a hotel owner contact list or local hotel and travel leads as a one-time CSV pack — delivered instantly.",
+    intro: "Reach hotel owners, resorts, and hospitality providers with verified hospitality leads. Buy a hotel owner contact list or local hotel and travel leads as a one-time CSV pack —.",
     keywords: ["buy hospitality leads", "hotel owner contact list", "hotel business database", "verified hospitality leads", "buy hospitality lead packs", "resort and B&B contacts", "local hotel leads", "targeted tourism business leads", "fresh hospitality contact packs", "hospitality decision maker data"]
   },
   "legal": {
     title: "Buy Lawyer Leads | Verified Attorney & Law Firm business databases | LeadsPitch",
     h1: "Get verified lawyer leads & attorney contact lists",
-    intro: "Build your legal business development pipeline with verified lawyer leads. Buy an attorney business database, law firm owner contacts, or local law firm leads as a one-time CSV pack — delivered instantly.",
+    intro: "Build your legal business development pipeline with verified lawyer leads. Buy an attorney business database, law firm owner contacts, or local law firm leads as a one-time CSV pack —.",
     keywords: ["buy lawyer leads", "attorney contact list", "law firm business database", "verified lawyer leads database", "buy attorney lead packs", "legal practice owner contacts", "local law firm leads", "targeted legal professional leads", "fresh lawyer contact packs", "lawyer decision maker data"]
   },
   "logistics": {
     title: "Buy Logistics & Trucking Leads | Verified Logistics Company Contact Lists | LeadsPitch",
     h1: "Get verified logistics & transportation leads",
-    intro: "Reach freight companies, trucking firms, and warehousing businesses with verified logistics leads. Buy a trucking company contact list or logistics business database as a one-time CSV pack — delivered instantly.",
+    intro: "Reach freight companies, trucking firms, and warehousing businesses with verified logistics leads. Buy a trucking company contact list or logistics business database as a one-time CSV pack —.",
     keywords: ["buy logistics leads", "trucking company contact list", "logistics and transport business database", "verified logistics leads", "buy transport lead packs", "freight and shipping contacts", "local logistics business leads", "targeted logistics B2B leads", "fresh logistics contact packs", "transport decision maker data"]
   },
   "real-estate": {
     title: "Buy Real Estate Leads | Verified Realtor & Broker Contact Lists | LeadsPitch",
     h1: "Get verified real estate leads & agent contact lists",
-    intro: "Target realtors, brokers, property managers, and real estate professionals with verified real estate leads. Buy a realtor business database, local agent contacts, or targeted real estate B2B leads as a one-time CSV pack — delivered instantly.",
+    intro: "Target realtors, brokers, property managers, and real estate professionals with verified real estate leads. Buy a realtor business database, local agent contacts, or targeted real estate B2B leads as a one-time CSV pack —.",
     keywords: ["buy real estate leads", "realtor contact list", "real estate agent business database", "verified realtor leads", "buy real estate lead packs", "broker and property manager contacts", "local real estate business leads", "targeted real estate agent leads", "fresh real estate contact packs", "real estate decision maker data"]
   },
 };
@@ -609,14 +609,14 @@ function generatePage(data) {
             <tbody>
               <tr><th scope="row">Pricing model</th><td>One-time packs, no subscription</td><td>Per-seat subscriptions with credits</td><td>Usage-based, pay per extraction</td></tr>
               <tr><th scope="row">Data verification</th><td>Verified contacts included</td><td>Verification often an add-on</td><td>You verify everything yourself</td></tr>
-              <tr><th scope="row">Setup time</th><td>Instant CSV download</td><td>Onboarding, tools, integrations</td><td>Infrastructure and code required</td></tr>
+              <tr><th scope="row">Setup time</th><td>CSV / Excel, ready to use</td><td>Onboarding, tools, integrations</td><td>Infrastructure and code required</td></tr>
               <tr><th scope="row">Minimum commitment</th><td>None — buy what you need</td><td>Annual contracts are common</td><td>Time and technical effort</td></tr>
               <tr><th scope="row">Support</th><td>Direct, human support</td><td>Ticket queues</td><td>Community forums</td></tr>
-              <tr><th scope="row">Delivery format</th><td>CSV / Excel, ready to use</td><td>API and CRM focused</td><td>Raw unverified data</td></tr>
+              <tr><th scope="row">Format</th><td>CSV / Excel, ready to use</td><td>API and CRM focused</td><td>Raw unverified data</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="compare-note">Plans and features change often. This comparison focuses on how business contact data is sold and delivered, not on specific competitor pricing.</p>
+        <p class="compare-note">Plans and features change often. This comparison focuses on how business contact data is sold, not on specific competitor pricing.</p>
       </div>
     </section>`;
 
@@ -2248,7 +2248,7 @@ ${comparisonHtml}
     <div class="wrap footer-top">
       <div class="footer-brand">
         <p class="logo">LeadsPitch</p>
-        <p>Verified B2B lead data, delivered as CSV. Subscriptions, one-time purchases, and membership discounts across 19+ niches.</p>
+        <p>Verified B2B lead data, provided as CSV. Subscriptions, one-time purchases, and membership discounts across 16 niches.</p>
         <p class="footer-email"><a href="mailto:contact@leadspitch.com">contact@leadspitch.com</a></p>
       </div>
       <div class="footer-grid">
@@ -2282,7 +2282,7 @@ ${comparisonHtml}
     </div>
     <div class="wrap footer-bottom">
       <span>&copy; <span id="y"></span> LeadsPitch</span>
-      <span>Verified B2B data, delivered your way.</span>
+      <span>Verified B2B data, ready to use.</span>
     </div>
     <div class="footer-giant" id="footer-giant">
       <span class="footer-giant__text" id="giant-text">LEADSPITCH</span>

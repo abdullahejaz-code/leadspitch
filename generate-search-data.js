@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const csvPath = path.join(__dirname, "reference-data");
@@ -210,7 +210,7 @@ const bundles = [
   { name: "Healthcare & Wellness Pack", desc: "Bundle of Clinics + Dentists + Beauty & Wellness datasets. Save up to $200.", includes: ["Clinics", "Dentists", "Beauty & Wellness"], price5k: "$119", price25k: "$429", price50k: "$699", save: "$200", url: "bundles.html" },
   { name: "Real Estate & Property Pack", desc: "Bundle of Real Estate + Construction + Home Services datasets. Save up to $70.", includes: ["Real Estate", "Construction", "Home Services"], price5k: "$139", price25k: "$499", price50k: "$829", save: "$70", url: "bundles.html" },
   { name: "Professional Services Pack", desc: "Bundle of Legal + Accounting & Finance + Agencies & Business Services datasets. Save up to $70.", includes: ["Legal", "Accounting & Finance", "Agencies & Business Services"], price5k: "$139", price25k: "$499", price50k: "$829", save: "$70", url: "bundles.html" },
-  { name: "E-commerce & Marketing Pack", desc: "Bundle of Agencies & Business Services + Logistics & Transportation + Education & Training datasets. Save up to $200.", includes: ["Agencies & Business Services", "Logistics & Transportation", "Education & Training"], price5k: "$119", price25k: "$429", price50k: "$699", save: "$200", url: "bundles.html" },
+  { name: "E-commerce & Growth Pack", desc: "Bundle of Agencies & Business Services + Logistics & Transportation + Education & Training datasets. Save up to $200.", includes: ["Agencies & Business Services", "Logistics & Transportation", "Education & Training"], price5k: "$119", price25k: "$429", price50k: "$699", save: "$200", url: "bundles.html" },
   { name: "Trades & Services Pack", desc: "Bundle of Construction + Automotive + Home Services + Logistics & Transportation datasets. Save up to $250.", includes: ["Construction", "Automotive", "Home Services", "Logistics & Transportation"], price5k: "$159", price25k: "$579", price50k: "$949", save: "$250", url: "bundles.html" },
   { name: "Hospitality & Leisure Pack", desc: "Bundle of Hotels & Hospitality + Restaurants & Cafes + Events & Leisure + Food & Beverage Suppliers datasets. Save up to $300.", includes: ["Hotels & Hospitality", "Restaurants & Cafes", "Events & Leisure", "Food & Beverage Suppliers"], price5k: "$149", price25k: "$549", price50k: "$899", save: "$300", url: "bundles.html" },
   { name: "Premium High-Ticket Pack", desc: "Bundle of Legal + Accounting & Finance + Real Estate + Clinics + Dentists datasets. Save up to $250.", includes: ["Legal", "Accounting & Finance", "Real Estate", "Clinics", "Dentists"], price5k: "$199", price25k: "$749", price50k: "$1,249", save: "$250", url: "bundles.html" },
