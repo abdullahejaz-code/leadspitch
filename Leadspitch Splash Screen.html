@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeadsPitch</title>
+
+<!-- If JS is off, never trap the user behind the splash -->
+<noscript><style>#splash{display:none !important}</style></noscript>
+
+<style>
+/* ============================================================
+   1. TIMING TOKENS
+   Single source of truth for the whole choreography.
+   The JavaScript reads these values back out of the CSS, so you
+   can retime the entire sequence from right here.
+   ============================================================ */
+:root {
+  --letter-stagger:  55ms;   /* gap between each letter appearing      */
+  --letter-duration: 420ms;  /* time for one letter to fade in         */
+  --panel-stagger:   45ms;   /* gap between each section starting to fall */
+  --panel-duration:  750ms;  /* time for one section to fall away      */
+
+  --letter-ease: cubic-bezier(0.22, 1, 0.36, 1);      /* expo-out   */
+  --panel-ease:  cubic-bezier(0.55, 0.02, 0.85, 0.40); /* gravity   */
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background: #0b0b0f;
+  color: #0b0b0f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll is locked only while the splash owns the screen.
+   NOTE: on a real page with a scrollbar, compensate the scrollbar
+   width here if you want to avoid a ~15px layout shift.          */
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ============================================================
+   3. SPLASH CONTAINER
+   Transparent by design: the blackness comes from the panels so
+   that the page behind is revealed as they fall away.
+   ============================================================ */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+
+  /* Safety net: guarantees a pure-black first paint, before JS
+     has injected the section panels. Removed at fall time.       */
+  background: #000000;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Panels already cover 100% of the viewport, so flipping the
+   container to transparent at fall time is completely invisible —
+   it just lets the site show through the widening gaps.           */
+.splash.is-falling { background: transparent; }
+
+/* ============================================================
+   4. SECTION PANELS
+   Each panel is one vertical slice of the screen. `overflow:hidden`
+   is what clips its private copy of the word into a slice.
+   ============================================================ */
+.splash__panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+  will-change: transform;      /* promote to its own layer → 60fps */
+  backface-visibility: hidden;
+}
+
+/* ---- 4a. Per-letter entrance (typewriter-ish fade) ---- */
+.splash__letter {
+  display: inline-block;
+  font-size: clamp(2.25rem, 8.5vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #ffffff;
+
+  /* Hidden until its own animation kicks in */
+  opacity: 0;
+  transform: translate3d(0, 0.4em, 0) scale(0.92);
+  will-change: transform, opacity;
+}
+
+/* `both` fill-mode keeps the letter hidden during its delay */
+.splash.is-typing .splash__letter {
+  animation: letter-in var(--letter-duration) var(--letter-ease) both;
+  animation-delay: calc(var(--li) * var(--letter-stagger));
+}
+
+@keyframes letter-in {
+  from { opacity: 0; transform: translate3d(0, 0.4em, 0) scale(0.92); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0)      scale(1);    }
+}
+
+/* ---- 4b. The section "falling away" exit ---- */
+.splash.is-falling .splash__panel {
+  animation: panel-fall var(--panel-duration) var(--panel-ease) both;
+  animation-delay: calc(var(--i) * var(--panel-stagger));
+}
+
+@keyframes panel-fall {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, 110%, 0); }   /* fully off-screen */
+}
+
+/* ============================================================
+   5. THE SLICED WORD
+   Every panel holds a full-width copy of "LeadsPitch".
+   JS gives each copy a width of 100vw and shifts it left by its
+   panel's x-offset, so all copies land on exactly the same pixel
+   coordinates → the word reads as ONE word until the panels split.
+   ============================================================ */
+.splash__word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  /* width + transform are injected by alignLayers() in JS */
+}
+
+/* ============================================================
+   6. REDUCED MOTION
+   No typing, no falling — just a calm fade.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .splash__letter { opacity: 1; transform: none; }
+  .splash.is-typing .splash__letter { animation: none; }
+  .splash.is-falling .splash__panel { animation: none; }
+}
+
+/* ============================================================
+   7. DEMO PAGE (the content the splash reveals)
+   Intentionally LIGHT so the black panels falling away produce a
+   dramatic, obvious reveal.
+   ============================================================ */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 24px;
+  text-align: center;
+  color: #0b0b0f;
+  background: radial-gradient(900px 520px at 50% -8%,
+              #ffffff 0%, #eef1f9 45%, #e2e7f3 100%);
+}
+
+.hero__title {
+  margin: 0 0 14px;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.hero__sub {
+  margin: 0 auto 30px;
+  max-width: 34ch;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.55;
+  color: #4a5163;
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: #0b0b0f;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(11, 11, 15, 0.22);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(11, 11, 15, 0.28);
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SPLASH  (filled in by JS; decorative so screen readers skip it)
+     ============================================================ -->
+<div id="splash" class="splash" aria-hidden="true"></div>
+
+<!-- ============================================================
+     MAIN SITE
+     ============================================================ -->
+<main class="page">
+  <div class="hero">
+    <h1 class="hero__title">LeadsPitch</h1>
+    <p class="hero__sub">Turn cold traffic into warm conversations.</p>
+    <a class="hero__cta" href="#">Get started</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ==========================================================
+     CONFIG
+     ========================================================== */
+  var WORD        = 'LeadsPitch';
+  var PANEL_COUNT = 8;   // how many vertical sections the screen splits into
+
+  var splash = document.getElementById('splash');
+  var root   = document.documentElement;
+  if (!splash) return;
+
+  /* ==========================================================
+     TIMING — read straight back out of the CSS custom properties
+     so there is exactly one place to retune the choreography.
+     ========================================================== */
+  var css = getComputedStyle(root);
+  function token(name, fallback) {
+    var v = parseFloat(css.getPropertyValue(name));
+    return isFinite(v) ? v : fallback;
+  }
+
+  var LETTER_STAGGER  = token('--letter-stagger',  55);
+  var LETTER_DURATION = token('--letter-duration', 420);
+  var PANEL_STAGGER   = token('--panel-stagger',   45);
+  var PANEL_DURATION  = token('--panel-duration',  750);
+
+  var HOLD_AFTER_WORD = 260;   // beat of stillness once the word is complete
+  var TEARDOWN_BUFFER = 140;   // margin so the last panel fully clears
+
+  /* ---- Derived master timeline (ms, from the first letter) ----
+     t=0 ............................ first letter starts
+     t=915 .......................... last letter finishes        (9*55 + 420)
+     t=1175 ......................... panels begin to fall        (+260 hold)
+     t=2240 ......................... last panel off-screen       (+7*45 + 750)
+     t=2380 ......................... splash removed from the DOM (+140)
+     Total ≈ 2.4s — right in the 2–3s sweet spot.               */
+  var T_WORD_DONE  = (WORD.length - 1) * LETTER_STAGGER + LETTER_DURATION;
+  var T_FALL_START = T_WORD_DONE + HOLD_AFTER_WORD;
+  var T_FALL_END   = T_FALL_START
+                   + (PANEL_COUNT - 1) * PANEL_STAGGER
+                   + PANEL_DURATION;
+
+  /* ==========================================================
+     LOCK SCROLL while the splash owns the screen
+     ========================================================== */
+  root.classList.add('is-loading');
+
+  /* ==========================================================
+     BUILD — create the panels, each carrying its own copy of the
+     word. The copy is clipped by the panel's `overflow:hidden`,
+     which is what turns one word into N independently-falling
+     slices.
+     ========================================================== */
+  var frag = document.createDocumentFragment();
+
+  for (var i = 0; i < PANEL_COUNT; i++) {
+    var panel = document.createElement('div');
+    panel.className = 'splash__panel';
+    panel.style.setProperty('--i', i);          // → panel's fall delay
+
+    var layer = document.createElement('div');
+    layer.className = 'splash__word';
+
+    for (var j = 0; j < WORD.length; j++) {
+      var letter = document.createElement('span');
+      letter.className = 'splash__letter';
+      letter.textContent = WORD.charAt(j);
+      letter.style.setProperty('--li', j);      // → letter's typing delay
+      layer.appendChild(letter);
+    }
+
+    panel.appendChild(layer);
+    frag.appendChild(panel);
+  }
+
+  splash.appendChild(frag);
+
+  var panels = Array.prototype.slice.call(splash.children);
+
+  /* ==========================================================
+     ALIGN — line every copy of the word up with the viewport
+     centre. Each copy is made as wide as the splash and pushed
+     left by its panel's x-offset, so all copies are pixel-identical
+     until the panels start moving.
+     ========================================================== */
+  var isFalling = false;
+
+  function alignLayers() {
+    // Once panels are animating, their rects are unreliable — bail out.
+    if (isFalling) return;
+
+    var splashRect = splash.getBoundingClientRect();
+
+    for (var k = 0; k < panels.length; k++) {
+      var layer  = panels[k].firstElementChild;
+      // getBoundingClientRect (not offsetLeft) → sub-pixel precision,
+      // which keeps the sliced text perfectly seamless.
+      var offset = panels[k].getBoundingClientRect().left - splashRect.left;
+
+      layer.style.width     = splashRect.width + 'px';
+      layer.style.transform = 'translate3d(' + (-offset) + 'px,0,0)';
+    }
+  }
+
+  alignLayers();
+  window.addEventListener('resize', alignLayers);
+
+  /* ==========================================================
+     TEARDOWN — remove the splash so it can never block the page.
+     ========================================================== */
+  var finished = false;
+
+  function teardown() {
+    if (finished) return;
+    finished  = true;
+    isFalling = true;
+
+    window.removeEventListener('resize', alignLayers);
+
+    if (splash.parentNode) splash.parentNode.removeChild(splash);
+
+    root.classList.remove('is-loading');       // page scrolls again
+
+    // Handy hook for the main site to start its own entrance animation.
+    document.dispatchEvent(new Event('splash:done'));
+  }
+
+  /* ==========================================================
+     PHASE 2 — the screen breaks apart and falls away
+     ========================================================== */
+  function startFall() {
+    isFalling = true;                 // freeze layout recalculation
+    splash.classList.add('is-falling'); // panels animate (CSS handles it)
+  }
+
+  /* ==========================================================
+     PHASE 1 — letters type in, then schedule the fall + teardown
+     ========================================================== */
+  var prefersReduced = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function play() {
+    splash.classList.add('is-typing');   // letters animate via CSS delays
+
+    if (prefersReduced) {
+      // Accessible path: show the word, then simply fade the overlay out.
+      window.setTimeout(function () {
+        splash.style.transition = 'opacity 220ms ease';
+        splash.style.opacity    = '0';
+        window.setTimeout(teardown, 240);
+      }, 800);
+      return;
+    }
+
+    window.setTimeout(startFall, T_FALL_START);
+    window.setTimeout(teardown,  T_FALL_END + TEARDOWN_BUFFER);
+  }
+
+  /* Double rAF: guarantees the letters' initial (hidden) state is
+     painted before the animations are triggered — no first-frame pop. */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(play);
+  });
+
+  /* Failsafe: if anything at all goes wrong, the splash still dies. */
+  window.setTimeout(teardown, 6000);
+
+})();
+</script>
+</body>
+</html>
