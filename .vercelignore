@@ -1,3 +1,8 @@
 # Never deploy the local pricing editor
 pricing-admin.html
 
+
+# orphaned pricing previews
+pricing-cards-all-industries.html
+pricing-cards-preview.html
+pricing-preview.html

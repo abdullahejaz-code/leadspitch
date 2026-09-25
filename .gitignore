@@ -13,3 +13,8 @@ node_modules/
 
 # private local-only tool - never publish
 pricing-admin.html
+
+# orphaned pricing previews (stale prices, no inbound links)
+pricing-cards-all-industries.html
+pricing-cards-preview.html
+pricing-preview.html
