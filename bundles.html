@@ -824,7 +824,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 </style>
   <link rel="stylesheet" href="large-screens.css">
-</head>
+
+  <script src="pricing-data.js"></script>
+  <script src="pricing-apply.js"></script>
+  <link rel="stylesheet" href="footer-reveal.css">
+  </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWP5C6SP"
@@ -1729,6 +1733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       function openCheckout(planKey) {
         var plan = plans[planKey];
+        if (window.LP_Pricing && window.LP_Pricing.checkout) { var _lp = window.LP_Pricing.checkout(planKey, plan); if (_lp) plan = _lp; }
         if (!plan) return;
 
         modalTitle.textContent = plan.name;
@@ -1781,5 +1786,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.LeadsPitchCheckout = { open: openCheckout, close: closeCheckout };
     })();
   </script>
+  <script src="footer-reveal.js" defer></script>
 </body>
 </html>

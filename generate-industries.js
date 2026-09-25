@@ -2001,6 +2001,8 @@ ${data.faqs.map(f => `      {
       }
     }
 </style>
+<script src="../pricing-data.js"></script>
+<script src="../pricing-apply.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2512,6 +2514,7 @@ ${data.bundles.map(key => {
 
       function openCheckout(planKey) {
         var plan = plans[planKey];
+        if (window.LP_Pricing && window.LP_Pricing.checkout) { var _lp = window.LP_Pricing.checkout(planKey, plan); if (_lp) plan = _lp; }
         if (!plan) return;
 
         modalTitle.textContent = plan.name + ' Plan';
