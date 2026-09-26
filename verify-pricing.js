@@ -66,6 +66,29 @@ check('no public page links to the editor', allPages.every((p) => {
   try { return !read(p).includes('pricing-admin'); } catch (e) { return true; }
 }));
 
+/* ---------- 2c. one-click local helper ---------- */
+let serverSrc = null;
+try { serverSrc = read('pricing-server.js'); } catch (e) { /* missing is a failure below */ }
+check('pricing-server.js exists', !!serverSrc);
+try {
+  if (serverSrc) new Function(serverSrc.replace(/^#![^\n]*\n/, ''));   // strip the shebang
+  check('pricing-server.js parses', !!serverSrc);
+} catch (e) {
+  check('pricing-server.js parses', false, e.message);
+}
+check('server binds loopback only', !!serverSrc &&
+  serverSrc.includes("server.listen(PORT, '127.0.0.1'") &&
+  !serverSrc.includes("server.listen(PORT, '0.0.0.0'"));
+check('server validates config bodies', !!serverSrc && serverSrc.includes('validConfig'));
+check('server caps request size', !!serverSrc && serverSrc.includes('MAX_BODY'));
+check('server rejects non-local requests', !!serverSrc && serverSrc.includes('isLoopback') && serverSrc.includes('hostIsLocal'));
+check('vercelignore excludes the helper', /pricing-server\.js/.test(vercelignore) && /Open Pricing Editor\.bat/.test(vercelignore));
+check('editor saves through the helper', adminSrc.includes('isLocalHelper') && adminSrc.includes("'/save'"));
+check('editor has a Publish button', adminSrc.includes('id="btn-publish"'));
+check('editor hides Publish outside the helper', adminSrc.includes('pubBtn.hidden'));
+check('editor marks helper-served pages', adminSrc.includes('<!--LP-SERVED-->') && adminSrc.includes('lp-local'));
+check('launcher script exists', fs.existsSync(path.join(root, 'Open Pricing Editor.bat')));
+
 /* ---------- 3. every page is wired ---------- */
 let totalPlans = 0;
 let totalTiers = 0;

@@ -6,3 +6,7 @@ pricing-admin.html
 pricing-cards-all-industries.html
 pricing-cards-preview.html
 pricing-preview.html
+
+# local-only helper (never deployed)
+pricing-server.js
+Open Pricing Editor.bat
