@@ -745,6 +745,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../footer-reveal.css">
   <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
   <script type="application/ld+json">
   {
@@ -1845,53 +1846,6 @@ ${data.faqs.map(f => `      {
     [data-theme="light"] .theme-toggle { color: #6b7280; }
     [data-theme="light"] .theme-toggle:hover { background: #f3f4f6; color: #111; }
   
-    /* ── Footer reveal (Mobbin-style) ────────────────────────── */
-    main {
-      position: relative;
-      z-index: 1;
-      background: var(--bg);
-      min-height: calc(100vh - var(--nav-h));
-      border-radius: 0 0 46px 46px;
-      box-shadow: 0 1px 2px rgba(20, 20, 28, 0.05), 0 24px 48px -20px rgba(20, 20, 28, 0.18);
-      overflow: clip;
-    }
-    html { background-color: #0a0a0a; }
-    .site-footer,
-    [data-theme="dark"] .site-footer,
-    [data-theme="light"] .site-footer {
-      position: static;
-      background: #0a0a0a;
-      color: #d1d5db;
-      border-top: 0;
-    }
-    .site-footer .footer-brand .logo,
-    [data-theme="dark"] .site-footer .footer-brand .logo,
-    [data-theme="light"] .site-footer .footer-brand .logo { color: #ffffff; }
-    .site-footer .footer-brand p,
-    [data-theme="dark"] .site-footer .footer-brand p,
-    [data-theme="light"] .site-footer .footer-brand p { color: #9ca3af; }
-    .site-footer .footer-col h4,
-    [data-theme="dark"] .site-footer .footer-col h4,
-    [data-theme="light"] .site-footer .footer-col h4 { color: #9ca3af; }
-    .site-footer .footer-col a,
-    [data-theme="dark"] .site-footer .footer-col a,
-    [data-theme="light"] .site-footer .footer-col a { color: #a0a0a8; }
-    .site-footer .footer-col a:hover,
-    [data-theme="dark"] .site-footer .footer-col a:hover,
-    [data-theme="light"] .site-footer .footer-col a:hover { color: #ffffff; }
-    .site-footer .footer-top,
-    [data-theme="dark"] .site-footer .footer-top,
-    [data-theme="light"] .site-footer .footer-top { border-bottom-color: #1f1f23; }
-    .site-footer .footer-bottom,
-    [data-theme="dark"] .site-footer .footer-bottom,
-    [data-theme="light"] .site-footer .footer-bottom { color: #6b7280; border-top-color: #1f1f23; }
-    .site-footer .footer-giant__text,
-    [data-theme="light"] .site-footer .footer-giant__text,
-    [data-theme="dark"] .site-footer .footer-giant__text { color: rgba(255, 255, 255, 0.08); }
-    @media (max-width: 600px) {
-      main { border-radius: 0 0 28px 28px; }
-    }
-
     /* Checkout Modal */
     .checkout-modal-overlay {
       position: fixed;
@@ -2576,6 +2530,7 @@ ${data.bundles.map(key => {
     })();
   </script>
 
+  <script src="../footer-reveal.js" defer></script>
 </body></html>`;
 }
 

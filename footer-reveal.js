@@ -1,37 +1,22 @@
-/* ==========================================================================
-   CURTAIN-REVEAL FOOTER — height sync (load ONCE per page, before </body>)
-   --------------------------------------------------------------------------
-   Keeps <main>'s bottom margin equal to the footer's REAL height so the page
-   always has exactly enough scroll room to reveal the footer, and never
-   more. No hardcoded footer height anywhere: ResizeObserver re-measures
-   whenever the footer re-sizes (font load, theme switch, wrap change,
-   orientation change, window resize).
-   ========================================================================== */
+/* LeadsPitch — curtain-reveal sync. ISOLATED FILE; replace wholesale. */
 (function () {
-  'use strict';
+  var footer = document.querySelector('.site-footer') || document.querySelector('footer');
+  var sheet  = document.querySelector('main');
+  if (!footer || !sheet) return;
 
-  /* Page wrapper: every page wraps its content in <main>. */
-  var footer = document.querySelector('footer');
-  var main = document.querySelector('main');
+  var last = 0, ticking = false, idle = null;
 
-  if (!footer || !main) return;
-
-  function sync() {
-    main.style.marginBottom = footer.offsetHeight + 'px';
+  function apply() {
+    ticking = false;
+    var h = footer.offsetHeight;
+    if (h && h !== last) { last = h; sheet.style.marginBottom = h + 'px'; }
   }
+  function queue() { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }
+  function idleQueue() { clearTimeout(idle); idle = setTimeout(queue, 120); }
 
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(sync).observe(footer);
-  }
-
-  window.addEventListener('resize', sync);
-  window.addEventListener('orientationchange', sync);
-  window.addEventListener('load', sync);
-
-  /* Web fonts (Gevora/Inter) can change the footer's height once swapped in. */
-  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
-    document.fonts.ready.then(sync);
-  }
-
-  sync();
+  window.addEventListener('resize', idleQueue, { passive: true });
+  window.addEventListener('orientationchange', idleQueue);
+  window.addEventListener('load', queue);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
+  queue();
 })();

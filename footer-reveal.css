@@ -1,120 +1,49 @@
-/* ==========================================================================
-   CURTAIN-REVEAL FOOTER — shared stylesheet (loaded by EVERY page)
-   --------------------------------------------------------------------------
-   How it works
-   1. <footer class="site-footer"> is pinned behind the page: position: fixed;
-      bottom: 0; z-index: 1. It sizes to its content and never moves.
-   2. <main> is the floating "sheet": position: relative; z-index: 2, solid
-      background, rounded bottom corners and a soft bottom shadow.
-   3. footer-reveal.js keeps <main>'s bottom margin equal to the footer's
-      REAL height (ResizeObserver — no hardcoded value), which creates the
-      scroll room that uncovers the footer at the end of the page.
-   4. Scrolling back up slides the sheet over the footer again.
+/* ============================================================
+   LeadsPitch — curtain-reveal footer. ISOLATED FILE.
+   Load AFTER search.css. To change the effect, REPLACE this
+   whole file. Never merge edits into it.
+   ============================================================ */
 
-   Load this file LAST in <head> (after every page stylesheet) so its rules
-   win ties against per-page footer rules.
-
-   Only positioning / scroll behaviour lives here — footer content, links,
-   branding and markup are untouched. Header, mobile panel, search, splash
-   and checkout overlays keep their own (higher) z-indexes, so they stay
-   above the revealed footer.
-   ========================================================================== */
-
-:root {
-  --fr-radius: 24px;
-  --fr-shadow: 0 1px 2px rgba(20, 20, 28, 0.06),
-    0 26px 48px -22px rgba(20, 20, 28, 0.38);
-}
-
-/* --------------------------------------------------------------------------
-   PAGE SHEET — everything the visitor reads sits above the footer
-   -------------------------------------------------------------------------- */
+/* Page sheet: rounded card that slides over the footer */
 html body main {
   position: relative;
   z-index: 2;
-  /* Solid copy of the page background (body sets it) so the footer can
-     never show through the sheet. */
-  background-color: inherit;
-  border-radius: 0 0 var(--fr-radius) var(--fr-radius);
-  box-shadow: var(--fr-shadow);
-  /* Clip section backgrounds to the rounded sheet edge. `clip` (not
-     `hidden`) is used on purpose: it does not create a scroll container,
-     so in-page sticky elements (TOC, category nav) keep working. */
-  overflow: clip;
-  /* The bottom margin is written at runtime by footer-reveal.js and always
-     equals footer.offsetHeight — see the JS file for the sync logic. */
+  background: var(--bg);          /* SOLID theme color, no alpha */
+  border-radius: 24px;            /* all four corners */
+  margin: 0 16px;                 /* side gutters; top flush under nav */
+  margin-bottom: 640px;           /* fallback; footer-reveal.js syncs it */
+  overflow: clip;                 /* clip children into the rounded corners */
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .35);
+  transition: none;
+  animation: none;
 }
 
-/* --------------------------------------------------------------------------
-   FOOTER — fixed behind the sheet, sized by its own content
-   -------------------------------------------------------------------------- */
-/* The doubled class raises specificity on purpose so these rules beat the
-   per-page `position: static` / theme-scoped footer declarations without
-   !important. */
-html body .site-footer.site-footer {
+/* Footer: fixed behind, revealed by native scroll */
+html body .site-footer {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1; /* behind <main> (2), behind header/overlays (>= 3) */
-  box-sizing: border-box;
-  margin-top: 0;
-  /* Short screens (landscape phones): scroll inside instead of overflowing. */
+  left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  border-radius: 28px 28px 0 0;
+  padding-top: calc(var(--nav-h, 76px) + 40px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   max-height: 100vh;
   max-height: 100dvh;
   overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  /* Notched devices / gesture bars. */
-  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  -webkit-overflow-scrolling: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transform: translateZ(0);       /* own compositor layer = smooth scroll */
+  transition: none;
+  animation: none;
 }
+html body .site-footer::-webkit-scrollbar { display: none; }
 
-/* --------------------------------------------------------------------------
-   FOOTER COLUMNS — 4 (desktop) -> 3 (tablet) -> 2 (small phones)
-   Fluid spacing via clamp(); column rules are scoped to the footer so they
-   override the per-page `.footer-grid` media queries regardless of order.
-   -------------------------------------------------------------------------- */
-html body .site-footer .footer-top {
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-}
-
-html body .site-footer .footer-grid {
-  gap: clamp(1.25rem, 3vw, 2rem);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-@media (min-width: 600px) {
-  html body .site-footer .footer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 900px) {
-  html body .site-footer .footer-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-/* --------------------------------------------------------------------------
-   SAFETY NETS
-   - Sticky/fixed headers are already >= 10 (index/about/...) or 50
-     (industries/*): always above the footer's z-index 1 — do not lower them.
-   - Mobile panel (100), search overlay (200), industry popup (200),
-     progress bar (60), splash (9999) and checkout modal (99999) are all
-     body-level siblings with z-index > 1, so they remain usable and sit
-     above the revealed footer.
-   - No page sets overflow: hidden on <html>/<body> (that would break the
-     fixed footer); body overflow stays untouched so the page scrolls.
-   -------------------------------------------------------------------------- */
-
-/* The reveal itself is scroll-driven only (no hover/click triggers and no
-   animation), so there is nothing to disable for reduced motion — but make
-   sure no page-level transition sneaks onto these two layers. */
-@media (prefers-reduced-motion: reduce) {
-  html body main,
-  html body .site-footer.site-footer {
-    animation: none !important;
-    transition: none !important;
-  }
+/* Solid header bar: kills per-frame blur repaint (rough scroll)
+   AND the footer bleed-through at the top.
+   If your header selector differs, adjust ONLY this rule. */
+body header,
+body .site-header {
+  background: var(--bg);          /* solid, no alpha */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
