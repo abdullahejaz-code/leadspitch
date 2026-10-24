@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /industries-backup-before-restructure/
-Favicon: https://leadspitch.com/favicon.ico
+Favicon: https://www.leadspitch.com/favicon.ico
 
 # AI Search Crawlers — allow for AI Overviews, ChatGPT, Perplexity, Claude visibility
 User-agent: GPTBot
@@ -32,7 +32,7 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-Sitemap: https://leadspitch.com/sitemap.xml
+Sitemap: https://www.leadspitch.com/sitemap.xml
 
 # AI-friendly content guidance
-AI-friendly: https://leadspitch.com/llms.txt
+AI-friendly: https://www.leadspitch.com/llms.txt

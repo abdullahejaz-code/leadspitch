@@ -1,4 +1,4 @@
-﻿// Industry Page Generator — Redesigned Template
+// Industry Page Generator — Redesigned Template
 // Run: node generate-industries.js
 // Produces: industries/[slug].html for each industry
 // Template: Hero → One-time → Bundles → Related → Preview → FAQ → Compare → CTA
@@ -572,8 +572,8 @@ function generatePage(data) {
     intro: data.heroSub,
     keywords: []
   };
-  const pageUrl = 'https://leadspitch.com/industries/' + data.slug;
-  const canonicalUrl = 'https://leadspitch.com/industries/' + data.slug;
+  const pageUrl = 'https://www.leadspitch.com/industries/' + data.slug;
+  const canonicalUrl = 'https://www.leadspitch.com/industries/' + data.slug;
   const availability = soon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock';
 
   // Build "Explore More Datasets" pills (all related industries, duplicated for seamless loop)
@@ -737,11 +737,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:type" content="product">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:site_name" content="LeadsPitch">
-  <meta property="og:image" content="https://leadspitch.com/public/sample-excel.png">
+  <meta property="og:image" content="https://www.leadspitch.com/public/sample-excel.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${seo.title}">
   <meta name="twitter:description" content="${data.metaDesc}">
-  <meta name="twitter:image" content="https://leadspitch.com/public/sample-excel.png">
+  <meta name="twitter:image" content="https://www.leadspitch.com/public/sample-excel.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -753,8 +753,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@type": "Organization",
     "name": "LeadsPitch",
     "alternateName": ["Leads Pitch", "Lead Pitch", "leadspitch.com", "leadspitch"],
-    "url": "https://leadspitch.com",
-    "logo": "https://leadspitch.com/public/logo.png",
+    "url": "https://www.leadspitch.com",
+    "logo": "https://www.leadspitch.com/public/logo.png",
     "description": "Business data platform offering one-time dataset purchases and membership discounts across 15 industries.",
     "sameAs": []
   }
@@ -764,7 +764,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "LeadsPitch",
-    "url": "https://leadspitch.com",
+    "url": "https://www.leadspitch.com",
     "description": "Buy verified, industry-specific business leads as ready-to-use CSV datasets."
   }
   </script>
@@ -775,7 +775,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "name": "${data.name} Dataset",
     "description": "${data.metaDesc}",
     "url": "${pageUrl}",
-    "image": "https://leadspitch.com/public/sample-excel.png",
+    "image": "https://www.leadspitch.com/public/sample-excel.png",
     "brand": { "@type": "Organization", "name": "LeadsPitch" },
     "category": "${data.name}",
     "offers": {
@@ -792,8 +792,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leadspitch.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://leadspitch.com/industries" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leadspitch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://www.leadspitch.com/industries" },
       { "@type": "ListItem", "position": 3, "name": "${data.name}", "item": "${pageUrl}" }
     ]
   }
