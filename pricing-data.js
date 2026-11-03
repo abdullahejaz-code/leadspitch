@@ -1,6 +1,6 @@
 /* LeadsPitch pricing configuration
  * Single source of truth for every price, badge, strike-through price and Whop plan ID.
- * Edit this file with pricing-admin.html (open it in Chrome/Edge, then press Save).
+ * Edit this file with LeadsPitch Admin (Open LeadsPitch Admin.bat).
  * Applied at runtime by pricing-apply.js - no page regeneration required.
  */
 window.LP_PRICING = {
@@ -1196,7 +1196,7 @@ window.LP_PRICING = {
   },
   "home": {
     "single": {
-      "price": "$15.98",
+      "price": "$49",
       "wasPrice": "",
       "unit": "per dataset",
       "badgeOn": true,
