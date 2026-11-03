@@ -1,8 +1,7 @@
 /* LeadsPitch pricing configuration
  * Single source of truth for every price, badge, strike-through price and Whop plan ID.
- * Edit with the local pricing editor (pricing-admin.html). That file is gitignored and
- * refuses to run on any public host, so it never reaches the live site.
- * Applied at runtime by pricing-apply.js -- no page regeneration required.
+ * Edit this file with pricing-admin.html (open it in Chrome/Edge, then press Save).
+ * Applied at runtime by pricing-apply.js - no page regeneration required.
  */
 window.LP_PRICING = {
   "industries": {
@@ -671,7 +670,7 @@ window.LP_PRICING = {
         "starter": {
           "name": "Starter",
           "vol": "5K",
-          "price": "$49.99",
+          "price": "$49.98",
           "wasPrice": "",
           "badgeOn": true,
           "badge": "Entry Plan",
