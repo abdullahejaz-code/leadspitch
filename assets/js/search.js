@@ -11,11 +11,10 @@
   if (window.__LS_SEARCH_INIT__) return;
   window.__LS_SEARCH_INIT__ = true;
 
-  // Auto-inject the stylesheet (kept in the same folder as search.js)
-  var basePath = /\/industries\//.test(location.pathname) ? "../" : "";
+  // Auto-inject the stylesheet (runtime assets live in /assets/)
   var cssLink = document.createElement("link");
   cssLink.rel = "stylesheet";
-  cssLink.href = basePath + "search.css";
+  cssLink.href = "/assets/css/search.css";
   document.head.appendChild(cssLink);
 
   var DATA = window.LEADSPITCH_SEARCH_DATA;

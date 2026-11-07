@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const root = __dirname;
+const root = path.resolve(__dirname, '..');
 
 const NEW_OVERRIDE =
   'if (window.LP_Pricing && window.LP_Pricing.checkout) { var _lp = window.LP_Pricing.checkout(planKey, plan); if (_lp) plan = _lp; }';
@@ -34,8 +34,8 @@ for (const page of pages) {
   // 1. <script> tags in <head>
   if (html.indexOf('pricing-apply.js') === -1) {
     const tags =
-      '\n  <script src="' + page.prefix + 'pricing-data.js"></script>\n' +
-      '  <script src="' + page.prefix + 'pricing-apply.js"></script>\n';
+      '\n  <script src="/assets/js/pricing-data.js"></script>\n' +
+      '  <script src="/assets/js/pricing-apply.js"></script>\n';
     if (html.indexOf('</head>') === -1) throw new Error('no </head> in ' + page.file);
     html = html.replace('</head>', tags + '</head>');
     scriptTagged++;

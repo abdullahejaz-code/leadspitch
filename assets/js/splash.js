@@ -1,5 +1,5 @@
 /* LeadsPitch first-visit splash — include once, early in <body>:
-   <script src="splash.js"></script>   (industries/: use ../splash.js)
+   <script src="/assets/js/splash.js"></script>
    Plays once per browser session on whichever page opens first. */
 (function () {
   'use strict';

@@ -1,7 +1,7 @@
 // Full verification of the pricing system. Run: node verify-pricing.js
 const fs = require('fs');
 const path = require('path');
-const root = __dirname;
+const root = path.resolve(__dirname, '..');
 
 let pass = 0;
 let fail = 0;
@@ -18,10 +18,10 @@ const industryFiles = fs.readdirSync(path.join(root, 'industries')).filter((f) =
 const allPages = ['index.html', 'bundles.html'].concat(industryFiles.map((f) => 'industries/' + f));
 
 /* ---------- 1. config file ---------- */
-check('pricing-data.js exists', fs.existsSync(path.join(root, 'pricing-data.js')));
+check('pricing-data.js exists', fs.existsSync(path.join(root, 'assets', 'js', 'pricing-data.js')));
 
 const sandbox = {};
-(new Function('window', read('pricing-data.js')))(sandbox);
+(new Function('window', read('assets/js/pricing-data.js')))(sandbox);
 const CFG = sandbox.LP_PRICING;
 check('pricing-data.js defines window.LP_PRICING', !!CFG);
 check('config has industries', CFG && typeof CFG.industries === 'object');
@@ -116,12 +116,12 @@ for (const page of allPages) {
     check(page + ': plans map present', /var plans = \{/.test(html));
   }
 
-  // relative path correctness
+  // relative path correctness (runtime assets live in /assets/js/)
   const dataTag = html.match(/<script src="([^"]*pricing-data\.js)"><\/script>/);
   const applyTag = html.match(/<script src="([^"]*pricing-apply\.js)"><\/script>/);
   if (dataTag && applyTag) {
-    const want = page.indexOf('industries/') === 0 ? '../pricing-data.js' : 'pricing-data.js';
-    check(page + ': correct relative path ' + want, dataTag[1] === want && applyTag[1] === (want === 'pricing-data.js' ? 'pricing-apply.js' : '../pricing-apply.js'),
+    const want = '/assets/js/pricing-data.js';
+    check(page + ': correct relative path ' + want, dataTag[1] === want && applyTag[1] === '/assets/js/pricing-apply.js',
       dataTag[1] + ' / ' + applyTag[1]);
     // target file actually exists relative to the page
     const dir = path.dirname(path.join(root, page));
@@ -238,7 +238,7 @@ for (const bk of Object.keys(CFG.bundles)) {
 
 /* ---------- 7. generator template keeps the wiring ---------- */
 {
-  const gen = read('generate-industries.js');
+  const gen = read('tools/generate-industries.js');
   check('generator emits pricing-data.js', gen.indexOf('pricing-data.js') !== -1);
   check('generator emits pricing-apply.js', gen.indexOf('pricing-apply.js') !== -1);
   check('generator emits checkout override', gen.indexOf('LP_Pricing.checkout') !== -1);

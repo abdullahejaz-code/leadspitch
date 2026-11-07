@@ -25,14 +25,14 @@ const flag = (name) => {
   return i >= 0 && argv[i + 1] ? argv[i + 1] : null;
 };
 
-const ROOT = path.resolve(flag('--root') || process.env.LP_ROOT || __dirname);
+const ROOT = path.resolve(flag('--root') || process.env.LP_ROOT || path.join(__dirname, '..'));
 const PORT = Number(flag('--port') || process.env.LP_PORT || 8787);
 const OPEN = argv.indexOf('--open') >= 0;
 const MAX_BODY = 512 * 1024;          // 512 KB, the real config is ~36 KB
 const SERVED_MARK = '<!--LP-SERVED-->';
 
 const EDITOR = path.join(ROOT, 'pricing-admin.html');
-const CONFIG = path.join(ROOT, 'pricing-data.js');
+const CONFIG = path.join(ROOT, 'assets', 'js', 'pricing-data.js');
 
 /* ------------------------------------------------------------------ guards */
 
@@ -120,11 +120,11 @@ function git(args) {
 
 async function publish() {
   const log = [];
-  const status = await git(['status', '--porcelain', '--', 'pricing-data.js']);
+  const status = await git(['status', '--porcelain', '--', 'assets/js/pricing-data.js']);
   if (!status.ok) return { ok: false, log: 'git status failed\n' + status.out };
 
   if (status.out.trim()) {
-    const add = await git(['add', 'pricing-data.js']);
+    const add = await git(['add', 'assets/js/pricing-data.js']);
     if (!add.ok) return { ok: false, log: 'git add failed\n' + add.out };
     const commit = await git(['commit', '-m', 'Update pricing config']);
     if (!commit.ok) return { ok: false, log: 'git commit failed\n' + commit.out };

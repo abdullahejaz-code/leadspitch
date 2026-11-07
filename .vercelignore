@@ -10,3 +10,12 @@ pricing-preview.html
 # local-only helper (never deployed)
 pricing-server.js
 Open Pricing Editor.bat
+
+# LeadsPitch Admin V1 (never deployed)
+local-admin/
+.local-admin/
+Open LeadsPitch Admin.bat
+
+# dev-only tooling + archives
+tools/
+_archive/

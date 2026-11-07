@@ -42,8 +42,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../footer-reveal.css">
-  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+  <link rel="stylesheet" href="/assets/css/footer-reveal.css">
+  <script defer src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1267,8 +1267,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 </style>
-<script src="../pricing-data.js"></script>
-<script src="../pricing-apply.js"></script>
+<script src="/assets/js/pricing-data.js"></script>
+<script src="/assets/js/pricing-apply.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2071,8 +2071,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })();
   </script>
 
-  <script src="../search-data.js"></script>
-  <script src="../search.js"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/search.js"></script>
 
   <!-- Checkout Modal -->
   <div class="checkout-modal-overlay" id="checkout-modal-overlay">
@@ -2125,30 +2125,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
 
+        if (window.LeadsPitchCheckoutHandle) {
+          try { window.LeadsPitchCheckoutHandle.destroy(); } catch (e) {}
+          window.LeadsPitchCheckoutHandle = null;
+        }
         modalBody.innerHTML = '';
 
         var container = document.createElement('div');
         container.className = 'whop-checkout-container';
-        container.setAttribute('data-whop-checkout-plan-id', plan.id);
-        container.setAttribute('data-whop-checkout-theme', 'dark');
-        container.style.width = '100%';
-        container.style.minHeight = '600px';
+        container.id = 'whop-checkout-mount';
         modalBody.appendChild(container);
 
-        if (window.WhopCheckout && typeof window.WhopCheckout.load === 'function') {
-          try {
-            window.WhopCheckout.load().then(function(sdk) {
-              if (sdk && typeof sdk.mountCheckout === 'function') {
-                sdk.mountCheckout(container, { planId: plan.id, theme: 'dark' });
-              }
-            }).catch(function() {});
-          } catch(e) {}
+        try {
+          window.LeadsPitchCheckoutHandle = window.WhopElements().checkout.create({
+            plan: plan.id,
+            appearance: { theme: { appearance: 'dark' } }
+          });
+          window.LeadsPitchCheckoutHandle.create('checkout').mount('#whop-checkout-mount');
+        } catch (e) {
+          modalBody.innerHTML = '<p style="padding:24px;text-align:center">Checkout could not load. <a href="https://whop.com/checkout/' + plan.id + '">Continue to Whop checkout</a></p>';
         }
       }
 
       function closeCheckout() {
         overlay.classList.remove('active');
         document.body.style.overflow = '';
+        if (window.LeadsPitchCheckoutHandle) {
+          try { window.LeadsPitchCheckoutHandle.destroy(); } catch (e) {}
+          window.LeadsPitchCheckoutHandle = null;
+        }
         modalBody.innerHTML = '';
       }
 
@@ -2180,5 +2185,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })();
   </script>
 
-  <script src="../footer-reveal.js" defer></script>
+  <script src="/assets/js/footer-reveal.js" defer></script>
 </body></html>

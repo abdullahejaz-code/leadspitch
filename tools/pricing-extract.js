@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const root = __dirname;
+const root = path.resolve(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 
 function planIdsFromPage(html) {
@@ -180,7 +180,7 @@ window.LP_PRICING = `;
 
 const body = JSON.stringify(config, null, 2) + ';\n';
 
-fs.writeFileSync(path.join(root, 'pricing-data.js'), header + body, 'utf8');
+fs.writeFileSync(path.join(root, 'assets', 'js', 'pricing-data.js'), header + body, 'utf8');
 
 console.log('Wrote pricing-data.js');
 console.log('  industries: ' + Object.keys(industries).length);

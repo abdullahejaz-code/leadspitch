@@ -14,6 +14,11 @@ node_modules/
 # private local-only tool - never publish
 pricing-admin.html
 
+# LeadsPitch Admin V1 - local-only application, never published or deployed
+local-admin/
+.local-admin/
+Open LeadsPitch Admin.bat
+
 # orphaned pricing previews (stale prices, no inbound links)
 pricing-cards-all-industries.html
 pricing-cards-preview.html

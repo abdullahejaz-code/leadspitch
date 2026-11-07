@@ -1,8 +1,9 @@
 ﻿const fs = require("fs");
 const path = require("path");
 
-const csvPath = path.join(__dirname, "reference-data");
-const outPath = path.join(__dirname, "search-data.js");
+const csvPath = path.join(__dirname, "..", "reference-data");
+
+const outPath = path.join(__dirname, "..", "assets", "js", "search-data.js");
 
 // Niche metadata: name, slug, description, keywords
 const NICHES = [
@@ -239,7 +240,7 @@ const pages = [
 ];
 
 function extractFAQs() {
-  const html = fs.readFileSync(path.join(__dirname, "faq.html"), "utf8");
+  const html = fs.readFileSync(path.join(__dirname, "..", "faq.html"), "utf8");
   const re = /<span class="acc-q">(.*?)<\/span>[\s\S]*?<div class="acc-inner">([\s\S]*?)<\/div><\/div>/g;
   const out = [];
   let m;
