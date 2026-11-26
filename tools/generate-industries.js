@@ -2536,6 +2536,7 @@ ${data.bundles.map(key => {
   </script>
 
   <script src="/assets/js/footer-reveal.js" defer></script>
+  <script src="/assets/js/construction.js" defer></script>
 </body></html>`;
 }
 
